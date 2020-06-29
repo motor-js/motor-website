@@ -1,0 +1,79 @@
+---
+id: Introduction
+title: Introduction
+sidebar_label: Introduction
+---
+
+## Motivation
+
+The Qlik APIs provide the flexiblity to build completely custom dashboards off Qlik's Associative Engine.
+Motor has been developed to make building these dashboards easy. 
+
+This library simplifies Mashup development by handling connection to the engine and API interactions for you,
+reducing the development time and complexity of your Mashup code.
+
+Motor aims to provide the following:
+
+- <b>Easy Mashup Development</b>: We aim to make the creation of Qlik Mashups as simple as possible for developers, removing the need 
+for detailed knowledge of the Qlik APIs.
+- <b>Powerful Theming</b>: Tailor the component library to your brand and layout needs. From simply applying your 
+brand color, to editing our theme object and component functionality via props.
+- <b>Responsive Components</b>: All our components are responsive out of the box
+- <b>Helpful Utilities</b>: Re-usable hooks to simplify interaction with the associative engine
+
+<br />
+
+## What it is
+
+Motor is a front-end React library consisting of Charts, Components and Utilities for the rapid creation of Qlik mashups. 
+The components work via any connection to the Qlik engine, whether that's Qlik Core, Qlik Sense Server or Qlik Sense cloud.
+
+:::important
+You need a valid connection to a Qlik Sense Engine to use this library.
+You can configure this in our top level Motor component by setting the config prop or passing the engine object directly.
+More on this here
+:::
+
+The library is split into the following core parts
+- Contexts: Leverging React's Context API to provide context throughout your dashboard including connection to the Engine, Theming and Responsiveness
+- Visualisations: Charts and Graphs to visualise your data
+- Components: Dashboard tools for interacting with data including Selections, Filtering & Search
+- Layout: Layout components for easy dashboarding, these do not require connection to a Qlik engine
+- Hooks: Re-usable functions to interact with the engine. Including creating HyperCubes and Bookmarks
+
+<br />
+
+## How it Works
+
+<br />
+
+## Technical Overview
+
+This section will break down the libraries and technologies used by Motor.
+
+#### React
+
+Motor is a React library utilising React hooks, we currently don't support other frameworks such as Angular or Vue. 
+
+#### Styled Components
+
+Motor uses CSS in JS for styling, more specifically Styled Components. 
+You can check out details of our theming framework here.
+
+#### Enigma JS
+
+Motor communicates with the Qlik engine via EngimaJS, our components have no dependencies on the Capability APIs.
+
+
+
+<br />
+
+## Authentication
+
+Motor is a front end framework, so does not handle authentication. You can check out examples of how to connect to the Qlik engine via JWT or certificates here.
+We aim to make it easy to connect to the engine, once you've authenticated, by setting the config or passing the engine object
+to our top level Motor component
+
+<br />
+
+## The Qlik Associative Engine
