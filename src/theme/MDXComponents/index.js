@@ -5,23 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-import Link from '@docusaurus/Link';
-import CodeBlock from '@theme/CodeBlock';
-import Heading from '@theme/Heading';
+import React from "react";
+import Link from "@docusaurus/Link";
+import CodeBlock from "@theme/CodeBlock";
+import Heading from "@theme/Heading";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 //-------------------------------------------------------/
 ////// Import the component you need in scope
-import { Juno, Button, Pie } from "juno-ui/dist";
+import { Juno, Button, Pie, Bar, Column } from "juno-ui/dist";
 
 const config = {
-  host: 'localhost',
+  host: "localhost",
   secure: false,
   port: 19077,
-  prefix: '',
-  appId: 'bd335164-4640-4a3f-970d-2fef039c39bf',
+  prefix: "",
+  // appId: 'bd335164-4640-4a3f-970d-2fef039c39bf', // Luke
+  appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
 };
 
 //-------------------------------------------------------/
@@ -30,17 +31,19 @@ const SCOPE = {
   Juno,
   Button,
   Pie,
+  Bar,
+  Column,
   config,
-}
+};
 
 export default {
   code: (props) => {
-    const {children} = props;
-    if (typeof children === 'string') {
-      if (!children.includes('\n')) {
+    const { children } = props;
+    if (typeof children === "string") {
+      if (!children.includes("\n")) {
         return <code {...props} />;
       }
-      return <CodeBlock {...props} scope={SCOPE}/>;
+      return <CodeBlock {...props} scope={SCOPE} />;
     }
     return children;
   },
@@ -52,10 +55,10 @@ export default {
     return <Link {...props} />;
   },
   pre: (props) => <div className={styles.mdxCodeBlock} {...props} />,
-  h1: Heading('h1'),
-  h2: Heading('h2'),
-  h3: Heading('h3'),
-  h4: Heading('h4'),
-  h5: Heading('h5'),
-  h6: Heading('h6'),
+  h1: Heading("h1"),
+  h2: Heading("h2"),
+  h3: Heading("h3"),
+  h4: Heading("h4"),
+  h5: Heading("h5"),
+  h6: Heading("h6"),
 };
