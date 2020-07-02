@@ -36,7 +36,7 @@ This handles two things:
 
 These examples are based off the Consumer Sales Qlik Sense application.
 
-## Examples - sinmple use (use of cols with no field descriptions (passing an array))
+## Examples - simple use (use of cols with no field descriptions (passing an array))
 
 We recommend you start by wrapping your React document with the Motor parent component.
 This handles two things:
@@ -105,9 +105,10 @@ function BarDemo() {
   return (
     <Juno config={config}>
       <Column
-        title="Bar Chart"
+        title="Revenue by Year and Product"
         cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          { qField: "[Year]", qLabel: "Year" },
+          { qField: "[Line Desc 1]", qLabel: "Product" },
           {
             qField: "=Sum( [Sales Quantity]*[Sales Price])",
             qLabel: "Revenue",
@@ -133,12 +134,16 @@ function BarDemo() {
   return (
     <Juno config={config}>
       <Column
-        title="Bar Chart"
+        title="Revenue and Sales $ by Product Sub Group"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
           {
             qField: "=Sum( [Sales Quantity]*[Sales Price])",
             qLabel: "Revenue",
+          },
+          {
+            qField: "=Sum ([Sales Amount])",
+            qLabel: "Sales",
           },
         ]}
       />
