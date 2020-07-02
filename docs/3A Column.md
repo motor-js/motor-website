@@ -5,7 +5,7 @@ sidebar_label: Column
 ---
 
 ```jsx live
-function BarDemo() {
+function ColumnDemo() {
   return (
     <Juno config={config}>
       <Column
@@ -18,7 +18,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
@@ -58,7 +60,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
@@ -86,7 +90,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
@@ -115,7 +121,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
@@ -147,7 +155,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
@@ -175,7 +185,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
@@ -203,7 +215,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
@@ -231,7 +245,9 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand">Clear Selections</Button>
+      <Button backgroundColor="brand" type="clearSelections">
+        Clear Selections
+      </Button>
     </Juno>
   );
 }
