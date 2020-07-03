@@ -23,11 +23,12 @@ npm i motor-ui
 ## Usage
 
 We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things: 
+This handles two things:
+
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
-You can then import the React component from the package and you're good to go. 
+You can then import the React component from the package and you're good to go.
 Check out the full list of props and theming options for each component in these docs.
 
 ```javascript
@@ -35,7 +36,7 @@ Check out the full list of props and theming options for each component in these
 import { Motor } from 'motor-ui/core'
 import classic from 'motor-ui/core/themes'
 
-<Motor 
+<Motor
   config={..}
   theme={classic}
 >
@@ -44,19 +45,18 @@ import classic from 'motor-ui/core/themes'
 
 ```
 
-Note, you can pass the configuration to connect to the Qlik engine directly in the components, if you prefer. 
-Some styling can also be applied directly to the components as props. 
-
+Note, you can pass the configuration to connect to the Qlik engine directly in the components, if you prefer.
+Some styling can also be applied directly to the components as props.
 
 ```javascript
 
 import { Button } from 'motor-ui/core'
- 
-<Button 
+
+<Button
     config={..}
-    type='clearSelections' 
-    title='Clear' 
-    backgroundColor='var(--oc-red-6)'
+    type='clearSelections'
+    title='Clear'
+    color='var(--oc-red-6)'
 />
 
 ```
@@ -66,5 +66,3 @@ import { Button } from 'motor-ui/core'
 ## Examples
 
 #### React Hello Motor -->
-
-

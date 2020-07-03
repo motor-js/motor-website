@@ -18,7 +18,7 @@ function ColumnDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
@@ -60,7 +60,7 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
@@ -90,7 +90,7 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
@@ -121,7 +121,7 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
@@ -155,7 +155,7 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
@@ -185,7 +185,7 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
@@ -215,7 +215,7 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
@@ -245,7 +245,7 @@ function BarDemo() {
           },
         ]}
       />
-      <Button backgroundColor="brand" type="clearSelections">
+      <Button color="brand" type="clearSelections">
         Clear Selections
       </Button>
     </Motor>
