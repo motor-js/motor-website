@@ -7,7 +7,7 @@ sidebar_label: Bar
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Bar Chart"
         cols={[
@@ -21,7 +21,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
@@ -49,7 +49,7 @@ This handles two things:
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Bar Chart"
         cols={[
@@ -63,7 +63,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
@@ -79,7 +79,7 @@ This handles two things:
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Bar Chart"
         cols={[
@@ -93,7 +93,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
@@ -109,7 +109,7 @@ This handles two things:
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Revenue by Year and Product"
         cols={[
@@ -124,7 +124,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
@@ -140,7 +140,7 @@ This handles two things:
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Revenue and Sales $ by Product Sub Group"
         cols={[
@@ -158,7 +158,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
@@ -174,7 +174,7 @@ This handles two things:
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Bar Chart"
         cols={[
@@ -188,7 +188,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
@@ -204,7 +204,7 @@ This handles two things:
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Bar Chart"
         cols={[
@@ -218,7 +218,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
@@ -234,7 +234,7 @@ This handles two things:
 ```jsx live
 function BarDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Bar
         title="Bar Chart"
         cols={[
@@ -248,7 +248,7 @@ function BarDemo() {
       <Button backgroundColor="brand" type="clearSelections">
         Clear Selections
       </Button>
-    </Juno>
+    </Motor>
   );
 }
 ```
