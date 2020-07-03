@@ -4,28 +4,6 @@ title: Column
 sidebar_label: Column
 ---
 
-```jsx live
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Column
-        title="Bar Chart"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-      />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
-    </Motor>
-  );
-}
-```
-
 ## Usage
 
 We recommend you start by wrapping your React document with the Motor parent component.
@@ -34,24 +12,28 @@ This handles two things:
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
+The simpliest method to render a Column chart is to add a Column element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
+
+      <Column cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+
+This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
+
+A more advanced version demonstrating this is displayed below.
+
 ## Examples
 
 These examples are based off the Consumer Sales Qlik Sense application.
 
-## Examples - simple use (use of cols with no field descriptions (passing an array))
-
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
+The first example is a column chart sorted by Revenue descending.
 
 ```jsx live
-function BarDemo() {
+function ColumnDemo() {
   return (
     <Motor config={config}>
       <Column
-        title="Bar Chart"
+        title="Revenue by Product Sub Group"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
           {
@@ -59,29 +41,23 @@ function BarDemo() {
             qLabel: "Revenue",
           },
         ]}
+        columnSortOrder={[1, 0]}
       />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
     </Motor>
   );
 }
 ```
 
-## Examples - complex use (use of cols with no field descriptions (passing an object))
-
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
+This exmaple removes the text from the axis as well as the labels from each bar and has selections disabled.
 
 ```jsx live
-function BarDemo() {
+function ColumnDemo() {
   return (
     <Motor config={config}>
       <Column
-        title="Bar Chart"
+        title="Revenue by Product Sub Group"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
           {
@@ -89,171 +65,16 @@ function BarDemo() {
             qLabel: "Revenue",
           },
         ]}
+        allowSelections={false}
+        textOnAxis={false}
+        showLabels="none"
       />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
     </Motor>
   );
 }
 ```
 
-## Examples - multiple dimensions
-
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
-
-```jsx live
-function BarDemo() {
-  return (
-    <Motor config={config}>
-      <Column
-        title="Revenue by Year and Product"
-        cols={[
-          { qField: "[Year]", qLabel: "Year" },
-          { qField: "[Line Desc 1]", qLabel: "Product" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-      />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
-    </Motor>
-  );
-}
-```
-
-## Examples - multiple measures
-
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
-
-```jsx live
-function BarDemo() {
-  return (
-    <Motor config={config}>
-      <Column
-        title="Revenue and Sales $ by Product Sub Group"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-          {
-            qField: "=Sum ([Sales Amount])",
-            qLabel: "Sales",
-          },
-        ]}
-      />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
-    </Motor>
-  );
-}
-```
-
-## Examples - stacked column chart
-
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
-
-```jsx live
-function BarDemo() {
-  return (
-    <Motor config={config}>
-      <Column
-        title="Bar Chart"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-      />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
-    </Motor>
-  );
-}
-```
-
-## Examples - percentage stacked column chart
-
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
-
-```jsx live
-function BarDemo() {
-  return (
-    <Motor config={config}>
-      <Column
-        title="Bar Chart"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-      />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
-    </Motor>
-  );
-}
-```
-
-## Examples - Suppress display of scroll bar
-
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
-
-```jsx live
-function BarDemo() {
-  return (
-    <Motor config={config}>
-      <Column
-        title="Bar Chart"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-      />
-      <Button color="brand" type="clearSelections">
-        Clear Selections
-      </Button>
-    </Motor>
-  );
-}
-```
-
-## props
+## Props
 
 <table>
   <tr>
@@ -264,11 +85,7 @@ function BarDemo() {
   <tr>
     <td>config</td>
     <td>Configuration object to connect to the Qlik Engine. Must include Qlik site URL and an App name</td>
-  <td></td>
-  </tr>
-  <tr>
-    <td>label</td>
-    <td>is this used ? </td>
+    <td>In the chart has been wrapped in the Motor component then this is not required and it will use the application and theme set there.</td>
   <td></td>
   </tr>
   <tr>
