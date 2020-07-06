@@ -8,6 +8,7 @@ module.exports = {
   projectName: 'Motor', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
+    sidebarCollapsible: true,
     navbar: {
       title: '',
       logo: {
