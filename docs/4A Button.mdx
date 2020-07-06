@@ -1,34 +1,149 @@
 ---
 id: Button
 title: Button
+description: hello
 sidebar_label: Button
 ---
+
+#### A Button. Trigger various Qlik actions such as clearing selections, or attach a custom event.
+
+
+## Usage
 
 ```jsx live
 
 function ButtonTest() {
     return (
-    <Juno config={{
-      host: 'localhost',
-      secure: false,
-      port: 19077,
-      prefix: '',
-      appId: 'bd335164-4640-4a3f-970d-2fef039c39bf',
-      }}
-    >  
-      <Button backgroundColor='brand'>Brand</Button>
-      <Button backgroundColor='var(--oc-red-6)'>Red</Button>
-      <Button backgroundColor='var(--oc-orange-6)'>Orange</Button>
-      <Button backgroundColor='var(--oc-yellow-6)'>Yellow</Button>
-      <Button backgroundColor='var(--oc-green-6)'>Green</Button>
-      <Button backgroundColor='var(--oc-teal-6)'>Teal</Button>
-      <Button backgroundColor='var(--oc-blue-6)'>Blue</Button>
-      <Button backgroundColor='var(--oc-violet-6)'>Violet</Button>
-      <Button backgroundColor='var(--oc-pink-6)'>Pink</Button>
-      <Button backgroundColor='var(--oc-gray-6)'>Gray</Button>
-      <Button backgroundColor='var(--oc-black-6)'>Black</Button>
+    <Juno config={config}>  
+      <Button backgroundColor='brand'>I am a Button.</Button>
     </Juno>
     )
 }
 
 ```
+
+
+## Props
+
+:::info
+You do not need to set the Config prop if the component is a child of the Motor component
+:::
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>config</td>
+    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component.</td>
+    <td>{ }</td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>The action on click of the button. If default, you can set a custom onClick function</td>
+    <td>'clearSelections'< br/>'back'< br/>'forward'< br/><b>'default'</b></td>
+  </tr>
+  <tr>
+    <td>block</td>
+    <td></td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td>onClick</td>
+    <td>Click handler</td>
+    <td>function</td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>The size of the button</td>
+    <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
+  </tr>
+  <tr>
+    <td>color</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>margin</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>fontColor</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>borderRadius</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>border</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>outline</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>activeTransform</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>activeBackgroundColor</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>activeBackgroundSize</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>activeTransition</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>transition</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>hoverBoxShadow</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>hoverBorder</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>hoverBackground</td>
+    <td></td>
+    <td></td>
+  </tr>
+  </table>
+
+
+## Theme API
+
+
+
+
+
+## Extending Styles
+
+

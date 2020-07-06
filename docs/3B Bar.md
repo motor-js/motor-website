@@ -253,7 +253,7 @@ function BarDemo() {
 }
 ```
 
-## props
+## Props
 
 <table>
   <tr>
