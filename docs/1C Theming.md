@@ -38,10 +38,10 @@ The library comes with some pre-built themes which you can import and use. See t
 
 ```javascript
 
-import { Motor } from 'motor-ui/core';
-import { dark } from 'motor-ui/core/themes'
+import { Motor } from 'motor-ui';
+import { night } from 'motor-ui/themes'
 
-const myTheme = {dark};
+const myTheme = {night};
 
 <Motor theme={myTheme}>
   //...
@@ -68,10 +68,12 @@ const myTheme = {
   filter: {
     // changes here will affect the Filter component only
   },
-  ...
+  //...
 }
 
 ```
+
+<br />
 
 ## API
 
