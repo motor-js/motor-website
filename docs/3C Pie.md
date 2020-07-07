@@ -7,7 +7,7 @@ sidebar_label: Pie
 ```jsx live
 function PieDemo() {
   return (
-    <Juno config={config}>
+    <Motor config={config}>
       <Pie
         title="Pie Chart"
         cols={[
@@ -15,7 +15,7 @@ function PieDemo() {
           { qField: "=Sum ([Sales Amount])", qLabel: "Sales $" },
         ]}
       />
-    </Juno>
+    </Motor>
   );
 }
 ```

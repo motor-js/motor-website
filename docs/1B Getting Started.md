@@ -31,7 +31,8 @@ npm i motor-ui
 ## Usage
 
 We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things: 
+This handles two things:
+
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
@@ -43,7 +44,7 @@ Check out the full list of props and theming options for each component in these
 import { Motor } from 'motor-ui'
 import base from 'motor-ui/themes'
 
-<Motor 
+<Motor
   config={..}
   theme={base}
 >
@@ -70,9 +71,9 @@ import { Button } from 'motor-ui'
  
 <Button 
     config={..}
-    type='clearSelections' 
-    title='Clear' 
-    backgroundColor='var(--oc-red-6)'
+    type='clearSelections'
+    title='Clear'
+    color='var(--oc-red-6)'
 />
 
 ```

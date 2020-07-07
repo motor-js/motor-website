@@ -14,7 +14,7 @@ import styles from "./styles.module.css";
 
 //-------------------------------------------------------/
 ////// Import the component you need in scope
-import { Juno, Button, Pie, Bar, Column } from "juno-ui/dist";
+import { Motor, Button, Pie, Bar, Column } from "motor-ui/dist";
 
 const config = {
   host: "localhost",
@@ -28,7 +28,7 @@ const config = {
 //-------------------------------------------------------/
 ////// Object with components I need in scope
 const SCOPE = {
-  Juno,
+  Motor,
   Button,
   Pie,
   Bar,
