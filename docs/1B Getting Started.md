@@ -78,7 +78,7 @@ import { Button } from 'motor-ui'
 
 ```
 
-<br />
+
 
 ## Examples
 

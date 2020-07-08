@@ -7,13 +7,18 @@ module.exports = {
   organizationName: 'Motor', // Usually your GitHub org/user name.
   projectName: 'Motor', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
+  stylesheets: [{
+    href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap",
+    type: 'text/css',
+  }],
   themeConfig: {
     sidebarCollapsible: true,
     navbar: {
       title: '',
       logo: {
         alt: 'Motor Logo',
-        src: 'img/motor.png',
+        src: 'img/motor_1.png',
+        srcDark: 'img/motor_js_6b.png',
       },
       links: [
         {

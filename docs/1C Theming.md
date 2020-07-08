@@ -41,9 +41,7 @@ The library comes with some pre-built themes which you can import and use. See t
 import { Motor } from 'motor-ui';
 import { night } from 'motor-ui/themes'
 
-const myTheme = {night};
-
-<Motor theme={myTheme}>
+<Motor theme={night}>
   //...
 </Motor>
 

@@ -87,18 +87,20 @@ function Home() {
       description="Motor homepage">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <span className="hero__title">{siteConfig.title}</span>
+          <div className="hero__subtitle">{siteConfig.tagline}</div>
           <div className={styles.buttons}>
             <Link
+              id='button1'
               className={clsx(
-                'button button--lg',
+                'button b1 button--lg',
                 styles.button,
               )}
-              to={useBaseUrl('docs/')}>
+              to={useBaseUrl('docs/Getting%20Started')}>
               Get Started
             </Link>
             <Link
+              id='button2'
               className={clsx(
                 'button button--lg',
                 styles.button,
@@ -113,6 +115,7 @@ function Home() {
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
+              <div className='heading'>Reasons you'll love motor js</div>
               <div className="row">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
@@ -121,6 +124,11 @@ function Home() {
             </div>
           </section>
         )}
+        <section className={styles.features}>
+          <div className="container">
+            Hi
+          </div>
+        </section>
       </main>
     </Layout>
   );

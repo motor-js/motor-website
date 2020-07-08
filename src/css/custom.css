@@ -6,8 +6,10 @@
  */
 
 /* You can override the default Infima variables here. */
+
+
 :root {
-  --ifm-color-primary: #0108aa;
+  --ifm-color-primary: #ed5d1d;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -15,6 +17,12 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+  --dark-1: #444444;
+}
+
+.hero__title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: bold;
 }
 
 .docusaurus-highlight-code-line {
@@ -23,3 +31,38 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.navbar__brand {
+  height: 3rem !important;
+}
+
+#button1 {
+ color: var(--dark-1);
+ border: 2px solid var(--dark-1);
+}
+
+#button2 {
+  background-color: #ed5d1d;
+  border: 2px solid #ed5d1d;
+  color: #f7fff8;
+}
+
+#button2:hover {
+  opacity: 0.7;
+}
+
+/*
+
+ '#ed5d1d' //orange,
+  '#add1ff' // lightblue,
+  '#f7fff8' //white,
+  '#0c58bb' //blue,
+  '#5d1909' //dark red,
+
+*/

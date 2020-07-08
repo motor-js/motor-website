@@ -10,12 +10,20 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  color: #444444;
+  background-color: #f7fff8;
 }
 
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
   }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttons {
@@ -36,13 +44,14 @@
   width: 200px;
 }
 
+
 .button {
   margin: 20px;
-  border: 2px solid red;
-  color: white;
+  padding: 12px 30px;
 }
 
 .button:hover {
   margin: 20px;
-  background-color: red;
+  transform: translateY(-2px);
+  background-color: #d5d5d5;
 }
