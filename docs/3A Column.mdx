@@ -40,10 +40,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
       Configuration object to connect to the Qlik Engine, only set this if used
       outside of the Motor component.
     </td>
-    <td>See sample syntax below</td>
+    <td>
+      <code>object</code> <br />
+      See sample syntax below
+    </td>
   </tr>
   <tr>
     <td>
+      <code>array</code> <br />
       <code>cols</code>
     </td>
     <td>Columns from Qlik Data Model to render in the chart. </td>
@@ -226,6 +230,296 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <b>* default obtained from theme.</b>
     </td>
   </tr>
+  <tr>
+    <td>
+      <code>fontColor</code>
+    </td>
+    <td>Color of the labels for the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>border</code>
+    </td>
+    <td>Border to be dispalyed around the chart</td>
+    <td>
+      <code>boolean</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "top"
+      <br />
+      "left"
+      <br />
+      "bottom"
+      <br />
+      "right"
+      <br />
+      "start"
+      <br />
+      "end"
+      <br />
+      "horizontal"
+      <br />
+      "vertical"
+      <br />
+      "all"
+      <br />
+      "between"
+      <br />
+      "none"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Background color the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderRadius</code>
+    </td>
+    <td>Border radius of the border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>chartColor</code>
+    </td>
+    <td>Color scheme to be used for the chart</td>
+    <td>
+      <code>array</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "divergent13"
+      <br />
+      "divergent9"
+      <br />
+      "goya"
+      <br />
+      "red"
+      <br />
+      "blue"
+      <br />
+      "gray"
+      <br />
+      "pink"
+      <br />
+      "grape"
+      <br />
+      "violet"
+      <br />
+      "indigo"
+      <br />
+      "blue"
+      <br />
+      "cyan"
+      <br />
+      "teal"
+      <br />
+      "green"
+      <br />
+      "lime"
+      <br />
+      "yellow"
+      <br />
+      "orange"
+      <br />
+      "base"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr> <tr>
+    <td>
+      <code>stacked</code>
+    </td>
+    <td>Draw chart as stacked chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>percentStacked</code>
+    </td>
+    <td>Draw chart as percenatge stacked chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>roundNum</code>
+    </td>
+    <td>Use round numbering to dispaly labels on charts</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>title</code>
+    </td>
+    <td>Title to be dispalyed on top of chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>subTitle</code>
+    </td>
+    <td>Sub title to be dispalyed on top of chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>allowSelections</code>
+    </td>
+    <td>Allow selections to be made on the chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxWidth</code>
+    </td>
+    <td>Maximum width in pixels of each column</td>
+    <td>
+      <code>number</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showAxis</code>
+    </td>
+    <td>Display axis on the chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "both"
+      <br />
+      "yAxis"
+      <br />
+      "xAxis"
+      <br />
+      "none"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxAxisLength</code>
+    </td>
+    <td>Maximum width in pixels of label before elipsis are applied</td>
+    <td>
+      <code>number</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>suppressScroll</code>
+    </td>
+    <td>Suppress the diplsay of the mini chart with brushing</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>columnPadding</code>
+    </td>
+    <td>Padding between each column</td>
+    <td>
+      <code>number</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>dimensionErrMsg</code>
+    </td>
+    <td>
+      Message to be displayed if an invalid dimension is used in the cols
+      property
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>measureErrMsg</code>
+    </td>
+    <td>
+      Message to be displayed if an invalid measure is used in the cols property
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>otherTotalSpec</code>
+    </td>
+    <td>
+      Message to be displayed if an invalid measure is used in the cols property
+    </td>
+    <td>
+      <code>bool</code>
+      <br />
+      <code>shape</code>
+      <br />
+      See sample syntax below <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
 </table>
 
 ## Sample syntax
@@ -337,7 +631,7 @@ import { Column } from "motor-ui";
 import { Column } from "motor-ui";
 
   <Column
-    ...
+    ....
     calcCondition={{
       qCond: '1+1=2',
       qMsg: 'Calculation condition has not been met',
@@ -345,9 +639,25 @@ import { Column } from "motor-ui";
   />
 ```
 
+### otherTotalSpec settings
+
+```jsx {5-8}
+import { Column } from "motor-ui";
+
+  <Column
+   ....
+          otherTotalSpec={{
+             qOtherLabel: 'Other',
+             qOtherCount: '5'
+           }}
+     />
+```
+
 ## Examples
 
 These examples are based off the Consumer Sales Qlik Sense application.
+
+### Chart sorted by descending values
 
 The first example is a column chart sorted by Revenue descending.
 
@@ -372,6 +682,8 @@ function ColumnDemo() {
   );
 }
 ```
+
+### Axis and labels removed from chart
 
 This exmaple removes the text from the axis as well as the labels from each bar and has selections disabled.
 
