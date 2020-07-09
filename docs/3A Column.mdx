@@ -166,9 +166,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
   </tr>
   <tr>
-    <td>textOnAxis</td>
+    <td>
+      <code>textOnAxis</code>
+    </td>
     <td>Show text on Axis</td>
     <td>
+      <code>boolean</code> <br />
+      <code>oneOf</code>
+      <br />
       'both'
       <br />
       'yAxis'
@@ -181,9 +186,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
   </tr>
   <tr>
-    <td>tickSpacing</td>
+    <td>
+      <code>tickSpacing</code>
+    </td>
     <td></td>
     <td>
+      <code>oneOf</code>
+      <br />
       "wide"
       <br />
       "normal"
@@ -197,7 +206,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ## Sample syntax
 
-### Sample syntax for config settings
+### config settings
 
 ```jsx {4-9}
 import { Column } from 'motor-ui'
@@ -214,7 +223,7 @@ import { Column } from 'motor-ui'
 />
 ```
 
-### Sample syntax for cols settings
+### cols settings
 
 <h4>Overview</h4>
 There are three different ways of specifying the columns:
@@ -298,7 +307,7 @@ import { Column } from "motor-ui";
 />
 ```
 
-### Sample syntax for calcCondition settings
+### calcCondition settings
 
 ```jsx {5-8}
 import { Column } from "motor-ui";
