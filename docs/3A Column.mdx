@@ -31,38 +31,42 @@ A more advanced version demonstrating this is displayed below.
   <tr>
     <td>config</td>
     <td>
-      Configuration object to connect to the Qlik Engine. Must include Qlik site
-      URL and an App name
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
     </td>
-    <td>
-      If the chart has been wrapped in the Motor component then this is not
-      required and it will use the application and theme set there.
-    </td>
+    <td></td>
+
   </tr>
   <tr>
     <td>cols</td>
-    <td></td>
-    <td></td>
+    <td>Columns from Qlik Data Model to render in the chart. </td>
+    <td>to be completed</td>
   </tr>
   <tr>
     <td>calcCondition</td>
-    <td></td>
-    <td></td>
+    <td>Calculated condition to be met before chart can be displayed.</td>
+    <td>to be completed</td>
   </tr>
   <tr>
     <td>suppressZero</td>
-    <td></td>
-    <td></td>
+    <td>Suppress items whith zero values from being displayed in the chart</td>
+    <td>
+      boolean <br />
+      <b>* default obtained from theme.</b>
+    </td>
   </tr>
   <tr>
     <td>columnSortOrder</td>
-    <td></td>
-    <td></td>
+    <td>Order of the columns on whihc the returned dat shoud be sorted</td>
+    <td>[1,0]</td>
   </tr>
   <tr>
     <td>sortDirection</td>
     <td></td>
-    <td></td>
+    <td>'ASCENDING' <br />
+   'ASC' <br />
+    'DESCENDING' <br />
+    'DESC' <br /></td>
   </tr>
   <tr>
     <td>theme</td>
@@ -71,33 +75,85 @@ A more advanced version demonstrating this is displayed below.
   </tr>
   <tr>
     <td>width</td>
-    <td>Column width</td>
-    <td></td>
+    <td>Chart width in percentage or valeu as pixels</td>
+    <td>
+      <b>'100%'</b>
+      <br />
+      '200px'
+    </td>
   </tr>
   <tr>
     <td>height</td>
-    <td>The height of the Column</td>
-    <td></td>
+    <td>Chart height in percentage or valeu as pixels</td>
+    <td>
+      <b>'100%'</b>
+      <br />
+      '200px'
+    </td>
   </tr>
   <tr>
     <td>margin</td>
     <td>The amount of margin around the component</td>
-    <td></td>
+    <td>
+      <b>'5px'</b>
+    </td>
   </tr>
   <tr>
     <td>size</td>
     <td>Size of the Column </td>
-    <td>'tiny', 'small', 'medium', 'large', 'xlarge'</td>
+    <td>
+      'tiny'
+      <br />
+      'small'
+      <br />
+      <b>'medium'</b>
+      <br />
+      'large'
+      <br />
+      'xlarge'
+    </td>
   </tr>
   <tr>
     <td>showLabels</td>
     <td>Label position</td>
-    <td>'top', 'none', 'inside'</td>
+    <td>
+      'top'
+      <br />
+      'none'
+      <br />
+      'inside'
+      <br />
+      <b>* default obtained from theme.</b>
+      <br />
+    </td>
   </tr>
   <tr>
     <td>textOnAxis</td>
     <td>Show text on Axis</td>
-    <td>'both', 'yAxis', 'xAxis', 'none'</td>
+    <td>
+      'both'
+      <br />
+      'yAxis'
+      <br />
+      'xAxis'
+      <br />
+      'none'
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>tickSpacing</td>
+    <td></td>
+    <td>
+      "wide"
+      <br />
+      "normal"
+      <br />
+      "narrow"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
   </tr>
 </table>
 
@@ -154,3 +210,5 @@ function ColumnDemo() {
   );
 }
 ```
+
+## Theme API
