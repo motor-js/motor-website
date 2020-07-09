@@ -1,0 +1,218 @@
+---
+id: Column
+title: Column
+sidebar_label: Column
+---
+
+## Usage
+
+We recommend you start by wrapping your React document with the Motor parent component.
+This handles two things:
+
+- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
+- Theming
+
+The simpliest method to render a Column chart is to add a Column element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
+
+      <Column cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+
+This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
+
+A more advanced version demonstrating this is displayed below.
+
+## Props
+
+:::info
+You do not need to set the Config prop if the component is a child of the Motor component
+:::
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>config</td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td></td>
+
+  </tr>
+  <tr>
+    <td>cols</td>
+    <td>Columns from Qlik Data Model to render in the chart. </td>
+    <td>to be completed</td>
+  </tr>
+  <tr>
+    <td>calcCondition</td>
+    <td>Calculated condition to be met before chart can be displayed.</td>
+    <td>to be completed</td>
+  </tr>
+  <tr>
+    <td>suppressZero</td>
+    <td>Suppress items whith zero values from being displayed in the chart</td>
+    <td>
+      boolean <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>columnSortOrder</td>
+    <td>Order of the columns on whihc the returned dat shoud be sorted</td>
+    <td>[1,0]</td>
+  </tr>
+  <tr>
+    <td>sortDirection</td>
+    <td></td>
+    <td>'ASCENDING' <br />
+   'ASC' <br />
+    'DESCENDING' <br />
+    'DESC' <br /></td>
+  </tr>
+  <tr>
+    <td>theme</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>Chart width in percentage or valeu as pixels</td>
+    <td>
+      <b>'100%'</b>
+      <br />
+      '200px'
+    </td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>Chart height in percentage or valeu as pixels</td>
+    <td>
+      <b>'100%'</b>
+      <br />
+      '200px'
+    </td>
+  </tr>
+  <tr>
+    <td>margin</td>
+    <td>The amount of margin around the component</td>
+    <td>
+      <b>'5px'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>Size of the Column </td>
+    <td>
+      'tiny'
+      <br />
+      'small'
+      <br />
+      <b>'medium'</b>
+      <br />
+      'large'
+      <br />
+      'xlarge'
+    </td>
+  </tr>
+  <tr>
+    <td>showLabels</td>
+    <td>Label position</td>
+    <td>
+      'top'
+      <br />
+      'none'
+      <br />
+      'inside'
+      <br />
+      <b>* default obtained from theme.</b>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>textOnAxis</td>
+    <td>Show text on Axis</td>
+    <td>
+      'both'
+      <br />
+      'yAxis'
+      <br />
+      'xAxis'
+      <br />
+      'none'
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>tickSpacing</td>
+    <td></td>
+    <td>
+      "wide"
+      <br />
+      "normal"
+      <br />
+      "narrow"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+</table>
+
+## Examples
+
+These examples are based off the Consumer Sales Qlik Sense application.
+
+The first example is a column chart sorted by Revenue descending.
+
+```jsx live
+function ColumnDemo() {
+  return (
+    <Motor config={config}>
+      <Column
+        title="Revenue by Product Sub Group"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        height="50%"
+        cols={[
+          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          {
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qLabel: "Revenue",
+          },
+        ]}
+        columnSortOrder={[1, 0]}
+      />
+    </Motor>
+  );
+}
+```
+
+This exmaple removes the text from the axis as well as the labels from each bar and has selections disabled.
+
+```jsx live
+function ColumnDemo() {
+  return (
+    <Motor config={config}>
+      <Column
+        title="Revenue by Product Sub Group"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        height="50%"
+        cols={[
+          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          {
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qLabel: "Revenue",
+          },
+        ]}
+        allowSelections={false}
+        textOnAxis={false}
+        showLabels="none"
+      />
+    </Motor>
+  );
+}
+```
+
+## Theme API
