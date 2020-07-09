@@ -33,23 +33,26 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <th>Options / Example</th>
   </tr>
   <tr>
-    <td>config</td>
+    <td>
+      <code>config</code>
+    </td>
     <td>
       Configuration object to connect to the Qlik Engine, only set this if used
       outside of the Motor component.
     </td>
-    <td></td>
-
+    <td>See sample syntax below</td>
   </tr>
   <tr>
-    <td>cols</td>
+    <td>
+      <code>cols</code>
+    </td>
     <td>Columns from Qlik Data Model to render in the chart. </td>
-    <td>to be completed</td>
+    <td>See sample syntax below</td>
   </tr>
   <tr>
     <td>calcCondition</td>
     <td>Calculated condition to be met before chart can be displayed.</td>
-    <td>to be completed</td>
+    <td>See sample syntax below</td>
   </tr>
   <tr>
     <td>suppressZero</td>
@@ -67,10 +70,12 @@ You do not need to set the Config prop if the component is a child of the Motor 
   <tr>
     <td>sortDirection</td>
     <td></td>
-    <td>'ASCENDING' <br />
-   'ASC' <br />
-    'DESCENDING' <br />
-    'DESC' <br /></td>
+    <td>
+      'ASCENDING' <br />
+      'ASC' <br />
+      'DESCENDING' <br />
+      'DESC' <br />
+    </td>
   </tr>
   <tr>
     <td>theme</td>
@@ -160,6 +165,132 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
   </tr>
 </table>
+
+## Sample syntax
+
+<i>
+  Sample syntax for <b>config</b> settings
+</i>
+<br />
+
+```jsx {4-9}
+import { Column } from 'motor-ui'
+
+<Column
+  config={{
+    host: "xxxxxxxxx",
+    secure: false,
+    port: xxxxx,
+    prefix: "",
+    appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+  }}
+  ......
+/>
+```
+
+<i>
+  Sample syntax for <b>cols</b> settings
+</i>
+<br />
+
+<h4>Overview</h4>
+There are three different ways of specifying the columns:
+
+- As a string.
+- As an Object
+- As a reference to a predefined dimension or measure, a so-called master item.
+
+<b>String syntax</b>
+<br />
+
+If a string starts with =, it will be treated as a measure, otherwise it is
+treated as a dimension.
+
+```jsx {4-7}
+import { Column } from "motor-ui";
+
+<Column
+  cols={[
+  "Case Owner Group",
+  "=Avg([Case Duration Time])"
+]}
+  ....
+/>
+```
+
+<b>Object syntax</b>
+<br />
+
+Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
+
+```jsx {4-28}
+import { Column } from "motor-ui";
+
+<Column
+  cols={[
+  /*dimension*/
+  "Year",
+  /*dimension with label*/
+  {
+    "qDef": {
+      "qFieldDefs": ["Case Owner Group"],
+      "qFieldLabels": ["Group"]
+    }
+  },
+  /*measure with label*/
+  {
+    "qDef": {
+      "qDef": "=Avg([Case Duration Time])",
+      "qLabel": "Avg Case Duration Time"
+    }
+  },
+  /*measure with label*/
+  {
+    "qDef": {
+      "qDef": "Sum( [Open Cases] )",
+      "qLabel": "Open Cases"
+    }
+  }
+]}
+  ....
+/>
+```
+
+<b>Predefined dimensions and measures syntax</b>
+<br />
+
+You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
+
+```jsx {4-9<>}
+import { Column } from "motor-ui";
+
+<Column
+  cols={[
+  {
+    "qLibraryId":"eqZjE",
+    "qType":"measure"
+  }
+]}
+  ....
+/>
+```
+
+<i>
+  Sample syntax for <b>calcCondition</b> settings
+</i>
+<br />
+
+```jsx {5-8}
+import { Column } from "motor-ui";
+
+  <Column
+    ...
+    calcCondition={{
+      qCond: '1+1=2',
+      qMsg: 'Calculation condition has not been met',
+    }}
+  />
+```
 
 ## Examples
 
