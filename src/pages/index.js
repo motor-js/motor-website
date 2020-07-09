@@ -146,7 +146,7 @@ function Home() {
                   </div>
                   <div>
                     <Link
-                      id='button2'
+                      id='button3'
                       className={clsx(
                         'button b1 button--lg',
                         styles.button,
@@ -164,7 +164,7 @@ function Home() {
           <div className="container">
           <div className='heading'>Need to build a custom Qlik solution?</div>
           <Link
-            id='button3'
+            id='button4'
             className={clsx(
               'button b1 button--lg',
               styles.button,

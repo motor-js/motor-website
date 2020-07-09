@@ -24,8 +24,9 @@
   --light: #f7fff8;
   --blue: #0c58bb;
   --darkred: #5d1909;
-  font-family: 'Montserrat', sans-serif !important;
 }
+/*font-family: 'Montserrat', sans-serif !important;*/
+
 
 .hero__title {
   font-weight: bold;
@@ -60,10 +61,16 @@
 }
 
 #button3 {
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  color: var(--light);
+  margin-left: 0 !important;
+}
+
+#button4 {
   background-color: var(--blue);
   border: 2px solid var(--blue);
   color: var(--light);
-  margin-left: 0 !important;
 }
 
 

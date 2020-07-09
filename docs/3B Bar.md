@@ -9,6 +9,7 @@ function BarDemo() {
   return (
     <Motor config={config}>
       <Bar
+        height='500px'
         title="Bar Chart"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
