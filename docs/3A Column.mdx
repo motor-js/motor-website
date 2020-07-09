@@ -47,11 +47,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
-      <code>array</code> <br />
       <code>cols</code>
     </td>
     <td>Columns from Qlik Data Model to render in the chart. </td>
-    <td>See sample syntax below</td>
+    <td>
+      <code>array</code> <br />
+      See sample syntax below
+    </td>
   </tr>
   <tr>
     <td>
@@ -611,7 +613,7 @@ import { Column } from "motor-ui";
 
 You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
 
-```jsx {4-9<>}
+```jsx {4-8}
 import { Column } from "motor-ui";
 
 <Column
