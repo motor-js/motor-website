@@ -18,6 +18,10 @@
   .heroBanner {
     padding: 2rem;
   }
+
+  .components {
+    flex-direction: column;
+  }
 }
 
 .container {
@@ -44,7 +48,6 @@
   width: 200px;
 }
 
-
 .button {
   margin: 20px;
   padding: 12px 30px;
@@ -54,4 +57,21 @@
   margin: 20px;
   transform: translateY(-2px);
   background-color: #d5d5d5;
+}
+
+.components {
+  display: flex;
+  padding: 2rem 0;
+  width: 100%;
+  align-items: center;
+}
+
+
+.darkcontainer {
+  display: flex;
+  padding: 2rem 0;
+  width: 100%;
+  align-items: center;
+  background-color: #444444;
+  color: white;
 }

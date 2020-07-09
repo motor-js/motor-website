@@ -21,7 +21,7 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Charts, Components and Layouts are responsive out of the box, supporting all screen sizes.
+        Charts, Components and Layouts are responsive, supporting all screen sizes.
       </>
     ),
   },
@@ -48,16 +48,16 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Pay by developer so you can scale without cost.
+        Pay by developer, so you can scale without additional cost.
       </>
     ),
   },
   {
-    title: <>Fully Supported</>,
+    title: <>Typescript Support</>,
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Dedicated support with issues and a free implementation session on our Enterprise plan
+       Support for Typescript out of the box. 
       </>
     ),
   },
@@ -97,7 +97,7 @@ function Home() {
                 styles.button,
               )}
               to={useBaseUrl('docs/Getting%20Started')}>
-              Get Started
+              Get Started for free
             </Link>
             <Link
               id='button2'
@@ -115,7 +115,7 @@ function Home() {
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
-              <div className='heading'>Reasons you'll love motor js</div>
+              <div className='heading'>Reasons you'll love motor</div>
               <div className="row">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
@@ -124,9 +124,59 @@ function Home() {
             </div>
           </section>
         )}
+        <section className={styles.components}>
+          <div className="container">
+            <div className='heading'>Explore Components</div>
+            <div className={clsx('col', styles.components)}>
+              <div className='left-side'>
+                <div style={{ border: '1px solid red', height: '300px', width: '500px'}}>
+                  Image here
+                </div>
+              </div>
+              <div>
+                <div className='right-side'>
+                  <div className="sub-heading">
+                    Our Charts sit on top of the Qlik engine, providing an interactive and responsive UI experience.
+                    <br />
+                    <br />
+                    Everything is themeable in just a few lines of code - apply your brand color, custom styles and fonts with ease
+                    <br />
+                    <br />
+                    Check out the live examples in our docs
+                  </div>
+                  <div>
+                    <Link
+                      id='button2'
+                      className={clsx(
+                        'button b1 button--lg',
+                        styles.button,
+                      )}
+                      to={useBaseUrl('docs/Getting%20Started')}>
+                        Explore Charts
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={styles.darkcontainer}>
+          <div className="container">
+          <div className='heading'>Need to build a custom Qlik solution?</div>
+          <Link
+            id='button3'
+            className={clsx(
+              'button b1 button--lg',
+              styles.button,
+            )}
+            to={useBaseUrl('docs/Getting%20Started')}>
+            Contact Us
+           </Link>
+          </div>
+        </section>
         <section className={styles.features}>
           <div className="container">
-            <div></div>
+          <div className='heading'>Get Started</div>
           </div>
         </section>
       </main>

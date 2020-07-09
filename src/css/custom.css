@@ -18,10 +18,16 @@
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
   --dark-1: #444444;
+  --dark-2: #2f2f2f;
+  --orange: #ed5d1d;
+  --lightblue: #add1ff;
+  --light: #f7fff8;
+  --blue: #0c58bb;
+  --darkred: #5d1909;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .hero__title {
-  font-family: 'Montserrat', sans-serif !important;
   font-weight: bold;
 }
 
@@ -48,12 +54,24 @@
 }
 
 #button2 {
-  background-color: #ed5d1d;
-  border: 2px solid #ed5d1d;
-  color: #f7fff8;
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  color: var(--light);
 }
 
+#button3 {
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+  color: var(--light);
+  margin-left: 0 !important;
+}
+
+
 #button2:hover {
+  opacity: 0.7;
+}
+
+#button3:hover {
   opacity: 0.7;
 }
 
@@ -62,6 +80,26 @@
   padding: 1.5rem;
   align-items: center;
   flex-direction: column;
+}
+
+.sub-heading {
+  font-size: 18px;
+}
+
+.left-side {
+  padding: 1.5rem;
+  display: flex;
+}
+
+.right-side {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark {
+  background-color: var(--dark-2);
+  color: white;
 }
 /*
 
