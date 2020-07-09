@@ -50,27 +50,41 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>See sample syntax below</td>
   </tr>
   <tr>
-    <td>calcCondition</td>
+    <td>
+      <code>calcCondition</code>
+    </td>
     <td>Calculated condition to be met before chart can be displayed.</td>
     <td>See sample syntax below</td>
   </tr>
   <tr>
-    <td>suppressZero</td>
+    <td>
+      <code>suppressZero</code>
+    </td>
     <td>Suppress items whith zero values from being displayed in the chart</td>
     <td>
-      boolean <br />
+      <code>boolean</code> <br />
       <b>* default obtained from theme.</b>
     </td>
   </tr>
   <tr>
-    <td>columnSortOrder</td>
+    <td>
+      <code>columnSortOrder</code>
+    </td>
     <td>Order of the columns on whihc the returned dat shoud be sorted</td>
-    <td>[1,0]</td>
+    <td>
+      <code>array</code>
+      <br />
+      [1,0]
+    </td>
   </tr>
   <tr>
-    <td>sortDirection</td>
+    <td>
+      <code>sortDirection</code>
+    </td>
     <td></td>
     <td>
+      <code>string</code>
+      <br />
       'ASCENDING' <br />
       'ASC' <br />
       'DESCENDING' <br />
@@ -78,39 +92,50 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
   </tr>
   <tr>
-    <td>theme</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>width</td>
+    <td>
+      <code>width</code>
+    </td>
     <td>Chart width in percentage or valeu as pixels</td>
     <td>
+      <code>string</code>
+      <br />
       <b>'100%'</b>
       <br />
       '200px'
     </td>
   </tr>
   <tr>
-    <td>height</td>
+    <td>
+      <code>height</code>
+    </td>
     <td>Chart height in percentage or valeu as pixels</td>
     <td>
+      <code>string</code>
+      <br />
       <b>'100%'</b>
       <br />
       '200px'
     </td>
   </tr>
   <tr>
-    <td>margin</td>
+    <td>
+      <code>margin</code>
+    </td>
     <td>The amount of margin around the component</td>
     <td>
+      <code>string</code>
+      <br />
       <b>'5px'</b>
     </td>
   </tr>
   <tr>
-    <td>size</td>
-    <td>Size of the Column </td>
     <td>
+      <code>size</code>
+    </td>
+    <td>Size of the text used in the chart</td>
+    <td>
+      <code>oneOf</code>
+      <br />
       'tiny'
       <br />
       'small'
@@ -123,9 +148,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
   </tr>
   <tr>
-    <td>showLabels</td>
+    <td>
+      <code>showLabels</code>
+    </td>
     <td>Label position</td>
     <td>
+      <code>oneOf</code>
+      <br />
       'top'
       <br />
       'none'
@@ -168,10 +197,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ## Sample syntax
 
-<i>
-  Sample syntax for <b>config</b> settings
-</i>
-<br />
+### Sample syntax for config settings
 
 ```jsx {4-9}
 import { Column } from 'motor-ui'
@@ -188,10 +214,7 @@ import { Column } from 'motor-ui'
 />
 ```
 
-<i>
-  Sample syntax for <b>cols</b> settings
-</i>
-<br />
+### Sample syntax for cols settings
 
 <h4>Overview</h4>
 There are three different ways of specifying the columns:
@@ -275,10 +298,7 @@ import { Column } from "motor-ui";
 />
 ```
 
-<i>
-  Sample syntax for <b>calcCondition</b> settings
-</i>
-<br />
+### Sample syntax for calcCondition settings
 
 ```jsx {5-8}
 import { Column } from "motor-ui";
