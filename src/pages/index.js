@@ -126,7 +126,7 @@ function Home() {
         )}
         <section className={styles.features}>
           <div className="container">
-            Hi
+            <div></div>
           </div>
         </section>
       </main>
