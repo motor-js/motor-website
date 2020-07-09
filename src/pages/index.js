@@ -26,7 +26,7 @@ const features = [
     ),
   },
   {
-    title: <>Free for Non-Commercial</>,
+    title: <>Free for Non-Commercial Use</>,
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
