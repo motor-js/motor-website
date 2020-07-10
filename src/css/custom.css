@@ -9,7 +9,7 @@
 
 
 :root {
-  --ifm-color-primary: #ed5d1d;
+  --ifm-color-primary: #0c58bb;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -46,12 +46,12 @@
 }
 
 .navbar__brand {
-  height: 3rem !important;
+  height: 2.2rem !important;
 }
 
 #button1 {
- color: var(--dark-1);
- border: 2px solid var(--dark-1);
+ color: var(--blue);
+ border: 2px solid var(--blue);
 }
 
 #button2 {
@@ -108,12 +108,12 @@
   background-color: var(--dark-2);
   color: white;
 }
-/*
 
+
+/*
  '#ed5d1d' //orange,
   '#add1ff' // lightblue,
   '#f7fff8' //white,
   '#0c58bb' //blue,
   '#5d1909' //dark red,
-
 */

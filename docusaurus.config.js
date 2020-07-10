@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'Motor', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
   stylesheets: [{
-    href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap",
     type: 'text/css',
   }],
   themeConfig: {
@@ -17,8 +17,8 @@ module.exports = {
       title: '',
       logo: {
         alt: 'Motor Logo',
-        src: 'img/motor_1.png',
-        srcDark: 'img/motor_js_6b.png',
+        src: 'img/motor_js_5a.png',
+        srcDark: 'img/motor_js_5b.png',
       },
       links: [
         {
