@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Powerful Theming</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    imageUrl: 'img/icons/design.svg',
     description: (
       <>
         Tailor the library to your needs. Control color, styles and layouts through our easy to use theme object.
@@ -54,10 +54,10 @@ const features = [
   },
   {
     title: <>Typescript Support</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    imageUrl: 'img/icons/flag.svg',
     description: (
       <>
-       Support for Typescript out of the box. 
+       Out of the box support for Typescript. 
       </>
     ),
   },

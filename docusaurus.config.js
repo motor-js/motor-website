@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Charts, Components & Utilities for the rapid creation of custom dashboards off the Qlik Engine',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/m_icon.png',
   organizationName: 'Motor', // Usually your GitHub org/user name.
   projectName: 'Motor', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -17,8 +17,8 @@ module.exports = {
       title: '',
       logo: {
         alt: 'Motor Logo',
-        src: 'img/motor_js_5a.png',
-        srcDark: 'img/motor_js_5b.png',
+        src: 'img/motor_red.png',
+        srcDark: 'img/motor_red.png',
       },
       links: [
         {

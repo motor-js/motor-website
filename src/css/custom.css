@@ -9,7 +9,7 @@
 
 
 :root {
-  --ifm-color-primary: #0c58bb;
+  --ifm-color-primary: #ff7272;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -24,6 +24,8 @@
   --light: #f7fff8;
   --blue: #0c58bb;
   --darkred: #5d1909;
+  --redBrand: #ff7272;
+  --lightBrand: #fff2f2;
 }
 /*font-family: 'Montserrat', sans-serif !important;*/
 
@@ -50,8 +52,8 @@
 }
 
 #button1 {
- color: var(--blue);
- border: 2px solid var(--blue);
+ color: var(--redBrand);
+ border: 2px solid var(--redBrand);
 }
 
 #button2 {
