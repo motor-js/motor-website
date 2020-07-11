@@ -174,11 +174,6 @@ function Home() {
            </Link>
           </div>
         </section>
-        <section className={styles.features}>
-          <div className="container">
-          <div className='heading'>Get Started</div>
-          </div>
-        </section>
       </main>
     </Layout>
   );

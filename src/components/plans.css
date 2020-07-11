@@ -1,0 +1,51 @@
+.plan-card {
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #cccccc;
+}
+
+.plan-button .buttons {
+  width: 100%;
+}
+
+.price-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0 0 10px 0;
+}
+
+.price-sub {
+  font-size: 0.9rem;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+.features {
+  display: flex;
+  flex-direction: row;
+  padding: 0.3rem;
+}
+
+.feat-text {
+  padding-left: 0.3rem;
+}
+
+.unav-features {
+  display: flex;
+  flex-direction: row;
+  padding: 0.3rem;
+}
+
+.unav-icon {
+  color: #bfbfbf;
+}
+
+.unav-feat-text {
+  padding-left: 0.3rem;
+  color: #bfbfbf;
+}
