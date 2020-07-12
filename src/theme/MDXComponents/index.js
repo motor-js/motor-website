@@ -14,7 +14,7 @@ import styles from "./styles.module.css";
 
 //-------------------------------------------------------/
 ////// Import the component you need in scope
-import { Motor, Button, Pie, Bar, Column } from "motor-ui";
+import { Motor, Button, Pie, Bar, Column, Line } from "motor-ui";
 
 const config = {
   host: "localhost",
@@ -22,8 +22,8 @@ const config = {
   port: 19077,
   prefix: "",
   // appId: 'bd335164-4640-4a3f-970d-2fef039c39bf', // Luke
-  //appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
-  appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Alan
+  appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
+  //appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Alan
 };
 
 //-------------------------------------------------------/
@@ -34,6 +34,7 @@ const SCOPE = {
   Pie,
   Bar,
   Column,
+  Line,
   config,
 };
 

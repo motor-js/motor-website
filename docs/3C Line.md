@@ -12,9 +12,9 @@ This handles two things:
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
-The simpliest method to render a Bar chart is to add a Bar element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
+The simpliest method to render a Line chart is to add a Line element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
 
-      <Bar cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+      <Line cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
 
 This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
 
@@ -529,9 +529,9 @@ You do not need to set the Config prop if the component is a child of the Motor 
 ### config settings
 
 ```jsx {4-9}
-import { Bar } from 'motor-ui'
+import { Line } from 'motor-ui'
 
-<Bar
+<Line
   config={{
     host: "xxxxxxxxx",
     secure: false,
@@ -559,9 +559,9 @@ If a string starts with =, it will be treated as a measure, otherwise it is
 treated as a dimension.
 
 ```jsx {4-7}
-import { Bar } from "motor-ui";
+import { Line } from "motor-ui";
 
-<Bar
+<Line
   cols={[
   "Case Owner Group",
   "=Avg([Case Duration Time])"
@@ -576,9 +576,9 @@ import { Bar } from "motor-ui";
 Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
 
 ```jsx {4-28}
-import { Bar } from "motor-ui";
+import { Line } from "motor-ui";
 
-<Bar
+<Line
   cols={[
   /*dimension*/
   "Year",
@@ -614,9 +614,9 @@ import { Bar } from "motor-ui";
 You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
 
 ```jsx {4-8}
-import { Bar } from "motor-ui";
+import { Line } from "motor-ui";
 
-<Bar
+<Line
   cols={[
   {
     "qLibraryId":"eqZjE",
@@ -630,9 +630,9 @@ import { Bar } from "motor-ui";
 ### calcCondition settings
 
 ```jsx {5-8}
-import { Bar } from "motor-ui";
+import { Line } from "motor-ui";
 
-  <Bar
+  <Line
     ....
     calcCondition={{
       qCond: '1+1=2',
@@ -644,9 +644,9 @@ import { Bar } from "motor-ui";
 ### otherTotalSpec settings
 
 ```jsx {5-8}
-import { Bar } from "motor-ui";
+import { Line } from "motor-ui";
 
-  <Bar
+  <Line
    ....
           otherTotalSpec={{
              qOtherLabel: 'Other',
@@ -667,7 +667,7 @@ The first example is a bar chart sorted by Revenue descending.
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Bar
+      <Line
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
         height="50%"
@@ -693,7 +693,7 @@ This exmaple removes the text from the axis as well as the labels from each bar 
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Bar
+      <Line
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
         height="50%"
