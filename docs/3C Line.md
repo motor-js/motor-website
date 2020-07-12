@@ -1067,18 +1067,9 @@ e.g. base.line.main.zoomScrollOnColumnWidth = 30.
   </tr>
   <tr>
     <td>
-      <code>zoomScrollOnColumnWidth</code>
+      <code>dataPointsToShow</code>
     </td>
-    <td>Minimum line width at which brushing will occur</td>
-    <td>
-      <code>number</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnPadding</code>
-    </td>
-    <td>Padding to be used between each line</td>
+    <td>Maximum number of data pints to show before scroll bar is displayed.</td>
     <td>
       <code>number</code> <br />
     </td>
@@ -1098,40 +1089,20 @@ e.g. base.line.main.zoomScrollOnColumnWidth = 30.
   </tr>
   <tr>
     <td>
-      <code>columnPaddingNarrow</code>
+      <code>symbol</code>
     </td>
-    <td>Padding to be applied when many bars are displayed</td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxWidth</code>
-    </td>
-    <td>
-      Maximum width in pixles and which axis labels will be shown before elipsis
-      are applied
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <td>columns</td>
-  </tr> <tr>
-    <td>
-      <code>stroke</code>
-    </td>
-    <td>Stroke color around columns</td>
+    <td>Symbol / marker for each data point on the chart</td>
     <td>
       <code>string</code>
     </td>
-  </tr> <tr>
+  </tr>
+  <tr>
     <td>
       <code>strokeWidth</code>
     </td>
-    <td>Stroke width around columns</td>
+    <td>
+      Width of each line.
+    </td>
     <td>
       <code>number</code>
     </td>
