@@ -714,3 +714,390 @@ function ColumnDemo() {
 ```
 
 ## Theme API
+
+All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
+
+Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific column chart related theme items are stored in base.column. Changing these settings will apply to all column charts within the application.
+
+### global
+
+Settings in base.global.chart are below :
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>allowSelections</code>
+    </td>
+    <td>Allows to enable / disable selctions on charts at a global level.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>allowSlantedYAxis</code>
+    </td>
+    <td>Allows for text on the axis to be displayed at 45 degrees.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Apply a background color to all charts within the application.</td>
+    <td>
+      <code>string</code> <br />
+      "white"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderRadius</code>
+    </td>
+    <td>Border radius for all charts.</td>
+    <td>
+      <code>string</code> <br />
+      "10px"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>userSelect</code>
+    </td>
+    <td>CSS user-select property.</td>
+    <td>
+      <code>string</code> <br />
+      "none"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>suppressZero</code>
+    </td>
+    <td>Suppress zeros on charts.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>suppressScroll</code>
+    </td>
+    <td>Suppress scroll bar / brushing on charts.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>allowZoom</code>
+    </td>
+    <td>Allow for the brush to be resiezed by the user.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showLabels</code>
+    </td>
+    <td>Label positioning on chart.</td>
+    <td>
+      <code>string</code> <br />
+      "top"
+      <br /> "none"
+      <br /> "inside"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showLegend</code>
+    </td>
+    <td>Display chart legend.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>textOnAxis</code>
+    </td>
+    <td>Labels for each axis on the chart</td>
+    <td>
+      <code>boolean</code> <br />
+      <code>oneOf</code>
+      <br />
+      'both'
+      <br />
+      'yAxis'
+      <br />
+      'xAxis'
+      <br />
+      'none'
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showAxis</code>
+    </td>
+    <td>Display axis on the chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "both"
+      <br />
+      "yAxis"
+      <br />
+      "xAxis"
+      <br />
+      "none"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showGridlines</code>
+    </td>
+    <td>Grid line type to be drawn on the chart</td>
+    <td>
+      <code>boolean</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "solid"
+      <br />
+      "dashes"
+      <br />
+      "dots"
+      <br />
+      "none"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>tickSpacing</code>
+    </td>
+    <td>Spacing of the ticks on the Y axis of the chart</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "wide"
+      <br />
+      "normal"
+      <br />
+      "narrow"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxAxisLength</code>
+    </td>
+    <td>Maximum width in pixels of label before elipsis are applied</td>
+    <td>
+      <code>number</code>
+      <br />
+      "80"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>display</code>
+    </td>
+    <td>CSS Display of the chart object</td>
+    <td>
+      <code>string</code>
+      <br />
+      "inline-block"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>boxSizing</code>
+    </td>
+    <td>CSS box sizing of the chart object</td>
+    <td>
+      <code>string</code>
+      <br />
+      "border-box""
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>border</code>
+    </td>
+    <td>Border to be dispalyed around the chart</td>
+    <td>
+      <code>boolean</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "top"
+      <br />
+      "left"
+      <br />
+      "bottom"
+      <br />
+      "right"
+      <br />
+      "start"
+      <br />
+      "end"
+      <br />
+      "horizontal"
+      <br />
+      "vertical"
+      <br />
+      "all"
+      <br />
+      "between"
+      <br />
+      "none"
+      <br />
+    </td>
+  </tr>{" "}
+  <tr>
+    <td>
+      <code>gridlines</code>
+    </td>
+    <td>stroke and strokeDasharray of chart gridlines</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>selection</code>
+    </td>
+    <td>opacity, stroke and strokeWidth of chart when making selections</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>nonSelection</code>
+    </td>
+    <td>
+      opacity, background of chart of non slected items when making selections
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>error</code>
+    </td>
+    <td>
+      dimensionErrMsg and measureErrMsg to bedisplayed when invlaid items
+      supplied to cols property
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+</table>
+
+### column
+
+Settings in base.column are below :
+
+e.g. base.column.main.zoomScrollOnColumnWidth = 30.
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>Main</th>
+  </tr>
+  <tr>
+    <td>
+      <code>zoomScrollOnColumnWidth</code>
+    </td>
+    <td>Minimum column width at which brushing will occur</td>
+    <td>
+      <code>number</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>columnPadding</code>
+    </td>
+    <td>Padding to be used between each column</td>
+    <td>
+      <code>number</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>otherTotalSpec</code>
+    </td>
+    <td>Setting at which 'Others' will be dispalyed on chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <code>shape</code>
+      <br />
+      See sample syntax above <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>columnPaddingNarrow</code>
+    </td>
+    <td>Padding to be applied when many bars are displayed</td>
+    <td>
+      <code>number</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxWidth</code>
+    </td>
+    <td>
+      Maximum width in pixles and which axis labels will be shown before elipsis
+      are applied
+    </td>
+    <td>
+      <code>number</code>
+    </td>
+  </tr>
+  <tr>
+    <td>columns</td>
+  </tr> <tr>
+    <td>
+      <code>stroke</code>
+    </td>
+    <td>Stroke color around columns</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr> <tr>
+    <td>
+      <code>strokeWidth</code>
+    </td>
+    <td>Stroke width around columns</td>
+    <td>
+      <code>number</code>
+    </td>
+  </tr>
+</table>
