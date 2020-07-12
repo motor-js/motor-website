@@ -5,20 +5,20 @@ description: hello
 sidebar_label: Button
 ---
 
-#### A Button. Trigger various Qlik actions such as clearing selections, or attach a custom event.
+#### A Button. Trigger various Qlik actions such as clearing selections, or attaching a custom event.
 
 
 ## Usage
 
-```jsx live
+```javascript
 
-function ButtonTest() {
-    return (
-    <Motor config={config}>  
-      <Button backgroundColor='brand'>I am a Button.</Button>
-    </Motor>
-    )
-}
+import { Button } from @motor-js/core
+
+//...
+
+<Button color='brand'>
+  Hello
+</Button>
 
 ```
 
@@ -62,33 +62,33 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>color</td>
-    <td></td>
-    <td></td>
+    <td>Background color</td>
+    <td>'string'</td>
   </tr>
   <tr>
     <td>margin</td>
-    <td></td>
-    <td></td>
+    <td>margin, sets the margin css property</td>
+    <td>'string' <br /> <b>'5px'</b></td>
   </tr>
   <tr>
     <td>width</td>
-    <td></td>
-    <td></td>
+    <td>sets the width css property</td>
+    <td>'string'<br /> <b>'100%'</b></td>
   </tr>
   <tr>
     <td>fontColor</td>
-    <td></td>
-    <td></td>
+    <td>button font color</td>
+    <td>'string'</td>
   </tr>
   <tr>
     <td>borderRadius</td>
-    <td></td>
-    <td></td>
+    <td>radius of the button</td>
+    <td>'string'<br /> <b>'8px'</b></td>
   </tr>
   <tr>
     <td>border</td>
-    <td></td>
-    <td></td>
+    <td>sets the border css property</td>
+    <td>'string'</td>
   </tr>
   <tr>
     <td>outline</td>
@@ -122,17 +122,17 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
     <tr>
     <td>hoverBoxShadow</td>
-    <td></td>
+    <td>box shadow on hover</td>
     <td></td>
   </tr>
   <tr>
     <td>hoverBorder</td>
-    <td></td>
+    <td>border on hover</td>
     <td></td>
   </tr>
     <tr>
     <td>hoverBackground</td>
-    <td></td>
+    <td>background color on hover</td>
     <td></td>
   </tr>
   </table>
@@ -143,11 +143,26 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ## Examples
 
+##### Simple Button example
+
+```jsx live
+
+function ButtonTest() {
+    return (
+    <Motor config={config}>  
+      <Button color='brand'>I am a Button.</Button>
+    </Motor>
+    )
+}
+
+```
 
 <br />
 
 
 ## Theme API
+
+
 
 
 <br />
