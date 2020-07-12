@@ -74,6 +74,15 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
+      <code>dualAxis</code>
+    </td>
+    <td>Allow chart to use dual axis. </td>
+    <td>
+      <code>boolean</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>columnSortOrder</code>
     </td>
     <td>Order of the columns on whihc the returned dat shoud be sorted</td>
@@ -350,20 +359,47 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
   </tr> <tr>
     <td>
+      <code>curve</code>
+    </td>
+    <td>Shape of the curve for each line</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+    <b>"Linear"</b> <br />
+    "Basis" <br />
+    "Bundle" <br />
+    "Cardinal" <br />
+    "CatmullRom" <br />
+    "MonotoneX" <br />
+    "MonotoneY" <br />
+    "Natural" <br />
+    "Step" <br />
+    "StepAfter" <br />
+    "StepBefore" <br />
+    "BasisClosed" <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>symbol</code>
+    </td>
+    <td>Symbol / marker type for each dat point on the chart</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+        <b>"circle"</b> <br />
+    "cross" <br />
+    "diamond" <br />
+    "square" <br />
+    "star" <br />
+    "triangle" <br />
+    "wye" <br />
+    "none" <br />
+    </td>
+  </tr> <tr>
+    <td>
       <code>stacked</code>
     </td>
     <td>Draw chart as stacked chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>percentStacked</code>
-    </td>
-    <td>Draw chart as percenatge stacked chart</td>
     <td>
       <code>bool</code>
       <br />
@@ -418,7 +454,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>maxWidth</code>
     </td>
-    <td>Maximum width in pixels of each bar</td>
+    <td>Maximum width in pixels of each line</td>
     <td>
       <code>number</code>
       <br />
@@ -446,6 +482,17 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <b>* default obtained from theme.</b>
     </td>
   </tr>
+    <tr>
+    <td>
+      <code>areaChart</code>
+    </td>
+    <td>Display chart as area chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
   <tr>
     <td>
       <code>maxAxisLength</code>
@@ -464,17 +511,6 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>Suppress the diplsay of the mini chart with brushing</td>
     <td>
       <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnPadding</code>
-    </td>
-    <td>Padding between each bar</td>
-    <td>
-      <code>number</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -661,7 +697,7 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Chart sorted by descending values
 
-The first example is a bar chart sorted by Revenue descending.
+The first example is a line chart sorted by Revenue descending.
 
 ```jsx live
 function ColumnDemo() {
@@ -687,7 +723,7 @@ function ColumnDemo() {
 
 ### Axis and labels removed from chart
 
-This exmaple removes the text from the axis as well as the labels from each bar and has selections disabled.
+This exmaple removes the text from the axis as well as the labels from each line and has selections disabled.
 
 ```jsx live
 function ColumnDemo() {
@@ -717,7 +753,7 @@ function ColumnDemo() {
 
 All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific bar chart related theme items are stored in base.bar. Changing these settings will apply to all bar charts within the application.
+Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific line chart related theme items are stored in base.line. Changing these settings will apply to all line charts within the application.
 
 ### global
 
@@ -790,7 +826,7 @@ Settings in base.global.chart are below :
     <td>
       <code>suppressScroll</code>
     </td>
-    <td>Suppress scroll bar / brushing on charts.</td>
+    <td>Suppress scroll line / brushing on charts.</td>
     <td>
       <code>bool</code> <br />
     </td>
@@ -1014,11 +1050,11 @@ Settings in base.global.chart are below :
   </tr>
 </table>
 
-### bar
+### line
 
-Settings in base.bar are below :
+Settings in base.line are below :
 
-e.g. base.bar.main.zoomScrollOnColumnWidth = 30.
+e.g. base.line.main.zoomScrollOnColumnWidth = 30.
 
 <table>
   <tr>
@@ -1033,7 +1069,7 @@ e.g. base.bar.main.zoomScrollOnColumnWidth = 30.
     <td>
       <code>zoomScrollOnColumnWidth</code>
     </td>
-    <td>Minimum bar width at which brushing will occur</td>
+    <td>Minimum line width at which brushing will occur</td>
     <td>
       <code>number</code> <br />
     </td>
@@ -1042,7 +1078,7 @@ e.g. base.bar.main.zoomScrollOnColumnWidth = 30.
     <td>
       <code>columnPadding</code>
     </td>
-    <td>Padding to be used between each bar</td>
+    <td>Padding to be used between each line</td>
     <td>
       <code>number</code> <br />
     </td>
