@@ -12,6 +12,14 @@ module.exports = {
     type: 'text/css',
   }],
   themeConfig: {
+    announcementBar: {
+      id: 'supportus-new',
+      content:
+        '<span class="text-white"<b>motor js</b> is in alpha, beware of breaking changes ⚒️</span>',
+    },
+    googleAnalytics: {
+      trackingID: '',
+    },
     sidebarCollapsible: true,
     navbar: {
       title: '',
@@ -37,16 +45,6 @@ module.exports = {
           label: 'Blog',
           position: 'left',
         },
-        {
-          to: 'learn/',
-          label: 'Learn',
-          position: 'left',
-        },
-        {
-          to: 'pricing/',
-          label: 'Get a License',
-          position: 'right',
-        },
       ],
     },
     footer: {
@@ -56,12 +54,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
+              label: 'Docs',
               to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
             },
           ],
         },

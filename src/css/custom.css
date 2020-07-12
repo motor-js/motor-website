@@ -24,12 +24,21 @@
   --light: #f7fff8;
   --blue: #0c58bb;
   --darkred: #5d1909;
+
+
   --redBrand: #ff7272;
   --lightBrand: #fff2f2;
+  --blueBrand: #ff7272;
+
 }
 /*font-family: 'Montserrat', sans-serif !important;*/
+#Layer_1 {
+  background-size: 20px 30px;
+}
 
-
+.text-white {
+  color: white;
+}
 .hero__title {
   font-weight: bold;
 }
@@ -44,7 +53,7 @@
 .heading {
   font-size: 2.2rem;
   font-weight: bold;
-  padding: 20px;
+  padding: 1rem 0 3rem 0;
 }
 
 .navbar__brand {
@@ -57,22 +66,22 @@
 }
 
 #button2 {
-  background-color: var(--orange);
-  border: 2px solid var(--orange);
-  color: var(--light);
+  background-color: var(--blueBrand);
+  border: 2px solid var(--blueBrand);
+  color: var(--lightBrand);
 }
 
 #button3 {
-  background-color: var(--orange);
-  border: 2px solid var(--orange);
-  color: var(--light);
+  background-color: var(--blueBrand);
+  border: 2px solid var(--blueBrand);
+  color: var(--lightBrand);
   margin-left: 0 !important;
 }
 
 #button4 {
-  background-color: var(--blue);
-  border: 2px solid var(--blue);
-  color: var(--light);
+  background-color: var(--blueBrand);
+  border: 2px solid var(--blueBrand);
+  color: var(--lightBrand);
 }
 
 
@@ -111,6 +120,9 @@
   color: white;
 }
 
+.feature-wrap {
+  padding: 3rem;
+}
 
 /*
  '#ed5d1d' //orange,

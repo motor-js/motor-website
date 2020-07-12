@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: <>Responsive Charts</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    imageUrl: 'img/icons/mobile.svg',
     description: (
       <>
         Charts, Components and Layouts are responsive, supporting all screen sizes.
@@ -27,7 +27,7 @@ const features = [
   },
   {
     title: <>Free for Non-Commercial Use</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    imageUrl: 'img/icons/happy.svg',
     description: (
       <>
         Get started for free, just install from npm, connect to a Qlik engine and start building.
@@ -36,7 +36,7 @@ const features = [
   },
   {
     title: <>Awesome Hooks</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    imageUrl: 'img/icons/graph.svg',
     description: (
       <>
         Re-usable hooks to speed up the development of your custom dashboards
@@ -45,7 +45,7 @@ const features = [
   },
   {
     title: <>Simple Licensing</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    imageUrl: 'img/icons/shopping.svg',
     description: (
       <>
         Pay by developer, so you can scale without additional cost.
@@ -114,7 +114,7 @@ function Home() {
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
-            <div className="container">
+            <div className="container feature-wrap">
               <div className='heading'>Reasons you'll love motor</div>
               <div className="row">
                 {features.map((props, idx) => (
