@@ -516,7 +516,7 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Chart sorted by descending values
 
-The first example is a line chart sorted by Revenue descending.
+The first example is a pie chart sorted by Revenue descending.
 
 ```jsx live
 function ColumnDemo() {
@@ -606,7 +606,7 @@ function ColumnDemo() {
 
 All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific line chart related theme items are stored in base.line. Changing these settings will apply to all line charts within the application.
+Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific pie chart related theme items are stored in base.pie. Changing these settings will apply to all pie charts within the application.
 
 ### global
 
@@ -623,15 +623,6 @@ Settings in base.global.chart are below :
       <code>allowSelections</code>
     </td>
     <td>Allows to enable / disable selctions on charts at a global level.</td>
-    <td>
-      <code>bool</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSlantedYAxis</code>
-    </td>
-    <td>Allows for text on the axis to be displayed at 45 degrees.</td>
     <td>
       <code>bool</code> <br />
     </td>
@@ -682,92 +673,6 @@ Settings in base.global.chart are below :
     <td>Display chart legend.</td>
     <td>
       <code>bool</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code> <br />
-      <code>oneOf</code>
-      <br />
-      'both'
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showAxis</code>
-    </td>
-    <td>Display axis on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "both"
-      <br />
-      "yAxis"
-      <br />
-      "xAxis"
-      <br />
-      "none"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showGridlines</code>
-    </td>
-    <td>Grid line type to be drawn on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "solid"
-      <br />
-      "dashes"
-      <br />
-      "dots"
-      <br />
-      "none"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>tickSpacing</code>
-    </td>
-    <td>Spacing of the ticks on the Y axis of the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      "wide"
-      <br />
-      "normal"
-      <br />
-      "narrow"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxAxisLength</code>
-    </td>
-    <td>Maximum width in pixels of label before elipsis are applied</td>
-    <td>
-      <code>number</code>
-      <br />
-      "80"
     </td>
   </tr>
   <tr>
@@ -825,16 +730,6 @@ Settings in base.global.chart are below :
       "none"
       <br />
     </td>
-  </tr>{" "}
-  <tr>
-    <td>
-      <code>gridlines</code>
-    </td>
-    <td>stroke and strokeDasharray of chart gridlines</td>
-    <td>
-      <code>string</code>
-      <br />
-    </td>
   </tr>
   <tr>
     <td>
@@ -873,11 +768,11 @@ Settings in base.global.chart are below :
   </tr>
 </table>
 
-### line
+### pie
 
-Settings in base.line are below :
+Settings in base.pie are below :
 
-e.g. base.line.main.zoomScrollOnColumnWidth = 30.
+e.g. <code>base.pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}</code>
 
 <table>
   <tr>
@@ -890,17 +785,6 @@ e.g. base.line.main.zoomScrollOnColumnWidth = 30.
   </tr>
   <tr>
     <td>
-      <code>dataPointsToShow</code>
-    </td>
-    <td>
-      Maximum number of data pints to show before scroll bar is displayed.
-    </td>
-    <td>
-      <code>number</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>otherTotalSpec</code>
     </td>
     <td>Setting at which 'Others' will be dispalyed on chart</td>
@@ -910,24 +794,6 @@ e.g. base.line.main.zoomScrollOnColumnWidth = 30.
       <code>shape</code>
       <br />
       See sample syntax above <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>symbol</code>
-    </td>
-    <td>Symbol / marker for each data point on the chart</td>
-    <td>
-      <code>string</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeWidth</code>
-    </td>
-    <td>Width of each line.</td>
-    <td>
-      <code>number</code>
     </td>
   </tr>
 </table>

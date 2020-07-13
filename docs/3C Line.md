@@ -1062,7 +1062,7 @@ Settings in base.global.chart are below :
 
 Settings in base.line are below :
 
-e.g. base.line.main.zoomScrollOnColumnWidth = 30.
+e.g. <code>main.zoomScrollOnColumnWidth = 30</code>.
 
 <table>
   <tr>
