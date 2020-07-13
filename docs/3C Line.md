@@ -757,6 +757,66 @@ function ColumnDemo() {
 }
 ```
 
+### Dual axis chart
+
+This is a dual axis chart example
+
+```jsx live
+function ColumnDemo() {
+  return (
+    <Motor config={config}>
+      <Line
+        title="Revenue by Product Sub Group"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
+        height="50%"
+        cols={[
+          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          {
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qLabel: "Revenue",
+          },
+          {
+            qField: "=Sum( [Sales Quantity])",
+            qLabel: "Quantity",
+          },
+        ]}
+        dualAxis={true}
+      />
+    </Motor>
+  );
+}
+```
+
+### Area chart
+
+This is a area chart example
+
+```jsx live
+function ColumnDemo() {
+  return (
+    <Motor config={config}>
+      <Line
+        title="Revenue by Product Sub Group"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
+        height="50%"
+        cols={[
+          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          {
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qLabel: "Revenue",
+          },
+          {
+            qField: "=Sum( [Sales Quantity])",
+            qLabel: "Quantity",
+          },
+        ]}
+        areaChart={true}
+      />
+    </Motor>
+  );
+}
+```
+
 ## Theme API
 
 All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
