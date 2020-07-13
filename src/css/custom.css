@@ -25,7 +25,6 @@
   --blue: #0c58bb;
   --darkred: #5d1909;
 
-
   --redBrand: #ff7272;
   --lightBrand: #fff2f2;
   --blueBrand: #ff7272;
@@ -41,6 +40,16 @@
 }
 .hero__title {
   font-weight: bold;
+}
+
+.hero-overlay {
+  background-color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  background-image: url(/img/design.jpg);
+  background-size: cover;
 }
 
 .docusaurus-highlight-code-line {
@@ -121,7 +130,7 @@
 }
 
 .feature-wrap {
-  padding: 3rem;
+  padding: 2rem;
 }
 
 /*

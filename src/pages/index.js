@@ -85,6 +85,7 @@ function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="Motor homepage">
+      <div className='hero-overlay'>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <span className="hero__title">{siteConfig.title}</span>
@@ -111,15 +112,18 @@ function Home() {
           </div>
         </div>
       </header>
+      </div>
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
-            <div className="container feature-wrap">
+            <div className="container">
               <div className='heading'>Reasons you'll love motor</div>
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
+                <div className="feature-wrap">
+                <div className="row">
+                  {features.map((props, idx) => (
+                    <Feature key={idx} {...props} />
+                  ))}
+                </div>
               </div>
             </div>
           </section>

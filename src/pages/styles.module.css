@@ -11,7 +11,7 @@
   position: relative;
   overflow: hidden;
   color: #444444;
-  background-color: white;
+  background-color: #ffffffe0;
 }
 
 @media screen and (max-width: 966px) {
@@ -39,7 +39,6 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem;
   width: 100%;
 }
 

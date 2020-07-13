@@ -67,7 +67,8 @@ export const PlanCard = (props) => {
                              }   
                         })}
                      </div>
-                    {
+                    {   price.title === 'NON COMMERCIAL' ? 
+                    (
                         <div className="plan-button">
                             <Link
                                 id='button1'
@@ -79,7 +80,19 @@ export const PlanCard = (props) => {
                                 {price.actionName}
                             </Link>
                         </div>
-                    }
+                    ) : (
+                        <div className="plan-button">
+                        <Link
+                            id='button2'
+                            className={clsx(
+                                'button b1 button--lg',
+                                styles.button,
+                            )}
+                            to={useBaseUrl('docs/Getting%20Started')}>
+                            {price.actionName}
+                        </Link>
+                    </div>
+                    )}
                 </div>
             </div>
         </React.Fragment>
