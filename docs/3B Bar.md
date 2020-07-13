@@ -1,7 +1,7 @@
 ---
-id: Pie
-title: Pie
-sidebar_label: Pie
+id: Bar
+title: Bar
+sidebar_label: Bar
 ---
 
 ## Usage
@@ -12,9 +12,9 @@ This handles two things:
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
-The simpliest method to render a Pie chart is to add a Pie element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
+The simpliest method to render a Bar chart is to add a Bar element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
 
-      <Pie cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+      <Bar cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
 
 This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
 
@@ -70,15 +70,6 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>boolean</code> <br />
       <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dualAxis</code>
-    </td>
-    <td>Allow chart to use dual axis. </td>
-    <td>
-      <code>boolean</code> <br />
     </td>
   </tr>
   <tr>
@@ -357,52 +348,22 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <br />
       <b>* default obtained from theme.</b>
     </td>
-  </tr>{" "}
-  <tr>
-    <td>
-      <code>curve</code>
-    </td>
-    <td>Shape of the curve for each line</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      <b>"Linear"</b> <br />
-      "Basis" <br />
-      "Bundle" <br />
-      "Cardinal" <br />
-      "CatmullRom" <br />
-      "MonotoneX" <br />
-      "MonotoneY" <br />
-      "Natural" <br />
-      "Step" <br />
-      "StepAfter" <br />
-      "StepBefore" <br />
-      "BasisClosed" <br />
-    </td>
-  </tr>{" "}
-  <tr>
-    <td>
-      <code>symbol</code>
-    </td>
-    <td>Symbol / marker type for each dat point on the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      <b>"circle"</b> <br />
-      "cross" <br />
-      "diamond" <br />
-      "square" <br />
-      "star" <br />
-      "triangle" <br />
-      "wye" <br />
-      "none" <br />
-    </td>
-  </tr>{" "}
-  <tr>
+  </tr> <tr>
     <td>
       <code>stacked</code>
     </td>
     <td>Draw chart as stacked chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>percentStacked</code>
+    </td>
+    <td>Draw chart as percenatge stacked chart</td>
     <td>
       <code>bool</code>
       <br />
@@ -442,6 +403,15 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <b>* default obtained from theme.</b>
     </td>
   </tr>
+    <tr>
+    <td>
+      <code>showLegend</code>
+    </td>
+    <td>Display chart legend.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
   <tr>
     <td>
       <code>allowSelections</code>
@@ -457,7 +427,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>maxWidth</code>
     </td>
-    <td>Maximum width in pixels of each line</td>
+    <td>Maximum width in pixels of each bar</td>
     <td>
       <code>number</code>
       <br />
@@ -487,17 +457,6 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
-      <code>areaChart</code>
-    </td>
-    <td>Display chart as area chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>maxAxisLength</code>
     </td>
     <td>Maximum width in pixels of label before elipsis are applied</td>
@@ -514,6 +473,17 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>Suppress the diplsay of the mini chart with brushing</td>
     <td>
       <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>columnPadding</code>
+    </td>
+    <td>Padding between each bar</td>
+    <td>
+      <code>number</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -568,9 +538,9 @@ You do not need to set the Config prop if the component is a child of the Motor 
 ### config settings
 
 ```jsx {4-9}
-import { Pie } from 'motor-ui'
+import { Bar } from 'motor-ui'
 
-<Pie
+<Bar
   config={{
     host: "xxxxxxxxx",
     secure: false,
@@ -598,9 +568,9 @@ If a string starts with =, it will be treated as a measure, otherwise it is
 treated as a dimension.
 
 ```jsx {4-7}
-import { Pie } from "motor-ui";
+import { Bar } from "motor-ui";
 
-<Pie
+<Bar
   cols={[
   "Case Owner Group",
   "=Avg([Case Duration Time])"
@@ -615,9 +585,9 @@ import { Pie } from "motor-ui";
 Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
 
 ```jsx {4-28}
-import { Pie } from "motor-ui";
+import { Bar } from "motor-ui";
 
-<Pie
+<Bar
   cols={[
   /*dimension*/
   "Year",
@@ -635,6 +605,13 @@ import { Pie } from "motor-ui";
       "qLabel": "Avg Case Duration Time"
     }
   },
+  /*measure with label*/
+  {
+    "qDef": {
+      "qDef": "Sum( [Open Cases] )",
+      "qLabel": "Open Cases"
+    }
+  }
 ]}
   ....
 />
@@ -646,9 +623,9 @@ import { Pie } from "motor-ui";
 You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
 
 ```jsx {4-8}
-import { Pie } from "motor-ui";
+import { Bar } from "motor-ui";
 
-<Pie
+<Bar
   cols={[
   {
     "qLibraryId":"eqZjE",
@@ -662,9 +639,9 @@ import { Pie } from "motor-ui";
 ### calcCondition settings
 
 ```jsx {5-8}
-import { Pie } from "motor-ui";
+import { Bar } from "motor-ui";
 
-  <Pie
+  <Bar
     ....
     calcCondition={{
       qCond: '1+1=2',
@@ -676,9 +653,9 @@ import { Pie } from "motor-ui";
 ### otherTotalSpec settings
 
 ```jsx {5-8}
-import { Pie } from "motor-ui";
+import { Bar } from "motor-ui";
 
-  <Pie
+  <Bar
    ....
           otherTotalSpec={{
              qOtherLabel: 'Other',
@@ -693,13 +670,13 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Chart sorted by descending values
 
-The first example is a line chart sorted by Revenue descending.
+The first example is a bar chart sorted by Revenue descending.
 
 ```jsx live
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Pie
+      <Bar
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
@@ -717,15 +694,15 @@ function ColumnDemo() {
 }
 ```
 
-### Legend removed, No selections and Others
+### Axis and labels removed from chart
 
-This exmaple removes the legend and has selections disabled and has Others set as 5 items.
+This exmaple removes the text from the axis as well as the labels from each bar and has selections disabled.
 
 ```jsx live
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Pie
+      <Bar
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
@@ -737,11 +714,8 @@ function ColumnDemo() {
           },
         ]}
         allowSelections={false}
-        showLegend="none"
-        otherTotalSpec={{
-          qOtherLabel: "Other",
-          qOtherCount: "5",
-        }}
+        textOnAxis={false}
+        showLabels="none"
       />
     </Motor>
   );
@@ -752,7 +726,7 @@ function ColumnDemo() {
 
 All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific line chart related theme items are stored in base.line. Changing these settings will apply to all line charts within the application.
+Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific bar chart related theme items are stored in base.bar. Changing these settings will apply to all bar charts within the application.
 
 ### global
 
@@ -825,7 +799,7 @@ Settings in base.global.chart are below :
     <td>
       <code>suppressScroll</code>
     </td>
-    <td>Suppress scroll line / brushing on charts.</td>
+    <td>Suppress scroll bar / brushing on charts.</td>
     <td>
       <code>bool</code> <br />
     </td>
@@ -1049,11 +1023,11 @@ Settings in base.global.chart are below :
   </tr>
 </table>
 
-### line
+### bar
 
-Settings in base.line are below :
+Settings in base.bar are below :
 
-e.g. base.line.main.zoomScrollOnColumnWidth = 30.
+e.g. base.bar.main.zoomScrollOnColumnWidth = 30.
 
 <table>
   <tr>
@@ -1066,11 +1040,18 @@ e.g. base.line.main.zoomScrollOnColumnWidth = 30.
   </tr>
   <tr>
     <td>
-      <code>dataPointsToShow</code>
+      <code>zoomScrollOnColumnWidth</code>
     </td>
+    <td>Minimum bar width at which brushing will occur</td>
     <td>
-      Maximum number of data pints to show before scroll bar is displayed.
+      <code>number</code> <br />
     </td>
+  </tr>
+  <tr>
+    <td>
+      <code>columnPadding</code>
+    </td>
+    <td>Padding to be used between each bar</td>
     <td>
       <code>number</code> <br />
     </td>
@@ -1090,18 +1071,40 @@ e.g. base.line.main.zoomScrollOnColumnWidth = 30.
   </tr>
   <tr>
     <td>
-      <code>symbol</code>
+      <code>columnPaddingNarrow</code>
     </td>
-    <td>Symbol / marker for each data point on the chart</td>
+    <td>Padding to be applied when many bars are displayed</td>
     <td>
-      <code>string</code>
+      <code>number</code>
     </td>
   </tr>
   <tr>
     <td>
+      <code>maxWidth</code>
+    </td>
+    <td>
+      Maximum width in pixles and which axis labels will be shown before elipsis
+      are applied
+    </td>
+    <td>
+      <code>number</code>
+    </td>
+  </tr>
+  <tr>
+    <td>columns</td>
+  </tr> <tr>
+    <td>
+      <code>stroke</code>
+    </td>
+    <td>Stroke color around columns</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr> <tr>
+    <td>
       <code>strokeWidth</code>
     </td>
-    <td>Width of each line.</td>
+    <td>Stroke width around columns</td>
     <td>
       <code>number</code>
     </td>

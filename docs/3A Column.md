@@ -403,6 +403,15 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <b>* default obtained from theme.</b>
     </td>
   </tr>
+    <tr>
+    <td>
+      <code>showLegend</code>
+    </td>
+    <td>Display chart legend.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
   <tr>
     <td>
       <code>allowSelections</code>
