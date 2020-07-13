@@ -701,7 +701,7 @@ function ColumnDemo() {
     <Motor config={config}>
       <Pie
         title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
@@ -717,9 +717,9 @@ function ColumnDemo() {
 }
 ```
 
-### Axis and labels removed from chart
+### Legend removed, No selections and Others
 
-This exmaple removes the text from the axis as well as the labels from each line and has selections disabled.
+This exmaple removes the legend and has selections disabled and has Others set as 5 items.
 
 ```jsx live
 function ColumnDemo() {
@@ -727,7 +727,7 @@ function ColumnDemo() {
     <Motor config={config}>
       <Pie
         title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
@@ -737,8 +737,11 @@ function ColumnDemo() {
           },
         ]}
         allowSelections={false}
-        textOnAxis={false}
-        showLabels="none"
+        showLegend="none"
+        otherTotalSpec={{
+          qOtherLabel: "Other",
+          qOtherCount: "5",
+        }}
       />
     </Motor>
   );

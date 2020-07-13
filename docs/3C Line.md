@@ -705,7 +705,7 @@ function ColumnDemo() {
     <Motor config={config}>
       <Line
         title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
@@ -731,7 +731,7 @@ function ColumnDemo() {
     <Motor config={config}>
       <Line
         title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense applocation"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
