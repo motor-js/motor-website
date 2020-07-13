@@ -47,6 +47,18 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
+      <code>label</code>
+    </td>
+    <td>
+      label to apear on the top of the KPI value
+    </td>
+    <td>
+      <code>string</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>cols</code>
     </td>
     <td>Columns from Qlik Data Model to render in the chart. </td>
@@ -64,32 +76,9 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
-      <code>suppressZero</code>
-    </td>
-    <td>Suppress items whith zero values from being displayed in the chart</td>
-    <td>
-      <code>boolean</code> <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>width</code>
     </td>
     <td>Chart width in percentage or value as pixels</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>'100%'</b>
-      <br />
-      '200px'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>height</code>
-    </td>
-    <td>Chart height in percentage or value as pixels</td>
     <td>
       <code>string</code>
       <br />
@@ -130,13 +119,108 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
-      <code>fontColor</code>
+      <code>color</code>
     </td>
-    <td>Color of the labels for the chart</td>
+    <td>Color of the KPI value</td>
     <td>
       <code>string</code>
       <br />
       <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>justifyContent</code>
+    </td>
+    <td>The alignment of the text within the component </td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "flex-start"
+      <br />
+      "center"
+      <br />
+      "flex-end"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>textAlign</code>
+    </td>
+    <td>Alignment of KPI label and Value relative to their container </td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "left"
+      <br />
+      "center"
+      <br />
+      "right"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>roundNum</code>
+    </td>
+    <td>Round vlaue and display large numbers with symbol e.g K for '000s</td>
+    <td>
+            <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>precision</code>
+    </td>
+    <td>Precision if RoundNum set to true. True equals 2 deciamls places, false equals none</td>
+    <td>
+      <code>bool</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>labelColor</code>
+    </td>
+    <td>Color of the KPI label</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>alignSelf</code>
+    </td>
+    <td>Alignment of the KPI Label</td>
+       <td>
+      <code>oneOf</code>
+      <br />
+      "flex-start"
+      <br />
+      "center"
+      <br />
+      "flex-end"
+      <br />
+    </td>
+  </tr>
+    <tr>
+    <td>
+      <code>padding</code>
+    </td>
+    <td>Padding of the KPI</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+    <tr>
+    <td>
+      <code>maxWidth</code>
+    </td>
+    <td>Max width of the KPI, text will be wrapped</td>
+    <td>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -185,203 +269,40 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <b>* default obtained from theme.</b>
     </td>
   </tr>
-  <tr>
+      <tr>
     <td>
-      <code>borderRadius</code>
+      <code>responsive</code>
     </td>
-    <td>Border radius of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>chartColor</code>
-    </td>
-    <td>Color scheme to be used for the chart</td>
-    <td>
-      <code>array</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "divergent13"
-      <br />
-      "divergent9"
-      <br />
-      "goya"
-      <br />
-      "red"
-      <br />
-      "blue"
-      <br />
-      "gray"
-      <br />
-      "pink"
-      <br />
-      "grape"
-      <br />
-      "violet"
-      <br />
-      "indigo"
-      <br />
-      "blue"
-      <br />
-      "cyan"
-      <br />
-      "teal"
-      <br />
-      "green"
-      <br />
-      "lime"
-      <br />
-      "yellow"
-      <br />
-      "orange"
-      <br />
-      "base"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>roundNum</code>
-    </td>
-    <td>Use round numbering to dispaly labels on charts</td>
+    <td>Whether the KPI size should scale for tablet and mobile</td>
     <td>
       <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
-  <tr>
+      <tr>
     <td>
-      <code>title</code>
+      <code>onClick</code>
     </td>
-    <td>Title to be dispalyed on top of chart</td>
+    <td>Event function to execute when button is clicked</td>
+    <td>
+      <code>func</code>
+    </td>
+  </tr>
+      <tr>
+    <td>
+      <code>cursor</code>
+    </td>
+    <td>Cursor style on hover</td>
     <td>
       <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
-  <tr>
+      <tr>
     <td>
-      <code>subTitle</code>
+      <code>autoSizeValue</code>
     </td>
-    <td>Sub title to be dispalyed on top of chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allow selections to be made on the chart</td>
+    <td>Automatically resize the label if it is too large for the min wrapper</td>
     <td>
       <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLegend</code>
-    </td>
-    <td>Display chart legend.</td>
-    <td>
-      <code>number</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>innerRadius</code>
-    </td>
-    <td>Inner radius of chart. Set this for a donut chart.</td>
-    <td>
-      <code>number</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>cornerRadius</code>
-    </td>
-    <td>Corner radius of chart. Have rounded corders on each slice.</td>
-    <td>
-      <code>number</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>padAngle</code>
-    </td>
-    <td>Padding angle on chart..</td>
-    <td>
-      <code>number</code> <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dimensionErrMsg</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid dimension is used in the cols
-      property
-    </td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>measureErrMsg</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid measure is used in the cols property
-    </td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLabels</code>
-    </td>
-    <td>
-      Display text label of each slice
-    </td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "inside"  <br /> "outside"  <br /> "altStyle"  <br /> "none"  <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>otherTotalSpec</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid measure is used in the cols property
-    </td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>shape</code>
-      <br />
-      See sample syntax below <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
 </table>
@@ -478,7 +399,7 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Standard KPI
 
-The first example is a pie chart sorted by Revenue descending.
+The first example is a standard KPI.
 
 ```jsx live
 function ColumnDemo() {
