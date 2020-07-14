@@ -1,7 +1,7 @@
 ---
-id: Bar
-title: Bar
-sidebar_label: Bar
+id: Column
+title: Column
+sidebar_label: Column
 ---
 
 ## Usage
@@ -12,9 +12,9 @@ This handles two things:
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
-The simpliest method to render a Bar chart is to add a Bar element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
+The simpliest method to render a Column chart is to add a Column element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
 
-      <Bar cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+      <Column cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
 
 This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
 
@@ -427,7 +427,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>maxWidth</code>
     </td>
-    <td>Maximum width in pixels of each bar</td>
+    <td>Maximum width in pixels of each column</td>
     <td>
       <code>number</code>
       <br />
@@ -481,7 +481,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>columnPadding</code>
     </td>
-    <td>Padding between each bar</td>
+    <td>Padding between each column</td>
     <td>
       <code>number</code>
       <br />
@@ -538,9 +538,9 @@ You do not need to set the Config prop if the component is a child of the Motor 
 ### config settings
 
 ```jsx {4-9}
-import { Bar } from 'motor-ui'
+import { Column } from 'motor-ui'
 
-<Bar
+<Column
   config={{
     host: "xxxxxxxxx",
     secure: false,
@@ -568,9 +568,9 @@ If a string starts with =, it will be treated as a measure, otherwise it is
 treated as a dimension.
 
 ```jsx {4-7}
-import { Bar } from "motor-ui";
+import { Column } from "motor-ui";
 
-<Bar
+<Column
   cols={[
   "Case Owner Group",
   "=Avg([Case Duration Time])"
@@ -585,9 +585,9 @@ import { Bar } from "motor-ui";
 Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
 
 ```jsx {4-28}
-import { Bar } from "motor-ui";
+import { Column } from "motor-ui";
 
-<Bar
+<Column
   cols={[
   /*dimension*/
   "Year",
@@ -623,9 +623,9 @@ import { Bar } from "motor-ui";
 You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
 
 ```jsx {4-8}
-import { Bar } from "motor-ui";
+import { Column } from "motor-ui";
 
-<Bar
+<Column
   cols={[
   {
     "qLibraryId":"eqZjE",
@@ -639,9 +639,9 @@ import { Bar } from "motor-ui";
 ### calcCondition settings
 
 ```jsx {5-8}
-import { Bar } from "motor-ui";
+import { Column } from "motor-ui";
 
-  <Bar
+  <Column
     ....
     calcCondition={{
       qCond: '1+1=2',
@@ -653,9 +653,9 @@ import { Bar } from "motor-ui";
 ### otherTotalSpec settings
 
 ```jsx {5-8}
-import { Bar } from "motor-ui";
+import { Column } from "motor-ui";
 
-  <Bar
+  <Column
    ....
           otherTotalSpec={{
              qOtherLabel: 'Other',
@@ -670,13 +670,13 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Chart sorted by descending values
 
-The first example is a bar chart sorted by Revenue descending.
+The first example is a column chart sorted by Revenue descending.
 
 ```jsx live
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Bar
+      <Column
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
@@ -702,7 +702,7 @@ This exmaple removes the text from the axis as well as the labels from each bar 
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Bar
+      <Column
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
@@ -726,7 +726,7 @@ function ColumnDemo() {
 
 All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific bar chart related theme items are stored in base.bar. Changing these settings will apply to all bar charts within the application.
+Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific column chart related theme items are stored in base.column. Changing these settings will apply to all column charts within the application.
 
 ### global
 
@@ -1023,11 +1023,11 @@ Settings in base.global.chart are below :
   </tr>
 </table>
 
-### bar
+### column
 
-Settings in base.bar are below :
+Settings in base.column are below :
 
-e.g. <code>base.bar.main.zoomScrollOnColumnWidth = 30</code>.
+e.g. <code>base.column.main.zoomScrollOnColumnWidth = 30</code>.
 
 <table>
   <tr>
@@ -1042,7 +1042,7 @@ e.g. <code>base.bar.main.zoomScrollOnColumnWidth = 30</code>.
     <td>
       <code>zoomScrollOnColumnWidth</code>
     </td>
-    <td>Minimum bar width at which brushing will occur</td>
+    <td>Minimum column width at which brushing will occur</td>
     <td>
       <code>number</code> <br />
     </td>
@@ -1051,7 +1051,7 @@ e.g. <code>base.bar.main.zoomScrollOnColumnWidth = 30</code>.
     <td>
       <code>columnPadding</code>
     </td>
-    <td>Padding to be used between each bar</td>
+    <td>Padding to be used between each column</td>
     <td>
       <code>number</code> <br />
     </td>
