@@ -33,12 +33,53 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <th>Description</th>
     <th>Options / Example</th>
   </tr>
-  <tr>
+ <tr>
     <td><code>config</code></td>
     <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
-    <td></td>
+    <td>&#123; <br />
+      host&#58; 'string', <br />
+      secure&#58; 'boolean', <br />
+      port&#58; 'number', <br />
+      prefix&#58; 'string', <br />
+      appId&#58; 'string' <br />
+      &#125;
+    </td>
   </tr>
- 
+  <tr>
+    <td><code>size</code></td>
+    <td>size of the selections box</td>
+    <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
+  </tr>
+  <tr>
+    <td><code>width</code></td>
+    <td>width of the selections box</td>
+    <td>'string'< br/>'100%'</td>
+  </tr>
+  <tr>
+    <td><code>margin</code></td>
+    <td>margin around the selections box</td>
+    <td>'string'< br/>'5px'</td>
+  </tr>
+  <tr>
+    <td><code>maxHeight</code></td>
+    <td>maximum height of the selections box</td>
+    <td>'string'< br/>'80px'</td>
+  </tr>
+  <tr>
+    <td><code>minHeight</code></td>
+    <td>minimum height of the selections box</td>
+    <td>'string'< br/>'80px'</td>
+  </tr>
+  <tr>
+    <td><code>selectionsLimit</code></td>
+    <td>Number of selections the object will display per dimension, before the values are grouped</td>
+    <td>'number'< br/>'3'</td>
+  </tr>
+  <tr>
+    <td><code>overflow</code></td>
+    <td>Set overflow property, either on the x-axis or y-axis</td>
+    <td><b>'x-axis'</b>< br/>'y-axis'</td>
+  </tr>
 </table>
 
 
