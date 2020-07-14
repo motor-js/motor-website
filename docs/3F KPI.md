@@ -399,7 +399,7 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Standard KPI
 
-The first example is a standard KPI.
+A standard KPI.
 
 ```jsx live
 function ColumnDemo() {
