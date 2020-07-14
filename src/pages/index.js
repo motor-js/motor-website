@@ -8,6 +8,15 @@ import styles from './styles.module.css';
 
 const features = [
   {
+    title: <>Free for Non-Commercial Use</>,
+    imageUrl: 'img/icons/happy.svg',
+    description: (
+      <>
+        Get started for free, just install from npm, connect to a Qlik engine and start building.
+      </>
+    ),
+  },
+  {
     title: <>Powerful Theming</>,
     imageUrl: 'img/icons/design.svg',
     description: (
@@ -22,15 +31,6 @@ const features = [
     description: (
       <>
         Charts, Components and Layouts are responsive, supporting all screen sizes.
-      </>
-    ),
-  },
-  {
-    title: <>Free for Non-Commercial Use</>,
-    imageUrl: 'img/icons/happy.svg',
-    description: (
-      <>
-        Get started for free, just install from npm, connect to a Qlik engine and start building.
       </>
     ),
   },
