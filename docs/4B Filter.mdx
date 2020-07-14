@@ -25,111 +25,72 @@ import { Filter } from @motor-js/core
 You do not need to set the Config prop if the component is a child of the Motor component
 :::
 
+ 
 <table>
   <tr>
-    <td></td>
-    <td></td>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td><code>config</code></td>
+    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>label</code></td>
+    <td>Filter label</td>
+    <td><b>is required</b><br/>'string'</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>dimension</code></td>
+    <td>Dimension to be rendered</td>
+    <td><b>is required</b><br/>'array'</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>size</code></td>
+    <td>Size of the filter</td>
+    <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>width</code></td>
+    <td>width of the filter</td>
+    <td>'string'<br/><b>'100%'</b></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>dropHeight</code></td>
+    <td>Height of the dropdown</td>
+    <td>'string'<br/><b>'250px'</b></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>margin</code></td>
+    <td>margin around the filter</td>
+    <td>'string'<br/><b>'5px'</b></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>onSelectionChange</code></td>
+    <td>function fired on a change in selection</td>
+    <td>function</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>onSearch</code></td>
+    <td>function fired on search</td>
+    <td>function</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>single</code></td>
+    <td>option to enable only single selections in the Filter list</td>
+    <td>boolean<br/><b>false</b></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>sortByState</code></td>
+    <td>option that sorts our Filter by selection state</td>
+    <td>boolean<br/><b>true</b></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code>selectionsTitle</code></td>
+    <td>Add the Filter selections to the title</td>
+    <td>boolean<br/><b>true</b></td>
   </tr>
 </table>
 

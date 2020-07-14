@@ -31,6 +31,9 @@ const config = {
 const SCOPE = {
   Motor,
   Button,
+  Filter,
+  CurrentSelections,
+  Search,
   Pie,
   Bar,
   Column,

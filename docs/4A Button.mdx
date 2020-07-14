@@ -36,102 +36,102 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <th>Options / Example</th>
   </tr>
   <tr>
-    <td>config</td>
-    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component.</td>
+    <td><code>config</code></td>
+    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
     <td>{ }</td>
   </tr>
   <tr>
-    <td>type</td>
+    <td><code>type</code></td>
     <td>The action on click of the button. If default, you can set a custom onClick function</td>
     <td>'clearSelections'< br/>'back'< br/>'forward'< br/><b>'default'</b></td>
   </tr>
   <tr>
-    <td>block</td>
+    <td><code>block</code></td>
     <td></td>
     <td>boolean</td>
   </tr>
   <tr>
-    <td>onClick</td>
+    <td><code>onClick</code></td>
     <td>Click handler</td>
     <td>function</td>
   </tr>
   <tr>
-    <td>size</td>
+    <td><code>size</code></td>
     <td>The size of the button</td>
     <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
   </tr>
   <tr>
-    <td>color</td>
+    <td><code>color</code></td>
     <td>Background color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td>margin</td>
+    <td><code>margin</code></td>
     <td>margin, sets the margin css property</td>
     <td>'string' <br /> <b>'5px'</b></td>
   </tr>
   <tr>
-    <td>width</td>
+    <td><code>width</code></td>
     <td>sets the width css property</td>
     <td>'string'<br /> <b>'100%'</b></td>
   </tr>
   <tr>
-    <td>fontColor</td>
+    <td><code>fontColor</code></td>
     <td>button font color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td>borderRadius</td>
+    <td><code>borderRadius</code></td>
     <td>radius of the button</td>
     <td>'string'<br /> <b>'8px'</b></td>
   </tr>
   <tr>
-    <td>border</td>
+    <td><code>border</code></td>
     <td>sets the border css property</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td>outline</td>
+    <td><code>outline</code></td>
+    <td>button outline</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>activeTransform</code></td>
+    <td>Transform css property on click</td>
+    <td>'string' <br /> <b>null</b></td>
+  </tr>
+  <tr>
+    <td><code>activeBackgroundColor</code></td>
+    <td>Background color on click</td>
+    <td>'string' <br /> <b>null</b></td>
+  </tr>
+    <tr>
+    <td><code>activeBackgroundSize</code></td>
+    <td>Background size on click</td>
+    <td>'string' <br /> <b>null</b></td>
+  </tr>
+  <tr>
+    <td><code>activeTransition</code></td>
+    <td>Transition on click</td>
+    <td>'string' <br /> <b>null</b></td>
+  </tr>
+  <tr>
+    <td><code>transition</code></td>
     <td></td>
     <td></td>
   </tr>
-    <tr>
-    <td>activeTransform</td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>activeBackgroundColor</td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>activeBackgroundSize</td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>activeTransition</td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>transition</td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>hoverBoxShadow</td>
+  <tr>
+    <td><code>hoverBoxShadow</code></td>
     <td>box shadow on hover</td>
     <td></td>
   </tr>
   <tr>
-    <td>hoverBorder</td>
+    <td><code>hoverBorder</code></td>
     <td>border on hover</td>
     <td></td>
   </tr>
     <tr>
-    <td>hoverBackground</td>
+    <td><code>hoverBackground</code></td>
     <td>background color on hover</td>
     <td></td>
   </tr>
@@ -147,10 +147,10 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ```jsx live
 
-function ButtonTest() {
+function FilterTest() {
     return (
     <Motor config={config}>  
-      <Button color='brand'>I am a Button.</Button>
+      <Filter />
     </Motor>
     )
 }
@@ -162,6 +162,77 @@ function ButtonTest() {
 
 ## Theme API
 
+### button
+
+Settings in global.button are below :
+
+e.g. <code>global.button.backgroundColor = 'red'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>button</th>
+  </tr>
+  <tr>
+    <td><code>backgroundColor</code></td>
+    <td>Background color of the button</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>fontColor</code></td>
+    <td>button font color</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>border</code></td>
+    <td>button border </td>
+    <td><code>'border'</code></td>
+  </tr>
+  <tr>
+    <td><code>margin</code></td>
+    <td>button margin</td>
+    <td><code>'margin'</code></td>
+  </tr>
+  <tr>
+    <td><code>radius</code></td>
+    <td>border radius</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>shadow</code></td>
+    <td>box shadow</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>padding</code></td>
+    <td>button paddding</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>transform</code></td>
+    <td>button transform property</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>fontWeight</code></td>
+    <td>font weight</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>outline</code></td>
+    <td>button outline</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>transition</code></td>
+    <td>transiton</td>
+    <td><code>'string'</code></td>
+  </tr>
+</table>
 
 
 
