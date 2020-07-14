@@ -108,7 +108,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <tr>
     <td><code>activeBackgroundSize</code></td>
     <td>Background size on click</td>
-    <td>'string' <br /> <b>null</b></td>
+    <td>'string'<br /><b>null</b></td>
   </tr>
   <tr>
     <td><code>activeTransition</code></td>
@@ -117,23 +117,23 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td><code>transition</code></td>
-    <td></td>
-    <td></td>
+    <td>transition</td>
+    <td>'string'<br /><b>null</b></td>
   </tr>
   <tr>
     <td><code>hoverBoxShadow</code></td>
     <td>box shadow on hover</td>
-    <td></td>
+    <td>'string'<br /><b>null</b></td>
   </tr>
   <tr>
     <td><code>hoverBorder</code></td>
     <td>border on hover</td>
-    <td></td>
+    <td>'string'<br /><b>null</b></td>
   </tr>
     <tr>
     <td><code>hoverBackground</code></td>
     <td>background color on hover</td>
-    <td></td>
+    <td>'string'<br /><b>null</b></td>
   </tr>
   </table>
 
@@ -147,10 +147,10 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ```jsx live
 
-function FilterTest() {
+function ButtonTest() {
     return (
     <Motor config={config}>  
-      <Filter />
+      <Button>I am a button.</Button>
     </Motor>
     )
 }
@@ -164,7 +164,7 @@ function FilterTest() {
 
 ### button
 
-Settings in global.button are below :
+Settings in global.button are below:
 
 e.g. <code>global.button.backgroundColor = 'red'</code>
 
@@ -210,7 +210,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
   <tr>
     <td><code>padding</code></td>
     <td>button paddding</td>
-    <td><code></code></td>
+    <td><code>'string'</code></td>
   </tr>
   <tr>
     <td><code>transform</code></td>
@@ -234,11 +234,92 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
   </tr>
 </table>
 
+<br />
 
+### button.hover
+
+Settings in global.button.hover are below:
+
+e.g. <code>global.button.hover.backgroundColor = 'red'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>button.hover</th>
+  </tr>
+  <tr>
+    <td><code>background</code></td>
+    <td>background on hover</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>borderColor</code></td>
+    <td>border color on hover</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>boxShadow</code></td>
+    <td>box shadow on hover</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>backgroundColor</code></td>
+    <td>background color on hover</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>border</code></td>
+    <td>border on hover</td>
+    <td><code>'string'</code></td>
+  </tr>
+</table>
 
 <br />
 
+### button.active
+
+Settings in global.button.active are below:
+
+e.g. <code>global.button.active.backgroundColor = 'red'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>button.active</th>
+  </tr>
+  <tr>
+    <td><code>transform</code></td>
+    <td>transform on button click</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>backgroundColor</code></td>
+    <td>background color on button click</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>backgroundSize</code></td>
+    <td>background size on button click</td>
+    <td><code>'string'</code></td>
+  </tr>
+  <tr>
+    <td><code>transition</code></td>
+    <td>transition on button click</td>
+    <td><code>'string'</code></td>
+  </tr>
+</table>
+
+<br />
 
 ## Extending Styles
+
 
 <br />

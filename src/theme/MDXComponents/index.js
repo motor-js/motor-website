@@ -14,7 +14,7 @@ import styles from "./styles.module.css";
 
 //-------------------------------------------------------/
 ////// Import the component you need in scope
-import { Motor, Button, Pie, Bar, Column, Line } from "motor-ui";
+import { Motor, Button, Filter, CurrentSelections, Search, Pie, Bar, Column, Line } from "motor-ui";
 
 const config = {
   host: "localhost",
