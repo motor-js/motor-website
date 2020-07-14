@@ -16,7 +16,7 @@ The simpliest method to render a Pie chart is to add a Pie element to the page a
 
       <Pie cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
 
-This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
+This can get more complex by setting various other propertes with in the cols property which will allow for the naming of columns and the ability to sort the data.
 
 A more advanced version demonstrating this is displayed below.
 
@@ -356,15 +356,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>showLabels</code>
     </td>
-    <td>
-      Display text label of each slice
-    </td>
+    <td>Display text label of each slice</td>
     <td>
       <code>bool</code>
       <br />
       <code>oneOf</code>
       <br />
-      "inside"  <br /> "outside"  <br /> "altStyle"  <br /> "none"  <br />
+      "inside" <br /> "outside" <br /> "altStyle" <br /> "none" <br />
       <b>* default obtained from theme.</b>
     </td>
   </tr>
@@ -604,9 +602,9 @@ function ColumnDemo() {
 
 ## Theme API
 
-All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
+All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific pie chart related theme items are stored in base.pie. Changing these settings will apply to all pie charts within the application.
+Most of the chart settings are in base.global.chart. Changing any setting in the above will apply to all charts within the application. Specific pie chart related theme items are stored in base.pie. Changing these settings will apply to all pie charts within the application.
 
 ### global
 
@@ -694,76 +692,293 @@ Settings in base.global.chart are below :
     <td>
       <code>string</code>
       <br />
-      "border-box""
+      "border-box"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>border</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.border</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>color</code>
+    </td>
+    <td>Color of the border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      "var(--oc-gray-4)"
     </td>
   </tr>
   <tr>
     <td>
-      <code>border</code>
+      <code>size</code>
     </td>
-    <td>Border to be dispalyed around the chart</td>
+    <td>Size of border around the chart</td>
     <td>
-      <code>boolean</code>
+      <code>string</code>
       <br />
-      <code>oneOf</code>
+      "1px"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>style</code>
+    </td>
+    <td>Style of the border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      "solid"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>radius</code>
+    </td>
+    <td>Style of the border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      "8px"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>selection</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.selection</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>opacity</code>
+    </td>
+    <td>Opacity of the item selected</td>
+    <td>
+      <code>number</code>
+      <br />1
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>stroke</code>
+    </td>
+    <td>Stroke of the item selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "black"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>strokeWidth</code>
+    </td>
+    <td>Stroke width of the item selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "1px"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>nonSelection</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.nonSelection</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>opacity</code>
+    </td>
+    <td>Opacity of the items not selected</td>
+    <td>
+      <code>number</code>
+      <br />
+      0.5
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>background</code>
+    </td>
+    <td>Background of the items not selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "var(--oc-gray-1)"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>label</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.label</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>fontColor</code>
+    </td>
+    <td>Label color</td>
+    <td>
+      <code>string</code>
+      <br />
+      "fontAlt"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>noData</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.noData</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>verticalAlign</code>
+    </td>
+    <td>Alignment of main object to display no data message</td>
+    <td>
+      <code>string</code>
       <br />
       "top"
-      <br />
-      "left"
-      <br />
-      "bottom"
-      <br />
-      "right"
-      <br />
-      "start"
-      <br />
-      "end"
-      <br />
-      "horizontal"
-      <br />
-      "vertical"
-      <br />
-      "all"
-      <br />
-      "between"
-      <br />
-      "none"
-      <br />
     </td>
   </tr>
   <tr>
     <td>
-      <code>selection</code>
+      <code>display</code>
     </td>
-    <td>opacity, stroke and strokeWidth of chart when making selections</td>
+    <td>Display of main object to display no data message</td>
     <td>
       <code>string</code>
       <br />
+      "inline-block"
     </td>
   </tr>
   <tr>
     <td>
-      <code>nonSelection</code>
+      <code>borderRadius</code>
     </td>
-    <td>
-      opacity, background of chart of non slected items when making selections
-    </td>
+    <td>Border radius of main object to display no data message</td>
     <td>
       <code>string</code>
       <br />
+      "10px"
     </td>
   </tr>
   <tr>
     <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Background color of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "var(--oc-gray-1)"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderCollapse</code>
+    </td>
+    <td>Border collapse of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "collapse"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>noDataContent</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.noDataContent</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>display</code>
+    </td>
+    <td>Display attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "inline-block"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>alignItems</code>
+    </td>
+    <td>Alignment attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "center"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>justifyContent</code>
+    </td>
+    <td>Justify attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "center"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>margin</code>
+    </td>
+    <td>Margin attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "10px"
+    </td>
+  </tr>
+  <tr>
+    <th>
       <code>error</code>
-    </td>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.error</code>
+    </th>
+  </tr>
+  <tr>
     <td>
-      dimensionErrMsg and measureErrMsg to bedisplayed when invlaid items
-      supplied to cols property
+      <code>dimensionErrMsg</code>
     </td>
+    <td>error mesage for invalid dimension</td>
     <td>
       <code>string</code>
       <br />
+      "Invalid Dimension."
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>measureErrMsg</code>
+    </td>
+    <td>error mesage for invalid measure</td>
+    <td>
+      <code>string</code>
+      <br />
+      "Invalid Measure. No values returned."
     </td>
   </tr>
 </table>
@@ -781,7 +996,12 @@ e.g. <code>base.pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '
     <th>Options / Example</th>
   </tr>
   <tr>
-    <th>Main</th>
+    <th>
+      <code>main</code>
+    </th>
+    <th colspan="2">
+      <code>base.pie.main</code>
+    </th>
   </tr>
   <tr>
     <td>

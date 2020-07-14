@@ -1,7 +1,7 @@
 ---
-id: Column
-title: Column
-sidebar_label: Column
+id: Bar
+title: Bar
+sidebar_label: Bar
 ---
 
 ## Usage
@@ -12,11 +12,11 @@ This handles two things:
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
-The simpliest method to render a Column chart is to add a Column element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
+The simpliest method to render a Bar chart is to add a Bar element to the page and set the cols props. Such as cols={['[Product Sub Group Desc]','=Sum([Sales Quantity])']}
 
-      <Column cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+      <Bar cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
 
-This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
+This can get more complex by setting various other propertes with in the cols property which will allow for the naming of columns and the ability to sort the data.
 
 A more advanced version demonstrating this is displayed below.
 
@@ -76,7 +76,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>columnSortOrder</code>
     </td>
-    <td>Order of the columns on whihc the returned dat shoud be sorted</td>
+    <td>Order of the columns on which the returned dat shoud be sorted</td>
     <td>
       <code>array</code>
       <br />
@@ -403,7 +403,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <b>* default obtained from theme.</b>
     </td>
   </tr>
-    <tr>
+  <tr>
     <td>
       <code>showLegend</code>
     </td>
@@ -427,7 +427,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>maxWidth</code>
     </td>
-    <td>Maximum width in pixels of each column</td>
+    <td>Maximum width in pixels of each bar</td>
     <td>
       <code>number</code>
       <br />
@@ -481,7 +481,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>columnPadding</code>
     </td>
-    <td>Padding between each column</td>
+    <td>Padding between each bar</td>
     <td>
       <code>number</code>
       <br />
@@ -538,9 +538,9 @@ You do not need to set the Config prop if the component is a child of the Motor 
 ### config settings
 
 ```jsx {4-9}
-import { Column } from 'motor-ui'
+import { Bar } from 'motor-ui'
 
-<Column
+<Bar
   config={{
     host: "xxxxxxxxx",
     secure: false,
@@ -568,9 +568,9 @@ If a string starts with =, it will be treated as a measure, otherwise it is
 treated as a dimension.
 
 ```jsx {4-7}
-import { Column } from "motor-ui";
+import { Bar } from "motor-ui";
 
-<Column
+<Bar
   cols={[
   "Case Owner Group",
   "=Avg([Case Duration Time])"
@@ -585,9 +585,9 @@ import { Column } from "motor-ui";
 Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
 
 ```jsx {4-28}
-import { Column } from "motor-ui";
+import { Bar } from "motor-ui";
 
-<Column
+<Bar
   cols={[
   /*dimension*/
   "Year",
@@ -623,9 +623,9 @@ import { Column } from "motor-ui";
 You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
 
 ```jsx {4-8}
-import { Column } from "motor-ui";
+import { Bar } from "motor-ui";
 
-<Column
+<Bar
   cols={[
   {
     "qLibraryId":"eqZjE",
@@ -639,9 +639,9 @@ import { Column } from "motor-ui";
 ### calcCondition settings
 
 ```jsx {5-8}
-import { Column } from "motor-ui";
+import { Bar } from "motor-ui";
 
-  <Column
+  <Bar
     ....
     calcCondition={{
       qCond: '1+1=2',
@@ -653,9 +653,9 @@ import { Column } from "motor-ui";
 ### otherTotalSpec settings
 
 ```jsx {5-8}
-import { Column } from "motor-ui";
+import { Bar } from "motor-ui";
 
-  <Column
+  <Bar
    ....
           otherTotalSpec={{
              qOtherLabel: 'Other',
@@ -670,13 +670,13 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Chart sorted by descending values
 
-The first example is a column chart sorted by Revenue descending.
+The first example is a bar chart sorted by Revenue descending.
 
 ```jsx live
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Column
+      <Bar
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
@@ -702,7 +702,7 @@ This exmaple removes the text from the axis as well as the labels from each bar 
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Column
+      <Bar
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
@@ -724,9 +724,9 @@ function ColumnDemo() {
 
 ## Theme API
 
-All components are styled from the main theme. Each theme can be overwtitten whihc will allow for all charts to sahre common functionality without having to set the props at an individual level.
+All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in base.global.chart. Changing any setting in the bove will apply to all charts within the application. Specific column chart related theme items are stored in base.column. Changing these settings will apply to all column charts within the application.
+Most of the chart settings are in base.global.chart. Changing any setting in the above will apply to all charts within the application. Specific bar chart related theme items are stored in base.bar. Changing these settings will apply to all bar charts within the application.
 
 ### global
 
@@ -943,39 +943,57 @@ Settings in base.global.chart are below :
     </td>
   </tr>
   <tr>
-    <td>
+    <th>
       <code>border</code>
-    </td>
-    <td>Border to be dispalyed around the chart</td>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.border</code>
+    </th>
+  </tr>
+  <tr>
     <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "top"
-      <br />
-      "left"
-      <br />
-      "bottom"
-      <br />
-      "right"
-      <br />
-      "start"
-      <br />
-      "end"
-      <br />
-      "horizontal"
-      <br />
-      "vertical"
-      <br />
-      "all"
-      <br />
-      "between"
-      <br />
-      "none"
-      <br />
+      <code>color</code>
     </td>
-  </tr>{" "}
+    <td>Color of the border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      "var(--oc-gray-4)"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>size</code>
+    </td>
+    <td>Size of border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      "1px"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>style</code>
+    </td>
+    <td>Style of the border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      "solid"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>radius</code>
+    </td>
+    <td>Style of the border around the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      "8px"
+    </td>
+  </tr>
   <tr>
     <td>
       <code>gridlines</code>
@@ -987,47 +1005,246 @@ Settings in base.global.chart are below :
     </td>
   </tr>
   <tr>
-    <td>
+    <th>
       <code>selection</code>
-    </td>
-    <td>opacity, stroke and strokeWidth of chart when making selections</td>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.selection</code>
+    </th>
+  </tr>
+  <tr>
     <td>
-      <code>string</code>
-      <br />
+      <code>opacity</code>
+    </td>
+    <td>Opacity of the item selected</td>
+    <td>
+      <code>number</code>
+      <br />1
     </td>
   </tr>
   <tr>
     <td>
+      <code>stroke</code>
+    </td>
+    <td>Stroke of the item selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "black"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>strokeWidth</code>
+    </td>
+    <td>Stroke width of the item selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "1px"
+    </td>
+  </tr>
+  <tr>
+    <th>
       <code>nonSelection</code>
-    </td>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.nonSelection</code>
+    </th>
+  </tr>
+  <tr>
     <td>
-      opacity, background of chart of non slected items when making selections
+      <code>opacity</code>
     </td>
+    <td>Opacity of the items not selected</td>
     <td>
-      <code>string</code>
+      <code>number</code>
       <br />
+      0.5
     </td>
   </tr>
   <tr>
     <td>
-      <code>error</code>
+      <code>background</code>
     </td>
-    <td>
-      dimensionErrMsg and measureErrMsg to bedisplayed when invlaid items
-      supplied to cols property
-    </td>
+    <td>Background of the items not selected</td>
     <td>
       <code>string</code>
       <br />
+      "var(--oc-gray-1)"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>label</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.label</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>fontColor</code>
+    </td>
+    <td>Label color</td>
+    <td>
+      <code>string</code>
+      <br />
+      "fontAlt"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>noData</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.noData</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>verticalAlign</code>
+    </td>
+    <td>Alignment of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "top"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>display</code>
+    </td>
+    <td>Display of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "inline-block"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderRadius</code>
+    </td>
+    <td>Border radius of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "10px"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Background color of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "var(--oc-gray-1)"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderCollapse</code>
+    </td>
+    <td>Border collapse of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "collapse"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>noDataContent</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.noDataContent</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>display</code>
+    </td>
+    <td>Display attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "inline-block"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>alignItems</code>
+    </td>
+    <td>Alignment attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "center"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>justifyContent</code>
+    </td>
+    <td>Justify attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "center"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>margin</code>
+    </td>
+    <td>Margin attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "10px"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>error</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.error</code>
+    </th>
+  </tr>{" "}
+  <tr>
+    <td>
+      <code>dimensionErrMsg</code>
+    </td>
+    <td>error mesage for invalid dimension</td>
+    <td>
+      <code>string</code>
+      <br />
+      "Invalid Dimension."
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>measureErrMsg</code>
+    </td>
+    <td>error mesage for invalid measure</td>
+    <td>
+      <code>string</code>
+      <br />
+      "Invalid Measure. No values returned."
     </td>
   </tr>
 </table>
 
-### column
+### bar
 
-Settings in base.column are below :
+Settings in base.bar are below :
 
-e.g. <code>base.column.main.zoomScrollOnColumnWidth = 30</code>.
+e.g. <code>base.bar.main.zoomScrollOnColumnWidth = 30</code>.
 
 <table>
   <tr>
@@ -1036,13 +1253,18 @@ e.g. <code>base.column.main.zoomScrollOnColumnWidth = 30</code>.
     <th>Options / Example</th>
   </tr>
   <tr>
-    <th>Main</th>
+    <th>
+      <code>main</code>
+    </th>
+    <th colspan="2">
+      <code>base.bar.main</code>
+    </th>
   </tr>
   <tr>
     <td>
       <code>zoomScrollOnColumnWidth</code>
     </td>
-    <td>Minimum column width at which brushing will occur</td>
+    <td>Minimum bar width at which brushing will occur</td>
     <td>
       <code>number</code> <br />
     </td>
@@ -1051,7 +1273,7 @@ e.g. <code>base.column.main.zoomScrollOnColumnWidth = 30</code>.
     <td>
       <code>columnPadding</code>
     </td>
-    <td>Padding to be used between each column</td>
+    <td>Padding to be used between each bar</td>
     <td>
       <code>number</code> <br />
     </td>
@@ -1091,8 +1313,52 @@ e.g. <code>base.column.main.zoomScrollOnColumnWidth = 30</code>.
     </td>
   </tr>
   <tr>
-    <td>columns</td>
-  </tr> <tr>
+    <th>
+      <code>overview</code>
+    </th>
+    <th colspan="2">
+      <code>base.bar.overview</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>opacity</code>
+    </td>
+    <td>Opacity for the mini chart</td>
+    <td>
+      <code>number</code>
+      0.5
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>stroke</code>
+    </td>
+    <td>Stroke color for the mini chart</td>
+    <td>
+      <code>string</code>
+      "var(--oc-gray-4)"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>strokeWidth</code>
+    </td>
+    <td>Stroke width for the mini chart</td>
+    <td>
+      <code>number</code>
+      0.5
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>columns</code>
+    </th>
+    <th colspan="2">
+      <code>base.bar.columns</code>
+    </th>
+  </tr>
+  <tr>
     <td>
       <code>stroke</code>
     </td>
@@ -1100,7 +1366,8 @@ e.g. <code>base.column.main.zoomScrollOnColumnWidth = 30</code>.
     <td>
       <code>string</code>
     </td>
-  </tr> <tr>
+  </tr>
+  <tr>
     <td>
       <code>strokeWidth</code>
     </td>

@@ -16,7 +16,7 @@ The simpliest method to render a KPI is to add a Kpi element to the page and set
 
       <KPI cols={["=Sum([Sales Quantity])"]} />
 
-This can get more complex by setting various other propertes with in the cols property whihc will allow for the naming of columns and the ability to sort the data.
+This can get more complex by setting various other propertes with in the cols property which will allow for the naming of columns and the ability to sort the data.
 
 A more advanced version demonstrating this is displayed below.
 
@@ -49,9 +49,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>label</code>
     </td>
-    <td>
-      label to apear on the top of the KPI value
-    </td>
+    <td>label to apear on the top of the KPI value</td>
     <td>
       <code>string</code> <br />
       See sample syntax below
@@ -166,7 +164,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Round vlaue and display large numbers with symbol e.g K for '000s</td>
     <td>
-            <code>bool</code>
+      <code>bool</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -175,7 +173,10 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>precision</code>
     </td>
-    <td>Precision if RoundNum set to true. True equals 2 deciamls places, false equals none</td>
+    <td>
+      Precision if RoundNum set to true. True equals 2 deciamls places, false
+      equals none
+    </td>
     <td>
       <code>bool</code>
     </td>
@@ -194,7 +195,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>alignSelf</code>
     </td>
     <td>Alignment of the KPI Label</td>
-       <td>
+    <td>
       <code>oneOf</code>
       <br />
       "flex-start"
@@ -205,7 +206,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <br />
     </td>
   </tr>
-    <tr>
+  <tr>
     <td>
       <code>padding</code>
     </td>
@@ -214,7 +215,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>string</code>
     </td>
   </tr>
-    <tr>
+  <tr>
     <td>
       <code>maxWidth</code>
     </td>
@@ -269,7 +270,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <b>* default obtained from theme.</b>
     </td>
   </tr>
-      <tr>
+  <tr>
     <td>
       <code>responsive</code>
     </td>
@@ -278,7 +279,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>bool</code>
     </td>
   </tr>
-      <tr>
+  <tr>
     <td>
       <code>onClick</code>
     </td>
@@ -287,7 +288,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>func</code>
     </td>
   </tr>
-      <tr>
+  <tr>
     <td>
       <code>cursor</code>
     </td>
@@ -296,11 +297,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>string</code>
     </td>
   </tr>
-      <tr>
+  <tr>
     <td>
       <code>autoSizeValue</code>
     </td>
-    <td>Automatically resize the label if it is too large for the min wrapper</td>
+    <td>
+      Automatically resize the label if it is too large for the min wrapper
+    </td>
     <td>
       <code>bool</code>
     </td>
@@ -413,3 +416,319 @@ function ColumnDemo() {
   );
 }
 ```
+
+## Theme API
+
+All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
+
+Most of the chart settings are in base.global.chart. Changing any setting in the above will apply to all charts within the application. Specific KPI related theme items are stored in base.kpi. Changing these settings will apply to all KPIs within the application.
+
+### global
+
+Settings in base.global.chart relevant for KPIS are below :
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>allowSelections</code>
+    </td>
+    <td>Allows to enable / disable selctions on charts at a global level.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Apply a background color to all charts within the application.</td>
+    <td>
+      <code>string</code> <br />
+      "white"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderRadius</code>
+    </td>
+    <td>Border radius for all charts.</td>
+    <td>
+      <code>string</code> <br />
+      "10px"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>selection</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.selection</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>opacity</code>
+    </td>
+    <td>Opacity of the item selected</td>
+    <td>
+      <code>number</code>
+      <br />1
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>stroke</code>
+    </td>
+    <td>Stroke of the item selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "black"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>strokeWidth</code>
+    </td>
+    <td>Stroke width of the item selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "1px"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>nonSelection</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.nonSelection</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>opacity</code>
+    </td>
+    <td>Opacity of the items not selected</td>
+    <td>
+      <code>number</code>
+      <br />
+      0.5
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>background</code>
+    </td>
+    <td>Background of the items not selected</td>
+    <td>
+      <code>string</code>
+      <br />
+      "var(--oc-gray-1)"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>label</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.label</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>fontColor</code>
+    </td>
+    <td>Label color</td>
+    <td>
+      <code>string</code>
+      <br />
+      "fontAlt"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>noData</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.noData</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>verticalAlign</code>
+    </td>
+    <td>Alignment of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "top"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>display</code>
+    </td>
+    <td>Display of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "inline-block"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderRadius</code>
+    </td>
+    <td>Border radius of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "10px"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Background color of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "var(--oc-gray-1)"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderCollapse</code>
+    </td>
+    <td>Border collapse of main object to display no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "collapse"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>noDataContent</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.noDataContent</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>display</code>
+    </td>
+    <td>Display attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "inline-block"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>alignItems</code>
+    </td>
+    <td>Alignment attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "center"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>justifyContent</code>
+    </td>
+    <td>Justify attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "center"
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>margin</code>
+    </td>
+    <td>Margin attribute for the no data message</td>
+    <td>
+      <code>string</code>
+      <br />
+      "10px"
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>error</code>
+    </th>
+    <th colspan="2">
+      <code>base.global.chart.error</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>dimensionErrMsg</code>
+    </td>
+    <td>error mesage for invalid dimension</td>
+    <td>
+      <code>string</code>
+      <br />
+      "Invalid Dimension."
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>measureErrMsg</code>
+    </td>
+    <td>error mesage for invalid measure</td>
+    <td>
+      <code>string</code>
+      <br />
+      "Invalid Measure. No values returned."
+    </td>
+  </tr>
+</table>
+
+### kpi
+
+Settings in base.kpi are below :
+
+e.g. <code>base.kpi.wrapper.backgroundColor = "white"</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>
+      <code>wrapper</code>
+    </th>
+    <th colspan="2">
+      <code>base.kpi.wrapper</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>otherTotalSpec</code>
+    </td>
+    <td>Setting at which 'Others' will be dispalyed on chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <code>shape</code>
+      <br />
+      See sample syntax above <br />
+    </td>
+  </tr>
+</table>
