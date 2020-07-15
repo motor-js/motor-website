@@ -4,6 +4,8 @@ title: KPI
 sidebar_label: KPI
 ---
 
+#### KPI. A component displaying data as a single numeric value.
+
 ## Usage
 
 We recommend you start by wrapping your React document with the Motor parent component.
@@ -12,9 +14,15 @@ This handles two things:
 - Connection to the Qlik Engine (you can pass configuration or the engine object directly)
 - Theming
 
-The simpliest method to render a KPI is to add a Kpi element to the page and set the cols props. Such as cols={['=Sum([Sales Quantity])']}
+The simpliest method to render a KPI is to add a Kpi element to the page and set the cols props.
 
-      <KPI cols={["=Sum([Sales Quantity])"]} />
+```javascript
+
+import { KPI } from @motor-js/core
+//...
+<KPI cols={[ "=Sum([Sales Quantity])"]} />
+
+```
 
 This can get more complex by setting various other propertes with in the cols property which will allow for the naming of columns and the ability to sort the data.
 
@@ -423,7 +431,7 @@ All components are styled from the main theme. Each theme can be overwtitten whi
 
 Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific KPI related theme items are stored in kpi. Changing these settings will apply to all KPIs within the application.
 
-### global
+### global.chart
 
 Settings in global.chart relevant for KPIS are below :
 
