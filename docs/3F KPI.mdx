@@ -50,7 +50,12 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>
       <code>object</code> <br />
-      See sample syntax below
+      config = &#123; <br />
+      host: "xxxxxxxxx", <br />
+      secure: false, <br />
+      port: xxxxx, <br />
+      prefix: "", <br />
+      appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx", &#125;
     </td>
   </tr>
   <tr>
@@ -70,7 +75,10 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>Columns from Qlik Data Model to render in the chart. </td>
     <td>
       <code>array</code> <br />
-      See sample syntax below
+      cols=&#123;[ <br />
+      "=Avg([Case Duration Time])"
+      <br />
+      ]&#125;
     </td>
   </tr>
   <tr>
@@ -78,7 +86,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>calcCondition</code>
     </td>
     <td>Calculated condition to be met before chart can be displayed.</td>
-    <td>See sample syntax below</td>
+    <td>
+      <code>shape</code> <br />
+      calcCondition= &#123; <br />
+      qCond: "=Avg([Case Duration Time])> 5", <br />
+      qMsg: "Calculation condition has not been met", <br />
+      &#125;
+    </td>
   </tr>
   <tr>
     <td>
