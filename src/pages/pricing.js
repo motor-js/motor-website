@@ -9,7 +9,8 @@ const pricing = (props) => {
         {
             id: 0,
             title: "NON COMMERCIAL",
-            perUsers: "Try before you buy, or use for non-profit",
+            perUsers: "Try before you buy",
+            perUsers2: "Or use for non-profit",
             fee: "Free",
             isMostPopular: false,
             actionLink: "https://identity.amphoradata.com/Register",
@@ -23,14 +24,15 @@ const pricing = (props) => {
         {
             id: 2,
             title: "TEAM",
-            perUsers: "Internal Applications. Up to 5 developers",
+            perUsers: "Internal applications",
+            perUsers2: "Up to 5 developers",
             fee: "£580 per developer, per year",
             isMostPopular: false,
             actionLink: "mailto:contact@amphoradata.com",
             actionName: "Contact Us",
             descriptions: [
                 { text: "Access to full library", access: true },
-                { text: "Email support", access: true },
+                { text: "Support via GitHub", access: true },
                 { text: "Max 5 developers", access: true },
                 { text: "Internal applications", access: true },
                 { text: "Priority support", access: false  },
@@ -41,9 +43,10 @@ const pricing = (props) => {
         {
             id: 1,
             title: "ENTERPRISE",
-            perUsers: "Internal Applications, no developer limit",
+            perUsers: "Internal applications",
+            perUsers2: "No developer limit",
             fee: "Contact us for pricing",
-            isMostPopular: false,
+            isMostPopular: true,
             actionLink: "mailto:contact@amphoradata.com",
             actionName: "Contact Us",
             descriptions: [
@@ -59,9 +62,10 @@ const pricing = (props) => {
         {
             id: 2,
             title: "OEM",
-            perUsers: "Distribute the library to third parties",
+            perUsers: "Distribute to third parties",
+            perUsers2: "No developer limit",
             fee: "Contact us for pricing",
-            isMostPopular: false,
+            isMostPopular: true,
             actionLink: "mailto:contact@amphoradata.com",
             actionName: "Contact Us",
             descriptions: [

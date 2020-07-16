@@ -20,26 +20,16 @@ export const PlanCard = (props) => {
     return (
         <React.Fragment>
             <div className="col col--3">
-                <div className="card plan-card">
+                <div style={props.isMostPopular ? {border: '2px solid var(--redBrand)'}: {}}
+                    className="card plan-card">
                     <div class="card__header">
                         <div className='price-title'>{price.title}</div>
                     </div>
                     <div className="price-sub text--center">{price.perUsers}</div>
+                    <div className="price-sub text--center">{price.perUsers2}</div>
                     <br />
                     <h4 className="text--center">{price.fee}</h4>
 
-                    {props.isMostPopular ? (
-                        <div className="text--center mb-2">
-                            <FontAwesomeIcon
-                                icon={faStar}
-                                size="lg"
-                                className="text--warning mr-1"
-                            />
-                            Most popular
-                        </div>
-                    ) : (
-                        <br />
-                    )}
                     <div className="feat-box">
                         {price.descriptions.map((description) => {
                             if (description.access) { 

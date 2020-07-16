@@ -50,6 +50,8 @@ The library is split into the following core parts
 
 Motor is made up of a series of re-usable components which can be easily brought together to build custom dashboards.
 
+These components are built in React and connect to the Qlik engine using the Engine API and Enigma JS. 
+
 The top level Motor component is firstly used to connect to your Qlik site, this then provides an open connection to the rest
 of the application, via React's Context API.
 
