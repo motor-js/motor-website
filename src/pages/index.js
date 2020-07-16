@@ -133,9 +133,14 @@ function Home() {
             <div className='heading'>Explore Components</div>
             <div className={clsx('col', styles.components)}>
               <div className='left-side'>
-                <div style={{ border: '1px solid red', height: '300px', width: '500px'}}>
-                  Image here
-                </div>
+                <div 
+                  style={{ 
+                    height: '400px',
+                    width: '600px',
+                    backgroundImage: 'url(/img/eg_charts.png)',
+                    backgroundSize: 'cover',
+                  }}
+                />
               </div>
               <div>
                 <div className='right-side'>
