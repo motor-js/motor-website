@@ -32,6 +32,33 @@ const { engine, engineError } = useEngine(config);
 
 Once the engine has been successfully conencted to you can perform functions such as creating hypercubes for data visualisations and creating list objects for listboxes.
 
+## Props
+
+:::info
+You do not need to set the Config prop if the component is a child of the Motor component
+:::
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>config</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>object</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+</table>
+
 ## Sample syntax
 
 ### useEngine configuration

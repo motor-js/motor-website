@@ -32,6 +32,176 @@ const { engine, engineError } = useEngine(config);
 
 Once data has been retrived from the hypercube the user can then pas it on to an object to render its contents.
 
+## Props
+
+:::info
+You do not need to set the Config prop if the component is a child of the Motor component
+:::
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>engine</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>object</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>cols</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>array</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qColumnOrder</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>array</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qCalcCondition</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>calcCondType</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qPage</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>object</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qInterColumnSortOrder</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>array</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qSupressMissing</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>boolean</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qSuppressZero</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>boolean</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qSortByNumeric</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>number</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qSortByAscii</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>number</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qInterLineSortOrder</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>number</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qOtherTotalSpec</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>otherTotalSpecType</code> <br />
+      See sample syntax below
+    </td>
+  </tr>
+</table>
+
 ## Sample syntax
 
 ### useHyperCube configuration
