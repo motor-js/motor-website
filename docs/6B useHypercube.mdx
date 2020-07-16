@@ -23,10 +23,14 @@ We have tried to expose hooks used in the libary so that you can create your own
 
 ```javascript
 
-import { useEngine } from @motor-js/core
+import { useHyperCube } from @motor-js/core
 //...
 
-const { engine, engineError } = useEngine(config);
+const { qLayout, qData } = useHyperCube({
+    engine,
+    cols,
+    qCalcCondition,
+  });
 
 ```
 
