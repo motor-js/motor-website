@@ -835,6 +835,20 @@ All components are styled from the main theme. Each theme can be overwtitten whi
 
 Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific line chart related theme items are stored in line. Changing these settings will apply to all line charts within the application.
 
+Theme settings can be overwritten at a global level. An example of changing the theme colors and disabling selections is below.
+
+```javascript
+
+import { Motor, ... } from @motor-js/core
+//...
+  <Motor config={config} theme={base}>
+   { base.global.colorTheme = "divergent9"}
+   { base.global.chart.allowSelections = false}
+    ...
+  </Motor>
+
+```
+
 ### global.chart
 
 Settings in global.chart are below :
