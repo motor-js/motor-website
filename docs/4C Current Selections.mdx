@@ -88,14 +88,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ## Examples
 
-##### Simple Filter example
+##### Simple Current Selections example
 
 ```jsx live
 
 function SelectionsTest() {
     return (
     <Motor config={config}>  
-     <CurrentSelections />
+      <CurrentSelections />
     </Motor>
     )
 }
@@ -107,6 +107,124 @@ function SelectionsTest() {
 
 ## Theme API
 
-### selections
+### selections.color
 
+Settings in global.selections.color are below:
+
+e.g. <code>global.selections.color.defaultFont = 'brand'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>selections.color</th>
+  </tr>
+  <tr>
+    <td><code>defaultFont</code></td>
+    <td>default font color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>fontTitle</code></td>
+    <td>font title color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>item</code></td>
+    <td>selection item color</td>
+    <td>'string'</td>
+  </tr>
+   <tr>
+    <td><code>clear</code></td>
+    <td>clear icon color</td>
+    <td>'string'</td>
+  </tr> 
+  <tr>
+    <td><code>border</code></td>
+    <td>border color</td>
+    <td>'string'</td>
+  </tr> 
+</table>
+
+<br />
+
+### selections.wrapper
+
+Settings in global.selections.wrapper are below:
+
+e.g. <code>global.selections.wrapper.border = '1px solid'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>selections.wrapper</th>
+  </tr>
+  <tr>
+    <td><code>border</code></td>
+    <td>wrapper border</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>backgroundColor</code></td>
+    <td>wrapper background color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>borderColor</code></td>
+    <td>wrapper border color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>radius</code></td>
+    <td>wrapper border radius</td>
+    <td>'string'</td>
+  </tr>
+</table>
+
+<br />
+
+
+### selections.item
+
+Settings in global.selections.item are below:
+
+e.g. <code>global.selections.item.border = '1px solid'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>selections.item</th>
+  </tr>
+  <tr>
+    <td><code>border</code></td>
+    <td>item border</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>backgroundColor</code></td>
+    <td>item background color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>radius</code></td>
+    <td>item border radius</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>titleFontWeight</code></td>
+    <td>item font weight</td>
+    <td>'string'</td>
+  </tr>
+</table>
 

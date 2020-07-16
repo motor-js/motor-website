@@ -3,3 +3,203 @@ id: Search
 title: Search
 sidebar_label: Search
 ---
+
+#### Search Bar, searh your app and make selections.
+
+
+## Usage
+
+```javascript
+
+import { Search } from @motor-js/core
+
+//...
+
+<Search />
+
+```
+
+
+## Props
+
+:::info
+You do not need to set the Config prop if the component is a child of the Motor component
+:::
+
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+ <tr>
+    <td><code>config</code></td>
+    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
+    <td>&#123; <br />
+      host&#58; 'string', <br />
+      secure&#58; 'boolean', <br />
+      port&#58; 'number', <br />
+      prefix&#58; 'string', <br />
+      appId&#58; 'string' <br />
+      &#125;
+    </td>
+  </tr>
+  <tr>
+    <td><code>size</code></td>
+    <td>size of the selections box</td>
+    <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
+  </tr>
+  <tr>
+    <td><code>width</code></td>
+    <td>width of the selections box</td>
+    <td>'string'< br/><b>'100%'</b></td>
+  </tr>
+  <tr>
+    <td><code>margin</code></td>
+    <td>margin around the selections box</td>
+    <td>'string'< br/><b>'5px'</b></td>
+  </tr>
+  <tr>
+    <td><code>dropHeight</code></td>
+    <td>height of the search dropdown</td>
+    <td>'string'< br/><b>'250px'</b></td>
+  </tr>
+</table>
+
+
+<br />
+
+
+## Examples
+
+##### Simple Search example
+
+```jsx live
+
+function SearchTest() {
+    return (
+    <Motor config={config}>  
+      <Search />
+    </Motor>
+    )
+}
+
+```
+
+<br />
+
+
+## Theme API
+
+### search.color
+
+Settings in global.search.color are below:
+
+e.g. <code>global.search.color.background = 'brand'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>search.color</th>
+  </tr>
+  <tr>
+    <td><code>background</code></td>
+    <td>search background color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>font</code></td>
+    <td>font color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>placeholder</code></td>
+    <td>placeholder font color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>icon</code></td>
+    <td>icon color</td>
+    <td>'string'</td>
+  </tr>
+</table>
+
+<br />
+
+### search.title
+
+Settings in global.search.title are below:
+
+e.g. <code>global.search.title.border = '1px solid'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>search.title</th>
+  </tr>
+  <tr>
+    <td><code>border</code></td>
+    <td>title border</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>borderColor</code></td>
+    <td>title border color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>radius</code></td>
+    <td>title border radius</td>
+    <td>'string'</td>
+  </tr>
+</table>
+
+<br />
+
+
+### search.suggestions
+
+Settings in global.search.suggestions are below:
+
+e.g. <code>global.search.suggestions.hoverColor = 'altGray4'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>search.suggestions</th>
+  </tr>
+  <tr>
+    <td><code>borderBottom</code></td>
+    <td>suggestions drodown bottom border</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>hoverColor</code></td>
+    <td>hover color of suggestion items</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>titleColor</code></td>
+    <td>suggestions title (dimension name) color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>valueColor</code></td>
+    <td>suggestions value color</td>
+    <td>'string'</td>
+  </tr>
+</table>
+

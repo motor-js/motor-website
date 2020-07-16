@@ -3,3 +3,125 @@ id: Smart Heading
 title: Smart Heading
 sidebar_label: Smart Heading
 ---
+
+#### Smart Heading, use as free test heading, or assign as the app name or last reload time.
+
+
+## Usage
+
+```javascript
+
+import { SmartHeading } from @motor-js/core
+
+//...
+<SmartHeading />
+
+```
+
+
+## Props
+
+:::info
+You do not need to set the Config prop if the component is a child of the Motor component
+:::
+
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+ <tr>
+    <td><code>config</code></td>
+    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
+    <td>&#123; <br />
+      host&#58; 'string', <br />
+      secure&#58; 'boolean', <br />
+      port&#58; 'number', <br />
+      prefix&#58; 'string', <br />
+      appId&#58; 'string' <br />
+      &#125;
+    </td>
+  </tr>
+  <tr>
+    <td><code>size</code></td>
+    <td>size of the selections box</td>
+    <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
+  </tr>
+  <tr>
+    <td><code>width</code></td>
+    <td>width of the selections box</td>
+    <td>'string'< br/><b>'100%'</b></td>
+  </tr>
+  <tr>
+    <td><code>margin</code></td>
+    <td>margin around the selections box</td>
+    <td>'string'< br/><b>'5px'</b></td>
+  </tr>
+  <tr>
+    <td><code>dropHeight</code></td>
+    <td>height of the search dropdown</td>
+    <td>'string'< br/><b>'250px'</b></td>
+  </tr>
+</table>
+
+
+<br />
+
+
+## Examples
+
+##### Simple Smart Heading example
+
+```jsx live
+
+function SmartHeadingTest() {
+    return (
+    <Motor config={config}>  
+      <SmartHeading />
+    </Motor>
+    )
+}
+
+```
+
+<br />
+
+
+## Theme API
+
+### search.color
+
+Settings in global.search.color are below:
+
+e.g. <code>global.search.color.background = 'brand'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>search.color</th>
+  </tr>
+  <tr>
+    <td><code>background</code></td>
+    <td>search background color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>font</code></td>
+    <td>font color</td>
+    <td>'string'</td>
+  </tr>
+  <tr>
+    <td><code>placeholder</code></td>
+    <td>placeholder font color</td>
+    <td>'string'</td>
+  </tr>
+</table>
+
+<br />
+

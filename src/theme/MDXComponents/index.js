@@ -14,15 +14,29 @@ import styles from "./styles.module.css";
 
 //-------------------------------------------------------/
 ////// Import the component you need in scope
-import { Motor, Button, Filter, CurrentSelections, Search, Pie, Bar, Column, Line } from "motor-ui";
+import { 
+  Motor,
+  Button,
+  Filter,
+  CurrentSelections,
+  Search,
+  Pie,
+  Bar,
+  Column,
+  Line,
+  Grid,
+  Box,
+  Sidebar,
+  Modal,
+} from "motor-ui";
 
 const config = {
   host: "localhost",
   secure: false,
   port: 19077,
   prefix: "",
-  // appId: 'bd335164-4640-4a3f-970d-2fef039c39bf', // Luke
-  appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
+  appId: 'bd335164-4640-4a3f-970d-2fef039c39bf', // Luke
+  //appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
   //appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Alan
 };
 
@@ -39,6 +53,10 @@ const SCOPE = {
   Column,
   Line,
   config,
+  Grid,
+  Box,
+  Sidebar,
+  Modal,
 };
 
 export default {
