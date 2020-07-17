@@ -13,7 +13,7 @@ module.exports = {
   }],
   themeConfig: {
     announcementBar: {
-      id: 'supportus-new',
+      id: 'alpha',
       content:
         '<span class="text-white"<b>motor js</b> is in alpha, beware of breaking changes ⚒️</span>',
     },

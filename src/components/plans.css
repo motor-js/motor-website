@@ -2,6 +2,7 @@
   padding: 1rem;
   margin: 1rem 0;
   display: flex;
+  min-width: 300px;
   align-items: center;
   justify-content: flex-start;
   border: 1px solid #cccccc;

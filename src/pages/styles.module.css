@@ -67,6 +67,12 @@
   align-items: center;
 }
 
+.usage {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+
 .darkcontainer {
   display: flex;
   padding: 2rem 0;

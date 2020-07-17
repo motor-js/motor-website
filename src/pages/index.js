@@ -5,6 +5,22 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import CustomCodeBlock from '../components/CustomCodeBlock'
+
+const usageExample =   
+
+`
+import { Filter, Motor } from 'motor-ui'
+
+<Motor 
+  config={ 
+    //Connect to your Qlik site
+  }
+>
+  <Fiter cols=['AwesomeDimension'] />
+</Motor>
+
+`
 
 const features = [
   {
@@ -114,6 +130,37 @@ function Home() {
       </header>
       </div>
       <main>
+      <section className={styles.usage}>
+          <div className="container">
+            <div className={clsx('col', styles.usage)}>
+              <div className='usage'>
+                <div className='usage-title'>Installation</div>
+                <div className='usage-body'>Install the source files via NPM.</div>
+                <CustomCodeBlock js={'npm install @motor-js/core'}/>
+                <div className='usage-body'>Or download our starter dashboard.</div>
+                <div className="plan-button">
+                            <Link
+                                id='button1'
+                                className={clsx(
+                                    'button b1 button--lg',
+                                    styles.button,
+                                )}
+                                to={useBaseUrl('docs/Getting%20Started')}>
+                                {'Download'}
+                            </Link>
+                        </div>
+              </div>
+              
+              <div className='usage'>
+                <div className='usage-title'>Usage</div>
+                <div className='usage-body'>
+                  Connect to your Qlik site through our Motor component and then start building.
+                </div>
+                <CustomCodeBlock js={usageExample}/>
+              </div>
+            </div>
+          </div>
+        </section>
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
@@ -130,7 +177,7 @@ function Home() {
         )}
         <section className={styles.components}>
           <div className="container">
-            <div className='heading'>Explore Components</div>
+            <div className='heading'>Explore Charts & Components</div>
             <div className={clsx('col', styles.components)}>
               <div className='left-side'>
                 <div 
