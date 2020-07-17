@@ -757,7 +757,24 @@ All components are styled from the main theme. Each theme can be overwtitten whi
 
 Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific column chart related theme items are stored in column. Changing these settings will apply to all column charts within the application.
 
-Theme settings can be overwritten at a global level. An example of changing the theme colors and disabling selections is below.
+Theme settings can be overwritten at a global level. There are 2 possible approaches. Examples are shown below.
+
+```javascript
+
+import { Motor, ... } from @motor-js/core
+//...
+
+  const myTheme = {
+    global: {
+      colorTheme: "divergent9",
+    },
+  };
+
+  <Motor config={config} theme={myTheme}>
+    ...
+  </Motor>
+
+```
 
 ```javascript
 

@@ -637,6 +637,25 @@ Most of the chart settings are in global.chart. Changing any setting in the abov
 
 Theme settings can be overwritten at a global level. An example of changing the theme colors and disabling selections is below.
 
+Theme settings can be overwritten at a global level. There are 2 possible approaches. Examples are shown below.
+
+```javascript
+
+import { Motor, ... } from @motor-js/core
+//...
+
+  const myTheme = {
+    global: {
+      colorTheme: "divergent9",
+    },
+  };
+
+  <Motor config={config} theme={myTheme}>
+    ...
+  </Motor>
+
+```
+
 ```javascript
 
 import { Motor, ... } from @motor-js/core
@@ -646,6 +665,8 @@ import { Motor, ... } from @motor-js/core
    { base.global.chart.allowSelections = false}
     ...
   </Motor>
+
+```
 
 ```
 
@@ -1060,3 +1081,4 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     </td>
   </tr>
 </table>
+```
