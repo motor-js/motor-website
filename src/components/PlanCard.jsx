@@ -1,9 +1,13 @@
 import React from "react";
-import clsx from 'clsx';
+import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle, faTimesCircle } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCheckCircle,
+  faTimesCircle,
+} from "@fortawesome/free-regular-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import styles from "../pages/styles.module.css";
 
 import "./plans.css";
@@ -81,9 +85,50 @@ export const PlanCard = (props) => {
                             {price.actionName}
                         </Link>
                     </div>
-                    )}
-                </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div
+                    key={description.text}
+                    className="d-flex mb-2 unav-features"
+                  >
+                    <FontAwesomeIcon
+                      icon={description.icon || faTimesCircle}
+                      size="lg"
+                      className="unav-icon"
+                    />
+                    <div className="unav-feat-text text--left">
+                      {description.text}
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          </div>
+          {price.title === "NON COMMERCIAL" ? (
+            <div className="plan-button">
+              <Link
+                id="button1"
+                className={clsx("button b1 button--lg", styles.button)}
+                to={useBaseUrl("docs/Getting%20Started")}
+              >
+                {price.actionName}
+              </Link>
             </div>
-        </React.Fragment>
-    );
+          ) : (
+            <div className="plan-button">
+              <Link
+                id="button2"
+                className={clsx("button b1 button--lg", styles.button)}
+                to={useBaseUrl("docs/Getting%20Started")}
+              >
+                {price.actionName}
+              </Link>
+            </div>
+          )}
+        </div>
+      </div>
+    </React.Fragment>
+  );
 };

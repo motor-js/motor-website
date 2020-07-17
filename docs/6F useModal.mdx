@@ -3,3 +3,82 @@ id: useModal
 title: useModal
 sidebar_label: useModal
 ---
+
+#### useModal hook. A hook allowing the user to retrive data usinga QLik hypercube.
+
+## Usage
+
+Hooks are a new addition in React. They let you use state and other React features without writing a class. To learn more abou hook in react please read : <a>https://reactjs.org/docs/hooks-intro.html</a>
+
+The motivation for introdcuitng hooks in React are:
+
+- It’s hard to reuse stateful logic between components
+- Complex components become hard to understand
+- Classes confuse both people and machines
+- Complex components become hard to understand
+
+To solve these problems, Hooks let you use more of React’s features without classes.
+
+We have tried to expose hooks used in the libary so that you can create your own visualisations if you wish.
+
+```javascript
+
+import { useModal } from @motor-js/core
+//...
+
+const {isShowing, toggle} = useModal();
+
+```
+
+## Sample syntax
+
+### useModal configuration
+
+```jsx {8,13-36}
+import React from "react";
+import { useModal, Modal } from "motor-ui";
+
+
+function ModalObject() {
+
+ {
+  const { isShowing, toggle } = useModal()
+  console.log(google)
+  return (
+    <>
+      <Motor config={config}>
+        <Modal
+          header={
+            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>
+              Modal Title
+            </div>
+          }
+          footer={
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Button width="100px" onClick={toggle}>
+                Close
+              </Button>
+            </div>
+          }
+          isShowing={isShowing}
+        >
+          Modal Content, like some filters...
+          <div
+            style={{ display: 'flex', height: '50px', padding: '20px 0px' }}
+          >
+            <Filter label="Province" dimension={['province']} size="small" />
+            <Filter label="Country" dimension={['country']} size="small" />
+            <Filter label="Region" dimension={['region_1']} size="small" />
+          </div>
+        </Modal>
+        <Button onClick={toggle}>Show Modal</Button>
+      </Motor>
+    </>
+  )
+}
+
+export default ModalObject;
+
+......
+/>
+```

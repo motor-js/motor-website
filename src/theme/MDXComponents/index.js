@@ -52,6 +52,7 @@ const SCOPE = {
   Bar,
   Column,
   Line,
+  KPI,
   config,
   Grid,
   Box,
