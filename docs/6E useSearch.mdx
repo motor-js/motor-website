@@ -26,11 +26,17 @@ We have tried to expose hooks used in the libary so that you can create your own
 import { useSearch } from @motor-js/core
 //...
 
-const { qLayout, clearSelections } = useSearch({ engine });
+  const { searchResults, select } = useSearch({
+    engine,
+    searchValue,
+    dimensions,
+    qCount,
+    qGroupItemCount,
+  });
 
 ```
 
-Once data has been retrived from the hypercube the user can then pas it on to an object to render its contents.
+Once data has been retrived from the search hook it can then pass it on to an object to render its contents.
 
 ## Props
 
@@ -127,9 +133,15 @@ import { useEngine, useSearch } from "motor-ui";
 
 function SearchObject({ engine }) {
 
- const { qLayout, clearSelections } = useSearch({ engine });
+   const { searchResults, select } = useSearch({
+    engine,
+    searchValue,
+    dimensions,
+    qCount,
+    qGroupItemCount,
+  });
 
-  console.log("layout: ", qLayout);
+  console.log("searchResults: ", searchResults);
 
   return <div></div>;
 }
