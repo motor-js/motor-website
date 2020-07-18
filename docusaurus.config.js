@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'The React Framework for Qlik Mashups',
+  title: 'The React Framework for Qlik Sense Mashups',
   tagline: 'Charts, Components & Utilities for the rapid creation of custom dashboards off the Qlik Engine',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',

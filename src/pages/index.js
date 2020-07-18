@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import CustomCodeBlock from '../components/CustomCodeBlock'
+import SubscriptionForm from '../components/SubscriptionForm'
 
 const usageExample =   
 
@@ -17,7 +18,9 @@ import { Filter, Motor } from 'motor-ui'
     //Connect to your Qlik site
   }
 >
+  //...
   <Fiter cols=['AwesomeDimension'] />
+  //...
 </Motor>
 
 `
@@ -135,28 +138,40 @@ function Home() {
             <div className={clsx('col', styles.usage)}>
               <div className='usage'>
                 <div className='usage-title'>Installation</div>
-                <div className='usage-body'>Install the source files via NPM.</div>
-                <CustomCodeBlock js={'npm install @motor-js/core'}/>
-                <div className='usage-body'>Or download our starter dashboard.</div>
+                <div className='usage-body'>
+                <div className='usage-text'>Install the source files via NPM.</div>
+                <div className='usage-text'>
+                  <CustomCodeBlock js={'npm install @motor-js/core'}/>
+                </div>
+                </div>
+                <div className='usage-body'>
+                <div className='usage-text'>Or download our starter dashboard.</div>
                 <div className="plan-button">
                             <Link
-                                id='button1'
+                                id='button-starter'
                                 className={clsx(
-                                    'button b1 button--lg',
+                                    'button b2 button--md',
                                     styles.button,
                                 )}
                                 to={useBaseUrl('docs/Getting%20Started')}>
                                 {'Download'}
                             </Link>
                         </div>
+                        </div>
               </div>
               
               <div className='usage'>
                 <div className='usage-title'>Usage</div>
-                <div className='usage-body'>
-                  Connect to your Qlik site through our Motor component and then start building.
+                <div className='usage-text'>
+                  Connect to your Qlik site through our Motor component and then use the components
+                  without any additional setup.
                 </div>
-                <CustomCodeBlock js={usageExample}/>
+                <div className='usage-text'>
+                  <CustomCodeBlock js={usageExample}/>
+                </div>
+                <div className='usage-text'>
+                 Explore the docs
+                </div>
               </div>
             </div>
           </div>

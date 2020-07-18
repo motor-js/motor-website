@@ -84,47 +84,6 @@ export const PlanCard = (props) => {
                             to={useBaseUrl('docs/Getting%20Started')}>
                             {price.actionName}
                         </Link>
-                    </div>
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    key={description.text}
-                    className="d-flex mb-2 unav-features"
-                  >
-                    <FontAwesomeIcon
-                      icon={description.icon || faTimesCircle}
-                      size="lg"
-                      className="unav-icon"
-                    />
-                    <div className="unav-feat-text text--left">
-                      {description.text}
-                    </div>
-                  </div>
-                );
-              }
-            })}
-          </div>
-          {price.title === "NON COMMERCIAL" ? (
-            <div className="plan-button">
-              <Link
-                id="button1"
-                className={clsx("button b1 button--lg", styles.button)}
-                to={useBaseUrl("docs/Getting%20Started")}
-              >
-                {price.actionName}
-              </Link>
-            </div>
-          ) : (
-            <div className="plan-button">
-              <Link
-                id="button2"
-                className={clsx("button b1 button--lg", styles.button)}
-                to={useBaseUrl("docs/Getting%20Started")}
-              >
-                {price.actionName}
-              </Link>
             </div>
           )}
         </div>

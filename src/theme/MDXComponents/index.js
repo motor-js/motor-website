@@ -24,6 +24,7 @@ import {
   Bar,
   Column,
   Line,
+  KPI,
   Grid,
   Box,
   Sidebar,
