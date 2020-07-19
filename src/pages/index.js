@@ -7,23 +7,23 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import CustomCodeBlock from '../components/CustomCodeBlock'
 import SubscriptionForm from '../components/SubscriptionForm'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowAltCircleDown,
+  faArrowAltCircleRight,
+} from "@fortawesome/free-regular-svg-icons";
 
 const usageExample =   
-
 `
-import { Filter, Motor } from 'motor-ui'
+import { Filter, Motor } from '@motor-js/core'
 
-<Motor 
-  config={ 
-    //Connect to your Qlik site
-  }
->
+<Motor config={ /* Connect to your Qlik site */ }>
   //...
-  <Fiter cols=['AwesomeDimension'] />
+  <Filter cols=['AwesomeDimension'] />
   //...
 </Motor>
 
-`
+`.trim()
 
 const features = [
   {
@@ -147,17 +147,21 @@ function Home() {
                 <div className='usage-body'>
                 <div className='usage-text'>Or download our starter dashboard.</div>
                 <div className="plan-button">
-                            <Link
-                                id='button-starter'
-                                className={clsx(
-                                    'button b2 button--md',
-                                    styles.button,
-                                )}
-                                to={useBaseUrl('docs/Getting%20Started')}>
-                                {'Download'}
-                            </Link>
-                        </div>
-                        </div>
+                  <Link
+                   id='button-starter'
+                    className={clsx(
+                      'button b2 button--md',
+                      styles.button,
+                    )}
+                    to={useBaseUrl('docs/Getting%20Started')}>
+                       <FontAwesomeIcon
+                          icon={faArrowAltCircleDown}
+                          size="lg"
+                          />
+                      {' Download'}
+                    </Link>
+                    </div>
+                </div>
               </div>
               
               <div className='usage'>
@@ -169,8 +173,20 @@ function Home() {
                 <div className='usage-text'>
                   <CustomCodeBlock js={usageExample}/>
                 </div>
-                <div className='usage-text'>
-                 Explore the docs
+                <div>
+                <Link
+                   id='button-starter'
+                    className={clsx(
+                      'button b2 button--md',
+                      styles.button,
+                    )}
+                    to={useBaseUrl('docs/Getting%20Started')}>
+                       <FontAwesomeIcon
+                          icon={faArrowAltCircleRight}
+                          size="lg"
+                          />
+                      {' Explore the Docs'}
+                    </Link>
                 </div>
               </div>
             </div>

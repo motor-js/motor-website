@@ -16,6 +16,7 @@ module.exports = {
       id: 'alpha',
       content:
         '<span class="text-white"<b>motor js</b> is in alpha, beware of breaking changes ⚒️</span>',
+     /* backgroundColor: 'var(--blueBrand)', */
     },
     googleAnalytics: {
       trackingID: '',

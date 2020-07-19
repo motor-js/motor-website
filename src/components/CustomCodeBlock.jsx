@@ -1,66 +1,25 @@
 import React, { useState } from 'react'
 import CodeBlock from '@theme/CodeBlock'
+import Highlight, { defaultProps }  from 'prism-react-renderer'
+import theme from "prism-react-renderer/themes/nightOwl";
 
 export default function CustomCodeBlock({
-  header,
-  code,
-  highlight,
-  js,
-  jsHighlight,
-  response,
-  language,
+  js
 }) {
-  const [showResponse, toggleResponse] = useState(false)
-
-  let wrapperClass = ''
-  if (header) wrapperClass += ' code-with-header'
-  if (response) wrapperClass += ' code-with-response'
-
+   
   return (
-    <>
-      <div className={wrapperClass}>
-        {header && <div className="code-header">{header}</div>}
-        <>
-          {code && (
-            <CodeBlock className={language || 'bash'} metastring={highlight}>
-              {code}
-            </CodeBlock>
-          )}
-          {js && <CodeBlock metastring={jsHighlight}>{js}</CodeBlock>}
-        </>
-      </div>
-      {response && (
-        <>
-          <div className={'code-with-header'}>
-            <a
-              className="code-header has-hover-pointer"
-              style={showResponse ? styles.responseShown : styles.responseHidden}
-              onClick={() => toggleResponse(!showResponse)}
-            >
-              {showResponse ? 'Hide' : 'Show'} Response
-            </a>
-            {showResponse && <CodeBlock>{response}</CodeBlock>}
-          </div>
-        </>
+    <Highlight {...defaultProps} code={js} theme={theme} language="jsx">
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={style}>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
       )}
-    </>
+    </Highlight>
   )
-}
-
-const styles = {
-  responseShown: {
-    textAlign: 'right',
-    display: 'block',
-    borderRadius: '0',
-    color: 'var(--custom-primary)',
-    borderTop: '1px solid #444',
-  },
-  responseHidden: {
-    textAlign: 'right',
-    display: 'block',
-    borderBottom: 'none',
-    borderRadius: '0 0 4px 4px',
-    borderTop: '1px solid #444',
-    color: '#ccc',
-  },
 }
