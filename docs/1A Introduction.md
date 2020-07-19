@@ -24,7 +24,6 @@ brand color, to editing our theme object and component functionality via props.
 - <b>Responsive Components</b>: All our components are responsive out of the box
 - <b>Helpful Utilities</b>: Re-usable hooks to simplify interaction with the associative engine
 
-<br />
 
 ## What it is
 

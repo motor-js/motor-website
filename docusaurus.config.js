@@ -12,6 +12,7 @@ module.exports = {
     type: 'text/css',
   }],
   themeConfig: {
+    disableDarkMode: true,
     announcementBar: {
       id: 'alpha',
       content:
