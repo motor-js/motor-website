@@ -3,3 +3,127 @@ id: Sidebar
 title: Sidebar
 sidebar_label: Sidebar
 ---
+
+#### Sidebar Layout. A CSS Sidebar Layout Component
+
+## Usage
+
+We have created layout componetns to make dashabord design easier and quicker.
+
+```javascript
+
+import { Sidebar } from @motor-js/core
+//...
+    <Sidebar ...    >
+    ...
+    </Sidebar>
+
+```
+
+## Props
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>{" "}
+  <tr>
+    <td>
+      <code>children</code>
+    </td>
+    <td>Contents of the sidebar.</td>
+    <td>
+      <code>node</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>collapsable</code>
+    </td>
+    <td>Whether the sidebar is collapsable.</td>
+    <td>
+      <code>bool</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>width</code>
+    </td>
+    <td>Width of the sidebar.</td>
+    <td>
+      <code>string</code> <br />
+    </td>
+  </tr>
+</table>
+
+## Sample Syntax
+
+### Sidebar configuration
+
+```jsx {11}
+//...
+<Sidebar
+  collapsable
+  padding="100px 5px"
+  isOpen={isOpen}
+  backgroundColor="lightblue"
+>
+  Sidebar Content
+</Sidebar>
+```
+
+## Example
+
+A simple sideBar example
+
+### Simple sidebar
+
+Render a simple sidebar
+
+```jsx live
+function SideBarDemo() {
+  const { isOpen, toggle } = useSidebar();
+  return (
+    <Motor config={config}>
+      <div style={{ overflow: "hidden", height: "300px", width: "500px" }}>
+        <Sidebar
+          width="30%"
+          collapsable
+          direction="column"
+          padding="15px 12px"
+          isOpen={isOpen}
+          backgroundColor="altGray1"
+          justifyContent="top"
+          border={{ color: "brand" }}
+        >
+          <Box direction="column" overflow="visible">
+            <Box
+              gridArea="header"
+              border={{ side: "bottom", color: "brand" }}
+              padding="0px 0px 10px 0px"
+              direction="row"
+              align="center"
+              size="large"
+              overflow="hidden"
+            >
+              <Button onClick={toggle} size={25}>
+                Hide Sidebar
+              </Button>
+              Filters
+            </Box>
+            <Box
+              direction="column"
+              padding="0px 0px 0px 30px"
+              overflow="visible"
+            >
+              {/** FILTERS */}
+            </Box>
+          </Box>
+        </Sidebar>
+        <Button onClick={toggle}>Show Sidebar</Button>
+      </div>
+    </Motor>
+  );
+}
+```
