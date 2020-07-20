@@ -59,23 +59,18 @@ You do not need to set the Config prop if the component is a child of the Motor 
       outside of the Motor component.
     </td>
     <td>
-      <code>object</code>
-      <br />
-      See sample syntax below
+      <code>object</code> <br />
+      const &#123;(engine, engineError)&#125; = useEngine(config);
     </td>
   </tr>
   <tr>
     <td>
       <code>searchValue</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Value to be search for.</td>
     <td>
       <code>string</code>
       <br />
-      See sample syntax below
     </td>
   </tr>
   <tr>
@@ -83,8 +78,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>dimensions</code>
     </td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
+      List of the search fields. If empty, the search is performed in all fields
+      of the app.
     </td>
     <td>
       <code>array</code>
@@ -96,10 +91,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>qCount</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Number of search groups to return.</td>
     <td>
       <code>number</code>
       <br />
@@ -110,14 +102,10 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>qGroupItemCount</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Number of search groups to return.</td>
     <td>
       <code>number</code>
       <br />
-      See sample syntax below
     </td>
   </tr>
 </table>
@@ -126,7 +114,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ### useSearch configuration
 
-```jsx {10-14}
+```jsx {7-13}
 import React from "react";
 import { useEngine, useSearch } from "motor-ui";
 
