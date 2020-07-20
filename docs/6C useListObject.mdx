@@ -63,17 +63,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>qPage</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Page structure of data to retrieve.</td>
     <td>
       <code>
         &#123; qTop: number, qLeft: number, qWidth: number, qHeight: number
         &#125;
       </code>{" "}
       <br />
-      See sample syntax below
     </td>
   </tr>
   <tr>
@@ -86,33 +82,25 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>
       <code>object</code> <br />
-      See sample syntax below
+      const &#123;(engine, engineError)&#125; = useEngine(config);
     </td>
   </tr>
   <tr>
     <td>
       <code>dimension</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Dimension data to retrieve.</td>
     <td>
       <code>array</code> <br />
-      See sample syntax below
     </td>
   </tr>
   <tr>
     <td>
       <code>label</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>label for the data.</td>
     <td>
       <code>string</code> <br />
-      See sample syntax below
     </td>
   </tr>
 </table>
@@ -121,7 +109,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ### useListObject configuration
 
-```jsx {10-14}
+```jsx {9-24}
 import React from "react";
 import { useEngine, useListObject } from "motor-ui";
 
@@ -156,4 +144,66 @@ export default ListObject;
 
 ......
 />
+```
+
+## Example
+
+The example is based off the Consumer Sales Qlik Sense application.
+
+### Retrieve data from the model
+
+Retrieve data sorted by dimension.
+
+```jsx {29-44}
+import React from "react";
+import { useEngine, useListObject } from "motor-ui";
+
+function HyperCubeDemo() {
+  return (
+    <Motor config={config}>
+
+    const qPage = {
+    qTop: 0,
+    qLeft: 0,
+    qWidth: 1,
+    qHeight: 10000,
+  };
+
+    const config={{
+      host: "xxxxxxxxx",
+      secure: false,
+      port: xxxxx,
+      prefix: "",
+      appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+    }}
+
+    const diemnsion = [Product Sub Group Desc];
+
+    const label =  "Product Sub Group"
+
+    const { engine, engineError } = useEngine(config);
+
+    const {
+    qData,
+    qLayout,
+    select,
+    selections,
+    searchListObjectFor,
+    acceptListObjectSearch,
+    beginSelections,
+    endSelections,
+    changePage,
+  } = useListObject({
+    qPage,
+    engine,
+    dimension,
+    label,
+  });
+
+  console.log("layout: ", qLayout);
+  console.log("data: ", qData);
+
+    </Motor>
+  );
+}
 ```
