@@ -3,3 +3,275 @@ id: Grid
 title: Grid
 sidebar_label: Grid
 ---
+
+#### Grid Layout. A CSS Grid Layout Component
+
+## Usage
+
+We have created layout componetns to make dashabord design easier and quicker.
+
+```javascript
+
+import { Grid } from @motor-js/core
+//...
+    <Grid ...
+    >
+    ...
+    </Grid>
+
+```
+
+## Props
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>areas</code>
+    </td>
+    <td>
+      grid-template-areas CSS property to specify named grid areas.
+      <br />
+      Passed either as an array of arrays or an array of objects.
+    </td>
+    <td>
+      <code>arrayOf</code> <br />
+      <code>shape</code> <br />
+      &#123; <br />
+      name: "header" <br />
+      start: [1,2], <br />
+      end: [3,4], <br />
+      &#125; <br />
+      <code>arrayOf</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>rows</code>
+    </td>
+    <td>
+      Row sizes. If an array value is an array, the inner array indicates the
+      minimum and maximum sizes for the row.
+      <br /> Specifying a single string will cause automatically added rows to be
+      the specified size.
+    </td>
+    <td>
+      <code>array</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>columns</code>
+    </td>
+    <td>
+      Column sizes. If an array value is an array, the inner array indicates the
+      minimum and maximum sizes for the column.
+      <br /> Specifying a single string will repeat multiple columns of that size,
+      as long as there is room for more.
+      <br /> Specifying an object allows indicating how the columns stretch to
+      fit the available space.
+    </td>
+    <td>
+      <code>array</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>fill</code>
+    </td>
+    <td>Whether the width and/or height should fill the container.</td>
+    <td>
+      <code>oneOf</code> <br />
+      <code>bool</code> <br />
+      'horizontal'
+      <br /> 'vertical'
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>overflow</code>
+    </td>
+    <td>Overflow of content for the grid</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "auto", "hidden", "scroll", "visible"
+      <br />
+      <br />
+      <code>shape</code> <br />
+      &#123; <br />
+      horizontal: "auto", "hidden", "scroll", "visible", <br />
+      vertical: "auto", "hidden", "scroll", "visible" <br />
+      &#125;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>fill</code>
+    </td>
+    <td>Sets the gaps (gutters) between rows and columns.</td>
+    <td>
+      <code>string</code> <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Grid backgroundColor</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>justify</code>
+    </td>
+    <td>Justify the contents along the cross axis</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "around" <br />
+      "between" <br />
+      "center" <br />
+      "end" <br />
+      "evenly" <br />
+      "start" <br />
+      "stretch" <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>justifyContent</code>
+    </td>
+    <td>Justify the contents when there is extra space in the cross axis</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "around"
+      <br />
+      "between"
+      <br />
+      "center"
+      <br />
+      "end"
+      <br />
+      "start"
+      <br />
+      "stretch"
+      <br />
+    </td>
+  </tr>{" "}
+  <tr>
+    <td>
+      <code>align</code>
+    </td>
+    <td>Align the contents along the cross axis</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "start"
+      <br /> "center"
+      <br /> "end"
+      <br /> "baseline"
+      <br /> "stretch"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>alignContent</code>
+    </td>
+    <td>Align the contents when there is extra space in the cross axis</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "start" <br />
+      "center" <br />
+      "end" <br />
+      "between" <br />
+      "around" <br />
+      "stretch" <br />
+    </td>
+  </tr>
+</table>
+
+## Sample Syntax
+
+### grid configuration
+
+```jsx {11}
+import { useEngine } from "motor-ui";
+
+//...
+<Grid
+  rows={["60px", "auto", "30px"]}
+  cols={["auto"]}
+  areas={[["header"], ["main"], ["footer"]]}
+  backgroundColor="altGray1"
+>
+  ...
+</Grid>;
+```
+
+## Example
+
+An example showing the uses of the grid layout component
+
+### Grid layout
+
+Sample grid layout
+
+```jsx live
+function BoxDemo() {
+  let flexDirection = "column";
+
+  const boxProps = {
+    backgroundColor: "white",
+    border: { color: "brand" },
+    margin: "5px",
+    borderRadius: "8px",
+  };
+
+  return (
+    <Grid
+      rows={["60px", "auto", "30px"]}
+      cols={["auto"]}
+      areas={[["header"], ["main"], ["footer"]]}
+      backgroundColor="altGray1"
+    >
+      {/** HEADER */}
+      <Box style={{ margin: "auto" }}>
+        <span style={{ color: "black", fontWeight: "bold" }}>
+          Motor Starter Dashboard{" "}
+          <span role="img" aria-label="peace_emoji">
+            ✌️
+          </span>
+        </span>
+      </Box>
+      {/** SIDEBAR */}
+      {/** MAIN */}
+      <Box gridArea="main">{/* <MainContent /> */}</Box>
+      {/** FOOTER */}
+      <Box style={{ margin: "auto" }}>
+        <span style={{ color: "black" }}>
+          made with
+          <span
+            role="img"
+            aria-label="heart_emoji"
+            style={{ padding: "0px 5px" }}
+          >
+            ❤️
+          </span>
+          by motor
+        </span>
+      </Box>
+    </Grid>
+  );
+}
+```
