@@ -173,7 +173,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>alignContent</code>
     </td>
-    <td>Align the contents when there is extra space in the cross axis </td>
+    <td>Align the contents when there is extra space in the cross axis</td>
     <td>
       <code>oneOf</code>
       <br />
@@ -222,6 +222,98 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <br />
       "stretch"
       <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>direction</code>
+    </td>
+    <td>Sets flex-direction. The direction to layout child components</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "row" <br />
+      "column" <br />
+      "row-responsive" <br />
+      "row-reverse" <br />
+      "column-reverse" <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>flex</code>
+    </td>
+    <td>Sets flex-direction. The direction to layout child components</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      "grow" <br /> "shrink" <br />
+      <code>bool</code>
+      <code>shape</code> <br />
+      &#123; <br />
+      grow: <code>number</code> <br />
+      shrink: <code>number</code> <br />
+      &#125;
+    </td>
+  </tr>{" "}
+  <tr>
+    <td>
+      <code>focusable</code>
+    </td>
+    <td>Whether focus should be applied to the box</td>
+    <td>
+      <code>bool</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>basis</code>
+    </td>
+    <td>A fixed or relative size along its container's main axis</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>wrapProp</code>
+    </td>
+    <td>whether children are wrapped in the box container</td>
+    <td>
+      <code>oneOf</code>
+      <code>bool</code>
+      <br />
+      "reverse"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>elevation</code>
+    </td>
+    <td>Setting the box shadow css property</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>onClick</code>
+    </td>
+    <td>OnClick callback function</td>
+    <td>
+      <code>function</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>gridArea</code>
+    </td>
+    <td>Name of the parent grid area to place the box</td>
+    <td>
+      <code>string</code>
     </td>
   </tr>
 </table>
