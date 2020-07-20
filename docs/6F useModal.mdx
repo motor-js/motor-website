@@ -34,7 +34,7 @@ const {isShowing, toggle} = useModal();
 
 ### useModal configuration
 
-```jsx {8,13-36}
+```jsx {8,12-28}
 import React from "react";
 import { useModal, Modal } from "motor-ui";
 
@@ -43,7 +43,6 @@ function ModalObject() {
 
  {
   const { isShowing, toggle } = useModal()
-  console.log(google)
   return (
     <>
       <Motor config={config}>
@@ -63,13 +62,6 @@ function ModalObject() {
           isShowing={isShowing}
         >
           Modal Content, like some filters...
-          <div
-            style={{ display: 'flex', height: '50px', padding: '20px 0px' }}
-          >
-            <Filter label="Province" dimension={['province']} size="small" />
-            <Filter label="Country" dimension={['country']} size="small" />
-            <Filter label="Region" dimension={['region_1']} size="small" />
-          </div>
         </Modal>
         <Button onClick={toggle}>Show Modal</Button>
       </Motor>
@@ -81,4 +73,46 @@ export default ModalObject;
 
 ......
 />
+```
+
+## Example
+
+A simple sideBar example
+
+### Simple Modal
+
+Render a simple Modal
+
+```jsx live
+function ModalDemo() {
+  const { isShowing, toggle } = useModal();
+  return (
+    <Motor config={config}>
+      <Modal
+        header={
+          <div style={{ fontSize: "20px", fontWeight: "bold" }}>
+            Modal Title
+          </div>
+        }
+        footer={
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <Button width="100px" onClick={toggle}>
+              Close
+            </Button>
+          </div>
+        }
+        isShowing={isShowing}
+      >
+        <div style={{ display: "flex", height: "50px", padding: "20px 0px" }}>
+          <Filter
+            label="Product Sub Group"
+            dimension={["Product Sub Group Desc"]}
+            size="small"
+          />
+        </div>
+      </Modal>
+      <Button onClick={toggle}>Show Modal</Button>
+    </Motor>
+  );
+}
 ```
