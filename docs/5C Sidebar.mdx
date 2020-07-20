@@ -8,15 +8,20 @@ sidebar_label: Sidebar
 
 ## Usage
 
-We have created layout componetns to make dashabord design easier and quicker.
+We have created layout components to make dashabord design easier and quicker.
 
 ```javascript
 
 import { Sidebar } from @motor-js/core
-
-    <Sidebar ...    >
-    ...
-    </Sidebar>
+//...
+   <Sidebar
+  collapsable
+  padding="100px 5px"
+  isOpen={isOpen}
+  backgroundColor="lightblue"
+>
+  Sidebar Content
+</Sidebar>
 
 ```
 

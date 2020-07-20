@@ -8,14 +8,18 @@ sidebar_label: Modal
 
 ## Usage
 
-We have created layout componetns to make dashabord design easier and quicker.
+We have created layout components to make dashabord design easier and quicker.
 
 ```javascript
 
 import { Modal } from @motor-js/core
-
-    <Modal ...    >
-    ...
+//...
+      <Modal
+      header={...}
+      footer={...}
+      isShowing={isShowing}
+    >
+      Modal Content, like some filters...
     </Modal>
 
 ```

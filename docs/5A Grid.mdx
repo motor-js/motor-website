@@ -8,17 +8,24 @@ sidebar_label: Grid
 
 ## Usage
 
-We have created layout componetns to make dashabord design easier and quicker.
+We have created layout components to make dashabord design easier and quicker.
 
 ```javascript
 
 import { Grid } from @motor-js/core
-
-  <Grid ...    >
+//...
+<Grid
+  rows={["60px", "auto", "30px"]}
+  cols={["auto"]}
+  areas={[["header"], ["main"], ["footer"]]}
+  backgroundColor="altGray1"
+>
   ...
-  </Grid>
+</Grid>
 
 ```
+
+````
 
 ## Props
 
@@ -214,7 +221,7 @@ import { Grid } from @motor-js/core
 >
   ...
 </Grid>
-```
+````
 
 ## Example
 

@@ -1,0 +1,31 @@
+---
+id: Table
+title: Table
+sidebar_label: Table
+---
+
+#### Table Component. Display data in a tabular format.
+
+## Usage
+
+We recommend you start by wrapping your React document with the Motor parent component.
+This handles two things:
+
+- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
+- Theming
+
+The simpliest method to render a KPI is to add a Kpi element to the page and set the cols props.
+
+```javascript
+
+import { Table } from @motor-js/core
+//...
+<Tble cols={[ "=Sum([Sales Quantity])"]} />
+
+```
+
+This can get more complex by setting various other propertes with in the cols property which will allow for the naming of columns and the ability to sort the data.
+
+A more advanced version demonstrating this is displayed below.
+
+## Props
