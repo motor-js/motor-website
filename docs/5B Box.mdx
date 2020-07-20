@@ -3,3 +3,119 @@ id: Box
 title: Box
 sidebar_label: Box
 ---
+
+#### Box Layout. A Box Wrapper for Components
+
+## Usage
+
+We have created layout componetns to make dashabord design easier and quicker.
+
+```javascript
+
+import { Box } from @motor-js/core
+//...
+<Box height="80px" backgroundColor="#FF6961" margin="10px" />
+
+```
+
+## Props
+
+:::info
+You do not need to set the Config prop if the component is a child of the Motor component
+:::
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>height</code>
+    </td>
+    <td>Height of layout component.</td>
+    <td>
+      <code>string</code> <br />
+      "120px" <br />
+      <code>shape</code> <br />
+      &#123; <br />
+      Min: "120px", <br />
+      Max: "500px", <br />
+      &#125;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>width</code>
+    </td>
+    <td>Width of layout component.</td>
+    <td>
+      <code>string</code> <br />
+      "120px" <br />
+      <code>shape</code> <br />
+      &#123; <br />
+      Min: "120px", <br />
+      Max: "500px", <br />
+      &#125;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>margin</code>
+    </td>
+    <td>The amount of margin around the component</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>'5px'</b>
+    </td>
+  </tr>
+</table>
+
+## Sample Syntax
+
+### box configuration
+
+```jsx {11}
+import { useEngine } from "motor-ui";
+
+<Box height="80px" backgroundColor="#FF6961" margin="10px" />;
+```
+
+## Example
+
+An example showing the uses of the box layout Components
+
+### Boxes nested within each other
+
+Boxes can be nested within each other to for a grid.
+
+```jsx live
+function BoxDemo() {
+  let flexDirection = "column";
+
+  const boxProps = {
+    backgroundColor: "white",
+    border: { color: "brand" },
+    margin: "5px",
+    borderRadius: "8px",
+  };
+
+  return (
+    <Box
+      padding="10px"
+      width="100%"
+      overflow="scroll"
+      direction={flexDirection}
+    >
+      <CurrentSelections minHeight="60px" width="100%" />
+      <Box width="100%" direction={"column"}>
+        <Box flex={true} height={{ min: "120px" }} {...boxProps}></Box>
+        <Box flex={true} height={{ min: "120px" }} {...boxProps}></Box>
+        <Box flex={true} height={{ min: "120px" }} {...boxProps}></Box>
+      </Box>
+    </Box>
+  );
+}
+```
