@@ -4,13 +4,13 @@ title: useSidebar
 sidebar_label: useSidebar
 ---
 
-#### useModal hook. A hook allowing the user to retrive data usinga QLik hypercube.
+#### useSidebar hook. A hook allowing the user to retrive data usinga QLik hypercube.
 
 ## Usage
 
 Hooks are a new addition in React. They let you use state and other React features without writing a class. To learn more abou hook in react please read : <a>https://reactjs.org/docs/hooks-intro.html</a>
 
-The motivation for introdcuitng hooks in React are:
+The motivation for introducing hooks in React are:
 
 - It’s hard to reuse stateful logic between components
 - Complex components become hard to understand
@@ -32,7 +32,7 @@ const {isOpen, toggle} = useSidebar();
 
 ## Sample Syntax
 
-### useModal configuration
+### useSidebar configuration
 
 ```jsx {8,14-16}
 import React from "react";
@@ -40,19 +40,18 @@ import { useSidebar, Sidebar } from "motor-ui";
 
 
 function SideBarObject() {
+  const {isOpen, toggle} = useSidebar();
 
  {
-     const {isOpen, toggle} = useSidebar();
     return (
       <>
         <Motor
           config={config}>
-          <div style={{overflow: 'hidden', height: '300px', width: '500px'}}>
+          ...
           <Sidebar collapsable padding='100px 5px' isOpen={isOpen} backgroundColor='lightblue'>
             Sidebar Content
           </Sidebar>
-          <Button onClick={toggle}>Toggle Sidebar</Button>
-          </div>
+          ...
         </Motor>
       </>
     )
@@ -63,4 +62,33 @@ export default SideBarObject;
 
 ......
 />
+```
+
+## Example
+
+A simple sideBar example
+
+### Simple sidebar
+
+Render a simple sidebar
+
+```jsx live
+function SideBarDemo() {
+  const { isOpen, toggle } = useSidebar();
+  return (
+    <Motor config={config}>
+      <div style={{ overflow: "hidden", height: "300px", width: "500px" }}>
+        <Sidebar
+          collapsable
+          padding="100px 5px"
+          isOpen={isOpen}
+          backgroundColor="lightblue"
+        >
+          Sidebar Content
+        </Sidebar>
+        <Button onClick={toggle}>Toggle Sidebar</Button>
+      </div>
+    </Motor>
+  );
+}
 ```

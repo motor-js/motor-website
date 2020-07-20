@@ -14,7 +14,7 @@ import styles from "./styles.module.css";
 
 //-------------------------------------------------------/
 ////// Import the component you need in scope
-import { 
+import {
   Motor,
   Button,
   Filter,
@@ -29,6 +29,7 @@ import {
   Box,
   Sidebar,
   Modal,
+  useSidebar,
 } from "motor-ui";
 
 const config = {
@@ -36,7 +37,7 @@ const config = {
   secure: false,
   port: 19077,
   prefix: "",
-  appId: 'bd335164-4640-4a3f-970d-2fef039c39bf', // Luke
+  appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Luke
   //appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
   //appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Alan
 };
@@ -59,6 +60,7 @@ const SCOPE = {
   Box,
   Sidebar,
   Modal,
+  useSidebar,
 };
 
 export default {
