@@ -4,3 +4,79 @@ title: Motor
 sidebar_label: Motor
 ---
 
+#### Sets context for connection to the Qlik engine and theming.
+
+
+## Usage
+
+We recommend that you wrap your React document with the Motor component.
+This handles two things:
+
+- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
+- Theming
+
+In the example below, we are connecting to a Qlik site, hosted on <b>localhost</b> port <b>19077</b>, to an app called <b>myAwesomeapp</b>.
+
+We are also making a change to the base theme, by changing the brand color to red.
+
+```javascript
+
+import { Motor } from @motor-js/core
+//...
+<Motor 
+  config={
+    host: "localhost",
+    secure: false,
+    port: 19077,
+    prefix: "",
+    appId: 'myAwesomeApp',
+  }
+  theme={
+    global: {
+      color: {
+        brand: 'red'
+      }
+    }
+  }
+>
+
+//...
+
+</Motor>
+
+```
+
+## Props
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td><code>config</code></td>
+    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
+    <td>&#123; <br />
+      host&#58; 'string', <br />
+      secure&#58; 'boolean', <br />
+      port&#58; 'number', <br />
+      prefix&#58; 'string', <br />
+      appId&#58; 'string' <br />
+      &#125;
+    </td>
+  </tr>
+  <tr>
+    <td><code>theme</code></td>
+    <td>Custom styles to merge with the base theme</td>
+    <td>"object"</td>
+  </tr>
+  <tr>
+    <td><code>engine</code></td>
+    <td>Qlik Engine object, output of the useEngine hook. If you are not setting the config prop, you can pass the Qlik engine object directly via this prop.
+    This is particularly useful if you are connecting to your Qlik site server side (using JWT or certificates).
+    </td>
+    <td>"object"</td>
+  </tr>
+</table>
+

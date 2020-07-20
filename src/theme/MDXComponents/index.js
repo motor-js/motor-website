@@ -36,7 +36,10 @@ const config = {
   secure: false,
   port: 19077,
   prefix: "",
-  appId: 'bd335164-4640-4a3f-970d-2fef039c39bf', // Luke
+  appId: 'c2a87f96-e112-44cd-b9f3-2f9db1b0a700', // Luke
+
+  //c2a87f96-e112-44cd-b9f3-2f9db1b0a700
+  //bd335164-4640-4a3f-970d-2fef039c39bf
   //appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
   //appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Alan
 };
