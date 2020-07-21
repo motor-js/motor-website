@@ -161,7 +161,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ```jsx {10-14}
 import React from "react";
-import { useEngine, useHyperCube } from "motor-ui";
+import { useEngine, useHyperCube } from "@motor-js/core";
 
 const cols = ["=Avg(price)"];
 
@@ -195,7 +195,7 @@ The example is based off the Consumer Sales Qlik Sense application.
 Retrieve data sorted by dimension.
 
 ```jsx {27-38}
- import { useEngine } from 'motor-ui'
+ import { useEngine } from '@motor-js/core'
 
 function HyperCubeDemo() {
   return (

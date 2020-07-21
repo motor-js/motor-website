@@ -32,7 +32,7 @@ import {
   Modal,
   useSidebar,
   useModal,
-} from "motor-ui";
+} from "@motor-js/core";
 
 const config = {
   host: "localhost",
@@ -48,7 +48,7 @@ const config = {
   //c2a87f96-e112-44cd-b9f3-2f9db1b0a700
   //bd335164-4640-4a3f-970d-2fef039c39bf
   //appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
-  
+
 //-------------------------------------------------------/
 ////// Object with components I need in scope
 const SCOPE = {

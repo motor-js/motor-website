@@ -16,13 +16,13 @@ The easiest way to get started is to install via NPM.
 ### Install via NPM
 
 ```javascript
-npm i motor-ui
+npm i @motor-js/core
 ```
 
 ### Include in your HTML
 
 ```javascript
-<script src="...motor-ui"></script>
+<script src="...@motor-js/core"></script>
 ```
 
 <br />
@@ -41,8 +41,8 @@ Check out the full list of props and theming options for each component in these
 
 ```javascript
 
-import { Motor } from 'motor-ui'
-import base from 'motor-ui/themes'
+import { Motor } from '@motor-js/core'
+import base from '@motor-js/core/themes'
 
 <Motor
   config={..}
@@ -67,7 +67,7 @@ Some styling can also be applied directly to the components as props, the rest c
 
 ```javascript
 
-import { Button } from 'motor-ui'
+import { Button } from '@motor-js/core'
  
 <Button 
     config={..}

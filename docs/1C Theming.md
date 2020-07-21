@@ -12,7 +12,7 @@ The recommended path to creating a new theme, is to pass it to the Motor compone
 
 ```javascript
 
-import { Motor } from 'motor-ui';
+import { Motor } from '@motor-js/core';
 
 const myTheme = {
   global: {
@@ -38,8 +38,8 @@ The library comes with some pre-built themes which you can import and use. See t
 
 ```javascript
 
-import { Motor } from 'motor-ui';
-import { night } from 'motor-ui/themes'
+import { Motor } from '@motor-js/core';
+import { night } from '@motor-js/core/themes'
 
 <Motor theme={night}>
   //...

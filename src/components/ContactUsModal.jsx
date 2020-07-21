@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal } from "motor-ui";
+import { Modal } from "@motor-js/core";
 import Link from "@docusaurus/Link";
 import styles from "../pages/styles.module.css";
 import clsx from "clsx";
