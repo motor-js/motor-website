@@ -11,6 +11,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import styles from "../pages/styles.module.css";
 
 import "./plans.css";
+import { Button, useModal } from "motor-ui";
+import ContactUsModal from "./ContactUsModal";
 // id: 0,
 // title: "FREE",
 // perUsers: "Individual",
@@ -20,7 +22,7 @@ import "./plans.css";
 
 export const PlanCard = (props) => {
   const price = props.plan;
-
+  const { isShowing, toggle } = useModal();
   return (
     <React.Fragment>
       <div className="col col--3">
@@ -87,10 +89,13 @@ export const PlanCard = (props) => {
               <Link
                 id="button2"
                 className={clsx("button b1 button--lg", styles.button)}
-                to={useBaseUrl("docs/Getting%20Started")}
+                // to={useBaseUrl("docs/Getting%20Started")}
+                onClick={toggle}
               >
                 {price.actionName}
               </Link>
+              {/* <Button onClick={toggle}>Show Modal</Button> */}
+              <ContactUsModal isShowing={isShowing} onToggle={toggle} />
             </div>
           )}
         </div>

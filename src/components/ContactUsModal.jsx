@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal } from "motor-ui";
+import { Modal, Button } from "motor-ui";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 const ContactUsModal = (props) => {
@@ -7,10 +7,10 @@ const ContactUsModal = (props) => {
   const YOUR_FORM_ID = 1535732;
   const YOUR_FORM_URL = `https://app.convertkit.com/forms/${YOUR_FORM_ID}/subscriptions`;
 
-  const isShowing = props.isShowing;
+  let isShowing = props.isShowing;
 
   const toggle = () => {
-    props.onClick();
+    props.onToggle();
   };
 
   const handleSubmit = async (e) => {
