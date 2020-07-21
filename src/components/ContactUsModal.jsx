@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import styles from "../pages/styles.module.css";
 import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import ContactUsForm from "./ContactUsForm";
 
 const ContactUsModal = (props) => {
   const [status, setStatus] = useState(null);
@@ -66,6 +67,7 @@ const ContactUsModal = (props) => {
     //   {status === "ERROR" && <p>Oops, try again.</p>}
     // </form>
     <Modal
+      top="10%"
       header={
         <div style={{ fontSize: "20px", fontWeight: "bold" }}>Modal Title</div>
       }
@@ -87,8 +89,8 @@ const ContactUsModal = (props) => {
       }
       isShowing={isShowing}
     >
-      <div style={{ display: "flex", height: "50px", padding: "20px 0px" }}>
-        Form Content
+      <div style={{ display: "flex", height: "500px", padding: "20px 0px" }}>
+        <ContactUsForm />
       </div>
     </Modal>
   );
