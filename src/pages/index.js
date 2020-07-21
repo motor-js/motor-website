@@ -6,7 +6,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
 import CustomCodeBlock from "../components/CustomCodeBlock";
-import SubscriptionForm from "../components/SubscriptionForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleDown,

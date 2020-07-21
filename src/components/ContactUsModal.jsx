@@ -5,6 +5,8 @@ import styles from "../pages/styles.module.css";
 import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ContactUsForm from "./ContactUsForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 const ContactUsModal = (props) => {
   const [status, setStatus] = useState(null);
@@ -69,7 +71,22 @@ const ContactUsModal = (props) => {
     <Modal
       top="10%"
       header={
-        <div style={{ fontSize: "20px", fontWeight: "bold" }}>Modal Title</div>
+        <div
+          style={{
+            fontSize: "20px",
+            fontWeight: "bold",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <span>Modal Title</span>
+          <FontAwesomeIcon
+            icon={faTimesCircle}
+            size="lg"
+            onClick={toggle}
+            className={clsx("icon", styles.icon)}
+          />
+        </div>
       }
       footer={
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
