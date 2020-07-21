@@ -10,7 +10,7 @@ sidebar_label: useSearch
 
 Hooks are a new addition in React. They let you use state and other React features without writing a class. To learn more abou hook in react please read : <a>https://reactjs.org/docs/hooks-intro.html</a>
 
-The motivation for introdcuitng hooks in React are:
+The motivation for introducing hooks in React are:
 
 - It’s hard to reuse stateful logic between components
 - Complex components become hard to understand
@@ -25,7 +25,6 @@ We have tried to expose hooks used in the libary so that you can create your own
 
 import { useSearch } from @motor-js/core
 //...
-
   const { searchResults, select } = useSearch({
     engine,
     searchValue,
@@ -61,21 +60,17 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>object</code>
       <br />
-      See sample syntax below
+      const &#123;(engine, engineError)&#125; = useEngine(config);
     </td>
   </tr>
   <tr>
     <td>
       <code>searchValue</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Value to be search for.</td>
     <td>
       <code>string</code>
       <br />
-      See sample syntax below
     </td>
   </tr>
   <tr>
@@ -83,8 +78,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>dimensions</code>
     </td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
+      List of the search fields. If empty, the search is performed in all fields
+      of the app.
     </td>
     <td>
       <code>array</code>
@@ -96,10 +91,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>qCount</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Number of search groups to return.</td>
     <td>
       <code>number</code>
       <br />
@@ -110,26 +102,21 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>qGroupItemCount</code>
     </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
+    <td>Number of search groups to return.</td>
     <td>
       <code>number</code>
       <br />
-      See sample syntax below
     </td>
   </tr>
 </table>
 
-## Sample syntax
+## Sample Syntax
 
 ### useSearch configuration
 
-```jsx {10-14}
+```jsx {2,6-12}
 import React from "react";
 import { useEngine, useSearch } from "motor-ui";
-
 
 function SearchObject({ engine }) {
 

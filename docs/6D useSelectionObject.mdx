@@ -10,7 +10,7 @@ sidebar_label: useSelectionObject
 
 Hooks are a new addition in React. They let you use state and other React features without writing a class. To learn more abou hook in react please read : <a>https://reactjs.org/docs/hooks-intro.html</a>
 
-The motivation for introdcuitng hooks in React are:
+The motivation for introducing hooks in React are:
 
 - It’s hard to reuse stateful logic between components
 - Complex components become hard to understand
@@ -25,7 +25,6 @@ We have tried to expose hooks used in the libary so that you can create your own
 
 import { useSelectionObject } from @motor-js/core
 //...
-
 const { qLayout, clearSelections } = useSelectionObject({ engine });
 
 ```
@@ -55,19 +54,18 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>object</code>
       <br />
-      See sample syntax below
+      const &#123;(engine, engineError)&#125; = useEngine(config);
     </td>
   </tr>
 </table>
 
-## Sample syntax
+## Sample Syntax
 
 ### useSelectionObject configuration
 
-```jsx {10-14}
+```jsx {2,6}
 import React from "react";
 import { useEngine, useSelectionObject } from "motor-ui";
-
 
 function SelectionObject({ engine }) {
 

@@ -10,7 +10,7 @@ sidebar_label: useHyperCube
 
 Hooks are a new addition in React. They let you use state and other React features without writing a class. To learn more abou hook in react please read : <a>https://reactjs.org/docs/hooks-intro.html</a>
 
-The motivation for introdcuitng hooks in React are:
+The motivation for introducing hooks in React are:
 
 - It’s hard to reuse stateful logic between components
 - Complex components become hard to understand
@@ -25,7 +25,6 @@ We have tried to expose hooks used in the libary so that you can create your own
 
 import { useHyperCube } from @motor-js/core
 //...
-
 const { qLayout, qData } = useHyperCube({
     engine,
     cols,
@@ -57,156 +56,106 @@ You do not need to set the Config prop if the component is a child of the Motor 
       outside of the Motor component.
     </td>
     <td>
-      <code>object</code> <br />
-      See sample syntax below
+      <code>object</code>
+      <br />
+      const &#123;(engine, engineError)&#125; = useEngine(config);
     </td>
   </tr>
   <tr>
     <td>
       <code>cols</code>
     </td>
+    <td>Columns from Qlik Data Model to render in the chart.</td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>array</code> <br />
-      See sample syntax below
+      <code>array</code>
+      <br />
+      &#123;[ "Case Owner Group", "=Avg([Case Duration Time])" ]&#125;
     </td>
   </tr>
   <tr>
     <td>
-      <code>qColumnOrder</code>
+      <code>sortDirection</code>
     </td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
+      Direction by which the chart should be sorted. CAn eith be ascending or
+      descending.
     </td>
     <td>
-      <code>array</code> <br />
-      See sample syntax below
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>qCalcCondition</code>
-    </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>calcCondType</code> <br />
-      See sample syntax below
+      <code>string</code>
+      <br />
+      <b>'ASCENDING'</b>
+      <br />
+      'ASC'
+      <br />
+      'DESCENDING'
+      <br />
+      'DESC'
+      <br />
     </td>
   </tr>
   <tr>
     <td>
-      <code>qPage</code>
+      <code>columnSortOrder</code>
     </td>
+    <td>Order of the columns on which the returned dat shoud be sorted</td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>object</code> <br />
-      See sample syntax below
+      <code>array</code>
+      <br />
+      [1,0]
     </td>
   </tr>
   <tr>
     <td>
-      <code>qInterColumnSortOrder</code>
+      <code>calcCondition</code>
     </td>
+    <td>Calculated condition to be met before chart can be displayed.</td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>array</code> <br />
-      See sample syntax below
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>qSupressMissing</code>
-    </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>boolean</code> <br />
-      See sample syntax below
+      <code>shape</code>
+      <br />
+      &#123;
+      <br />
+      qCond: "=Avg([Case Duration Time])> 5",
+      <br />
+      qMsg: "Calculation condition has not been met",
+      <br />
+      &#125;
     </td>
   </tr>
   <tr>
     <td>
-      <code>qSuppressZero</code>
+      <code>suppressZero</code>
     </td>
+    <td>Suppress items whith zero values from being displayed in the chart</td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>boolean</code> <br />
-      See sample syntax below
+      <code>boolean</code>
+      <br />
     </td>
   </tr>
   <tr>
     <td>
-      <code>qSortByNumeric</code>
+      <code>otherTotalSpec</code>
     </td>
     <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
+      Message to be displayed if an invalid measure is used in the cols property
     </td>
     <td>
-      <code>number</code> <br />
-      See sample syntax below
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>qSortByAscii</code>
-    </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>number</code> <br />
-      See sample syntax below
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>qInterLineSortOrder</code>
-    </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>number</code> <br />
-      See sample syntax below
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>qOtherTotalSpec</code>
-    </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>otherTotalSpecType</code> <br />
-      See sample syntax below
+      <code>bool</code>
+      <br />
+      <code>shape</code>
+      <br />
+      &#123;
+      <br />
+      qOtherLabel: "Other",
+      <br />
+      qOtherCount: "5",
+      <br />
+      &#125;
+      <br />
     </td>
   </tr>
 </table>
 
-## Sample syntax
+## Sample Syntax
 
 ### useHyperCube configuration
 
@@ -235,4 +184,57 @@ export default HyperCube;
 
 ......
 />
+```
+
+## Example
+
+The example is based off the Consumer Sales Qlik Sense application.
+
+### Retrieve data from the model
+
+Retrieve data sorted by dimension.
+
+```jsx {27-38}
+ import { useEngine } from 'motor-ui'
+
+function HyperCubeDemo() {
+  return (
+    <Motor config={config}>
+
+    const config={{
+      host: "xxxxxxxxx",
+      secure: false,
+      port: xxxxx,
+      prefix: "",
+      appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+    }}
+
+    const cols={[
+            { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+            {
+              qField: "=Sum( [Sales Quantity]*[Sales Price])",
+              qLabel: "Revenue",
+            },
+          ]}
+
+    const columnSortOrder={[1, 0]}
+
+    const { engine, engineError } = useEngine(config);
+
+    const {
+      beginSelections,
+      endSelections,
+      qLayout,
+      qData,
+      selections,
+      select,
+    } = UseHyperCube({
+      engine,
+      cols,
+      columnSortOrder
+    });
+
+    </Motor>
+  );
+}
 ```

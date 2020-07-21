@@ -1,0 +1,368 @@
+---
+id: Table
+title: Table
+sidebar_label: Table
+---
+
+#### Table Component. Display data in a tabular format.
+
+## Usage
+
+We recommend you start by wrapping your React document with the Motor parent component.
+This handles two things:
+
+- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
+- Theming
+
+The simpliest method to render a table is to add a Table component to the page and set the columns props.
+
+```javascript
+
+import { Table } from @motor-js/core
+//...
+<Table columns={[
+      {
+        dimensions: [
+          {
+            qField: 'country',
+            qLabel: 'Country',
+            width: '10%',
+          },
+          {
+            qField: 'province',
+            qLabel: 'Province',
+            width: '10%',
+          },
+          {
+            qField: 'region_1',
+            qLabel: 'Region',
+            width: '10%',
+          },
+        ],
+      },
+    ]} />
+
+```
+
+This can get more complex by setting various other propertes within the cols property which will allow for the naming of columns and the ability to sort the data.
+
+A more advanced version demonstrating this is displayed below.
+
+## Props
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>config</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component.
+    </td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      host: "xxxxxxxxx",
+      <br />
+      secure: false,
+      <br />
+      port: xxxxx,
+      <br />
+      prefix: "",
+      <br />
+      appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx", &#125;
+    </td>
+  </tr> <tr>
+    <td>
+      <code>columns</code>
+    </td>
+    <td>
+      An array of objects to define the data to be used in the component. The
+      columns need a dimension and / or measure object.
+      <br />
+      See "Column Definition" below for the detailed object properties
+    </td>
+    <td>
+      <code>array</code>
+      <br />
+      &#123;[ &#123; dimensions &#58;
+      <br /> [ &#123; qField&#58; 'country',
+      <br />
+      qLabel&#58; 'Country',
+      <br />
+      width&#58; '10%', &#125;, ], &#125;,
+      <br />
+      ]&#125;
+    </td>
+  </tr> <tr>
+    <td>
+      <code>columnOrder</code>
+    </td>
+    <td>
+      An array of integers (starting from 0), set the order of your table
+      columns.
+      <br />
+      Default order is as defined in the columns prop, with dimensions listed
+      first and then measures.
+    </td>
+    <td>
+      <code>array</code>
+      <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>calcCondition</code>
+    </td>
+    <td>Calculated condition to be met before chart can be displayed.</td>
+    <td>
+      <code>shape</code>
+      <br />
+      &#123;
+      <br />
+      qCond: "=Avg([Case Duration Time])> 5",
+      <br />
+      qMsg: "Calculation condition has not been met",
+      <br />
+      &#125;
+    </td>
+  </tr> <tr>
+    <td>
+      <code>columnSortOrder</code>
+    </td>
+    <td>Order of the columns on which the returned dat shoud be sorted.</td>
+    <td>
+      <code>array</code>
+      <br />
+      [1,0]
+    </td>
+  </tr> <tr>
+    <td>
+      <code>grandTotalsFlag</code>
+    </td>
+    <td>
+      Set to true to show a grand totals row at the top of the table object.
+    </td>
+    <td>
+      <code>bool</code>
+      <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>margin</code>
+    </td>
+    <td>The amount of margin around the component</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>'5px'</b>
+    </td>
+  </tr> <tr>
+    <td>
+      <code>height</code>
+    </td>
+    <td>Table height in percentage or value as pixels.</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>'100%'</b>
+      <br />
+      '200px'
+    </td>
+  </tr> <tr>
+    <td>
+      <code>wrapperWidth</code>
+    </td>
+    <td>
+      Width of the outer wrapper around the table object.
+      <br />
+      If this is smaller than the table width, a horizontal scrollbar will
+      enable you to view all columns.
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>'100%'</b>
+      <br />
+      '200px'
+    </td>
+  </tr> <tr>
+    <td>
+      <code>tableWidth</code>
+    </td>
+    <td>Table width.</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>'100%'</b>
+      <br />
+      '200px'
+    </td>
+  </tr> <tr>
+    <td>
+      <code>size</code>
+    </td>
+    <td>Size of the text used in the table</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      'tiny'
+      <br />
+      'small'
+      <br />
+      <b>'medium'</b>
+      <br />
+      'large'
+      <br />
+      'xlarge'
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>pageHeight</code>
+    </td>
+    <td>
+      Number of records to be returned per page of the table.
+      <br />
+      Note that increasing this will have a performance impact.
+    </td>
+    <td>
+      <code>number</code>
+      <br />
+      <b>30</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>tableLayout</code>
+    </td>
+    <td>
+      Defines the algorithm used to lay out table cells, rows and columns. For
+      more information regarding the impact, please see
+      https://www.w3schools.com/cssref/pr_tab_table-layout.asp.
+    </td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      'fixed'
+      <br /> <b>'auto'</b>
+      <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>headerAlignment</code>
+    </td>
+    <td>Alignment of header row.</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      <b>'left'</b>
+      <br /> 'middle'
+      <br /> 'right'
+      <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>headerBackgroundColor</code>
+    </td>
+    <td>Header background color.</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>headerFontColor</code>
+    </td>
+    <td>Header font color.</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>interactiveSort</code>
+    </td>
+    <td>Toggle interactive sorting icon in table header.</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>false</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>grid</code>
+    </td>
+    <td>Add or remove the table grid.</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>false</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>bandedRows</code>
+    </td>
+    <td>Add or remove banded rows.</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>false</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>highlightOnSelection</code>
+    </td>
+    <td>Highlight cells on selection.</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>false</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>allowSelections</code>
+    </td>
+    <td>To allow or disable selections.</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>true</b>
+    </td>
+  </tr>
+</table>
+
+## Column Definition
+
+To be completed
+
+## Sample Syntax
+
+### Table configuration
+
+```jsx {11}
+   <Modal
+      header={...}
+      footer={...}
+      isShowing={isShowing}
+    >
+      Modal Content, like some filters...
+    </Modal>
+```
+
+## Example
+
+A simple table example
+
+### Table

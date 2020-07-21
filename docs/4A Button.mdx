@@ -7,7 +7,6 @@ sidebar_label: Button
 
 #### A Button. Trigger various Qlik actions such as clearing selections, or attaching a custom event.
 
-
 ## Usage
 
 ```javascript
@@ -22,7 +21,6 @@ import { Button } from @motor-js/core
 
 ```
 
-
 ## Props
 
 :::info
@@ -36,129 +34,226 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <th>Options / Example</th>
   </tr>
   <tr>
-    <td><code>config</code></td>
-    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
-    <td>{ }</td>
+    <td>
+      <code>config</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component
+    </td>
+    <td>{}</td>
   </tr>
   <tr>
-    <td><code>type</code></td>
-    <td>The action on click of the button. If default, you can set a custom onClick function</td>
-    <td>'clearSelections'< br/>'back'< br/>'forward'< br/><b>'default'</b></td>
+    <td>
+      <code>type</code>
+    </td>
+    <td>
+      The action on click of the button. If default, you can set a custom
+      onClick function
+    </td>
+    <td>
+      'clearSelections'
+      <br />
+      'back'
+      <br />
+      'forward'
+      <br />
+      <b>'default'</b>
+    </td>
   </tr>
   <tr>
-    <td><code>block</code></td>
+    <td>
+      <code>block</code>
+    </td>
     <td></td>
     <td>boolean</td>
   </tr>
   <tr>
-    <td><code>onClick</code></td>
+    <td>
+      <code>onClick</code>
+    </td>
     <td>Click handler</td>
     <td>function</td>
   </tr>
   <tr>
-    <td><code>size</code></td>
+    <td>
+      <code>size</code>
+    </td>
     <td>The size of the button</td>
-    <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
+    <td>
+      'tiny'
+      <br />
+      'small'
+      <br />
+      <b>'medium'</b>
+      <br />
+      'large'
+      <br />
+      'xlarge'
+    </td>
   </tr>
   <tr>
-    <td><code>color</code></td>
+    <td>
+      <code>color</code>
+    </td>
     <td>Background color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>margin</code></td>
+    <td>
+      <code>margin</code>
+    </td>
     <td>margin, sets the margin css property</td>
-    <td>'string' <br /> <b>'5px'</b></td>
+    <td>
+      'string'
+      <br /> <b>'5px'</b>
+    </td>
   </tr>
   <tr>
-    <td><code>width</code></td>
+    <td>
+      <code>width</code>
+    </td>
     <td>sets the width css property</td>
-    <td>'string'<br /> <b>'100%'</b></td>
+    <td>
+      'string'
+      <br /> <b>'100%'</b>
+    </td>
   </tr>
   <tr>
-    <td><code>fontColor</code></td>
+    <td>
+      <code>fontColor</code>
+    </td>
     <td>button font color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>borderRadius</code></td>
+    <td>
+      <code>borderRadius</code>
+    </td>
     <td>radius of the button</td>
-    <td>'string'<br /> <b>'8px'</b></td>
+    <td>
+      'string'
+      <br /> <b>'8px'</b>
+    </td>
   </tr>
   <tr>
-    <td><code>border</code></td>
+    <td>
+      <code>border</code>
+    </td>
     <td>sets the border css property</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>outline</code></td>
+    <td>
+      <code>outline</code>
+    </td>
     <td>button outline</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>activeTransform</code></td>
+    <td>
+      <code>activeTransform</code>
+    </td>
     <td>Transform css property on click</td>
-    <td>'string' <br /> <b>null</b></td>
+    <td>
+      'string'
+      <br /> <b>null</b>
+    </td>
   </tr>
   <tr>
-    <td><code>activeBackgroundColor</code></td>
+    <td>
+      <code>activeBackgroundColor</code>
+    </td>
     <td>Background color on click</td>
-    <td>'string' <br /> <b>null</b></td>
+    <td>
+      'string'
+      <br /> <b>null</b>
+    </td>
   </tr>
-    <tr>
-    <td><code>activeBackgroundSize</code></td>
+  <tr>
+    <td>
+      <code>activeBackgroundSize</code>
+    </td>
     <td>Background size on click</td>
-    <td>'string'<br /><b>null</b></td>
+    <td>
+      'string'
+      <br />
+      <b>null</b>
+    </td>
   </tr>
   <tr>
-    <td><code>activeTransition</code></td>
+    <td>
+      <code>activeTransition</code>
+    </td>
     <td>Transition on click</td>
-    <td>'string' <br /> <b>null</b></td>
+    <td>
+      'string'
+      <br /> <b>null</b>
+    </td>
   </tr>
   <tr>
-    <td><code>transition</code></td>
+    <td>
+      <code>transition</code>
+    </td>
     <td>transition</td>
-    <td>'string'<br /><b>null</b></td>
+    <td>
+      'string'
+      <br />
+      <b>null</b>
+    </td>
   </tr>
   <tr>
-    <td><code>hoverBoxShadow</code></td>
+    <td>
+      <code>hoverBoxShadow</code>
+    </td>
     <td>box shadow on hover</td>
-    <td>'string'<br /><b>null</b></td>
+    <td>
+      'string'
+      <br />
+      <b>null</b>
+    </td>
   </tr>
   <tr>
-    <td><code>hoverBorder</code></td>
+    <td>
+      <code>hoverBorder</code>
+    </td>
     <td>border on hover</td>
-    <td>'string'<br /><b>null</b></td>
+    <td>
+      'string'
+      <br />
+      <b>null</b>
+    </td>
   </tr>
-    <tr>
-    <td><code>hoverBackground</code></td>
+  <tr>
+    <td>
+      <code>hoverBackground</code>
+    </td>
     <td>background color on hover</td>
-    <td>'string'<br /><b>null</b></td>
+    <td>
+      'string'
+      <br />
+      <b>null</b>
+    </td>
   </tr>
-  </table>
-
+</table>
 
 <br />
-
 
 ## Examples
 
 ##### Simple Button example
 
 ```jsx live
-
 function ButtonTest() {
-    return (
-    <Motor config={config}>  
+  return (
+    <Motor config={config}>
       <Button>I am a button.</Button>
     </Motor>
-    )
+  );
 }
-
 ```
 
 <br />
-
 
 ## Theme API
 
@@ -178,59 +273,103 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     <th>button</th>
   </tr>
   <tr>
-    <td><code>backgroundColor</code></td>
+    <td>
+      <code>backgroundColor</code>
+    </td>
     <td>Background color of the button</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>fontColor</code></td>
+    <td>
+      <code>fontColor</code>
+    </td>
     <td>button font color</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>border</code></td>
+    <td>
+      <code>border</code>
+    </td>
     <td>button border </td>
-    <td><code>'border'</code></td>
+    <td>
+      <code>'border'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>margin</code></td>
+    <td>
+      <code>margin</code>
+    </td>
     <td>button margin</td>
-    <td><code>'margin'</code></td>
+    <td>
+      <code>'margin'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>radius</code></td>
+    <td>
+      <code>radius</code>
+    </td>
     <td>border radius</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>shadow</code></td>
+    <td>
+      <code>shadow</code>
+    </td>
     <td>box shadow</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>padding</code></td>
+    <td>
+      <code>padding</code>
+    </td>
     <td>button paddding</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>transform</code></td>
+    <td>
+      <code>transform</code>
+    </td>
     <td>button transform property</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>fontWeight</code></td>
+    <td>
+      <code>fontWeight</code>
+    </td>
     <td>font weight</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>outline</code></td>
+    <td>
+      <code>outline</code>
+    </td>
     <td>button outline</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>transition</code></td>
+    <td>
+      <code>transition</code>
+    </td>
     <td>transiton</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
 </table>
 
@@ -252,29 +391,49 @@ e.g. <code>global.button.hover.backgroundColor = 'red'</code>
     <th>button.hover</th>
   </tr>
   <tr>
-    <td><code>background</code></td>
+    <td>
+      <code>background</code>
+    </td>
     <td>background on hover</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>borderColor</code></td>
+    <td>
+      <code>borderColor</code>
+    </td>
     <td>border color on hover</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>boxShadow</code></td>
+    <td>
+      <code>boxShadow</code>
+    </td>
     <td>box shadow on hover</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>backgroundColor</code></td>
+    <td>
+      <code>backgroundColor</code>
+    </td>
     <td>background color on hover</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>border</code></td>
+    <td>
+      <code>border</code>
+    </td>
     <td>border on hover</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
 </table>
 
@@ -296,30 +455,45 @@ e.g. <code>global.button.active.backgroundColor = 'red'</code>
     <th>button.active</th>
   </tr>
   <tr>
-    <td><code>transform</code></td>
+    <td>
+      <code>transform</code>
+    </td>
     <td>transform on button click</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>backgroundColor</code></td>
+    <td>
+      <code>backgroundColor</code>
+    </td>
     <td>background color on button click</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>backgroundSize</code></td>
+    <td>
+      <code>backgroundSize</code>
+    </td>
     <td>background size on button click</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>transition</code></td>
+    <td>
+      <code>transition</code>
+    </td>
     <td>transition on button click</td>
-    <td><code>'string'</code></td>
+    <td>
+      <code>'string'</code>
+    </td>
   </tr>
 </table>
 
 <br />
 
 ## Extending Styles
-
 
 <br />

@@ -10,7 +10,7 @@ sidebar_label: useEngine
 
 Hooks are a new addition in React. They let you use state and other React features without writing a class. To learn more abou hook in react please read : <a>https://reactjs.org/docs/hooks-intro.html</a>
 
-The motivation for introdcuitng hooks in React are:
+The motivation for introducing hooks in React are:
 
 - It’s hard to reuse stateful logic between components
 - Complex components become hard to understand
@@ -25,7 +25,6 @@ We have tried to expose hooks used in the libary so that you can create your own
 
 import { useEngine } from @motor-js/core
 //...
-
 const { engine, engineError } = useEngine(config);
 
 ```
@@ -53,18 +52,24 @@ You do not need to set the Config prop if the component is a child of the Motor 
       outside of the Motor component.
     </td>
     <td>
-      <code>object</code> <br />
-      config = &#123; <br />
-      host: "xxxxxxxxx", <br />
-      secure: false, <br />
-      port: xxxxx, <br />
-      prefix: "", <br />
+      <code>object</code>
+      <br />
+      config = &#123;
+      <br />
+      host: "xxxxxxxxx",
+      <br />
+      secure: false,
+      <br />
+      port: xxxxx,
+      <br />
+      prefix: "",
+      <br />
       appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx", &#125;
     </td>
   </tr>
 </table>
 
-## Sample syntax
+## Sample Syntax
 
 ### useEngine configuration
 
