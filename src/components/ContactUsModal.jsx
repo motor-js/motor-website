@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Modal, Button } from "motor-ui";
+import { Modal } from "motor-ui";
+import Link from "@docusaurus/Link";
+import styles from "../pages/styles.module.css";
+import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 const ContactUsModal = (props) => {
@@ -68,9 +71,18 @@ const ContactUsModal = (props) => {
       }
       footer={
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button width="100px" onClick={toggle}>
+          {/* <Button width="100px" onClick={toggle}>
             Close
-          </Button>
+          </Button> */}
+          <Link
+            id="button2"
+            className={clsx("button b1 button--lg", styles.button)}
+            // to={useBaseUrl("docs/Getting%20Started")}
+            onClick={toggle}
+          >
+            {/* {price.actionName} */}
+            Close
+          </Link>
         </div>
       }
       isShowing={isShowing}
