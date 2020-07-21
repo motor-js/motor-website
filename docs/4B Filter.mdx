@@ -3,8 +3,8 @@ id: Filter
 title: Filter
 sidebar_label: Filter
 ---
-#### A Filter. Make selections and filter your data.
 
+#### A Filter. Make selections and filter your data.
 
 ## Usage
 
@@ -18,14 +18,12 @@ import { Filter } from @motor-js/core
 
 ```
 
-
 ## Props
 
 :::info
 You do not need to set the Config prop if the component is a child of the Motor component
 :::
 
- 
 <table>
   <tr>
     <th>Prop</th>
@@ -33,89 +31,149 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <th>Options / Example</th>
   </tr>
   <tr>
-    <td><code>config</code></td>
-    <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
+    <td>
+      <code>config</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component
+    </td>
     <td></td>
   </tr>
   <tr>
-    <td><code>label</code></td>
+    <td>
+      <code>label</code>
+    </td>
     <td>Filter label</td>
-    <td><b>is required</b><br/>'string'</td>
+    <td>
+      <b>is required</b>
+      <br />
+      'string'
+    </td>
   </tr>
   <tr>
-    <td><code>dimension</code></td>
+    <td>
+      <code>dimension</code>
+    </td>
     <td>Dimension to be rendered</td>
-    <td><b>is required</b><br/>'array'</td>
+    <td>
+      <b>is required</b>
+      <br />
+      'array'
+    </td>
   </tr>
   <tr>
-    <td><code>size</code></td>
+    <td>
+      <code>size</code>
+    </td>
     <td>Size of the filter</td>
-    <td>'tiny'< br/>'small'< br/><b>'medium'</b>< br/>'large'< br/>'xlarge'</td>
+    <td>
+      'tiny'
+      <br />
+      'small'
+      <br />
+      <b>'medium'</b>
+      <br />
+      'large'
+      <br />
+      'xlarge'
+    </td>
   </tr>
   <tr>
-    <td><code>width</code></td>
+    <td>
+      <code>width</code>
+    </td>
     <td>width of the filter</td>
-    <td>'string'<br/><b>'100%'</b></td>
+    <td>
+      'string'
+      <br />
+      <b>'100%'</b>
+    </td>
   </tr>
   <tr>
-    <td><code>dropHeight</code></td>
+    <td>
+      <code>dropHeight</code>
+    </td>
     <td>Height of the dropdown</td>
-    <td>'string'<br/><b>'250px'</b></td>
+    <td>
+      'string'
+      <br />
+      <b>'250px'</b>
+    </td>
   </tr>
   <tr>
-    <td><code>margin</code></td>
+    <td>
+      <code>margin</code>
+    </td>
     <td>margin around the filter</td>
-    <td>'string'<br/><b>'5px'</b></td>
+    <td>
+      'string'
+      <br />
+      <b>'5px'</b>
+    </td>
   </tr>
   <tr>
-    <td><code>onSelectionChange</code></td>
+    <td>
+      <code>onSelectionChange</code>
+    </td>
     <td>function fired on a change in selection</td>
     <td>function</td>
   </tr>
   <tr>
-    <td><code>onSearch</code></td>
+    <td>
+      <code>onSearch</code>
+    </td>
     <td>function fired on search</td>
     <td>function</td>
   </tr>
   <tr>
-    <td><code>single</code></td>
+    <td>
+      <code>single</code>
+    </td>
     <td>option to enable only single selections in the Filter list</td>
-    <td>boolean<br/><b>false</b></td>
+    <td>
+      boolean
+      <br />
+      <b>false</b>
+    </td>
   </tr>
   <tr>
-    <td><code>sortByState</code></td>
+    <td>
+      <code>sortByState</code>
+    </td>
     <td>option that sorts our Filter by selection state</td>
-    <td>boolean<br/><b>true</b></td>
+    <td>
+      boolean
+      <br />
+      <b>true</b>
+    </td>
   </tr>
   <tr>
-    <td><code>selectionsTitle</code></td>
+    <td>
+      <code>selectionsTitle</code>
+    </td>
     <td>Add the Filter selections to the title</td>
-    <td>boolean<br/><b>true</b></td>
+    <td>
+      boolean
+      <br />
+      <b>true</b>
+    </td>
   </tr>
 </table>
 
-
 <br />
-
 
 ## Examples
 
 ##### Simple Filter example
 
 ```jsx live
-
 function FilterTest() {
-    return (
-    <Motor config={config}>  
-     
-    </Motor>
-    )
+  return <Motor config={config}></Motor>;
 }
-
 ```
 
 <br />
-
 
 ## Theme API
 
@@ -135,37 +193,51 @@ e.g. <code>global.filter.color.selected = 'brand'</code>
     <th>filter.color</th>
   </tr>
   <tr>
-    <td><code>selected</code></td>
+    <td>
+      <code>selected</code>
+    </td>
     <td>background color of selected item</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>icon</code></td>
+    <td>
+      <code>icon</code>
+    </td>
     <td>color of the filter icons</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>backgroundColor</code></td>
+    <td>
+      <code>backgroundColor</code>
+    </td>
     <td>background color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>selectedFont</code></td>
+    <td>
+      <code>selectedFont</code>
+    </td>
     <td>font color of selected item</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>fontTitle</code></td>
+    <td>
+      <code>fontTitle</code>
+    </td>
     <td>color of Filter label</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>notSelected</code></td>
+    <td>
+      <code>notSelected</code>
+    </td>
     <td>color not selected item</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>altSelection</code></td>
+    <td>
+      <code>altSelection</code>
+    </td>
     <td>color of alternate selections</td>
     <td>'string'</td>
   </tr>
@@ -189,22 +261,30 @@ e.g. <code>global.filter.title.border = '1px solid'</code>
     <th>filter.title</th>
   </tr>
   <tr>
-    <td><code>border</code></td>
+    <td>
+      <code>border</code>
+    </td>
     <td>filter title border</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>bordeColor</code></td>
+    <td>
+      <code>bordeColor</code>
+    </td>
     <td>filter title border color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>radius</code></td>
+    <td>
+      <code>radius</code>
+    </td>
     <td>filter title border radius</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>justifyContent</code></td>
+    <td>
+      <code>justifyContent</code>
+    </td>
     <td>title alignment</td>
     <td>'string'</td>
   </tr>
@@ -228,7 +308,9 @@ e.g. <code>global.filter.main.border = '1px solid'</code>
     <th>filter.main</th>
   </tr>
   <tr>
-    <td><code>border</code></td>
+    <td>
+      <code>border</code>
+    </td>
     <td>filter border</td>
     <td>'string'</td>
   </tr>
@@ -252,12 +334,16 @@ e.g. <code>global.filter.selected.border = '1px solid'</code>
     <th>filter.selected</th>
   </tr>
   <tr>
-    <td><code>border</code></td>
+    <td>
+      <code>border</code>
+    </td>
     <td>selected item border</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>borderColor</code></td>
+    <td>
+      <code>borderColor</code>
+    </td>
     <td>selected item border color</td>
     <td>'string'</td>
   </tr>
@@ -281,46 +367,67 @@ e.g. <code>global.filter.dropdown.border = '1px solid'</code>
     <th>filter.dropdown</th>
   </tr>
   <tr>
-    <td><code>border</code></td>
+    <td>
+      <code>border</code>
+    </td>
     <td>dropdown border</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>borderColor</code></td>
+    <td>
+      <code>borderColor</code>
+    </td>
     <td>dropdown border color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>borderItems</code></td>
+    <td>
+      <code>borderItems</code>
+    </td>
     <td>dropdown border color</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>radius</code></td>
+    <td>
+      <code>radius</code>
+    </td>
     <td>dropdown border radius</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>marginTop</code></td>
+    <td>
+      <code>marginTop</code>
+    </td>
     <td>margin at the top of the dropdown</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>shadow</code></td>
+    <td>
+      <code>shadow</code>
+    </td>
     <td>dropdown shadow</td>
     <td>'string'</td>
   </tr>
   <tr>
-    <td><code>itemHeight</code></td>
+    <td>
+      <code>itemHeight</code>
+    </td>
     <td>height of the dropdown items</td>
-    <td>&#123; <br />
-      tiny&#58; 'number', <br />
-      small&#58; 'number', <br />
-      medium&#58; 'number', <br />
-      large&#58; 'number', <br />
-      xlarge&#58; 'number' <br />
+    <td>
+      &#123;
+      <br />
+      tiny&#58; 'number',
+      <br />
+      small&#58; 'number',
+      <br />
+      medium&#58; 'number',
+      <br />
+      large&#58; 'number',
+      <br />
+      xlarge&#58; 'number'
+      <br />
       &#125;
-     </td>
+    </td>
   </tr>
 </table>
 
@@ -342,11 +449,12 @@ e.g. <code>global.filter.hover.borderColor = 'red'</code>
     <th>filter.hover</th>
   </tr>
   <tr>
-    <td><code>borderColor</code></td>
+    <td>
+      <code>borderColor</code>
+    </td>
     <td>border color on hover</td>
     <td>'string'</td>
   </tr>
 </table>
 
 <br />
-
