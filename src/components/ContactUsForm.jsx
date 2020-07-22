@@ -45,39 +45,51 @@ const ContacUsForm = () => {
     //     Your link text
     //   </a>
     <form
-      action="https://app.convertkit.com/forms/1535694/subscriptions"
+      action="https://app.convertkit.com/forms/1543213/subscriptions"
       className="seva-form formkit-form"
       method="post"
-      data-sv-form="1535694"
-      data-uid="5902fe96f4"
-      data-format="modal"
+      data-sv-form="1543213"
+      data-uid="02c7858452"
+      data-format="inline"
       data-version="5"
-      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"http://localhost:3000/pricing"},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+      data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"},"recaptcha":{"enabled":true},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
       min-width="400 500 600 700 800"
-      style={{ backgroundColor: "rgb(255, 255, 255)", borderRadius: "6px" }}
-      //   onSubmit={handleSubmit}
+      style={{ backgroundColor: `rgb(255, 255, 255)`, borderRadius: `8px` }}
     >
-      <div data-style="full">
+      <div data-style="card">
         <div
           data-element="column"
-          className="formkit-background"
-          style={{
-            backgroundImage: `url(
-              "//pages.convertkit.com/assets/charlotte/bg.jpg"
-            )`,
-          }}
-        ></div>
-        <div data-element="column" className="formkit-column">
+          className="formkit-column"
+          style={{ backgroundColor: `rgb(251, 105, 112)` }}
+        >
+          <div
+            className="formkit-background"
+            style={{
+              backgroundImage: `url(
+                "//pages.convertkit.com/assets/powell/bg.jpg"
+              )`,
+              opacity: 0.2,
+            }}
+          ></div>
           <div
             className="formkit-header"
             data-element="header"
             style={{
-              color: "rgb(83, 83, 83)",
-              fontSize: "28px",
-              fontWeight: "700",
+              color: `rgb(255, 255, 255)`,
+              fontSize: `22px`,
+              fontWeight: `700`,
             }}
           >
-            <h1>Get our how to guide</h1>
+            <h1>Looking to learn more about our product ?</h1>
+          </div>
+        </div>
+        <div data-element="column" className="formkit-column">
+          <div
+            className="formkit-subheader"
+            data-element="subheader"
+            style={{ color: `rgb(125, 125, 125)`, fontSize: `16px` }}
+          >
+            <p>Subscribe to get our latest content by email.</p>
           </div>
           <ul
             className="formkit-alert formkit-alert-error"
@@ -88,14 +100,16 @@ const ContacUsForm = () => {
             <div className="formkit-field">
               <input
                 className="formkit-input"
-                aria-label="Your first name"
+                aria-label="Your name"
                 name="fields[first_name]"
-                placeholder="Your first name"
+                required=""
+                placeholder="Your name"
                 type="text"
                 style={{
-                  color: `rgb(139, 139, 139)`,
-                  borderColor: "rgb(221, 224, 228)",
-                  fontWeight: "400",
+                  color: `rgb(77, 77, 77)`,
+                  borderColor: `rgb(227, 227, 227)`,
+                  borderRadius: `4px`,
+                  fontWeight: 400,
                 }}
               />
             </div>
@@ -107,9 +121,56 @@ const ContacUsForm = () => {
                 required=""
                 type="email"
                 style={{
-                  color: `rgb(139, 139, 139)`,
-                  borderColor: `rgb(221, 224, 228)`,
-                  fontWeight: "400",
+                  color: `rgb(77, 77, 77)`,
+                  borderColor: `rgb(227, 227, 227)`,
+                  borderRadius: `4px`,
+                  fontWeight: 400,
+                }}
+              />
+            </div>
+            <div className="formkit-field">
+              <input
+                className="formkit-input"
+                aria-label="Company"
+                name="fields[null]"
+                placeholder="Company"
+                type="text"
+                style={{
+                  color: `rgb(77, 77, 77)`,
+                  borderColor: `rgb(227, 227, 227)`,
+                  borderRadius: `4px`,
+                  fontWeight: 400,
+                }}
+              />
+            </div>
+            <div className="formkit-field">
+              <input
+                className="formkit-input"
+                aria-label="Location"
+                name="fields[location]"
+                required=""
+                placeholder="Location"
+                type="text"
+                style={{
+                  color: `rgb(77, 77, 77)`,
+                  borderColor: `rgb(227, 227, 227)`,
+                  borderRadius: `4px`,
+                  fontWeight: 400,
+                }}
+              />
+            </div>
+            <div className="formkit-field">
+              <input
+                className="formkit-input"
+                aria-label="Phone number"
+                name="fields[null]"
+                placeholder="Phone number"
+                type="text"
+                style={{
+                  color: `rgb(77, 77, 77)`,
+                  borderColor: `rgb(227, 227, 227)`,
+                  borderRadius: `4px`,
+                  fontWeight: 400,
                 }}
               />
             </div>
@@ -117,49 +178,56 @@ const ContacUsForm = () => {
               <div role="button" tabIndex="0">
                 <fieldset
                   data-group="checkboxes"
-                  className="formkit-5279"
+                  className="formkit-1967"
                   type="Custom"
-                  order="2"
+                  order="5"
                   save_as="Tag"
                   group="field"
                 >
+                  <legend style={{ color: `rgb(77, 77, 77)`, fontWeight: 400 }}>
+                    Reason for your enquiry :
+                  </legend>
                   <div
                     className="formkit-checkboxes"
                     data-element="tags-checkboxes"
                     data-group="checkbox"
                     style={{
-                      color: `rgb(139, 139, 139)`,
-                      borderColor: `rgb(221, 224, 228)`,
-                      fontWeight: `400`,
+                      color: `rgb(77, 77, 77)`,
+                      borderColor: `rgb(227, 227, 227)`,
+                      borderRadius: `4px`,
+                      fontWeight: 400,
                     }}
                   >
                     <input
                       className="formkit-checkbox"
-                      id="tag-4148000-1735622"
+                      id="tag-4184380-1743428"
                       type="checkbox"
                       name="tags[]"
-                      value="1735622"
+                      value="1743428"
                     />
-                    <label htmlFor="tag-4148000-1735622">Subscribe</label>
+                    <label htmlFor="tag-4184380-1743428">
+                      Enterprise license query
+                    </label>
                   </div>
                   <div
                     className="formkit-checkboxes"
                     data-element="tags-checkboxes"
                     data-group="checkbox"
                     style={{
-                      color: `rgb(139, 139, 139)`,
-                      borderColor: `rgb(221, 224, 228)`,
-                      fontWeight: "400",
+                      color: `rgb(77, 77, 77)`,
+                      borderColor: `rgb(227, 227, 227)`,
+                      borderRadius: `4px`,
+                      fontWeight: 400,
                     }}
                   >
                     <input
                       className="formkit-checkbox"
-                      id="tag-4148000-1735623"
+                      id="tag-4184380-1743429"
                       type="checkbox"
                       name="tags[]"
-                      value="1735623"
+                      value="1743429"
                     />
-                    <label htmlFor="tag-4148000-1735623">Recommendations</label>
+                    <label htmlFor="tag-4184380-1743429">Request a demo</label>
                   </div>
                 </fieldset>
               </div>
@@ -169,9 +237,9 @@ const ContacUsForm = () => {
               className="formkit-submit formkit-submit"
               style={{
                 color: `rgb(255, 255, 255)`,
-                backgroundColor: `rgb(246, 166, 171)`,
-                borderRadius: `3px`,
-                fontWeight: `700`,
+                backgroundColor: `rgb(251, 105, 112)`,
+                borderRadius: `24px`,
+                fontWeight: 700,
               }}
             >
               <div className="formkit-spinner">
@@ -179,25 +247,20 @@ const ContacUsForm = () => {
                 <div></div>
                 <div></div>
               </div>
-              <span>Send me the guide</span>
+              <span>Request Callback</span>
             </button>
           </div>
           <div
-            className="formkit-disclaimer"
-            data-element="disclaimer"
-            style={{ color: `rgb(139, 139, 139)`, fontSize: `13px` }}
+            className="formkit-guarantee"
+            data-element="guarantee"
+            style={{
+              color: `rgb(125, 125, 125)`,
+              fontSize: `13px`,
+              fontWeight: 400,
+            }}
           >
-            We respect your privacy. Unsubscribe at anytime.
+            We won't send you spam. Unsubscribe at any time.
           </div>
-          <a
-            href="https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"
-            className="formkit-powered-by"
-            data-element="powered-by"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered By ConvertKit
-          </a>
         </div>
       </div>
     </form>
