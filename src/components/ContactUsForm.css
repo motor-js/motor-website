@@ -20,6 +20,7 @@
   padding: 0.01em 0 0 0;
   margin: 0;
   min-width: 0;
+  font-size: 14px;
 }
 
 .formkit-form[data-uid="02c7858452"] body:not(:-moz-handler-blocked) fieldset {
@@ -265,7 +266,8 @@
 .formkit-form[data-uid="02c7858452"]
   [data-group="checkboxes"]
   [data-group="checkbox"]
-  label::before {
+  label::before,
+#consent {
   height: 16px;
   width: 16px;
   border: 1px solid #e3e3e3;
@@ -472,7 +474,7 @@
   display: block;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-header {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-bottom: 0;
   position: relative;
   z-index: 2;
@@ -503,6 +505,14 @@
   position: relative;
   column-count: 2;
   column-gap: 10px;
+}
+.formkit-form[data-uid="02c7858452"] .formkit-consent {
+  position: relative;
+  column-count: 2;
+  column-gap: 10px;
+}
+.formkit-form[data-uid="02c7858452"] .formkit-consent-label {
+  font-size: 10px;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field {
   margin: 0 0 15px 0;

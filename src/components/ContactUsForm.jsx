@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
@@ -9,7 +9,7 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 import { ModalWrapper, ModalOverlay } from "./ContactUsFormTheme";
 
-const Modal = ({
+const ContactForm = ({
   isShowing,
   children,
   header,
@@ -22,8 +22,56 @@ const Modal = ({
 }) => {
   const numWidth = Number(width.replace("%", "").replace("vw", ""));
 
+  const FORM_ID = `1543213`;
+  const FORM_URL = `https://app.convertkit.com/forms/${FORM_ID}/subscriptions`;
+
+  const [email, setEmail] = useState(null);
+  const [status, setStatus] = useState(null);
+  const [consent, setConsent] = useState(false);
+
   const toggle = () => {
+    setStatus(null);
     onToggle();
+  };
+
+  const handleSubmit = async (e) => {
+    console.log("here");
+    e.preventDefault();
+    const data = new FormData(e.target);
+    try {
+      const response = await fetch(FORM_URL, {
+        method: "post",
+        body: data,
+        headers: {
+          accept: "application/json",
+        },
+      });
+      setEmail("");
+      const json = await response.json();
+      console.log(json);
+      if (json.status === "success") {
+        setStatus("SUCCESS");
+        return;
+      }
+      if (json.status === "failed") {
+        setStatus("ERROR");
+        return;
+      }
+    } catch (err) {
+      setStatus("ERROR");
+      console.log(err);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setEmail(value);
+  };
+
+  const handleCheck = (event) => {
+    // isActive = event.target.checked;
+    // this.setState({ isActive: isActive });
+    setConsent(event.target.checked);
   };
 
   return isShowing
@@ -44,14 +92,18 @@ const Modal = ({
                 data-uid="02c7858452"
                 data-format="inline"
                 data-version="5"
-                data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"},"recaptcha":{"enabled":true},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+                data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
                 min-width="400 500 600 700 800"
+                onSubmit={handleSubmit}
               >
                 <div data-style="card">
                   <div
                     data-element="column"
                     className="formkit-column"
-                    style={{ backgroundColor: `var(--redBrand)` }}
+                    style={{
+                      backgroundColor: `var(--redBrand)`,
+                      height: `80px`,
+                    }}
                   >
                     <div className="formkit-background"></div>
                     <div className="formkit-header" data-element="header">
@@ -77,7 +129,20 @@ const Modal = ({
                       className="formkit-alert formkit-alert-error"
                       data-element="errors"
                       data-group="alert"
-                    ></ul>
+                    >
+                      {status === "ERROR" && (
+                        <p>Oops, Something went wrong! try again.</p>
+                      )}
+                    </ul>
+                    <ul
+                      className="formkit-alert formkit-alert-success"
+                      data-element="errors"
+                      data-group="alert"
+                    >
+                      {status === "SUCCESS" && (
+                        <p>Please go confirm your subscription!</p>
+                      )}
+                    </ul>
                     <div
                       data-element="fields"
                       className="seva-fields formkit-fields"
@@ -130,7 +195,7 @@ const Modal = ({
                         />
                       </div>
                       <div className="formkit-field">
-                        <div role="button" tabIndex="0">
+                        <div>
                           <fieldset
                             data-group="checkboxes"
                             className="formkit-1967"
@@ -147,70 +212,6 @@ const Modal = ({
                             >
                               <input
                                 className="formkit-checkbox"
-                                id="tag-4184380-1743428"
-                                type="checkbox"
-                                name="tags[]"
-                                value="1743428"
-                              />
-                              <label htmlFor="tag-4184380-1743428">
-                                Enterprise license query
-                              </label>
-                            </div>
-                            <div
-                              className="formkit-checkboxes"
-                              data-element="tags-checkboxes"
-                              data-group="checkbox"
-                            >
-                              <input
-                                className="formkit-checkbox"
-                                id="tag-4184380-1743428"
-                                type="checkbox"
-                                name="tags[]"
-                                value="1743428"
-                              />
-                              <label htmlFor="tag-4184380-1743428">
-                                Enterprise license query
-                              </label>
-                            </div>
-                            <div
-                              className="formkit-checkboxes"
-                              data-element="tags-checkboxes"
-                              data-group="checkbox"
-                            >
-                              <input
-                                className="formkit-checkbox"
-                                id="tag-4184380-1743428"
-                                type="checkbox"
-                                name="tags[]"
-                                value="1743428"
-                              />
-                              <label htmlFor="tag-4184380-1743428">
-                                Enterprise license query
-                              </label>
-                            </div>
-                            <div
-                              className="formkit-checkboxes"
-                              data-element="tags-checkboxes"
-                              data-group="checkbox"
-                            >
-                              <input
-                                className="formkit-checkbox"
-                                id="tag-4184380-1743428"
-                                type="checkbox"
-                                name="tags[]"
-                                value="1743428"
-                              />
-                              <label htmlFor="tag-4184380-1743428">
-                                Enterprise license query
-                              </label>
-                            </div>
-                            <div
-                              className="formkit-checkboxes"
-                              data-element="tags-checkboxes"
-                              data-group="checkbox"
-                            >
-                              <input
-                                className="formkit-checkbox"
                                 id="tag-4184380-1743429"
                                 type="checkbox"
                                 name="tags[]"
@@ -220,14 +221,110 @@ const Modal = ({
                                 Request a demo
                               </label>
                             </div>
+                            <div
+                              className="formkit-checkboxes"
+                              data-element="tags-checkboxes"
+                              data-group="checkbox"
+                            >
+                              <input
+                                className="formkit-checkbox"
+                                id="tag-4184380-1746207"
+                                type="checkbox"
+                                name="tags[]"
+                                value="1746207"
+                              />
+                              <label htmlFor="tag-4184380-1746207">
+                                Team license enquiry
+                              </label>
+                            </div>
+                            <div
+                              className="formkit-checkboxes"
+                              data-element="tags-checkboxes"
+                              data-group="checkbox"
+                            >
+                              <input
+                                className="formkit-checkbox"
+                                id="tag-4184380-1743428"
+                                type="checkbox"
+                                name="tags[]"
+                                value="1743428"
+                              />
+                              <label htmlFor="tag-4184380-1743428">
+                                Enterprise license query
+                              </label>
+                            </div>
+                            <div
+                              className="formkit-checkboxes"
+                              data-element="tags-checkboxes"
+                              data-group="checkbox"
+                            >
+                              <input
+                                className="formkit-checkbox"
+                                id="tag-4184380-1746208"
+                                type="checkbox"
+                                name="tags[]"
+                                value="1746208"
+                              />
+                              <label htmlFor="tag-4184380-1746208">
+                                OEM license enquiry
+                              </label>
+                            </div>
+                            <div
+                              className="formkit-checkboxes"
+                              data-element="tags-checkboxes"
+                              data-group="checkbox"
+                            >
+                              <input
+                                className="formkit-checkbox"
+                                id="tag-4184380-1746209"
+                                type="checkbox"
+                                name="tags[]"
+                                value="1746209"
+                              />
+                              <label htmlFor="tag-4184380-1746209">
+                                General enquiry
+                              </label>
+                            </div>
                           </fieldset>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      data-element="fields"
+                      className="seva-fields formkit-consent"
+                    >
+                      <div
+                        className="formkit-checkboxes"
+                        data-element="tags-checkboxes"
+                        data-group="checkbox"
+                        style={{ marginTop: `5px` }}
+                      >
+                        <input
+                          className="formkit-checkbox"
+                          id="consent"
+                          type="checkbox"
+                          // name="tags[]"
+                          // value="1743429"
+                          onChange={(event) => handleCheck(event)}
+                        />
+                        <label
+                          htmlFor="consent"
+                          className="formkit-consent-label"
+                        >
+                          By checking this box, I acknowledge that I have read
+                          and accepted the Motor-js Terms and Conditions. By
+                          submitting my personal data, I consent to receive
+                          electronic messages and other communications from
+                          Motor-js. For further information, please see our
+                          Privacy Note.
+                        </label>
                       </div>
                       <button
                         data-element="submit"
                         className="formkit-submit formkit-submit"
                         id="button2"
                         className={clsx("button b1 button--lg", styles.button)}
+                        disabled={!consent}
                       >
                         <div className="formkit-spinner">
                           <div></div>
@@ -251,7 +348,7 @@ const Modal = ({
     : null;
 };
 
-Modal.propTypes = {
+ContactForm.propTypes = {
   children: PropTypes.node,
   footer: PropTypes.node,
   header: PropTypes.node,
@@ -280,7 +377,7 @@ Modal.propTypes = {
   zIndex: PropTypes.string,
 };
 
-Modal.defaultProps = {
+ContactForm.defaultProps = {
   children: undefined,
   footer: undefined,
   header: undefined,
@@ -289,4 +386,4 @@ Modal.defaultProps = {
   zIndex: "1050",
 };
 
-export default Modal;
+export default ContactForm;
