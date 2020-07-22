@@ -557,3 +557,7 @@
 .formkit-form[data-uid="02c7858452"] .formkit-close-icon {
   margin-left: 10px;
 }
+.formkit-form[data-uid="02c7858452"] .formkit-close-icon:hover {
+  cursor: pointer;
+  opacity: 0.95;
+}
