@@ -53,11 +53,24 @@ You do not need to set the Config prop if the component is a child of the Motor 
       &#125;
     </td>
   </tr>
+   <tr>
+    <td>
+      <code>type</code>
+    </td>
+    <td>heading type, displaying either free text, last reload timestamp or the app name</td>
+    <td>
+      <b>'lastReleod'</b>
+      <br />
+      'free'
+      <br />
+      'appName'
+    </td>
+  </tr>
   <tr>
     <td>
       <code>size</code>
     </td>
-    <td>size of the selections box</td>
+    <td>size of the heading</td>
     <td>
       'tiny'
       <br />
@@ -72,20 +85,28 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
-      <code>width</code>
+      <code>level</code>
     </td>
-    <td>width of the selections box</td>
+    <td>Heading level from H1 to H6, prop takes the number.</td>
     <td>
-      'string'
+      <b>'1'</b>
       <br />
-      <b>'100%'</b>
+      '2'
+       <br />
+      '3'
+       <br />
+      '4'
+       <br />
+      '5'
+       <br />
+      '6'
     </td>
   </tr>
   <tr>
     <td>
       <code>margin</code>
     </td>
-    <td>margin around the selections box</td>
+    <td>heading margin</td>
     <td>
       'string'
       <br />
@@ -94,13 +115,13 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
-      <code>dropHeight</code>
+      <code>color</code>
     </td>
-    <td>height of the search dropdown</td>
+    <td>heading color</td>
     <td>
       'string'
       <br />
-      <b>'250px'</b>
+      <b>'default taken from theme'</b>
     </td>
   </tr>
 </table>
@@ -125,11 +146,11 @@ function SmartHeadingTest() {
 
 ## Theme API
 
-### search.color
+### smartHeading
 
-Settings in global.search.color are below:
+Settings in global.smartHeading are below:
 
-e.g. <code>global.search.color.background = 'brand'</code>
+e.g. <code>global.smartHeading.color = 'brand'</code>
 
 <table>
   <tr>
@@ -138,27 +159,10 @@ e.g. <code>global.search.color.background = 'brand'</code>
     <th>Options / Example</th>
   </tr>
   <tr>
-    <th>search.color</th>
-  </tr>
-  <tr>
     <td>
-      <code>background</code>
+      <code>color</code>
     </td>
-    <td>search background color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>font</code>
-    </td>
-    <td>font color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>placeholder</code>
-    </td>
-    <td>placeholder font color</td>
+    <td>heading color</td>
     <td>'string'</td>
   </tr>
 </table>

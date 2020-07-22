@@ -17,7 +17,7 @@ const pricing = (props) => {
       actionName: "Get Started",
       descriptions: [
         { text: "Access to full library", access: true },
-        { text: "Support via GitHub", access: true },
+        { text: "Support via Spectrum", access: true },
         { text: "Non commercial projects", access: true },
         { text: "Internal applications", access: false },
         { text: "Priority support", access: false },
@@ -36,7 +36,7 @@ const pricing = (props) => {
       actionName: "Contact Us",
       descriptions: [
         { text: "Access to full library", access: true },
-        { text: "Support via GitHub", access: true },
+        { text: "Support via Spectrum", access: true },
         { text: "Max 3 developers", access: true },
         { text: "Internal applications", access: true },
         { text: "Priority support", access: false },

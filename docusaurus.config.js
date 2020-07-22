@@ -65,8 +65,8 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Gitter',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Spectrum',
+              href: 'https://spectrum.chat/motor-js',
             },
             {
               label: 'Twitter',
@@ -83,7 +83,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/motor-js/',
             },
           ],
         },

@@ -14,7 +14,10 @@ import { Filter } from @motor-js/core
 
 //...
 
-<Filter cols=['Dimension Name'] />
+<Filter  
+  dimension={['myAwesomeDimension']}
+  label='AwesomeDimension'
+/>
 
 ```
 
@@ -33,12 +36,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
   <tr>
     <td><code>config</code></td>
     <td>Configuration object to connect to the Qlik Engine, only set this if used outside of the Motor component</td>
-    <td>&#123; <br />
+    <td>
+      <code>object</code> <br />
+      &#123; <br />
       host&#58; 'string', <br />
       secure&#58; 'boolean', <br />
       port&#58; 'number', <br />
-      prefix&#58; 'string', <br />
-      appId&#58; 'string' <br />
+      prefix&#58; <code>string</code>, <br />
+      appId&#58; <code>string</code> <br />
       &#125;
     </td>
   </tr>
@@ -50,7 +55,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <b>is required</b>
       <br />
-      'string'
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -61,7 +66,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <b>is required</b>
       <br />
-      'array'
+      <code>array</code>
     </td>
   </tr>
   <tr>
@@ -70,6 +75,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Size of the filter</td>
     <td>
+      <code>oneOf</code>
+      <br />
       'tiny'
       <br />
       'small'
@@ -87,7 +94,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>width of the filter</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>'100%'</b>
     </td>
@@ -98,7 +105,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Height of the dropdown</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>'250px'</b>
     </td>
@@ -109,7 +116,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>margin around the filter</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>'5px'</b>
     </td>
@@ -119,14 +126,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>onSelectionChange</code>
     </td>
     <td>function fired on a change in selection</td>
-    <td>function</td>
+    <td><code>function</code></td>
   </tr>
   <tr>
     <td>
       <code>onSearch</code>
     </td>
     <td>function fired on search</td>
-    <td>function</td>
+    <td><code>function</code></td>
   </tr>
   <tr>
     <td>
@@ -134,7 +141,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>option to enable only single selections in the Filter list</td>
     <td>
-      boolean
+      <code>boolean</code>
       <br />
       <b>false</b>
     </td>
@@ -145,7 +152,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>option that sorts our Filter by selection state</td>
     <td>
-      boolean
+      <code>boolean</code>
       <br />
       <b>true</b>
     </td>
@@ -156,7 +163,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Add the Filter selections to the title</td>
     <td>
-      boolean
+      <code>boolean</code>
       <br />
       <b>true</b>
     </td>
@@ -167,23 +174,54 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ## Examples
 
-##### Simple Filter example
+### Simple Filter example
 
 ```jsx live
 function FilterTest() {
-  return <Motor config={config}></Motor>;
+  return (
+    <Motor config={config}>
+      <Filter 
+        dimension={['Product Sub Group Desc']}
+        label='Product Group'
+      />
+    </Motor>
+  )
 }
 ```
+
+### Singe Selection
+
+```jsx live
+function FilterTest() {
+  return (
+    <Motor config={config}>
+      <Filter 
+        dimension={['Product Sub Group Desc']}
+        label='Product Group'
+        single
+      />
+    </Motor>
+  )
+}
+```
+
 
 <br />
 
 ## Theme API
 
-### filter.color
+### filter
 
-Settings in global.filter.color are below:
+Settings in filter are below:
 
 e.g. <code>global.filter.color.selected = 'brand'</code>
+
+or
+
+<code>global.filter.title.border = '1px solid'</code>
+
+<br />
+<br />
 
 <table>
   <tr>
@@ -192,223 +230,169 @@ e.g. <code>global.filter.color.selected = 'brand'</code>
     <th>Options / Example</th>
   </tr>
   <tr>
+    <th>color</th>
     <th>filter.color</th>
+    <th></th>
   </tr>
   <tr>
     <td>
       <code>selected</code>
     </td>
     <td>background color of selected item</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>icon</code>
     </td>
     <td>color of the filter icons</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>backgroundColor</code>
     </td>
     <td>background color</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>selectedFont</code>
     </td>
     <td>font color of selected item</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>fontTitle</code>
     </td>
     <td>color of Filter label</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>notSelected</code>
     </td>
     <td>color not selected item</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>altSelection</code>
     </td>
     <td>color of alternate selections</td>
-    <td>'string'</td>
-  </tr>
-</table>
-
-<br />
-
-### filter.title
-
-Settings in global.filter.title are below:
-
-e.g. <code>global.filter.title.border = '1px solid'</code>
-
-<table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
+    <td><code>string</code></td>
   </tr>
   <tr>
+    <th>title</th>
     <th>filter.title</th>
+    <th></th>
   </tr>
   <tr>
     <td>
       <code>border</code>
     </td>
     <td>filter title border</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>bordeColor</code>
     </td>
     <td>filter title border color</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>radius</code>
     </td>
     <td>filter title border radius</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>justifyContent</code>
     </td>
     <td>title alignment</td>
-    <td>'string'</td>
-  </tr>
-</table>
-
-<br />
-
-### filter.main
-
-Settings in global.filter.main are below:
-
-e.g. <code>global.filter.main.border = '1px solid'</code>
-
-<table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
+    <td><code>string</code></td>
   </tr>
   <tr>
+    <th>main</th>
     <th>filter.main</th>
+    <th></th>
   </tr>
   <tr>
     <td>
       <code>border</code>
     </td>
     <td>filter border</td>
-    <td>'string'</td>
-  </tr>
-</table>
-
-<br />
-
-### filter.selected
-
-Settings in global.filter.selected are below:
-
-e.g. <code>global.filter.selected.border = '1px solid'</code>
-
-<table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
+    <td><code>string</code></td>
   </tr>
   <tr>
+    <th>selected</th>
     <th>filter.selected</th>
+    <th></th>
   </tr>
   <tr>
     <td>
       <code>border</code>
     </td>
     <td>selected item border</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>borderColor</code>
     </td>
     <td>selected item border color</td>
-    <td>'string'</td>
-  </tr>
-</table>
-
-<br />
-
-### filter.dropdown
-
-Settings in global.filter.dropdown are below:
-
-e.g. <code>global.filter.dropdown.border = '1px solid'</code>
-
-<table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <th>filter.dropdown</th>
+    <th>dropdown</th>
+    <th></th>
   </tr>
   <tr>
     <td>
       <code>border</code>
     </td>
     <td>dropdown border</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>borderColor</code>
     </td>
     <td>dropdown border color</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>borderItems</code>
     </td>
     <td>dropdown border color</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>radius</code>
     </td>
     <td>dropdown border radius</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>marginTop</code>
     </td>
     <td>margin at the top of the dropdown</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>shadow</code>
     </td>
     <td>dropdown shadow</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
@@ -416,6 +400,7 @@ e.g. <code>global.filter.dropdown.border = '1px solid'</code>
     </td>
     <td>height of the dropdown items</td>
     <td>
+      <code>object</code>
       &#123;
       <br />
       tiny&#58; 'number',
@@ -431,32 +416,17 @@ e.g. <code>global.filter.dropdown.border = '1px solid'</code>
       &#125;
     </td>
   </tr>
-</table>
-
-<br />
-
-### filter.hover
-
-Settings in global.filter.hover are below:
-
-e.g. <code>global.filter.hover.borderColor = 'red'</code>
-
-<table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
+    <tr>
+    <th>hover</th>
     <th>filter.hover</th>
+    <th></th>
   </tr>
   <tr>
     <td>
       <code>borderColor</code>
     </td>
     <td>border color on hover</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
 </table>
 
-<br />

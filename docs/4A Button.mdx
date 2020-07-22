@@ -41,7 +41,23 @@ You do not need to set the Config prop if the component is a child of the Motor 
       Configuration object to connect to the Qlik Engine, only set this if used
       outside of the Motor component
     </td>
-    <td>{}</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      host&#58; 'string',
+      <br />
+      secure&#58; 'boolean',
+      <br />
+      port&#58; 'number',
+      <br />
+      prefix&#58; 'string',
+      <br />
+      appId&#58; 'string'
+      <br />
+      &#125;
+    </td>
   </tr>
   <tr>
     <td>
@@ -52,6 +68,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
       onClick function
     </td>
     <td>
+      <code>oneOf</code>
+      <br />
       'clearSelections'
       <br />
       'back'
@@ -66,21 +84,23 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>block</code>
     </td>
     <td></td>
-    <td>boolean</td>
+    <td><code>boolean</code></td>
   </tr>
   <tr>
     <td>
       <code>onClick</code>
     </td>
     <td>Click handler</td>
-    <td>function</td>
+    <td><code>function</code></td>
   </tr>
   <tr>
     <td>
       <code>size</code>
     </td>
-    <td>The size of the button</td>
+    <td>button size</td>
     <td>
+      <code>oneOf</code>
+      <br />
       'tiny'
       <br />
       'small'
@@ -97,7 +117,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>color</code>
     </td>
     <td>Background color</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
@@ -105,7 +125,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>margin, sets the margin css property</td>
     <td>
-      'string'
+      <code>string</code>
       <br /> <b>'5px'</b>
     </td>
   </tr>
@@ -115,7 +135,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>sets the width css property</td>
     <td>
-      'string'
+      <code>string</code>
       <br /> <b>'100%'</b>
     </td>
   </tr>
@@ -124,7 +144,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>fontColor</code>
     </td>
     <td>button font color</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
@@ -132,7 +152,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>radius of the button</td>
     <td>
-      'string'
+      <code>string</code>
       <br /> <b>'8px'</b>
     </td>
   </tr>
@@ -141,14 +161,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>border</code>
     </td>
     <td>sets the border css property</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>outline</code>
     </td>
     <td>button outline</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
@@ -156,7 +176,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Transform css property on click</td>
     <td>
-      'string'
+      <code>string</code>
       <br /> <b>null</b>
     </td>
   </tr>
@@ -166,7 +186,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Background color on click</td>
     <td>
-      'string'
+      <code>string</code>
       <br /> <b>null</b>
     </td>
   </tr>
@@ -176,7 +196,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Background size on click</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>null</b>
     </td>
@@ -187,7 +207,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Transition on click</td>
     <td>
-      'string'
+      <code>string</code>
       <br /> <b>null</b>
     </td>
   </tr>
@@ -197,7 +217,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>transition</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>null</b>
     </td>
@@ -208,7 +228,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>box shadow on hover</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>null</b>
     </td>
@@ -219,7 +239,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>border on hover</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>null</b>
     </td>
@@ -230,7 +250,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>background color on hover</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>null</b>
     </td>
@@ -241,13 +261,37 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ## Examples
 
-##### Simple Button example
+### Simple Button example
 
 ```jsx live
 function ButtonTest() {
+  const msg = 'You clicked the button'
   return (
     <Motor config={config}>
-      <Button>I am a button.</Button>
+      <Button onClick={() => window.alert(msg)}>Click Me.</Button>
+    </Motor>
+  );
+}
+```
+
+### Large Buttons, different colors
+
+```jsx live
+function ButtonTest() {
+  const size = 'large'
+  return (
+    <Motor config={config}>
+        <Button size={size} color='brand'>Brand</Button>
+        <Button size={size} color='var(--oc-red-6)'>Red</Button>
+        <Button size={size} color='var(--oc-orange-6)'>Orange</Button>
+        <Button size={size} color='var(--oc-yellow-6)'>Yellow</Button>
+        <Button size={size} color='var(--oc-green-6)'>Green</Button>
+        <Button size={size} color='var(--oc-teal-6)'>Teal</Button>
+        <Button size={size} color='var(--oc-blue-6)'>Blue</Button>
+        <Button size={size} color='var(--oc-violet-6)'>Violet</Button>
+        <Button size={size} color='var(--oc-pink-6)'>Pink</Button>
+        <Button size={size} color='var(--oc-gray-6)'>Gray</Button>
+        <Button size={size} color='black'>Black</Button>
     </Motor>
   );
 }
@@ -259,9 +303,15 @@ function ButtonTest() {
 
 ### button
 
-Settings in global.button are below:
+Settings in button are below:
 
-e.g. <code>global.button.backgroundColor = 'red'</code>
+e.g. <code>button.backgroundColor = 'red'</code>
+
+or
+
+<code>button.hover.backgroundColor = 'yellow'</code>
+<br />
+<br />
 
 <table>
   <tr>
@@ -271,14 +321,16 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
   </tr>
   <tr>
     <th>button</th>
+    <th></th>
+    <th></th>
   </tr>
   <tr>
     <td>
       <code>backgroundColor</code>
     </td>
-    <td>Background color of the button</td>
+    <td>background color of the button</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -287,7 +339,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>button font color</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -296,7 +348,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>button border </td>
     <td>
-      <code>'border'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -305,7 +357,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>button margin</td>
     <td>
-      <code>'margin'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -314,7 +366,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>border radius</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -323,7 +375,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>box shadow</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -332,7 +384,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>button paddding</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -341,7 +393,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>button transform property</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -350,7 +402,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>font weight</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -359,7 +411,7 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>button outline</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -368,35 +420,21 @@ e.g. <code>global.button.backgroundColor = 'red'</code>
     </td>
     <td>transiton</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
-</table>
-
-<br />
-
-### button.hover
-
-Settings in global.button.hover are below:
-
-e.g. <code>global.button.hover.backgroundColor = 'red'</code>
-
-<table>
   <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
+    <th>hover</th>
     <th>button.hover</th>
+    <th></th>
   </tr>
-  <tr>
+<tr>
     <td>
       <code>background</code>
     </td>
     <td>background on hover</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -405,7 +443,7 @@ e.g. <code>global.button.hover.backgroundColor = 'red'</code>
     </td>
     <td>border color on hover</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -414,7 +452,7 @@ e.g. <code>global.button.hover.backgroundColor = 'red'</code>
     </td>
     <td>box shadow on hover</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -423,7 +461,7 @@ e.g. <code>global.button.hover.backgroundColor = 'red'</code>
     </td>
     <td>background color on hover</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -432,35 +470,21 @@ e.g. <code>global.button.hover.backgroundColor = 'red'</code>
     </td>
     <td>border on hover</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
-</table>
-
-<br />
-
-### button.active
-
-Settings in global.button.active are below:
-
-e.g. <code>global.button.active.backgroundColor = 'red'</code>
-
-<table>
   <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
+    <th>active</th>
     <th>button.active</th>
+    <th></th>
   </tr>
-  <tr>
+<tr>
     <td>
       <code>transform</code>
     </td>
     <td>transform on button click</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -469,7 +493,7 @@ e.g. <code>global.button.active.backgroundColor = 'red'</code>
     </td>
     <td>background color on button click</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -478,7 +502,7 @@ e.g. <code>global.button.active.backgroundColor = 'red'</code>
     </td>
     <td>background size on button click</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
   <tr>
@@ -487,13 +511,8 @@ e.g. <code>global.button.active.backgroundColor = 'red'</code>
     </td>
     <td>transition on button click</td>
     <td>
-      <code>'string'</code>
+      <code>string</code>
     </td>
   </tr>
 </table>
 
-<br />
-
-## Extending Styles
-
-<br />

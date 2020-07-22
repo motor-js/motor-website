@@ -22,7 +22,9 @@ npm i @motor-js/core
 ### Include in your HTML
 
 ```javascript
-<script src="...@motor-js/core"></script>
+<script src="https://unpkg.com/@motor-js/core"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
 <br />
@@ -77,7 +79,6 @@ import { Button } from '@motor-js/core'
 />
 
 ```
-
 
 
 ## Examples
