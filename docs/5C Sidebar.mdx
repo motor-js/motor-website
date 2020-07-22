@@ -8,13 +8,13 @@ sidebar_label: Sidebar
 
 ## Usage
 
-We have created layout components to make dashabord design easier and quicker.
+A collapsable sidebar component which hides additional content beside a page.
 
 ```javascript
 
 import { Sidebar } from @motor-js/core
 //...
-   <Sidebar
+<Sidebar
   collapsable
   padding="100px 5px"
   isOpen={isOpen}
@@ -83,7 +83,6 @@ import { Sidebar } from @motor-js/core
 
 ## Example
 
-A simple sideBar example
 
 ### Simple sidebar
 
@@ -106,27 +105,9 @@ function SideBarDemo() {
           border={{ color: "brand" }}
         >
           <Box direction="column" overflow="visible">
-            <Box
-              gridArea="header"
-              border={{ side: "bottom", color: "brand" }}
-              padding="0px 0px 10px 0px"
-              direction="row"
-              align="center"
-              size="large"
-              overflow="hidden"
-            >
               <Button onClick={toggle} size={25}>
                 Hide Sidebar
               </Button>
-              Filters
-            </Box>
-            <Box
-              direction="column"
-              padding="0px 0px 0px 30px"
-              overflow="visible"
-            >
-              {/** FILTERS */}
-            </Box>
           </Box>
         </Sidebar>
         <Button onClick={toggle}>Show Sidebar</Button>
