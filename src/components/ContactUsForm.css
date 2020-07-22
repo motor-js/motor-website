@@ -440,12 +440,14 @@
 }
 .formkit-form[data-uid="02c7858452"] {
   box-shadow: 0 2px 15px 0 rgba(51, 51, 51, 0.1);
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow: scroll;
 }
 .formkit-form[data-uid="02c7858452"],
 .formkit-modal,
 .formkit-slide-in {
-  max-width: 460px !important;
+  /* max-width: 460px !important; */
+  width: 100% !important;
 }
 .formkit-form[data-uid="02c7858452"] [data-style="card"] {
   width: 100%;

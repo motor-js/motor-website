@@ -77,6 +77,7 @@ const ContactUsModal = (props) => {
             fontWeight: "bold",
             display: "flex",
             justifyContent: "space-between",
+            backgroundColor: `rgb(251, 105, 112)`,
           }}
         >
           <span>Modal Title</span>
