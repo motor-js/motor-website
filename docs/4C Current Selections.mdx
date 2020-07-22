@@ -39,6 +39,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
       outside of the Motor component
     </td>
     <td>
+    <code>object</code>
+    <br />
       &#123;
       <br />
       host&#58; 'string',
@@ -61,6 +63,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>size of the selections box</td>
     <td>
       <code>oneOf</code>
+      <br />
       'tiny'
       <br />
       'small'
@@ -125,7 +128,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       values are grouped
     </td>
     <td>
-      'number'
+      <code>number</code>
       <br />
       '3'
     </td>
@@ -136,6 +139,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Set overflow property, either on the x-axis or y-axis</td>
     <td>
+      <code>oneOf</code>
+      <br />
       <b>'x-axis'</b>
       <br />
       'y-axis'
@@ -147,7 +152,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ## Examples
 
-##### Simple Example
+### Simple Example
 
 ```jsx live
 function SelectionsTest() {
@@ -200,11 +205,11 @@ function SelectionsTest() {
 
 ## Theme API
 
-### selections.color
+### selections
 
-Settings in global.selections.color are below:
+Settings in selections are below:
 
-e.g. <code>global.selections.color.defaultFont = 'brand'</code>
+e.g. <code>selections.color.defaultFont = 'brand'</code>
 
 <table>
   <tr>
@@ -213,7 +218,9 @@ e.g. <code>global.selections.color.defaultFont = 'brand'</code>
     <th>Options / Example</th>
   </tr>
   <tr>
-    <th>selections.color</th>
+    <th>color</th>
+     <th>selections.color</th>
+    <th></th>
   </tr>
   <tr>
     <td>
@@ -250,24 +257,10 @@ e.g. <code>global.selections.color.defaultFont = 'brand'</code>
     <td>border color</td>
     <td><code>string</code></td>
   </tr>
-</table>
-
-<br />
-
-### selections.wrapper
-
-Settings in global.selections.wrapper are below:
-
-e.g. <code>global.selections.wrapper.border = '1px solid'</code>
-
-<table>
   <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
+    <th>wrapper</th>
     <th>selections.wrapper</th>
+    <th></th>
   </tr>
   <tr>
     <td>
@@ -297,24 +290,10 @@ e.g. <code>global.selections.wrapper.border = '1px solid'</code>
     <td>wrapper border radius</td>
     <td><code>string</code></td>
   </tr>
-</table>
-
-<br />
-
-### selections.item
-
-Settings in global.selections.item are below:
-
-e.g. <code>global.selections.item.border = '1px solid'</code>
-
-<table>
   <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
+    <th>item</th>
     <th>selections.item</th>
+    <th></th>
   </tr>
   <tr>
     <td>
@@ -345,3 +324,4 @@ e.g. <code>global.selections.item.border = '1px solid'</code>
     <td><code>string</code></td>
   </tr>
 </table>
+

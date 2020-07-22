@@ -38,6 +38,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       outside of the Motor component
     </td>
     <td>
+      <code>object</code> <br />
       &#123;
       <br />
       host&#58; 'string',
@@ -59,7 +60,9 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>heading type, displaying either free text, last reload timestamp or the app name</td>
     <td>
-      <b>'lastReleod'</b>
+      <code>oneOf</code> 
+      <br />
+      <b>'lastReload'</b>
       <br />
       'free'
       <br />
@@ -72,6 +75,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>size of the heading</td>
     <td>
+      <code>oneOf</code> 
+      <br />
       'tiny'
       <br />
       'small'
@@ -89,6 +94,8 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Heading level from H1 to H6, prop takes the number.</td>
     <td>
+      <code>oneOf</code> 
+      <br /> 
       <b>'1'</b>
       <br />
       '2'
@@ -108,7 +115,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>heading margin</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
       <b>'5px'</b>
     </td>
@@ -119,9 +126,9 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>heading color</td>
     <td>
-      'string'
+      <code>string</code>
       <br />
-      <b>'default taken from theme'</b>
+      <b>'null' (default taken from theme)</b>
     </td>
   </tr>
 </table>
@@ -163,7 +170,7 @@ e.g. <code>global.smartHeading.color = 'brand'</code>
       <code>color</code>
     </td>
     <td>heading color</td>
-    <td>'string'</td>
+    <td><code>string</code></td>
   </tr>
 </table>
 
