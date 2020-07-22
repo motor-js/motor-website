@@ -57,8 +57,19 @@
 .button:hover {
   margin: 20px;
   transform: translateY(-2px);
-  background-color: var(--lightBrand);/*#d5d5d5;  0c58bb3d*/
+  background-color: var(--lightBrand); /*#d5d5d5;  0c58bb3d*/
 }
+.icon {
+  margin: 0 20px;
+  /* transform: translateY(-2px); */
+  color: var(--redBrand); /*#d5d5d5;  0c58bb3d*/
+}
+
+/*.icon:hover {
+  margin: 0 20px;
+  transform: translateY(-2px);
+  background-color: var(--lightBrand); 
+}*/
 
 .components {
   display: flex;

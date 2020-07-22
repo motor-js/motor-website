@@ -5,6 +5,8 @@ import styles from "../pages/styles.module.css";
 import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ContactUsForm from "./ContactUsForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 const ContactUsModal = (props) => {
   const [status, setStatus] = useState(null);
@@ -67,9 +69,51 @@ const ContactUsModal = (props) => {
     //   {status === "ERROR" && <p>Oops, try again.</p>}
     // </form>
     <Modal
-      top="10%"
+      top="5%"
       header={
-        <div style={{ fontSize: "20px", fontWeight: "bold" }}>Modal Title</div>
+        // <div
+        //   style={{
+        //     fontSize: "20px",
+        //     fontWeight: "bold",
+        //     display: "flex",
+        //     justifyContent: "space-between",
+        //     backgroundColor: `rgb(251, 105, 112)`,
+        //   }}
+        // >
+        //   <span>Modal Title</span>
+        //   <FontAwesomeIcon
+        //     icon={faTimesCircle}
+        //     size="lg"
+        //     onClick={toggle}
+        //     className={clsx("icon", styles.icon)}
+        //   />
+        // </div>
+        <div
+          data-element="column"
+          className="formkit-column"
+          style={{ backgroundColor: `rgb(251, 105, 112)` }}
+        >
+          <div
+            className="formkit-background"
+            style={{
+              backgroundImage: `url(
+                "//pages.convertkit.com/assets/powell/bg.jpg"
+              )`,
+              opacity: 0.2,
+            }}
+          ></div>
+          <div
+            className="formkit-header"
+            data-element="header"
+            style={{
+              color: `rgb(255, 255, 255)`,
+              fontSize: `22px`,
+              fontWeight: `700`,
+            }}
+          >
+            <h1>Looking to learn more about our product ?</h1>
+          </div>
+        </div>
       }
       footer={
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
