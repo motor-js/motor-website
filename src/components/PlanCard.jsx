@@ -12,7 +12,7 @@ import styles from "../pages/styles.module.css";
 
 import "./plans.css";
 import { Button, useModal } from "@motor-js/core";
-import ContactUsModal from "./ContactUsModal";
+import ContactUs from "./ContactUsForm";
 // id: 0,
 // title: "FREE",
 // perUsers: "Individual",
@@ -95,7 +95,7 @@ export const PlanCard = (props) => {
                 {price.actionName}
               </Link>
               {/* <Button onClick={toggle}>Show Modal</Button> */}
-              <ContactUsModal isShowing={isShowing} onToggle={toggle} />
+              <ContactUs isShowing={isShowing} onToggle={toggle} />
             </div>
           )}
         </div>

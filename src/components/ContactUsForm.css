@@ -476,9 +476,12 @@
 }
 .formkit-form[data-uid="02c7858452"] .formkit-fields {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field {
   margin: 0 0 15px 0;
+  flex: 0 50%;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field:last-of-type input {
   padding-right: 110px;
