@@ -12,6 +12,8 @@
   padding: 0;
   position: relative;
   display: table;
+  color: rgb(77, 77, 77);
+  font-weight: 400;
 }
 .formkit-form[data-uid="02c7858452"] fieldset {
   border: 0;
@@ -19,6 +21,7 @@
   margin: 0;
   min-width: 0;
 }
+
 .formkit-form[data-uid="02c7858452"] body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
@@ -461,6 +464,8 @@
 .formkit-slide-in {
   /* max-width: 460px !important; */
   width: 100% !important;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
 }
 .formkit-form[data-uid="02c7858452"] [data-style="card"] {
   width: 100%;
