@@ -94,7 +94,6 @@ export const PlanCard = (props) => {
               >
                 {price.actionName}
               </Link>
-              {/* <Button onClick={toggle}>Show Modal</Button> */}
               <ContactUs isShowing={isShowing} onToggle={toggle} />
             </div>
           )}

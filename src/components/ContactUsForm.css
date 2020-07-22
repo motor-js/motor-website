@@ -64,9 +64,15 @@
   display: block;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-input,
-.formkit-form[data-uid="02c7858452"] .formkit-select,
+.formkit-form[data-uid="02c7858452"] .formkit-select {
+  width: 100%;
+}
 .formkit-form[data-uid="02c7858452"] .formkit-checkboxes {
   width: 100%;
+  color: rgb(77, 77, 77);
+  border-color: rgb(227, 227, 227);
+  border-radius: 4px;
+  font-weight: 400;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-button,
 .formkit-form[data-uid="02c7858452"] .formkit-submit {
@@ -230,8 +236,8 @@
   [data-group="checkbox"]
   input[type="checkbox"]:checked
   + label::before {
-  background: #10bf7a;
-  border-color: #10bf7a;
+  background: var(--redBrand);
+  border-color: var(--redBrand);
 }
 .formkit-form[data-uid="02c7858452"]
   [data-group="checkboxes"]
@@ -465,12 +471,19 @@
   margin-bottom: 0;
   position: relative;
   z-index: 2;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-header p {
   margin-bottom: 0;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-subheader {
   margin-bottom: 25px;
+  color: rgb(125, 125, 125);
+  font-size: 16px;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-column {
   padding: 30px;
@@ -483,12 +496,12 @@
 }
 .formkit-form[data-uid="02c7858452"] .formkit-fields {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
+  column-count: 2;
+  column-gap: 10px;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field {
   margin: 0 0 15px 0;
-  flex: 0 50%;
+  /* flex: 0 50%; */
   /* margin: 5px; */
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field:last-of-type input {
@@ -510,6 +523,9 @@
   font-size: 13px;
   text-align: center;
   margin: 25px 0 0 0;
+  color: rgb(125, 125, 125);
+  font-size: 13px;
+  font-weight: 400;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-guarantee > p {
   margin: 0;
@@ -522,6 +538,8 @@
   left: 0;
   background-size: cover;
   z-index: 1;
+  background-image: url("//pages.convertkit.com/assets/powell/bg.jpg");
+  opacity: 0.2;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-powered-by {
   color: #7d7d7d;
@@ -530,4 +548,12 @@
   margin-top: 15px;
   margin-bottom: 0;
   text-align: center;
+}
+
+.formkit-form[data-uid="02c7858452"] .formkit-close {
+  opacity: 0.7;
+  font-size: 14px;
+}
+.formkit-form[data-uid="02c7858452"] .formkit-close-icon {
+  margin-left: 10px;
 }

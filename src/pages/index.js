@@ -11,6 +11,8 @@ import {
   faArrowAltCircleDown,
   faArrowAltCircleRight,
 } from "@fortawesome/free-regular-svg-icons";
+import { useModal } from "@motor-js/core";
+import ContactUs from "../components/ContactUsForm";
 
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
@@ -93,6 +95,7 @@ function Feature({ imageUrl, title, description }) {
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
+  const { isShowing, toggle } = useModal();
   return (
     <Layout title={`${siteConfig.title}`} description="Motor homepage">
       <div className="hero-overlay">
@@ -111,10 +114,12 @@ function Home() {
               <Link
                 id="button2"
                 className={clsx("button button--lg", styles.button)}
-                to={useBaseUrl("docs/")}
+                // to={useBaseUrl("docs/")}
+                onClick={toggle}
               >
                 Book Demo
               </Link>
+              <ContactUs isShowing={isShowing} onToggle={toggle} />
             </div>
           </div>
         </header>
@@ -234,10 +239,12 @@ function Home() {
             <Link
               id="button4"
               className={clsx("button b1 button--lg", styles.button)}
-              to={useBaseUrl("docs/Getting%20Started")}
+              // to={useBaseUrl("docs/Getting%20Started")}
+              onClick={toggle}
             >
               Contact Us
             </Link>
+            <ContactUs isShowing={isShowing} onToggle={toggle} />
           </div>
         </section>
       </main>

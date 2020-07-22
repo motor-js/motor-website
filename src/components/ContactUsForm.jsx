@@ -1,20 +1,13 @@
 import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-// import Box from "../box";
-// import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import "./ContactUsForm.css"; // Import regular stylesheet
 import styles from "../pages/styles.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
-import {
-  ModalWrapper,
-  ModalOverlay,
-  ModalMain,
-  //  ModalHeader,
-  //  ModalBody,
-  //  ModalFooter,
-} from "./ContactUsFormTheme";
+import { ModalWrapper, ModalOverlay } from "./ContactUsFormTheme";
 
 const Modal = ({
   isShowing,
@@ -24,9 +17,14 @@ const Modal = ({
   width,
   top,
   zIndex,
+  onToggle,
   ...rest
 }) => {
   const numWidth = Number(width.replace("%", "").replace("vw", ""));
+
+  const toggle = () => {
+    onToggle();
+  };
 
   return isShowing
     ? ReactDOM.createPortal(
@@ -59,31 +57,24 @@ const Modal = ({
                     className="formkit-column"
                     style={{ backgroundColor: `rgb(251, 105, 112)` }}
                   >
-                    <div
-                      className="formkit-background"
-                      style={{
-                        backgroundImage: `url("//pages.convertkit.com/assets/powell/bg.jpg")`,
-                        opacity: 0.2,
-                      }}
-                    ></div>
-                    <div
-                      className="formkit-header"
-                      data-element="header"
-                      style={{
-                        color: `rgb(255, 255, 255)`,
-                        fontSize: `22px`,
-                        fontWeight: `700`,
-                      }}
-                    >
+                    <div className="formkit-background"></div>
+                    <div className="formkit-header" data-element="header">
                       <h1>Looking to learn more about our product ?</h1>
+
+                      <div onClick={toggle} className="formkit-close">
+                        Close
+                        <FontAwesomeIcon
+                          icon={faTimesCircle}
+                          size="lg"
+                          // className="text--primary mr-1"
+                          className="formkit-close-icon"
+                          onClick={toggle}
+                        />
+                      </div>
                     </div>
                   </div>
                   <div data-element="column" className="formkit-column">
-                    <div
-                      className="formkit-subheader"
-                      data-element="subheader"
-                      style={{ color: `rgb(125, 125, 125)`, fontSize: `16px` }}
-                    >
+                    <div className="formkit-subheader" data-element="subheader">
                       <p>Subscribe to get our latest content by email.</p>
                     </div>
                     <ul
@@ -103,12 +94,6 @@ const Modal = ({
                           required=""
                           placeholder="Your name"
                           type="text"
-                          // style={{
-                          //   color: `rgb(77, 77, 77)`,
-                          //   borderColor: `rgb(227, 227, 227)`,
-                          //   borderRadius: `4px`,
-                          //   fontWeight: 400,
-                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -118,12 +103,6 @@ const Modal = ({
                           placeholder="Your email address"
                           required=""
                           type="email"
-                          // style={{
-                          //   color: `rgb(77, 77, 77)`,
-                          //   borderColor: `rgb(227, 227, 227)`,
-                          //   borderRadius: `4px`,
-                          //   fontWeight: 400,
-                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -133,12 +112,6 @@ const Modal = ({
                           name="fields[null]"
                           placeholder="Company"
                           type="text"
-                          // style={{
-                          //   color: `rgb(77, 77, 77)`,
-                          //   borderColor: `rgb(227, 227, 227)`,
-                          //   borderRadius: `4px`,
-                          //   fontWeight: 400,
-                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -149,12 +122,6 @@ const Modal = ({
                           required=""
                           placeholder="Location"
                           type="text"
-                          // style={{
-                          //   color: `rgb(77, 77, 77)`,
-                          //   borderColor: `rgb(227, 227, 227)`,
-                          //   borderRadius: `4px`,
-                          //   fontWeight: 400,
-                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -164,12 +131,6 @@ const Modal = ({
                           name="fields[null]"
                           placeholder="Phone number"
                           type="text"
-                          // style={{
-                          //   color: `rgb(77, 77, 77)`,
-                          //   borderColor: `rgb(227, 227, 227)`,
-                          //   borderRadius: `4px`,
-                          //   fontWeight: 400,
-                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -194,12 +155,6 @@ const Modal = ({
                               className="formkit-checkboxes"
                               data-element="tags-checkboxes"
                               data-group="checkbox"
-                              style={{
-                                color: `rgb(77, 77, 77)`,
-                                borderColor: `rgb(227, 227, 227)`,
-                                borderRadius: `4px`,
-                                fontWeight: 400,
-                              }}
                             >
                               <input
                                 className="formkit-checkbox"
@@ -216,12 +171,6 @@ const Modal = ({
                               className="formkit-checkboxes"
                               data-element="tags-checkboxes"
                               data-group="checkbox"
-                              style={{
-                                color: `rgb(77, 77, 77)`,
-                                borderColor: `rgb(227, 227, 227)`,
-                                borderRadius: `4px`,
-                                fontWeight: 400,
-                              }}
                             >
                               <input
                                 className="formkit-checkbox"
@@ -242,31 +191,16 @@ const Modal = ({
                         className="formkit-submit formkit-submit"
                         id="button2"
                         className={clsx("button b1 button--lg", styles.button)}
-                        // className={clsx("button b1 button--lg", styles.button)}
-                        // style={{
-                        //   color: `rgb(255, 255, 255)`,
-                        //   backgroundColor: `rgb(251, 105, 112)`,
-                        //   borderRadius: `24px`,
-                        //   fontWeight: 700,
-                        // }}
                       >
                         <div className="formkit-spinner">
                           <div></div>
                           <div></div>
                           <div></div>
                         </div>
-                        <span>Request Callback</span>
+                        <span>Send Enquiry</span>
                       </button>
                     </div>
-                    <div
-                      className="formkit-guarantee"
-                      data-element="guarantee"
-                      style={{
-                        color: `rgb(125, 125, 125)`,
-                        fontSize: `13px`,
-                        fontWeight: 400,
-                      }}
-                    >
+                    <div className="formkit-guarantee" data-element="guarantee">
                       We won't send you spam. Unsubscribe at any time.
                     </div>
                   </div>
