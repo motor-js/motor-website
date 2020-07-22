@@ -2,7 +2,10 @@ import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 // import Box from "../box";
+// import Link from "@docusaurus/Link";
+import clsx from "clsx";
 import "./ContactUsForm.css"; // Import regular stylesheet
+import styles from "../pages/styles.module.css";
 
 import {
   ModalWrapper,
@@ -59,9 +62,7 @@ const Modal = ({
                     <div
                       className="formkit-background"
                       style={{
-                        backgroundImage: `url(
-                "//pages.convertkit.com/assets/powell/bg.jpg"
-              )`,
+                        backgroundImage: `url("//pages.convertkit.com/assets/powell/bg.jpg")`,
                         opacity: 0.2,
                       }}
                     ></div>
@@ -102,12 +103,12 @@ const Modal = ({
                           required=""
                           placeholder="Your name"
                           type="text"
-                          style={{
-                            color: `rgb(77, 77, 77)`,
-                            borderColor: `rgb(227, 227, 227)`,
-                            borderRadius: `4px`,
-                            fontWeight: 400,
-                          }}
+                          // style={{
+                          //   color: `rgb(77, 77, 77)`,
+                          //   borderColor: `rgb(227, 227, 227)`,
+                          //   borderRadius: `4px`,
+                          //   fontWeight: 400,
+                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -117,12 +118,12 @@ const Modal = ({
                           placeholder="Your email address"
                           required=""
                           type="email"
-                          style={{
-                            color: `rgb(77, 77, 77)`,
-                            borderColor: `rgb(227, 227, 227)`,
-                            borderRadius: `4px`,
-                            fontWeight: 400,
-                          }}
+                          // style={{
+                          //   color: `rgb(77, 77, 77)`,
+                          //   borderColor: `rgb(227, 227, 227)`,
+                          //   borderRadius: `4px`,
+                          //   fontWeight: 400,
+                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -132,12 +133,12 @@ const Modal = ({
                           name="fields[null]"
                           placeholder="Company"
                           type="text"
-                          style={{
-                            color: `rgb(77, 77, 77)`,
-                            borderColor: `rgb(227, 227, 227)`,
-                            borderRadius: `4px`,
-                            fontWeight: 400,
-                          }}
+                          // style={{
+                          //   color: `rgb(77, 77, 77)`,
+                          //   borderColor: `rgb(227, 227, 227)`,
+                          //   borderRadius: `4px`,
+                          //   fontWeight: 400,
+                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -148,12 +149,12 @@ const Modal = ({
                           required=""
                           placeholder="Location"
                           type="text"
-                          style={{
-                            color: `rgb(77, 77, 77)`,
-                            borderColor: `rgb(227, 227, 227)`,
-                            borderRadius: `4px`,
-                            fontWeight: 400,
-                          }}
+                          // style={{
+                          //   color: `rgb(77, 77, 77)`,
+                          //   borderColor: `rgb(227, 227, 227)`,
+                          //   borderRadius: `4px`,
+                          //   fontWeight: 400,
+                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -163,12 +164,12 @@ const Modal = ({
                           name="fields[null]"
                           placeholder="Phone number"
                           type="text"
-                          style={{
-                            color: `rgb(77, 77, 77)`,
-                            borderColor: `rgb(227, 227, 227)`,
-                            borderRadius: `4px`,
-                            fontWeight: 400,
-                          }}
+                          // style={{
+                          //   color: `rgb(77, 77, 77)`,
+                          //   borderColor: `rgb(227, 227, 227)`,
+                          //   borderRadius: `4px`,
+                          //   fontWeight: 400,
+                          // }}
                         />
                       </div>
                       <div className="formkit-field">
@@ -239,12 +240,15 @@ const Modal = ({
                       <button
                         data-element="submit"
                         className="formkit-submit formkit-submit"
-                        style={{
-                          color: `rgb(255, 255, 255)`,
-                          backgroundColor: `rgb(251, 105, 112)`,
-                          borderRadius: `24px`,
-                          fontWeight: 700,
-                        }}
+                        id="button2"
+                        className={clsx("button b1 button--lg", styles.button)}
+                        // className={clsx("button b1 button--lg", styles.button)}
+                        // style={{
+                        //   color: `rgb(255, 255, 255)`,
+                        //   backgroundColor: `rgb(251, 105, 112)`,
+                        //   borderRadius: `24px`,
+                        //   fontWeight: 700,
+                        // }}
                       >
                         <div className="formkit-spinner">
                           <div></div>

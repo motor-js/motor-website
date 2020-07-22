@@ -116,10 +116,17 @@
   margin: 0;
   -webkit-transition: border-color ease-out 300ms;
   transition: border-color ease-out 300ms;
+
+  color: rgb(77, 77, 77);
+  border-color: rgb(227, 227, 227);
+  border-radius: 4px;
+  font-weight: 400;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-input:focus {
   outline: none;
-  border-color: #1677be;
+  /* border-color: #1677be; */
+  border-color: var(--redBrand);
+  background: var(--lightBrand);
   -webkit-transition: border-color ease 300ms;
   transition: border-color ease 300ms;
 }
@@ -482,6 +489,7 @@
 .formkit-form[data-uid="02c7858452"] .formkit-field {
   margin: 0 0 15px 0;
   flex: 0 50%;
+  /* margin: 5px; */
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field:last-of-type input {
   padding-right: 110px;
