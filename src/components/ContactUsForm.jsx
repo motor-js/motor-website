@@ -152,7 +152,7 @@ const ContactForm = ({
                           className="formkit-input"
                           aria-label="Your name"
                           name="fields[first_name]"
-                          required=""
+                          required
                           placeholder="Your name"
                           type="text"
                         />
@@ -162,7 +162,7 @@ const ContactForm = ({
                           className="formkit-input"
                           name="email_address"
                           placeholder="Your email address"
-                          required=""
+                          required
                           type="email"
                         />
                       </div>
@@ -180,7 +180,7 @@ const ContactForm = ({
                           className="formkit-input"
                           aria-label="Location"
                           name="fields[location]"
-                          required=""
+                          // required=""
                           placeholder="Location"
                           type="text"
                         />
@@ -190,6 +190,7 @@ const ContactForm = ({
                           className="formkit-input"
                           aria-label="Phone number"
                           name="fields[null]"
+                          required
                           placeholder="Phone number"
                           type="text"
                         />
@@ -286,6 +287,24 @@ const ContactForm = ({
                               </label>
                             </div>
                           </fieldset>
+                          <div className="formkit-field">
+                            <textarea
+                              className="formkit-textarea"
+                              aria-label="General enquiry"
+                              name="fields[undefined]"
+                              placeholder="General enquiry"
+                              type="text"
+                              rows="4"
+                              style={{ marginTop: `10px` }}
+                              // cols="50"
+                              //                   style="
+                              //   color: rgb(77, 77, 77);
+                              //   border-color: rgb(227, 227, 227);
+                              //   border-radius: 4px;
+                              //   font-weight: 400;
+                              // "
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

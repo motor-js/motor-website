@@ -132,7 +132,29 @@
   border-radius: 4px;
   font-weight: 400;
 }
-.formkit-form[data-uid="02c7858452"] .formkit-input:focus {
+.formkit-form[data-uid="02c7858452"] .formkit-textarea {
+  font-family: Arial;
+  width: 100%;
+  background: #ffffff;
+  font-size: 15px;
+  padding: 12px;
+  border: 1px solid #e3e3e3;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  line-height: 1.4;
+  margin: 0;
+  -webkit-transition: border-color ease-out 300ms;
+  transition: border-color ease-out 300ms;
+
+  color: rgb(77, 77, 77);
+  border-color: rgb(227, 227, 227);
+  border-radius: 4px;
+  font-weight: 400;
+  resize: none;
+}
+.formkit-form[data-uid="02c7858452"] .formkit-input:focus,
+.formkit-form[data-uid="02c7858452"] .formkit-textarea:focus {
   outline: none;
   /* border-color: #1677be; */
   border-color: var(--redBrand);
@@ -513,6 +535,7 @@
 }
 .formkit-form[data-uid="02c7858452"] .formkit-consent-label {
   font-size: 10px;
+  margin-left: 5px;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field {
   margin: 0 0 15px 0;
