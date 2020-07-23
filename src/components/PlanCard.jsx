@@ -11,7 +11,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import styles from "../pages/styles.module.css";
 
 import "./plans.css";
-import { Button, useModal } from "@motor-js/core";
+import { useModal } from "@motor-js/core";
 import ContactUs from "./ContactUsForm";
 // id: 0,
 // title: "FREE",

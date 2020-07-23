@@ -123,7 +123,10 @@ const ContactForm = ({
                   </div>
                   <div data-element="column" className="formkit-column">
                     <div className="formkit-subheader" data-element="subheader">
-                      <p>Subscribe to get our latest content by email.</p>
+                      <p>
+                        Please subscribe and we will be in contact as soon as
+                        possible.
+                      </p>
                     </div>
                     <ul
                       className="formkit-alert formkit-alert-error"
@@ -131,7 +134,10 @@ const ContactForm = ({
                       data-group="alert"
                     >
                       {status === "ERROR" && (
-                        <p>Oops, Something went wrong! try again.</p>
+                        <p className="formkit-alert-message">
+                          Oops, Something went wrong! Please check the form and
+                          try again.
+                        </p>
                       )}
                     </ul>
                     <ul
@@ -140,7 +146,11 @@ const ContactForm = ({
                       data-group="alert"
                     >
                       {status === "SUCCESS" && (
-                        <p>Please go confirm your subscription!</p>
+                        <p className="formkit-alert-message">
+                          Thank you for subscribing. An email has been sent to
+                          your account. Please confirm subscription and we will
+                          be in contact soon.
+                        </p>
                       )}
                     </ul>
                     <div
@@ -416,7 +426,7 @@ ContactForm.defaultProps = {
   footer: undefined,
   header: undefined,
   width: "70vw",
-  top: "10%",
+  top: "5%",
   zIndex: "1050",
 };
 
