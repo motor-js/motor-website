@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -96,6 +96,8 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   const { isShowing, toggle } = useModal();
+  const [checkedValue, setCheckedValue] = useState(null);
+
   return (
     <Layout title={`${siteConfig.title}`} description="Motor homepage">
       <div className="hero-overlay">
@@ -115,11 +117,19 @@ function Home() {
                 id="button2"
                 className={clsx("button button--lg", styles.button)}
                 // to={useBaseUrl("docs/")}
-                onClick={toggle}
+                // onClick={toggle}
+                onClick={() => {
+                  toggle();
+                  setCheckedValue("BOOKDEMO");
+                }}
               >
                 Book Demo
               </Link>
-              <ContactUs isShowing={isShowing} onToggle={toggle} />
+              <ContactUs
+                isShowing={isShowing}
+                onToggle={toggle}
+                checkedValue={checkedValue}
+              />
             </div>
           </div>
         </header>
@@ -240,11 +250,19 @@ function Home() {
               id="button4"
               className={clsx("button b1 button--lg", styles.button)}
               // to={useBaseUrl("docs/Getting%20Started")}
-              onClick={toggle}
+              // onClick={toggle}
+              onClick={() => {
+                toggle();
+                setCheckedValue("CONTACTUS");
+              }}
             >
               Contact Us
             </Link>
-            <ContactUs isShowing={isShowing} onToggle={toggle} />
+            <ContactUs
+              isShowing={isShowing}
+              onToggle={toggle}
+              checkedValue={checkedValue}
+            />
           </div>
         </section>
       </main>

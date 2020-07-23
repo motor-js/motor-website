@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -23,6 +23,8 @@ import ContactUs from "./ContactUsForm";
 export const PlanCard = (props) => {
   const price = props.plan;
   const { isShowing, toggle } = useModal();
+  const [checkedValue, setCheckedValue] = useState(null);
+
   return (
     <React.Fragment>
       <div className="col col--3">
@@ -90,11 +92,19 @@ export const PlanCard = (props) => {
                 id="button2"
                 className={clsx("button b1 button--lg", styles.button)}
                 // to={useBaseUrl("docs/Getting%20Started")}
-                onClick={toggle}
+                // onClick={toggle}
+                onClick={() => {
+                  toggle();
+                  setCheckedValue(price.title);
+                }}
               >
                 {price.actionName}
               </Link>
-              <ContactUs isShowing={isShowing} onToggle={toggle} />
+              <ContactUs
+                isShowing={isShowing}
+                onToggle={toggle}
+                checkedValue={checkedValue}
+              />
             </div>
           )}
         </div>

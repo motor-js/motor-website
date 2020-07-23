@@ -18,6 +18,7 @@ const ContactForm = ({
   top,
   zIndex,
   onToggle,
+  checkedValue,
   ...rest
 }) => {
   const numWidth = Number(width.replace("%", "").replace("vw", ""));
@@ -35,7 +36,6 @@ const ContactForm = ({
   };
 
   const handleSubmit = async (e) => {
-    console.log("here");
     e.preventDefault();
     const data = new FormData(e.target);
     try {
@@ -48,7 +48,7 @@ const ContactForm = ({
       });
       setEmail("");
       const json = await response.json();
-      console.log(json);
+      // console.log(json);
       if (json.status === "success") {
         setStatus("SUCCESS");
         return;
@@ -59,7 +59,7 @@ const ContactForm = ({
       }
     } catch (err) {
       setStatus("ERROR");
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -217,6 +217,9 @@ const ContactForm = ({
                                 type="checkbox"
                                 name="tags[]"
                                 value="1743429"
+                                defaultChecked={
+                                  checkedValue === "BOOKDEMO" ? true : false
+                                }
                               />
                               <label htmlFor="tag-4184380-1743429">
                                 Request a demo
@@ -233,6 +236,9 @@ const ContactForm = ({
                                 type="checkbox"
                                 name="tags[]"
                                 value="1746207"
+                                defaultChecked={
+                                  checkedValue === "TEAM" ? true : false
+                                }
                               />
                               <label htmlFor="tag-4184380-1746207">
                                 Team license enquiry
@@ -249,6 +255,9 @@ const ContactForm = ({
                                 type="checkbox"
                                 name="tags[]"
                                 value="1743428"
+                                defaultChecked={
+                                  checkedValue === "ENTERPRISE" ? true : false
+                                }
                               />
                               <label htmlFor="tag-4184380-1743428">
                                 Enterprise license query
@@ -265,6 +274,9 @@ const ContactForm = ({
                                 type="checkbox"
                                 name="tags[]"
                                 value="1746208"
+                                defaultChecked={
+                                  checkedValue === "OEM" ? true : false
+                                }
                               />
                               <label htmlFor="tag-4184380-1746208">
                                 OEM license enquiry
@@ -281,6 +293,9 @@ const ContactForm = ({
                                 type="checkbox"
                                 name="tags[]"
                                 value="1746209"
+                                defaultChecked={
+                                  checkedValue === "CONTACTUS" ? true : false
+                                }
                               />
                               <label htmlFor="tag-4184380-1746209">
                                 General enquiry
