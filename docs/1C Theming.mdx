@@ -1,0 +1,244 @@
+---
+id: Theming
+title: Theming
+sidebar_label: Theming
+---
+
+## Overview
+
+A big part of Motor is its theming framework. There are a lot of things you can customize, which are covered on this page.
+
+The recommended path to creating a new theme, is to pass it to the Motor component.
+
+```javascript
+
+import { Motor } from '@motor-js/core';
+
+const myTheme = {
+  global: {
+    colors: {
+      brand: 'red',
+    },
+  },
+};
+
+<Motor theme={myTheme}>
+  //...
+</Motor>
+
+```
+
+This is just an example of using the theme to replace the app's brand color. There are a couple of things you should know:
+
+There is a base theme and the customizations you add will merge with it. 
+As a result, you only need to pass what you need to change, not the entire theme object. 
+These changes will only affect the children of the Motor component.
+
+The library comes with some pre-built themes which you can import and use. See the example below for using the night theme
+
+```javascript
+
+import { Motor } from '@motor-js/core';
+import { night } from '@motor-js/core/themes'
+
+<Motor theme={night}>
+  //...
+</Motor>
+
+```
+
+
+## Structure
+
+The structure of the JSON object is divided into three parts: global, charts and each component entry, for example:
+
+```javascript
+
+const myTheme = {
+  global: {
+    // changes here will affect more than one component at a time
+  },
+  filter: {
+    // changes here will affect the Filter component only
+  },
+  //...
+}
+
+```
+
+
+## API
+
+This section documents each of the theme entries so that you know what is possible to customize. 
+
+:::info 
+Please see the relevant component / chart page for those theme API details. This page will document the global theme object.
+:::
+
+
+### global
+
+Settings in global object are below. Default values are in the base theme:
+
+e.g. <code>global.backgroundColor = 'brand'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+    <th>Component using this theme entry</th>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>background color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'white'
+    </td>
+    <td>
+    Grid
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>fontFamily</code>
+    </td>
+    <td>font family</td>
+    <td>
+      <code>string</code>
+      <br />
+      'Inter, sans-serif'
+    </td>
+    <td>
+      ALL
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>border</code>
+    </td>
+    <td>font family</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      color&#58;'var(--oc-gray-4)',
+      <br />
+      size&#58; '1px',
+      <br />
+      style&#58; 'solid',
+      <br />
+      radius&#58; '8px',
+      <br />
+      &#125;
+    </td>
+    <td>
+      Box <br />
+      Bar <br />
+      Column <br />
+      Line <br />
+      KPI <br />
+      Pie
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>deviceBreakpoint</code>
+    </td>
+    <td>Which size to use depending on the screensize</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      mobile&#58;'small',
+      <br />
+      tablet&#58; 'medium',
+      <br />
+      desktop&#58; 'medium',
+      <br />
+      largeDesktop&#58; 'large',
+      <br />
+      &#125;
+    </td>
+    <td>
+      ALL
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>responsiveBreakpoints</code>
+    </td>
+    <td>screen size breakpoints</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      mobile&#58;'400px',
+      <br />
+      tablet&#58; '640px',
+      <br />
+      desktop&#58; '1024px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     useScreenSize hook
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>focus</code>
+    </td>
+    <td>screen size breakpoints</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      outline&#58; 
+      &#123;
+      <br />
+      color&#58;'#212121',
+      <br />
+      size&#58; '5px'
+      &#125;
+      <br />
+      &#125;
+    </td>
+    <td>
+     Box
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>size</code>
+    </td>
+    <td>size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      outline&#58; 
+      &#123;
+      <br />
+      color&#58;'#212121',
+      <br />
+      size&#58; '5px'
+      &#125;
+      <br />
+      &#125;
+    </td>
+    <td>
+     Box
+    </td>
+  </tr>
+</table>
+
