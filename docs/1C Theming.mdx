@@ -36,10 +36,15 @@ These changes will only affect the children of the Motor component.
 
 The library comes with some pre-built themes which you can import and use. See the example below for using the night theme
 
+:::caution 
+Additional themes including the night theme are not in the alpha release.
+These are planned ahead of full library release.
+:::
+
 ```javascript
 
 import { Motor } from '@motor-js/core';
-import { night } from '@motor-js/core/themes'
+import { night } from '@motor-js/core'
 
 <Motor theme={night}>
   //...
@@ -217,28 +222,147 @@ e.g. <code>global.backgroundColor = 'brand'</code>
     </td>
   </tr>
   <tr>
+    <th>size</th>
+    <th>global.size</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
     <td>
-      <code>size</code>
+      <code>font</code>
     </td>
-    <td>size</td>
+    <td>dashboard font size</td>
     <td>
       <code>object</code>
       <br />
       &#123;
       <br />
-      outline&#58; 
-      &#123;
+      tiny&#58; '10px',
       <br />
-      color&#58;'#212121',
+      small&#58; '12px',
       <br />
-      size&#58; '5px'
-      &#125;
+      medium&#58; '14px',
+      <br />
+      large&#58; '16px',
+      <br />
+      xlarge&#58; '18px',
       <br />
       &#125;
     </td>
     <td>
-     Box
+     All
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>subFont</code>
+    </td>
+    <td>dashboard sub font size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '8px',
+      <br />
+      small&#58; '10px',
+      <br />
+      medium&#58; '12px',
+      <br />
+      large&#58; '14px',
+      <br />
+      xlarge&#58; '16px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>title</code>
+    </td>
+    <td>chart title size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '14px',
+      <br />
+      small&#58; '16px',
+      <br />
+      medium&#58; '18px',
+      <br />
+      large&#58; '20px',
+      <br />
+      xlarge&#58; '22px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All charts
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>subTitle</code>
+    </td>
+    <td>chart sub title size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '12px',
+      <br />
+      small&#58; '14px',
+      <br />
+      medium&#58; '16px',
+      <br />
+      large&#58; '18px',
+      <br />
+      xlarge&#58; '20px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All charts
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>tooltip</code>
+    </td>
+    <td>chart tooltip</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '10px',
+      <br />
+      small&#58; '12px',
+      <br />
+      medium&#58; '14px',
+      <br />
+      large&#58; '16px',
+      <br />
+      xlarge&#58; '18px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All charts
     </td>
   </tr>
 </table>
+
+
+### global.chart
+
+Theme entries for global.chart can be viewed on each Chart documentation page. Changes here will impact all charts on your dashboard
+
+
 

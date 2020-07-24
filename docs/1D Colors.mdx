@@ -6,19 +6,46 @@ sidebar_label: Colors
 
 ## Overview
 
-The Motor JS provides a base color system which can all be edited to match your brand colors and style. 
-All of the colors used in the framework are defined in our theme object, within global.color.
+The Motor JS provides a base color system which can be edited to match your brand colors and style. 
+All of the colors used in the framework are defined in our theme object, within <b>global.color</b>.
 
-These colors can be both edited, by editing the theme object and referenced from all of our components. 
-See examples of this below
+:::info
+The global.color object is documented on the API section of the Theming page
+:::
 
-<br />
+Al of these colors can be referenced from our components or edited via our theme object. 
+You can find an example of this below.
 
-### Editing the base colors
+
+### Referencing & Editing the base colors
+
+In the below example, the Box is referencing the brand color via the backgroundColor prop. 
+This brand entry has also been edited in the Motor Component and changed to green.
+
+You can try editing the live code below to change the brand color, or even, reference a different color.
+Try changing the backgroundColor prop to equal 'accent1', you'll see this reference the accent1 entry in the global.color object.
 
 
-### Referencing the base colors
+```jsx live
+function BoxDemo() {
 
+  return (
+    <Motor theme={{
+      global: {
+        color: {
+          brand: 'green'
+        }
+      }
+    }}>
+    <Box
+      height="100px"
+      width="300px"
+      backgroundColor='brand'
+    />
+    </Motor>
+  );
+}
+```
 
 
 ## Open Color

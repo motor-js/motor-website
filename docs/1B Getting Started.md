@@ -44,7 +44,7 @@ Check out the full list of props and theming options for each component in these
 ```javascript
 
 import { Motor } from '@motor-js/core'
-import base from '@motor-js/core/themes'
+import { base } from '@motor-js/core'
 
 <Motor
   config={..}
