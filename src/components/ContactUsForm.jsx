@@ -374,7 +374,7 @@ const ContactForm = ({
                             Privacy Note.
                           </label>
                         </div>
-                      </fieldset>{" "}
+                      </fieldset>
                       <button
                         data-element="submit"
                         className="formkit-submit formkit-submit"
