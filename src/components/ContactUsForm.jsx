@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
@@ -69,10 +69,21 @@ const ContactForm = ({
   };
 
   const handleCheck = (event) => {
-    // isActive = event.target.checked;
-    // this.setState({ isActive: isActive });
     setConsent(event.target.checked);
   };
+
+  const myRef = useRef();
+
+  const handleClickOutside = (e) => {
+    if (myRef.current && !myRef.current.contains(e.target)) {
+      toggle();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  });
 
   return isShowing
     ? ReactDOM.createPortal(
@@ -83,6 +94,7 @@ const ContactForm = ({
               numWidth={numWidth}
               top={top}
               zIndex={zIndex}
+              ref={myRef}
             >
               <form
                 action="https://app.convertkit.com/forms/1543213/subscriptions"

@@ -258,11 +258,11 @@ function Home() {
             >
               Contact Us
             </Link>
-            <ContactUs
+            {/* <ContactUs
               isShowing={isShowing}
               onToggle={toggle}
               checkedValue={checkedValue}
-            />
+            /> */}
           </div>
         </section>
       </main>
