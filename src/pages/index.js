@@ -100,6 +100,11 @@ function Home() {
 
   return (
     <Layout title={`${siteConfig.title}`} description="Motor homepage">
+      <ContactUs
+        isShowing={isShowing}
+        onToggle={toggle}
+        checkedValue={checkedValue}
+      />
       <div className="hero-overlay">
         <header className={clsx("hero hero--primary", styles.heroBanner)}>
           <div className="container">
@@ -125,11 +130,6 @@ function Home() {
               >
                 Book Demo
               </Link>
-              <ContactUs
-                isShowing={isShowing}
-                onToggle={toggle}
-                checkedValue={checkedValue}
-              />
             </div>
           </div>
         </header>
@@ -249,8 +249,6 @@ function Home() {
             <Link
               id="button4"
               className={clsx("button b1 button--lg", styles.button)}
-              // to={useBaseUrl("docs/Getting%20Started")}
-              // onClick={toggle}
               onClick={() => {
                 toggle();
                 setCheckedValue("CONTACTUS");
@@ -258,11 +256,6 @@ function Home() {
             >
               Contact Us
             </Link>
-            {/* <ContactUs
-              isShowing={isShowing}
-              onToggle={toggle}
-              checkedValue={checkedValue}
-            /> */}
           </div>
         </section>
       </main>

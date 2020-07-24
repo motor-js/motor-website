@@ -333,13 +333,6 @@ const ContactForm = ({
                               type="text"
                               rows="4"
                               style={{ marginTop: `10px` }}
-                              // cols="50"
-                              //                   style="
-                              //   color: rgb(77, 77, 77);
-                              //   border-color: rgb(227, 227, 227);
-                              //   border-radius: 4px;
-                              //   font-weight: 400;
-                              // "
                             />
                           </div>
                         </div>
@@ -349,32 +342,39 @@ const ContactForm = ({
                       data-element="fields"
                       className="seva-fields formkit-consent"
                     >
-                      <div
-                        className="formkit-checkboxes"
-                        data-element="tags-checkboxes"
-                        data-group="checkbox"
-                        style={{ marginTop: `5px` }}
+                      <fieldset
+                        data-group="checkboxes"
+                        className="formkit-1967"
+                        type="Custom"
+                        order="5"
+                        save_as="Tag"
+                        group="field"
                       >
-                        <input
-                          className="formkit-checkbox"
-                          id="consent"
-                          type="checkbox"
-                          // name="tags[]"
-                          // value="1743429"
-                          onChange={(event) => handleCheck(event)}
-                        />
-                        <label
-                          htmlFor="consent"
-                          className="formkit-consent-label"
+                        <div
+                          className="formkit-checkboxes"
+                          data-element="tags-checkboxes"
+                          data-group="checkbox"
+                          style={{ marginTop: `5px` }}
                         >
-                          By checking this box, I acknowledge that I have read
-                          and accepted the Motor-js Terms and Conditions. By
-                          submitting my personal data, I consent to receive
-                          electronic messages and other communications from
-                          Motor-js. For further information, please see our
-                          Privacy Note.
-                        </label>
-                      </div>
+                          <input
+                            className="formkit-checkbox"
+                            id="consent"
+                            type="checkbox"
+                            onChange={(event) => handleCheck(event)}
+                          />
+                          <label
+                            htmlFor="consent"
+                            className="formkit-consent-label"
+                          >
+                            By checking this box, I acknowledge that I have read
+                            and accepted the Motor-js Terms and Conditions. By
+                            submitting my personal data, I consent to receive
+                            electronic messages and other communications from
+                            Motor-js. For further information, please see our
+                            Privacy Note.
+                          </label>
+                        </div>
+                      </fieldset>{" "}
                       <button
                         data-element="submit"
                         className="formkit-submit formkit-submit"
