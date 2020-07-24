@@ -25,6 +25,9 @@ import { Filter, Motor } from '@motor-js/core'
 
 `.trim();
 
+const starter_URL =
+  "https://github.com/motor-js/motor-starter/archive/master.zip";
+
 const features = [
   {
     title: <>Free for Non-Commercial Use</>,
@@ -156,7 +159,8 @@ function Home() {
                     <Link
                       id="button-starter"
                       className={clsx("button b2 button--md", styles.button)}
-                      to={useBaseUrl("docs/Getting%20Started")}
+                      // to={useBaseUrl("docs/Getting%20Started")}
+                      to={starter_URL}
                     >
                       <FontAwesomeIcon icon={faArrowAltCircleDown} size="lg" />
                       {" Download"}
