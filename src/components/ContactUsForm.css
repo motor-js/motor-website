@@ -539,6 +539,7 @@
 .formkit-form[data-uid="02c7858452"] .formkit-consent-label {
   font-size: 10px;
   margin-left: 5px;
+  cursor: pointer;
 }
 .formkit-form[data-uid="02c7858452"] .formkit-field {
   margin: 0 0 15px 0;
