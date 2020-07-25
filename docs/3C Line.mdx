@@ -35,612 +35,620 @@ You do not need to set the Config prop if the component is a child of the Motor 
 :::
 
 <table>
-  <tr>
-    <th>Prop</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <td>
-      <code>config</code>
-    </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component.
-    </td>
-    <td>
-      <code>object</code>
-      <br />
-      &#123;
-      <br />
-      host: "xxxxxxxxx",
-      <br />
-      secure: false,
-      <br />
-      port: xxxxx,
-      <br />
-      prefix: "",
-      <br />
-      appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx", &#125;
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>cols</code>
-    </td>
-    <td>Columns from Qlik Data Model to render in the chart. </td>
-    <td>
-      <code>array</code>
-      <br />
-      &#123;[
-      <br />
-      "Case Owner Group",
-      <br />
-      "=Avg([Case Duration Time])"
-      <br />
-      ]&#125;
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>calcCondition</code>
-    </td>
-    <td>Calculated condition to be met before chart can be displayed.</td>
-    <td>
-      <code>shape</code>
-      <br />
-      &#123;
-      <br />
-      qCond: "=Avg([Case Duration Time])> 5",
-      <br />
-      qMsg: "Calculation condition has not been met",
-      <br />
-      &#125;
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>suppressZero</code>
-    </td>
-    <td>Suppress items whith zero values from being displayed in the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dualAxis</code>
-    </td>
-    <td>Allow chart to use dual axis. </td>
-    <td>
-      <code>boolean</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnSortOrder</code>
-    </td>
-    <td>Order of the columns on which the returned dat shoud be sorted</td>
-    <td>
-      <code>array</code>
-      <br />
-      [1,0]
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>sortDirection</code>
-    </td>
-    <td>
-      Direction by which the chart should be sorted. CAn eith be ascending or
-      descending.
-    </td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>'ASCENDING'</b>
-      <br />
-      'ASC'
-      <br />
-      'DESCENDING'
-      <br />
-      'DESC'
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>width</code>
-    </td>
-    <td>Chart width in percentage or value as pixels</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>'100%'</b>
-      <br />
-      '200px'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>height</code>
-    </td>
-    <td>Chart height in percentage or value as pixels</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>'100%'</b>
-      <br />
-      '200px'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>margin</code>
-    </td>
-    <td>The amount of margin around the component</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>'5px'</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>size</code>
-    </td>
-    <td>Size of the text used in the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      'tiny'
-      <br />
-      'small'
-      <br />
-      <b>'medium'</b>
-      <br />
-      'large'
-      <br />
-      'xlarge'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLabels</code>
-    </td>
-    <td>Label position of values for the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      'top'
-      <br />
-      <b>"none"</b>
-      <br />
-      'inside'
-      <br />
-      <b>* default obtained from theme.</b>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>tickSpacing</code>
-    </td>
-    <td>Spacing of the ticks on the Y axis of the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      "wide"
-      <br />
-      "normal"
-      <br />
-      "narrow"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showGridlines</code>
-    </td>
-    <td>Grid line type to be drawn on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "solid"
-      <br />
-      "dashes"
-      <br />
-      "dots"
-      <br />
-      "none"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>fontColor</code>
-    </td>
-    <td>Color of the labels for the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>border</code>
-    </td>
-    <td>Border to be dispalyed around the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "top"
-      <br />
-      "left"
-      <br />
-      "bottom"
-      <br />
-      "right"
-      <br />
-      "start"
-      <br />
-      "end"
-      <br />
-      "horizontal"
-      <br />
-      "vertical"
-      <br />
-      "all"
-      <br />
-      "between"
-      <br />
-      "none"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundColor</code>
-    </td>
-    <td>Background color the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderRadius</code>
-    </td>
-    <td>Border radius of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>chartColor</code>
-    </td>
-    <td>Color scheme to be used for the chart</td>
-    <td>
-      <code>array</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "divergent13"
-      <br />
-      "divergent9"
-      <br />
-      "goya"
-      <br />
-      "red"
-      <br />
-      "blue"
-      <br />
-      "gray"
-      <br />
-      "pink"
-      <br />
-      "grape"
-      <br />
-      "violet"
-      <br />
-      "indigo"
-      <br />
-      "blue"
-      <br />
-      "cyan"
-      <br />
-      "teal"
-      <br />
-      "green"
-      <br />
-      "lime"
-      <br />
-      "yellow"
-      <br />
-      "orange"
-      <br />
-      "base"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>curve</code>
-    </td>
-    <td>Shape of the curve for each line</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      <b>"Linear"</b>
-      <br />
-      "Basis"
-      <br />
-      "Bundle"
-      <br />
-      "Cardinal"
-      <br />
-      "CatmullRom"
-      <br />
-      "MonotoneX"
-      <br />
-      "MonotoneY"
-      <br />
-      "Natural"
-      <br />
-      "Step"
-      <br />
-      "StepAfter"
-      <br />
-      "StepBefore"
-      <br />
-      "BasisClosed"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>symbol</code>
-    </td>
-    <td>Symbol / marker type for each dat point on the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      <b>"circle"</b>
-      <br />
-      "cross"
-      <br />
-      "diamond"
-      <br />
-      "square"
-      <br />
-      "star"
-      <br />
-      "triangle"
-      <br />
-      "wye"
-      <br />
-      "none"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>stacked</code>
-    </td>
-    <td>Draw chart as stacked chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>roundNum</code>
-    </td>
-    <td>Use round numbering to dispaly labels on charts</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>title</code>
-    </td>
-    <td>Title to be dispalyed on top of chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>subTitle</code>
-    </td>
-    <td>Sub title to be dispalyed on top of chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLegend</code>
-    </td>
-    <td>Display chart legend.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allow selections to be made on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxWidth</code>
-    </td>
-    <td>Maximum width in pixels of each line</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showAxis</code>
-    </td>
-    <td>Display axis on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "both"
-      <br />
-      "yAxis"
-      <br />
-      "xAxis"
-      <br />
-      "none"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>areaChart</code>
-    </td>
-    <td>Display chart as area chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxAxisLength</code>
-    </td>
-    <td>Maximum width in pixels of label before elipsis are applied</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>suppressScroll</code>
-    </td>
-    <td>Suppress the diplsay of the mini chart with brushing</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dimensionErrMsg</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid dimension is used in the cols
-      property
-    </td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>measureErrMsg</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid measure is used in the cols property
-    </td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>otherTotalSpec</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid measure is used in the cols property
-    </td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>shape</code>
-      <br />
-      &#123;
-      <br />
-      qOtherLabel: "Other",
-      <br />
-      qOtherCount: "5",
-      <br />
-      &#125;
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Description</th>
+      <th>Options / Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>config</code>
+      </td>
+      <td>
+        Configuration object to connect to the Qlik Engine, only set this if
+        used outside of the Motor component.
+      </td>
+      <td>
+        <code>object</code>
+        <br />
+        &#123;
+        <br />
+        host: "xxxxxxxxx",
+        <br />
+        secure: false,
+        <br />
+        port: xxxxx,
+        <br />
+        prefix: "",
+        <br />
+        appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx", &#125;
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>cols</code>
+      </td>
+      <td>Columns from Qlik Data Model to render in the chart. </td>
+      <td>
+        <code>array</code>
+        <br />
+        &#123;[
+        <br />
+        "Case Owner Group",
+        <br />
+        "=Avg([Case Duration Time])"
+        <br />
+        ]&#125;
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>calcCondition</code>
+      </td>
+      <td>Calculated condition to be met before chart can be displayed.</td>
+      <td>
+        <code>shape</code>
+        <br />
+        &#123;
+        <br />
+        qCond: "=Avg([Case Duration Time])> 5",
+        <br />
+        qMsg: "Calculation condition has not been met",
+        <br />
+        &#125;
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>suppressZero</code>
+      </td>
+      <td>
+        Suppress items whith zero values from being displayed in the chart
+      </td>
+      <td>
+        <code>boolean</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>dualAxis</code>
+      </td>
+      <td>Allow chart to use dual axis. </td>
+      <td>
+        <code>boolean</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>columnSortOrder</code>
+      </td>
+      <td>Order of the columns on which the returned dat shoud be sorted</td>
+      <td>
+        <code>array</code>
+        <br />
+        [1,0]
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>sortDirection</code>
+      </td>
+      <td>
+        Direction by which the chart should be sorted. CAn eith be ascending or
+        descending.
+      </td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>'ASCENDING'</b>
+        <br />
+        'ASC'
+        <br />
+        'DESCENDING'
+        <br />
+        'DESC'
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>width</code>
+      </td>
+      <td>Chart width in percentage or value as pixels</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>'100%'</b>
+        <br />
+        '200px'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>height</code>
+      </td>
+      <td>Chart height in percentage or value as pixels</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>'100%'</b>
+        <br />
+        '200px'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>margin</code>
+      </td>
+      <td>The amount of margin around the component</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>'5px'</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>size</code>
+      </td>
+      <td>Size of the text used in the chart</td>
+      <td>
+        <code>oneOf</code>
+        <br />
+        'tiny'
+        <br />
+        'small'
+        <br />
+        <b>'medium'</b>
+        <br />
+        'large'
+        <br />
+        'xlarge'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showLabels</code>
+      </td>
+      <td>Label position of values for the chart</td>
+      <td>
+        <code>oneOf</code>
+        <br />
+        'top'
+        <br />
+        <b>"none"</b>
+        <br />
+        'inside'
+        <br />
+        <b>* default obtained from theme.</b>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>textOnAxis</code>
+      </td>
+      <td>Labels for each axis on the chart</td>
+      <td>
+        <code>boolean</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        <b>'both'</b>
+        <br />
+        'yAxis'
+        <br />
+        'xAxis'
+        <br />
+        'none'
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>tickSpacing</code>
+      </td>
+      <td>Spacing of the ticks on the Y axis of the chart</td>
+      <td>
+        <code>oneOf</code>
+        <br />
+        "wide"
+        <br />
+        "normal"
+        <br />
+        "narrow"
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showGridlines</code>
+      </td>
+      <td>Grid line type to be drawn on the chart</td>
+      <td>
+        <code>boolean</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "solid"
+        <br />
+        "dashes"
+        <br />
+        "dots"
+        <br />
+        "none"
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>fontColor</code>
+      </td>
+      <td>Color of the labels for the chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>border</code>
+      </td>
+      <td>Border to be dispalyed around the chart</td>
+      <td>
+        <code>boolean</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "top"
+        <br />
+        "left"
+        <br />
+        "bottom"
+        <br />
+        "right"
+        <br />
+        "start"
+        <br />
+        "end"
+        <br />
+        "horizontal"
+        <br />
+        "vertical"
+        <br />
+        "all"
+        <br />
+        "between"
+        <br />
+        "none"
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>backgroundColor</code>
+      </td>
+      <td>Background color the chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>borderRadius</code>
+      </td>
+      <td>Border radius of the border around the chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>chartColor</code>
+      </td>
+      <td>Color scheme to be used for the chart</td>
+      <td>
+        <code>array</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "divergent13"
+        <br />
+        "divergent9"
+        <br />
+        "goya"
+        <br />
+        "red"
+        <br />
+        "blue"
+        <br />
+        "gray"
+        <br />
+        "pink"
+        <br />
+        "grape"
+        <br />
+        "violet"
+        <br />
+        "indigo"
+        <br />
+        "blue"
+        <br />
+        "cyan"
+        <br />
+        "teal"
+        <br />
+        "green"
+        <br />
+        "lime"
+        <br />
+        "yellow"
+        <br />
+        "orange"
+        <br />
+        "base"
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>curve</code>
+      </td>
+      <td>Shape of the curve for each line</td>
+      <td>
+        <code>oneOf</code>
+        <br />
+        <b>"Linear"</b>
+        <br />
+        "Basis"
+        <br />
+        "Bundle"
+        <br />
+        "Cardinal"
+        <br />
+        "CatmullRom"
+        <br />
+        "MonotoneX"
+        <br />
+        "MonotoneY"
+        <br />
+        "Natural"
+        <br />
+        "Step"
+        <br />
+        "StepAfter"
+        <br />
+        "StepBefore"
+        <br />
+        "BasisClosed"
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>symbol</code>
+      </td>
+      <td>Symbol / marker type for each dat point on the chart</td>
+      <td>
+        <code>oneOf</code>
+        <br />
+        <b>"circle"</b>
+        <br />
+        "cross"
+        <br />
+        "diamond"
+        <br />
+        "square"
+        <br />
+        "star"
+        <br />
+        "triangle"
+        <br />
+        "wye"
+        <br />
+        "none"
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>stacked</code>
+      </td>
+      <td>Draw chart as stacked chart</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>roundNum</code>
+      </td>
+      <td>Use round numbering to dispaly labels on charts</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>title</code>
+      </td>
+      <td>Title to be dispalyed on top of chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>subTitle</code>
+      </td>
+      <td>Sub title to be dispalyed on top of chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showLegend</code>
+      </td>
+      <td>Display chart legend.</td>
+      <td>
+        <code>bool</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>allowSelections</code>
+      </td>
+      <td>Allow selections to be made on the chart</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>maxWidth</code>
+      </td>
+      <td>Maximum width in pixels of each line</td>
+      <td>
+        <code>number</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showAxis</code>
+      </td>
+      <td>Display axis on the chart</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "both"
+        <br />
+        "yAxis"
+        <br />
+        "xAxis"
+        <br />
+        "none"
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>areaChart</code>
+      </td>
+      <td>Display chart as area chart</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>maxAxisLength</code>
+      </td>
+      <td>Maximum width in pixels of label before elipsis are applied</td>
+      <td>
+        <code>number</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>suppressScroll</code>
+      </td>
+      <td>Suppress the diplsay of the mini chart with brushing</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>dimensionErrMsg</code>
+      </td>
+      <td>
+        Message to be displayed if an invalid dimension is used in the cols
+        property
+      </td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>measureErrMsg</code>
+      </td>
+      <td>
+        Message to be displayed if an invalid measure is used in the cols
+        property
+      </td>
+      <td>
+        <code>string</code>
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>otherTotalSpec</code>
+      </td>
+      <td>
+        Message to be displayed if an invalid measure is used in the cols
+        property
+      </td>
+      <td>
+        <code>bool</code>
+        <br />
+        <code>shape</code>
+        <br />
+        &#123;
+        <br />
+        qOtherLabel: "Other",
+        <br />
+        qOtherCount: "5",
+        <br />
+        &#125;
+        <br />
+        <b>* default obtained from theme.</b>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ## Sample Syntax
@@ -702,26 +710,11 @@ import { Line } from "@motor-js/core";
   /*dimension*/
   "Year",
   /*dimension with label*/
-  {
-    "qDef": {
-      "qFieldDefs": ["Case Owner Group"],
-      "qFieldLabels": ["Group"]
-    }
-  },
+   { qField: "[Case Owner Group]", qLabel: "Group" },
   /*measure with label*/
-  {
-    "qDef": {
-      "qDef": "=Avg([Case Duration Time])",
-      "qLabel": "Avg Case Duration Time"
-    }
-  },
+   { qField: "=Avg([Case Duration Time])", qLabel: "Avg Case Duration Time" },
   /*measure with label*/
-  {
-    "qDef": {
-      "qDef": "Sum( [Open Cases] )",
-      "qLabel": "Open Cases"
-    }
-  }
+   { qField: "=Sum( [Open Cases]", qLabel: "Open Cases" },
 ]}
   ....
 />
@@ -787,11 +780,11 @@ function ColumnDemo() {
   return (
     <Motor config={config}>
       <Line
-        title="Revenue by Product Sub Group"
+        title="Revenue by Sales Date"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          { qField: "[DateKey]", qLabel: "Sales Date" },
           {
             qField: "=Sum( [Sales Quantity]*[Sales Price])",
             qLabel: "Revenue",
@@ -813,11 +806,11 @@ function ColumnDemo() {
   return (
     <Motor config={config}>
       <Line
-        title="Revenue by Product Sub Group"
+        title="Revenue by Sales Date"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          { qField: "[DateKey]", qLabel: "Sales Date" },
           {
             qField: "=Sum( [Sales Quantity]*[Sales Price])",
             qLabel: "Revenue",
@@ -841,11 +834,11 @@ function ColumnDemo() {
   return (
     <Motor config={config}>
       <Line
-        title="Revenue by Product Sub Group"
+        title="Revenue by Sales Date"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          { qField: "[DateKey]", qLabel: "Sales Date" },
           {
             qField: "=Sum( [Sales Quantity]*[Sales Price])",
             qLabel: "Revenue",
@@ -871,11 +864,11 @@ function ColumnDemo() {
   return (
     <Motor config={config}>
       <Line
-        title="Revenue by Product Sub Group"
+        title="Revenue by Sales Date"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         height="50%"
         cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
+          { qField: "[DateKey]", qLabel: "Sales Date" },
           {
             qField: "=Sum( [Sales Quantity]*[Sales Price])",
             qLabel: "Revenue",
@@ -934,544 +927,549 @@ import { Motor, ... } from @motor-js/core
 Settings in global.chart are below :
 
 <table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allows to enable / disable selctions on charts at a global level.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSlantedYAxis</code>
-    </td>
-    <td>Allows for text on the axis to be displayed at 45 degrees.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundColor</code>
-    </td>
-    <td>Apply a background color to all charts within the application.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "white"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderRadius</code>
-    </td>
-    <td>Border radius for all charts.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "10px"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>userSelect</code>
-    </td>
-    <td>CSS user-select property.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "none"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>suppressZero</code>
-    </td>
-    <td>Suppress zeros on charts.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>suppressScroll</code>
-    </td>
-    <td>Suppress scroll line / brushing on charts.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowZoom</code>
-    </td>
-    <td>Allow for the brush to be resiezed by the user.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLabels</code>
-    </td>
-    <td>Label positioning on chart.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "top"
-      <br /> <b>"none"</b>
-      <br /> "inside"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLegend</code>
-    </td>
-    <td>Display chart legend.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showAxis</code>
-    </td>
-    <td>Display axis on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "both"
-      <br />
-      "yAxis"
-      <br />
-      "xAxis"
-      <br />
-      "none"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showGridlines</code>
-    </td>
-    <td>Grid line type to be drawn on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "solid"
-      <br />
-      "dashes"
-      <br />
-      "dots"
-      <br />
-      "none"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>tickSpacing</code>
-    </td>
-    <td>Spacing of the ticks on the Y axis of the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      "wide"
-      <br />
-      "normal"
-      <br />
-      "narrow"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxAxisLength</code>
-    </td>
-    <td>Maximum width in pixels of label before elipsis are applied</td>
-    <td>
-      <code>number</code>
-      <br />
-      "80"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>display</code>
-    </td>
-    <td>CSS Display of the chart object</td>
-    <td>
-      <code>string</code>
-      <br />
-      "inline-block"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>boxSizing</code>
-    </td>
-    <td>CSS box sizing of the chart object</td>
-    <td>
-      <code>string</code>
-      <br />
-      "border-box""
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>border</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.border</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>color</code>
-    </td>
-    <td>Color of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "var(--oc-gray-4)"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>size</code>
-    </td>
-    <td>Size of border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "1px"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>style</code>
-    </td>
-    <td>Style of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "solid"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>radius</code>
-    </td>
-    <td>Style of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "8px"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>gridlines</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.gridlines</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>stroke</code>
-    </td>
-    <td>Stroke to be sued for the gridlines</td>
-    <td>
-      <code>number</code>
-      <br />
-      "var(--oc-gray-4)"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeDasharray</code>
-    </td>
-    <td>
-      Stroke Dasharray of the gridlines. Allows for dashed or dotted gridlines.
-    </td>
-    <td>
-      <code>number</code>
-      <br />
-      null
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>selection</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.selection</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>opacity</code>
-    </td>
-    <td>Opacity of the item selected</td>
-    <td>
-      <code>number</code>
-      <br />1
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>stroke</code>
-    </td>
-    <td>Stroke of the item selected</td>
-    <td>
-      <code>string</code>
-      <br />
-      "black"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeWidth</code>
-    </td>
-    <td>Stroke width of the item selected</td>
-    <td>
-      <code>string</code>
-      <br />
-      "1px"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>nonSelection</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.nonSelection</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>opacity</code>
-    </td>
-    <td>Opacity of the items not selected</td>
-    <td>
-      <code>number</code>
-      <br />
-      0.5
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>background</code>
-    </td>
-    <td>Background of the items not selected</td>
-    <td>
-      <code>string</code>
-      <br />
-      "var(--oc-gray-1)"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>label</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.label</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>fontColor</code>
-    </td>
-    <td>Label color</td>
-    <td>
-      <code>string</code>
-      <br />
-      "fontAlt"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>noData</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.noData</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>verticalAlign</code>
-    </td>
-    <td>Alignment of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "top"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>display</code>
-    </td>
-    <td>Display of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "inline-block"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderRadius</code>
-    </td>
-    <td>Border radius of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "10px"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundColor</code>
-    </td>
-    <td>Background color of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "var(--oc-gray-1)"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderCollapse</code>
-    </td>
-    <td>Border collapse of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "collapse"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>noDataContent</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.noDataContent</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>display</code>
-    </td>
-    <td>Display attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "inline-block"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>alignItems</code>
-    </td>
-    <td>Alignment attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "center"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>justifyContent</code>
-    </td>
-    <td>Justify attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "center"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>margin</code>
-    </td>
-    <td>Margin attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "10px"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>error</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.error</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>dimensionErrMsg</code>
-    </td>
-    <td>error mesage for invalid dimension</td>
-    <td>
-      <code>string</code>
-      <br />
-      "Invalid Dimension."
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>measureErrMsg</code>
-    </td>
-    <td>error mesage for invalid measure</td>
-    <td>
-      <code>string</code>
-      <br />
-      "Invalid Measure. No values returned."
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Options / Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>allowSelections</code>
+      </td>
+      <td>Allows to enable / disable selctions on charts at a global level.</td>
+      <td>
+        <code>bool</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>allowSlantedYAxis</code>
+      </td>
+      <td>Allows for text on the axis to be displayed at 45 degrees.</td>
+      <td>
+        <code>bool</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>backgroundColor</code>
+      </td>
+      <td>Apply a background color to all charts within the application.</td>
+      <td>
+        <code>string</code>
+        <br />
+        "white"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>borderRadius</code>
+      </td>
+      <td>Border radius for all charts.</td>
+      <td>
+        <code>string</code>
+        <br />
+        "10px"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>userSelect</code>
+      </td>
+      <td>CSS user-select property.</td>
+      <td>
+        <code>string</code>
+        <br />
+        "none"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>suppressZero</code>
+      </td>
+      <td>Suppress zeros on charts.</td>
+      <td>
+        <code>bool</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>suppressScroll</code>
+      </td>
+      <td>Suppress scroll line / brushing on charts.</td>
+      <td>
+        <code>bool</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>allowZoom</code>
+      </td>
+      <td>Allow for the brush to be resiezed by the user.</td>
+      <td>
+        <code>bool</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showLabels</code>
+      </td>
+      <td>Label positioning on chart.</td>
+      <td>
+        <code>string</code>
+        <br />
+        "top"
+        <br /> <b>"none"</b>
+        <br /> "inside"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showLegend</code>
+      </td>
+      <td>Display chart legend.</td>
+      <td>
+        <code>bool</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>textOnAxis</code>
+      </td>
+      <td>Labels for each axis on the chart</td>
+      <td>
+        <code>boolean</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        <b>'both'</b>
+        <br />
+        'yAxis'
+        <br />
+        'xAxis'
+        <br />
+        'none'
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showAxis</code>
+      </td>
+      <td>Display axis on the chart</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "both"
+        <br />
+        "yAxis"
+        <br />
+        "xAxis"
+        <br />
+        "none"
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>showGridlines</code>
+      </td>
+      <td>Grid line type to be drawn on the chart</td>
+      <td>
+        <code>boolean</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "solid"
+        <br />
+        "dashes"
+        <br />
+        "dots"
+        <br />
+        "none"
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>tickSpacing</code>
+      </td>
+      <td>Spacing of the ticks on the Y axis of the chart</td>
+      <td>
+        <code>oneOf</code>
+        <br />
+        "wide"
+        <br />
+        "normal"
+        <br />
+        "narrow"
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>maxAxisLength</code>
+      </td>
+      <td>Maximum width in pixels of label before elipsis are applied</td>
+      <td>
+        <code>number</code>
+        <br />
+        "80"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>display</code>
+      </td>
+      <td>CSS Display of the chart object</td>
+      <td>
+        <code>string</code>
+        <br />
+        "inline-block"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>boxSizing</code>
+      </td>
+      <td>CSS box sizing of the chart object</td>
+      <td>
+        <code>string</code>
+        <br />
+        "border-box""
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>border</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.border</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>color</code>
+      </td>
+      <td>Color of the border around the chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        "var(--oc-gray-4)"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>size</code>
+      </td>
+      <td>Size of border around the chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        "1px"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>style</code>
+      </td>
+      <td>Style of the border around the chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        "solid"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>radius</code>
+      </td>
+      <td>Style of the border around the chart</td>
+      <td>
+        <code>string</code>
+        <br />
+        "8px"
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>gridlines</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.gridlines</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>stroke</code>
+      </td>
+      <td>Stroke to be sued for the gridlines</td>
+      <td>
+        <code>number</code>
+        <br />
+        "var(--oc-gray-4)"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>strokeDasharray</code>
+      </td>
+      <td>
+        Stroke Dasharray of the gridlines. Allows for dashed or dotted
+        gridlines.
+      </td>
+      <td>
+        <code>number</code>
+        <br />
+        null
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>selection</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.selection</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>opacity</code>
+      </td>
+      <td>Opacity of the item selected</td>
+      <td>
+        <code>number</code>
+        <br />1
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>stroke</code>
+      </td>
+      <td>Stroke of the item selected</td>
+      <td>
+        <code>string</code>
+        <br />
+        "black"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>strokeWidth</code>
+      </td>
+      <td>Stroke width of the item selected</td>
+      <td>
+        <code>string</code>
+        <br />
+        "1px"
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>nonSelection</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.nonSelection</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>opacity</code>
+      </td>
+      <td>Opacity of the items not selected</td>
+      <td>
+        <code>number</code>
+        <br />
+        0.5
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>background</code>
+      </td>
+      <td>Background of the items not selected</td>
+      <td>
+        <code>string</code>
+        <br />
+        "var(--oc-gray-1)"
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>label</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.label</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>fontColor</code>
+      </td>
+      <td>Label color</td>
+      <td>
+        <code>string</code>
+        <br />
+        "fontAlt"
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>noData</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.noData</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>verticalAlign</code>
+      </td>
+      <td>Alignment of main object to display no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "top"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>display</code>
+      </td>
+      <td>Display of main object to display no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "inline-block"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>borderRadius</code>
+      </td>
+      <td>Border radius of main object to display no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "10px"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>backgroundColor</code>
+      </td>
+      <td>Background color of main object to display no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "var(--oc-gray-1)"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>borderCollapse</code>
+      </td>
+      <td>Border collapse of main object to display no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "collapse"
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>noDataContent</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.noDataContent</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>display</code>
+      </td>
+      <td>Display attribute for the no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "inline-block"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>alignItems</code>
+      </td>
+      <td>Alignment attribute for the no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "center"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>justifyContent</code>
+      </td>
+      <td>Justify attribute for the no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "center"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>margin</code>
+      </td>
+      <td>Margin attribute for the no data message</td>
+      <td>
+        <code>string</code>
+        <br />
+        "10px"
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>error</code>
+      </th>
+      <th colSpan="2">
+        <code>global.chart.error</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>dimensionErrMsg</code>
+      </td>
+      <td>error mesage for invalid dimension</td>
+      <td>
+        <code>string</code>
+        <br />
+        "Invalid Dimension."
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>measureErrMsg</code>
+      </td>
+      <td>error mesage for invalid measure</td>
+      <td>
+        <code>string</code>
+        <br />
+        "Invalid Measure. No values returned."
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ### line
@@ -1481,61 +1479,65 @@ Settings in line are below :
 e.g. <code>main.zoomScrollOnColumnWidth = 30</code>.
 
 <table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <th>
-      <code>main</code>
-    </th>
-    <th colSpan="2">
-      <code>line.main</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>dataPointsToShow</code>
-    </td>
-    <td>
-      Maximum number of data pints to show before scroll bar is displayed.
-    </td>
-    <td>
-      <code>number</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>otherTotalSpec</code>
-    </td>
-    <td>Setting at which 'Others' will be dispalyed on chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>shape</code>
-      <br />
-      See sample syntax above
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>symbol</code>
-    </td>
-    <td>Symbol / marker for each data point on the chart</td>
-    <td>
-      <code>string</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeWidth</code>
-    </td>
-    <td>Width of each line.</td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Options / Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>main</code>
+      </th>
+      <th colSpan="2">
+        <code>line.main</code>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>dataPointsToShow</code>
+      </td>
+      <td>
+        Maximum number of data pints to show before scroll bar is displayed.
+      </td>
+      <td>
+        <code>number</code>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>otherTotalSpec</code>
+      </td>
+      <td>Setting at which 'Others' will be dispalyed on chart</td>
+      <td>
+        <code>bool</code>
+        <br />
+        <code>shape</code>
+        <br />
+        See sample syntax above
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>symbol</code>
+      </td>
+      <td>Symbol / marker for each data point on the chart</td>
+      <td>
+        <code>string</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>strokeWidth</code>
+      </td>
+      <td>Width of each line.</td>
+      <td>
+        <code>number</code>
+      </td>
+    </tr>
+  </tbody>
 </table>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -24,6 +24,9 @@ import { Filter, Motor } from '@motor-js/core'
 </Motor>
 
 `.trim();
+
+const starter_URL =
+  "https://github.com/motor-js/motor-starter/archive/master.zip";
 
 const features = [
   {
@@ -96,8 +99,15 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   const { isShowing, toggle } = useModal();
+  const [checkedValue, setCheckedValue] = useState(null);
+
   return (
     <Layout title={`${siteConfig.title}`} description="Motor homepage">
+      <ContactUs
+        isShowing={isShowing}
+        onToggle={toggle}
+        checkedValue={checkedValue}
+      />
       <div className="hero-overlay">
         <header className={clsx("hero hero--primary", styles.heroBanner)}>
           <div className="container">
@@ -115,11 +125,14 @@ function Home() {
                 id="button2"
                 className={clsx("button button--lg", styles.button)}
                 // to={useBaseUrl("docs/")}
-                onClick={toggle}
+                // onClick={toggle}
+                onClick={() => {
+                  toggle();
+                  setCheckedValue("BOOKDEMO");
+                }}
               >
                 Book Demo
               </Link>
-              <ContactUs isShowing={isShowing} onToggle={toggle} />
             </div>
           </div>
         </header>
@@ -146,7 +159,8 @@ function Home() {
                     <Link
                       id="button-starter"
                       className={clsx("button b2 button--md", styles.button)}
-                      to={useBaseUrl("docs/Getting%20Started")}
+                      // to={useBaseUrl("docs/Getting%20Started")}
+                      to={starter_URL}
                     >
                       <FontAwesomeIcon icon={faArrowAltCircleDown} size="lg" />
                       {" Download"}
@@ -274,12 +288,13 @@ function Home() {
             <Link
               id="button4"
               className={clsx("button b1 button--lg", styles.button)}
-              // to={useBaseUrl("docs/Getting%20Started")}
-              onClick={toggle}
+              onClick={() => {
+                toggle();
+                setCheckedValue("CONTACTUS");
+              }}
             >
               Contact Us
             </Link>
-            <ContactUs isShowing={isShowing} onToggle={toggle} />
           </div>
         </section>
       </main>

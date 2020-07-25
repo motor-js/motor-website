@@ -651,26 +651,11 @@ import { Column } from "@motor-js/core";
   /*dimension*/
   "Year",
   /*dimension with label*/
-  {
-    "qDef": {
-      "qFieldDefs": ["Case Owner Group"],
-      "qFieldLabels": ["Group"]
-    }
-  },
+   { qField: "[Case Owner Group]", qLabel: "Group" },
   /*measure with label*/
-  {
-    "qDef": {
-      "qDef": "=Avg([Case Duration Time])",
-      "qLabel": "Avg Case Duration Time"
-    }
-  },
+   { qField: "=Avg([Case Duration Time])", qLabel: "Avg Case Duration Time" },
   /*measure with label*/
-  {
-    "qDef": {
-      "qDef": "Sum( [Open Cases] )",
-      "qLabel": "Open Cases"
-    }
-  }
+   { qField: "=Sum( [Open Cases]", qLabel: "Open Cases" },
 ]}
   ....
 />
