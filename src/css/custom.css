@@ -69,7 +69,7 @@
 .heading {
   font-size: 2.2rem;
   font-weight: bold;
-  padding: 3rem 0 0.5rem 0;
+  padding: 1rem 0 0.5rem 0;
 }
 
 .navbar__brand {
@@ -127,12 +127,12 @@
 }
 
 .left-side {
-  padding: 1.5rem;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
   display: flex;
 }
 
 .right-side {
-  padding: 1.5rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
 }

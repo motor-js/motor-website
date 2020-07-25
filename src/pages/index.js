@@ -194,13 +194,14 @@ function Home() {
         )}
         <section className={styles.components}>
           <div className="container">
-            <div className="heading">Explore Charts & Components</div>
+            <div className="heading">Charts Powered by the Engine API</div>
             <div className={clsx("col", styles.components)}>
               <div className="left-side">
                 <div
                   style={{
                     height: "400px",
-                    width: "600px",
+                    width: "550px",
+                    paddingRight: '50px',
                     backgroundImage: "url(/img/eg_charts.png)",
                     backgroundSize: "cover",
                   }}
@@ -228,6 +229,40 @@ function Home() {
                       Explore Charts
                     </Link>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={styles.components}>
+          <div className="container">
+            <div className="heading">Powerful Theming</div>
+            <div className={clsx("col", styles.components)}>
+            <div className="left-side">
+                  <div className="sub-heading">
+                    Our Charts sit on top of the Qlik engine, providing an
+                    interactive and responsive UI experience.
+                    <br />
+                    <br />
+                    Everything is themeable in just a few lines of code - apply
+                    your brand color, custom styles and fonts with ease
+                    <br />
+                    <br />
+                    Check out the live examples in our docs
+                  </div>
+                  <div>
+                    <Link
+                      id="button3"
+                      className={clsx("button b1 button--lg", styles.button)}
+                      to={useBaseUrl("docs/Getting%20Started")}
+                    >
+                      Explore Charts
+                    </Link>
+                  </div>
+                </div>
+              <div>
+                <div className="right-side">
+
                 </div>
               </div>
             </div>
