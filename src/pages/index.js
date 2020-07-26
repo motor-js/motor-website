@@ -17,7 +17,10 @@ import ContactUs from "../components/ContactUsForm";
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
 
-<Motor config={ /* Connect to your Qlik site */ }>
+<Motor 
+  config={ /* Connect to your Qlik site */ }
+  theme={ /* Theme your Mashup */ }
+>
   //...
   <Filter cols=['AwesomeDimension'] />
   //...
@@ -168,7 +171,6 @@ function Home() {
                   </div>
                 </div>
               </div>
-
               <div className="usage">
                 <div className="usage-title">Usage</div>
                 <div className="usage-text">
@@ -206,9 +208,27 @@ function Home() {
             </div>
           </section>
         )}
+        <section className={styles.altcontainer}>
+          <div className="container">
+            <div style={{ display: 'flex', textAlign: 'center'}}className="heading">
+              We are adding features and would love your feedback!
+              <br />
+              Get in touch via chat or on Spectrum</div>
+            <Link
+              id="button4"
+              className={clsx("button b1 button--lg", styles.button)}
+              onClick={() => {
+                toggle();
+                setCheckedValue("CONTACTUS");
+              }}
+            >
+              View Community
+            </Link>
+          </div>
+        </section>
         <section className={styles.components}>
           <div className="container">
-            <div className="heading">Charts Powered by the Engine API</div>
+            <div className="heading">Charts Powered by the Engine</div>
             <div className={clsx("col", styles.components)}>
               <div className="left-side">
                 <div
@@ -224,24 +244,19 @@ function Home() {
               <div>
                 <div className="right-side">
                   <div className="sub-heading">
-                    Our Charts sit on top of the Qlik engine, providing an
+                    Go beyond Qlik's native charting capabilities with our range of charts.
+                    Have full control over style, apply custom events and a lot more.
+                    <br />
+                    <br />
+                    <br />
+                    No need for the Capability APIs, our charts work off any Qlik engine connection, providing an
                     interactive and responsive UI experience.
                     <br />
-                    <br />
-                    Everything is themeable in just a few lines of code - apply
-                    your brand color, custom styles and fonts with ease
                     <br />
                     <br />
                     Check out the live examples in our docs
                   </div>
                   <div>
-                    <Link
-                      id="button3"
-                      className={clsx("button b1 button--lg", styles.button)}
-                      to={useBaseUrl("docs/Getting%20Started")}
-                    >
-                      Explore Charts
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -250,34 +265,15 @@ function Home() {
         </section>
         <section className={styles.components}>
           <div className="container">
-            <div className="heading">Powerful Theming</div>
+            <div className="heading">Unbelievable Theming</div>
             <div className={clsx("col", styles.components)}>
-            <div className="left-side">
-                  <div className="sub-heading">
-                    Our Charts sit on top of the Qlik engine, providing an
-                    interactive and responsive UI experience.
-                    <br />
-                    <br />
-                    Everything is themeable in just a few lines of code - apply
-                    your brand color, custom styles and fonts with ease
-                    <br />
-                    <br />
-                    Check out the live examples in our docs
-                  </div>
-                  <div>
-                    <Link
-                      id="button3"
-                      className={clsx("button b1 button--lg", styles.button)}
-                      to={useBaseUrl("docs/Getting%20Started")}
-                    >
-                      Explore Charts
-                    </Link>
+              <div className="left-side">
+                <div className="sub-heading">
                   </div>
                 </div>
               <div>
-                <div className="right-side">
-
-                </div>
+              <div className="right-side">
+              </div>
               </div>
             </div>
           </div>

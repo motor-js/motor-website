@@ -63,6 +63,10 @@ module.exports = {
               label: "Docs",
               to: "docs/",
             },
+            {
+              label: "GitHub",
+              href: "https://github.com/motor-js",
+           },
           ],
         },
         {
@@ -82,14 +86,10 @@ module.exports = {
           title: "Contact",
           items: [
             {
-              label: "Email Us",
+              label: "Email",
               href:
                 "mailto:hello@motor-js.io?subject=Please tell me more about Motor-JS!",
             },
-            // {
-            //   label: "GitHub",
-            //   href: "https://github.com/facebook/docusaurus",
-            // },
           ],
         },
         // {
