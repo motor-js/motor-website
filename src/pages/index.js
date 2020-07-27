@@ -217,10 +217,7 @@ function Home() {
             <Link
               id="button4"
               className={clsx("button b1 button--lg", styles.button)}
-              onClick={() => {
-                toggle();
-                setCheckedValue("CONTACTUS");
-              }}
+              to={useBaseUrl("https://spectrum.chat/motor-js?tab=posts")}
             >
               View Community
             </Link>

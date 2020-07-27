@@ -30,7 +30,7 @@ const pricing = (props) => {
       title: "TEAM",
       perUsers: "Internal applications",
       perUsers2: "Up to 3 developers",
-      fee: "£2,600 per year",
+      fee: "Contact us for Pricing",
       isMostPopular: false,
       actionLink: "mailto:contact@amphoradata.com",
       actionName: "Contact Us",

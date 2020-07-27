@@ -18,9 +18,9 @@ module.exports = {
   themeConfig: {
     disableDarkMode: true,
     announcementBar: {
-      id: "alpha",
+      id: "beta",
       content:
-        '<span class="text-white"<b>motor js</b> is in alpha, beware of breaking changes ⚒️</span>',
+        '<span class="text-white"<b>motor js</b> is in beta, beware of breaking changes ⚒️</span>',
       /* backgroundColor: 'var(--blueBrand)', */
     },
     googleAnalytics: {
@@ -49,6 +49,11 @@ module.exports = {
         {
           to: "blog",
           label: "Blog",
+          position: "left",
+        },
+        {
+          to: "https://spectrum.chat/motor-js",
+          label: "Community",
           position: "left",
         },
       ],
