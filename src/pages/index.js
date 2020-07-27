@@ -269,10 +269,18 @@ function Home() {
             <div className={clsx("col", styles.components)}>
               <div className="left-side">
                 <div className="sub-heading">
+                  Theme your entire dashboard with ease and customise all of our components through
+                  our simple to use theme object. 
+                  <br />
+                  <br />
+                  <br />                  
+                  Motor JS leverages CSS in JS and a high level theming context. Apply your theme changes once 
+                  in our top level Motor component and it'll propogate through your application.
                   </div>
                 </div>
               <div>
               <div className="right-side">
+
               </div>
               </div>
             </div>
