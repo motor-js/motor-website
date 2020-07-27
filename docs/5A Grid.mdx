@@ -25,8 +25,6 @@ import { Grid } from @motor-js/core
 
 ```
 
-````
-
 ## Props
 
 <table>
@@ -41,18 +39,26 @@ import { Grid } from @motor-js/core
     </td>
     <td>
       grid-template-areas CSS property to specify named grid areas.
-     <br />
+      <br />
       Passed either as an array of arrays or an array of objects.
     </td>
     <td>
-      <code>arrayOf</code><br />
-      <code>shape</code><br />
-      &#123;<br />
-      name: "header"<br />
-      start: [1,2],<br />
-      end: [3,4],<br />
-      &#125;<br />
-      <code>arrayOf</code><br />
+      <code>arrayOf</code>
+      <br />
+      <code>shape</code>
+      <br />
+      &#123;
+      <br />
+      name: "header"
+      <br />
+      start: [1,2],
+      <br />
+      end: [3,4],
+      <br />
+      &#125;
+      <br />
+      <code>arrayOf</code>
+      <br />
     </td>
   </tr>
   <tr>
@@ -62,11 +68,12 @@ import { Grid } from @motor-js/core
     <td>
       Row sizes. If an array value is an array, the inner array indicates the
       minimum and maximum sizes for the row.
-     <br /> Specifying a single string will cause automatically added rows to be
+      <br /> Specifying a single string will cause automatically added rows to be
       the specified size.
     </td>
     <td>
-      <code>array</code><br />
+      <code>array</code>
+      <br />
     </td>
   </tr>
   <tr>
@@ -76,13 +83,14 @@ import { Grid } from @motor-js/core
     <td>
       Column sizes. If an array value is an array, the inner array indicates the
       minimum and maximum sizes for the column.
-     <br /> Specifying a single string will repeat multiple columns of that size,
+      <br /> Specifying a single string will repeat multiple columns of that size,
       as long as there is room for more.
-     <br /> Specifying an object allows indicating how the columns stretch to
+      <br /> Specifying an object allows indicating how the columns stretch to
       fit the available space.
     </td>
     <td>
-      <code>array</code><br />
+      <code>array</code>
+      <br />
     </td>
   </tr>
   <tr>
@@ -91,11 +99,13 @@ import { Grid } from @motor-js/core
     </td>
     <td>Whether the width and/or height should fill the container.</td>
     <td>
-      <code>oneOf</code><br />
-      <code>bool</code><br />
+      <code>oneOf</code>
+      <br />
+      <code>bool</code>
+      <br />
       'horizontal'
-     <br /> 'vertical'
-     <br />
+      <br /> 'vertical'
+      <br />
     </td>
   </tr>
   <tr>
@@ -105,14 +115,18 @@ import { Grid } from @motor-js/core
     <td>Overflow of content for the grid</td>
     <td>
       <code>oneOf</code>
-     <br />
+      <br />
       "auto", "hidden", "scroll", "visible"
-     <br />
-     <br />
-      <code>shape</code><br />
-      &#123;<br />
-      horizontal: "auto", "hidden", "scroll", "visible",<br />
-      vertical: "auto", "hidden", "scroll", "visible"<br />
+      <br />
+      <br />
+      <code>shape</code>
+      <br />
+      &#123;
+      <br />
+      horizontal: "auto", "hidden", "scroll", "visible",
+      <br />
+      vertical: "auto", "hidden", "scroll", "visible"
+      <br />
       &#125;
     </td>
   </tr>
@@ -122,7 +136,8 @@ import { Grid } from @motor-js/core
     </td>
     <td>Sets the gaps (gutters) between rows and columns.</td>
     <td>
-      <code>string</code><br />
+      <code>string</code>
+      <br />
     </td>
   </tr>
   <tr>
@@ -132,7 +147,7 @@ import { Grid } from @motor-js/core
     <td>Grid backgroundColor</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
     </td>
   </tr> <tr>
     <td>
@@ -141,14 +156,21 @@ import { Grid } from @motor-js/core
     <td>Justify the contents along the cross axis</td>
     <td>
       <code>oneOf</code>
-     <br />
-      "around"<br />
-      "between"<br />
-      "center"<br />
-      "end"<br />
-      "evenly"<br />
-      "start"<br />
-      "stretch"<br />
+      <br />
+      "around"
+      <br />
+      "between"
+      <br />
+      "center"
+      <br />
+      "end"
+      <br />
+      "evenly"
+      <br />
+      "start"
+      <br />
+      "stretch"
+      <br />
     </td>
   </tr>
   <tr>
@@ -158,19 +180,19 @@ import { Grid } from @motor-js/core
     <td>Justify the contents when there is extra space in the cross axis</td>
     <td>
       <code>oneOf</code>
-     <br />
+      <br />
       "around"
-     <br />
+      <br />
       "between"
-     <br />
+      <br />
       "center"
-     <br />
+      <br />
       "end"
-     <br />
+      <br />
       "start"
-     <br />
+      <br />
       "stretch"
-     <br />
+      <br />
     </td>
   </tr>
   <tr>
@@ -180,13 +202,13 @@ import { Grid } from @motor-js/core
     <td>Align the contents along the cross axis</td>
     <td>
       <code>oneOf</code>
-     <br />
+      <br />
       "start"
-     <br /> "center"
-     <br /> "end"
-     <br /> "baseline"
-     <br /> "stretch"
-     <br />
+      <br /> "center"
+      <br /> "end"
+      <br /> "baseline"
+      <br /> "stretch"
+      <br />
     </td>
   </tr>
   <tr>
@@ -196,13 +218,19 @@ import { Grid } from @motor-js/core
     <td>Align the contents when there is extra space in the cross axis</td>
     <td>
       <code>oneOf</code>
-     <br />
-      "start"<br />
-      "center"<br />
-      "end"<br />
-      "between"<br />
-      "around"<br />
-      "stretch"<br />
+      <br />
+      "start"
+      <br />
+      "center"
+      <br />
+      "end"
+      <br />
+      "between"
+      <br />
+      "around"
+      <br />
+      "stretch"
+      <br />
     </td>
   </tr>
 </table>
@@ -221,7 +249,7 @@ import { Grid } from @motor-js/core
 >
   ...
 </Grid>
-````
+```
 
 ## Example
 
