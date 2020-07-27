@@ -840,12 +840,20 @@ function ColumnDemo() {
         cols={[
           { qField: "[DateKey]", qLabel: "Sales Date" },
           {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qField: "=Sum( [Sales Amount]*[Sales Price])",
             qLabel: "Revenue",
           },
           {
-            qField: "=Sum( [Sales Quantity])",
-            qLabel: "Quantity",
+            qField: "=Sum( [Sales Cost Amount])/Sum( [Sales Amount])",
+            qLabel: "Cost to Sales Percentage",
+            qNumFormat: {
+              qType: "R",
+              qnDec: 14,
+              qUseThou: 1,
+              qFmt: "#,##0.00%",
+              qDec: ".",
+              qThou: ",",
+            },
           },
         ]}
         dualAxis={true}
