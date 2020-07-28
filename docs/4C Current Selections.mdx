@@ -25,121 +25,125 @@ You do not need to set the Config prop if the component is a child of the Motor 
 :::
 
 <table>
-  <tr>
-    <th>Prop</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <td>
-      <code>config</code>
-    </td>
-    <td>
-      Configuration object to connect to the Qlik Engine, only set this if used
-      outside of the Motor component
-    </td>
-    <td>
-      &#123;
-      <br />
-      host&#58; 'string',
-      <br />
-      secure&#58; 'boolean',
-      <br />
-      port&#58; 'number',
-      <br />
-      prefix&#58; 'string',
-      <br />
-      appId&#58; 'string'
-      <br />
-      &#125;
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>size</code>
-    </td>
-    <td>size of the selections box</td>
-    <td>
-      'tiny'
-      <br />
-      'small'
-      <br />
-      <b>'medium'</b>
-      <br />
-      'large'
-      <br />
-      'xlarge'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>width</code>
-    </td>
-    <td>width of the selections box</td>
-    <td>
-      'string'
-      <br />
-      '100%'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>margin</code>
-    </td>
-    <td>margin around the selections box</td>
-    <td>
-      'string'
-      <br />
-      '5px'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxHeight</code>
-    </td>
-    <td>maximum height of the selections box</td>
-    <td>
-      'string'
-      <br />
-      '80px'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>minHeight</code>
-    </td>
-    <td>minimum height of the selections box</td>
-    <td>
-      'string'
-      <br />
-      '80px'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>selectionsLimit</code>
-    </td>
-    <td>
-      Number of selections the object will display per dimension, before the
-      values are grouped
-    </td>
-    <td>
-      'number'
-      <br />
-      '3'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>overflow</code>
-    </td>
-    <td>Set overflow property, either on the x-axis or y-axis</td>
-    <td>
-      <b>'x-axis'</b>
-      <br />
-      'y-axis'
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Description</th>
+      <th>Options / Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>config</code>
+      </td>
+      <td>
+        Configuration object to connect to the Qlik Engine, only set this if
+        used outside of the Motor component
+      </td>
+      <td>
+        &#123;
+        <br />
+        host&#58; 'string',
+        <br />
+        secure&#58; 'boolean',
+        <br />
+        port&#58; 'number',
+        <br />
+        prefix&#58; 'string',
+        <br />
+        appId&#58; 'string'
+        <br />
+        &#125;
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>size</code>
+      </td>
+      <td>size of the selections box</td>
+      <td>
+        'tiny'
+        <br />
+        'small'
+        <br />
+        <b>'medium'</b>
+        <br />
+        'large'
+        <br />
+        'xlarge'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>width</code>
+      </td>
+      <td>width of the selections box</td>
+      <td>
+        'string'
+        <br />
+        '100%'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>margin</code>
+      </td>
+      <td>margin around the selections box</td>
+      <td>
+        'string'
+        <br />
+        '5px'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>maxHeight</code>
+      </td>
+      <td>maximum height of the selections box</td>
+      <td>
+        'string'
+        <br />
+        '80px'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>minHeight</code>
+      </td>
+      <td>minimum height of the selections box</td>
+      <td>
+        'string'
+        <br />
+        '80px'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>selectionsLimit</code>
+      </td>
+      <td>
+        Number of selections the object will display per dimension, before the
+        values are grouped
+      </td>
+      <td>
+        'number'
+        <br />
+        '3'
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>overflow</code>
+      </td>
+      <td>Set overflow property, either on the x-axis or y-axis</td>
+      <td>
+        <b>'x-axis'</b>
+        <br />
+        'y-axis'
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <br />
@@ -169,49 +173,53 @@ Settings in global.selections.color are below:
 e.g. <code>global.selections.color.defaultFont = 'brand'</code>
 
 <table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <th>selections.color</th>
-  </tr>
-  <tr>
-    <td>
-      <code>defaultFont</code>
-    </td>
-    <td>default font color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>fontTitle</code>
-    </td>
-    <td>font title color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>item</code>
-    </td>
-    <td>selection item color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>clear</code>
-    </td>
-    <td>clear icon color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>border</code>
-    </td>
-    <td>border color</td>
-    <td>'string'</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Options / Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>selections.color</th>
+    </tr>
+    <tr>
+      <td>
+        <code>defaultFont</code>
+      </td>
+      <td>default font color</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>fontTitle</code>
+      </td>
+      <td>font title color</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>item</code>
+      </td>
+      <td>selection item color</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>clear</code>
+      </td>
+      <td>clear icon color</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>border</code>
+      </td>
+      <td>border color</td>
+      <td>'string'</td>
+    </tr>
+  </tbody>
 </table>
 
 <br />
@@ -223,42 +231,46 @@ Settings in global.selections.wrapper are below:
 e.g. <code>global.selections.wrapper.border = '1px solid'</code>
 
 <table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <th>selections.wrapper</th>
-  </tr>
-  <tr>
-    <td>
-      <code>border</code>
-    </td>
-    <td>wrapper border</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundColor</code>
-    </td>
-    <td>wrapper background color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderColor</code>
-    </td>
-    <td>wrapper border color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>radius</code>
-    </td>
-    <td>wrapper border radius</td>
-    <td>'string'</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Options / Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>selections.wrapper</th>
+    </tr>
+    <tr>
+      <td>
+        <code>border</code>
+      </td>
+      <td>wrapper border</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>backgroundColor</code>
+      </td>
+      <td>wrapper background color</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>borderColor</code>
+      </td>
+      <td>wrapper border color</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>radius</code>
+      </td>
+      <td>wrapper border radius</td>
+      <td>'string'</td>
+    </tr>
+  </tbody>
 </table>
 
 <br />
@@ -270,40 +282,44 @@ Settings in global.selections.item are below:
 e.g. <code>global.selections.item.border = '1px solid'</code>
 
 <table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <th>selections.item</th>
-  </tr>
-  <tr>
-    <td>
-      <code>border</code>
-    </td>
-    <td>item border</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundColor</code>
-    </td>
-    <td>item background color</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>radius</code>
-    </td>
-    <td>item border radius</td>
-    <td>'string'</td>
-  </tr>
-  <tr>
-    <td>
-      <code>titleFontWeight</code>
-    </td>
-    <td>item font weight</td>
-    <td>'string'</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Options / Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>selections.item</th>
+    </tr>
+    <tr>
+      <td>
+        <code>border</code>
+      </td>
+      <td>item border</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>backgroundColor</code>
+      </td>
+      <td>item background color</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>radius</code>
+      </td>
+      <td>item border radius</td>
+      <td>'string'</td>
+    </tr>
+    <tr>
+      <td>
+        <code>titleFontWeight</code>
+      </td>
+      <td>item font weight</td>
+      <td>'string'</td>
+    </tr>
+  </tbody>
 </table>
