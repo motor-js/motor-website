@@ -30,6 +30,7 @@ import {
   Box,
   Sidebar,
   Modal,
+  Table,
   useSidebar,
   useModal,
 } from "@motor-js/core";
@@ -68,6 +69,7 @@ const SCOPE = {
   Box,
   Sidebar,
   Modal,
+  Table,
   useSidebar,
   useModal,
 };

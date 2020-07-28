@@ -26,17 +26,14 @@ import { Table } from @motor-js/core
           {
             qField: 'country',
             qLabel: 'Country',
-            width: '10%',
+            width: '20%',
           },
           {
-            qField: 'province',
-            qLabel: 'Province',
-            width: '10%',
-          },
-          {
-            qField: 'region_1',
-            qLabel: 'Region',
-            width: '10%',
+            qField: "province",
+            qLabel: "Province",
+            qCondBackgroundFormat:'',
+            qCondTextFormat:'',
+            width: "20%"
           },
         ],
       },
@@ -93,7 +90,8 @@ A more advanced version demonstrating this is displayed below.
       <code>array</code>
       <br />
       &#123;[ &#123; dimensions &#58;
-      <br /> [ &#123; qField&#58; 'country',
+      <br /> 
+      [ &#123; qField&#58; 'country',
       <br />
       qLabel&#58; 'Country',
       <br />
@@ -357,6 +355,71 @@ To be completed
 
 ## Example
 
-A simple table example
 
-### Table
+### Simple Table Example
+
+```jsx live
+function TableDemo() {
+  return (
+    <Motor config={config}>
+      <Table
+        columns={[{
+          dimensions: [{
+              qField: '[Product Sub Group Desc]',
+              qLabel: 'Product Sub Group',
+              qCondBackgroundFormat:'',
+              qCondTextFormat:'',
+              qSortCriteria: '',
+              width: '10%',
+          }],
+          measures: [{
+            qField: '=Sum([Sales Quantity])',
+            qLabel: 'Province',
+            qCondBackgroundFormat:'',
+            qCondTextFormat:'',
+            qSortCriteria: '',
+            width: '10%',
+            qNumType: '',
+            qNumFmt: ''
+          }],
+        }]}
+      />
+    </Motor>
+  );
+}
+```
+
+
+### Kitchen Sink Example
+
+```jsx live
+function TableDemo() {
+  return (
+    <Motor config={config}>
+      <Table
+        columns={[{
+          dimensions: [{
+              qField: '[Product Sub Group Desc]',
+              qLabel: 'Product Sub Group',
+              qCondBackgroundFormat:'',
+              qCondTextFormat:'',
+              qSortCriteria: '',
+              width: '10%',
+          }],
+          measures: [{
+            qField: '=Sum([Sales Quantity])',
+            qLabel: 'Province',
+            qCondBackgroundFormat:'',
+            qCondTextFormat:'',
+            qSortCriteria: '',
+            width: '10%',
+            qNumType: '',
+            qNumFmt: ''
+          }],
+        }]}
+      />
+    </Motor>
+  );
+}
+```
+
