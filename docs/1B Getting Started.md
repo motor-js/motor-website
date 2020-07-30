@@ -41,13 +41,15 @@ This handles two things:
 You can then import the desired React component from the package and you're good to go. 
 Check out the full list of props and theming options for each component in these docs.
 
-```javascript
+```js
 
 import { Motor } from '@motor-js/core'
 import { base } from '@motor-js/core'
 
 <Motor
-  config={..}
+  config={
+
+  }
   theme={base}
 >
 // ...
