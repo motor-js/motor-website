@@ -644,15 +644,15 @@ import { Column } from "@motor-js/core";
 
 <Column
   cols={[
-  /*dimension*/
-  "Year",
-  /*dimension with label*/
-   { qField: "[Case Owner Group]", qLabel: "Group" },
-  /*measure with label*/
-   { qField: "=Avg([Case Duration Time])", qLabel: "Avg Case Duration Time" },
-  /*measure with label*/
-   { qField: "=Sum( [Open Cases]", qLabel: "Open Cases" },
-]}
+    /*dimension*/
+    "Year",
+    /*dimension with label*/
+    { qField: "[Case Owner Group]", qLabel: "Group" },
+    /*measure with label*/
+    { qField: "=Avg([Case Duration Time])", qLabel: "Avg Case Duration Time" },
+    /*measure with label*/
+    { qField: "=Sum( [Open Cases]", qLabel: "Open Cases" },
+  ]}
   ....
 />
 ```
@@ -697,11 +697,11 @@ import { Column } from "@motor-js/core";
 
   <Column
    ....
-          otherTotalSpec={{
-             qOtherLabel: 'Other',
-             qOtherCount: '5'
-           }}
-     />
+    otherTotalSpec={{
+      qOtherLabel: 'Other',
+      qOtherCount: '5'
+   }}
+  />
 ```
 
 ## Examples
@@ -722,10 +722,10 @@ function ColumnDemo() {
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
+            {
+              qField: "=Sum( [Sales Quantity]*[Sales Price])",
+              qLabel: "Revenue",
+            },
         ]}
         columnSortOrder={[1, 0]}
       />
@@ -748,10 +748,10 @@ function ColumnDemo() {
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
+            {
+              qField: "=Sum( [Sales Quantity]*[Sales Price])",
+              qLabel: "Revenue",
+            },
         ]}
         allowSelections={false}
         textOnAxis={false}

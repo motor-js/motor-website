@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -99,6 +99,23 @@ function Feature({ imageUrl, title, description }) {
 }
 
 function Home() {
+
+  useEffect(() => {
+      // Include the Crisp code here, without the <script></script> tags
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "313a6b40-8101-456d-8ca3-2acbba65bcd0";
+
+    (function() {
+      var d = document;
+      var s = d.createElement("script");
+  
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  },[])
+
+
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   const { isShowing, toggle } = useModal();

@@ -41,6 +41,11 @@ This handles two things:
 You can then import the desired React component from the package and you're good to go. 
 Check out the full list of props and theming options for each component in these docs.
 
+:::info
+The 
+::
+
+
 ```jsx
 
 import { Motor } from '@motor-js/core'
@@ -48,7 +53,11 @@ import { base } from '@motor-js/core'
 
 <Motor
   config={
-
+    host: "sense-demo.qlik.com",
+    secure: true,
+    port: 443,
+    prefix: "",
+    appId: "372cbc85-f7fb-4db6-a620-9a5367845dce"
   }
   theme={base}
 >
