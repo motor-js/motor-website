@@ -42,9 +42,9 @@ You can then import the desired React component from the package and you're good
 Check out the full list of props and theming options for each component in these docs.
 
 :::info
-The 
-::
-
+The connection example below is pointing to Qlik's demo site. All examples in these docs use 
+dimensions from this application
+:::
 
 ```jsx
 
