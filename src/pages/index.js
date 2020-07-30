@@ -251,7 +251,7 @@ function Home() {
                     <br />
                     <br />
                     <br />
-                    Check out the live examples in our docs
+                    Check out the examples in our docs
                   </div>
                   <div>
                   </div>
