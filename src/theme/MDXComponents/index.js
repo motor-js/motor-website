@@ -60,6 +60,7 @@ const config = {
 
 */
 
+/*
 const config = {
   host: "sense-demo.qlik.com",
   secure: true,
@@ -119,3 +120,4 @@ export default {
   h5: Heading("h5"),
   h6: Heading("h6"),
 };
+*/
