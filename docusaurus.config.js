@@ -74,8 +74,12 @@ module.exports = {
            },
            {
              label: "License",
-             to: "license"
-           }
+             to: "license/"
+           },
+           {
+            label: "Privacy Policy",
+            to: "privacy/"
+          }
           ],
         },
         {

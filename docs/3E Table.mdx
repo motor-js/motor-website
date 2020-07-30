@@ -28,6 +28,13 @@ import { Table } from @motor-js/core
             width: "20%"
           },
         ],
+        measures: [
+          {
+            qField: 'sum(price)',
+            qLabel: 'Total Price',
+            width: '20%',
+          }
+        ]
       },
     ]} />
 
@@ -335,15 +342,153 @@ A more advanced version demonstrating this is displayed below.
 
 ## Column Definition
 
-To be completed
+Below props are for use in the dimensions and measures array, within columns. 
+An example of this can also be seen below. 
 
+<table>
+  <tr>
+    <th>Props within columns</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+    <th>dimensions or measures array?</th>
+  </tr>
+  <tr>
+    <td>
+      <code>qField</code>
+    </td>
+    <td>
+      Field name from your Qlik app
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      '[Product Group Desc]'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qLabel</code>
+    </td>
+    <td>
+      Label of your dimension or measure
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      'Product Group'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qCondBackgroundFormat</code>
+    </td>
+    <td>
+     Conditional background color
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      'Product Group'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qCondTextFormat</code>
+    </td>
+    <td>
+     Conditional text color
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      'Product Group'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qSortCriteria</code>
+    </td>
+    <td>
+     Sort criteria
+    </td>
+    <td>
+      <b>Not available in beta release</b>
+    </td>
+    <td>
+      <b>Not available in beta release</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>width</code>
+    </td>
+    <td>
+     Column width, in pixels of a percent
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      '10%'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qNumType</code>
+    </td>
+    <td>
+     Number type
+    </td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      U or UNKNOWN
+      A or ASCII
+      I or INTEGER
+      R or REAL
+      F or FIX
+      M or MONEY
+      D or DATE
+      T or TIME
+      TS or TIMESTAMP
+      IV or INTERVAL
+    </td>
+    <td>
+      measure
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qNumFmt</code>
+    </td>
+    <td>
+     Number format
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      '#,##0'
+    </td>
+    <td>
+      measure
+    </td>
+  </tr>
+</table>
 
-
-### Table configuration
-
-```jsx {11}
- 
-```
 
 ## Example
 
@@ -360,14 +505,12 @@ function TableDemo() {
               qLabel: 'Product Group',
               qCondBackgroundFormat:'',
               qCondTextFormat:'',
-              qSortCriteria: '',
               width: '10%',
           },{
               qField: '[Product Sub Group Desc]',
               qLabel: 'Product Sub Group',
               qCondBackgroundFormat:'',
               qCondTextFormat:'',
-              qSortCriteria: '',
               width: '10%',
           }],
           measures: [{
@@ -375,7 +518,6 @@ function TableDemo() {
             qLabel: 'Total Sales',
             qCondBackgroundFormat:'',
             qCondTextFormat:'',
-            qSortCriteria: '',
             width: '10%',
             qNumType: 'M',
             qNumFmt: '£#,##0'
