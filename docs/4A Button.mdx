@@ -268,7 +268,7 @@ function ButtonTest() {
   const msg = 'You clicked the button'
   return (
     <Motor config={config}>
-      <Button onClick={() => window.alert(msg)}>Click Me.</Button>
+      <Button onClick={() => console.log(msg)}>Click Me.</Button>
     </Motor>
   );
 }
