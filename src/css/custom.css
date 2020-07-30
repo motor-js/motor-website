@@ -123,19 +123,34 @@
 }
 
 .sub-heading {
-  font-size: 18px;
+  font-size: 1.2rem;
+  width: 100%;
 }
 
 .left-side {
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   display: flex;
+  width: 50%;
 }
 
 .right-side {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
+
+
+@media (max-width: 965px) {
+  .right-side {
+    width: 100%;
+  }
+  .left-side {
+    width: 100%;
+  }
+
+}
+
 
 .dark {
   background-color: var(--dark-2);
@@ -145,6 +160,19 @@
 .feature-wrap {
   padding: 1rem;
 }
+
+.usage-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 980px) {
+  .usage-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 
 .usage {
   width: 100%;

@@ -160,7 +160,7 @@ function Home() {
       <main>
         <section className={styles.usage}>
           <div className="container">
-            <div className={clsx("col", styles.usage)}>
+            <div className='usage-wrap'>
               <div className="usage">
                 <div className="usage-title">Installation</div>
                 <div className="usage-body">
@@ -248,14 +248,13 @@ function Home() {
                 <div
                   style={{
                     height: "400px",
-                    width: "550px",
+                    width: "100%",
                     paddingRight: '50px',
                     backgroundImage: "url(/img/eg_charts.png)",
                     backgroundSize: "cover",
                   }}
                 />
               </div>
-              <div>
                 <div className="right-side">
                   <div className="sub-heading">
                     Go beyond Qlik's native charting capabilities with our range of charts.
@@ -275,7 +274,6 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
         <section className={styles.darkcontainer}>
           <div className="container">
