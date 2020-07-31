@@ -355,48 +355,48 @@ You do not need to set the Config prop if the component is a child of the Motor 
       </td>
       <td>Color scheme to be used for the chart</td>
       <td>
-      <code>array</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "motor"
-      <br />
-      "divergent13"
-      <br />
-      "divergent9"
-      <br />
-      "eco"
-      <br />
-      "bio"
-      <br />
-      "red"
-      <br />
-      "blue"
-      <br />
-      "gray"
-      <br />
-      "pink"
-      <br />
-      "grape"
-      <br />
-      "violet"
-      <br />
-      "indigo"
-      <br />
-      "blue"
-      <br />
-      "cyan"
-      <br />
-      "teal"
-      <br />
-      "green"
-      <br />
-      "lime"
-      <br />
-      "yellow"
-      <br />
-      "orange"        
-      <br />
+        <code>array</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "motor"
+        <br />
+        "divergent13"
+        <br />
+        "divergent9"
+        <br />
+        "eco"
+        <br />
+        "bio"
+        <br />
+        "red"
+        <br />
+        "blue"
+        <br />
+        "gray"
+        <br />
+        "pink"
+        <br />
+        "grape"
+        <br />
+        "violet"
+        <br />
+        "indigo"
+        <br />
+        "blue"
+        <br />
+        "cyan"
+        <br />
+        "teal"
+        <br />
+        "green"
+        <br />
+        "lime"
+        <br />
+        "yellow"
+        <br />
+        "orange"
+        <br />
         <b>* default obtained from theme.</b>
       </td>
     </tr>
@@ -839,20 +839,12 @@ function ColumnDemo() {
         cols={[
           { qField: "[DateKey]", qLabel: "Sales Date" },
           {
-            qField: "=Sum( [Sales Amount]*[Sales Price])",
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
             qLabel: "Revenue",
           },
           {
-            qField: "=Sum( [Sales Cost Amount])/Sum( [Sales Amount])",
-            qLabel: "Cost to Sales Percentage",
-            qNumFormat: {
-              qType: "R",
-              qnDec: 14,
-              qUseThou: 1,
-              qFmt: "#,##0.00%",
-              qDec: ".",
-              qThou: ",",
-            },
+            qField: "=Sum( [Sales Quantity])",
+            qLabel: "Quantity",
           },
         ]}
         dualAxis={true}

@@ -84,18 +84,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>block</code>
     </td>
     <td></td>
-    <td>
-      <code>boolean</code>
-    </td>
+    <td><code>boolean</code></td>
   </tr>
   <tr>
     <td>
       <code>onClick</code>
     </td>
     <td>Click handler</td>
-    <td>
-      <code>function</code>
-    </td>
+    <td><code>function</code></td>
   </tr>
   <tr>
     <td>
@@ -121,9 +117,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>color</code>
     </td>
     <td>Background color</td>
-    <td>
-      <code>string</code>
-    </td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
@@ -150,9 +144,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>fontColor</code>
     </td>
     <td>button font color</td>
-    <td>
-      <code>string</code>
-    </td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
@@ -169,18 +161,14 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>border</code>
     </td>
     <td>sets the border css property</td>
-    <td>
-      <code>string</code>
-    </td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
       <code>outline</code>
     </td>
     <td>button outline</td>
-    <td>
-      <code>string</code>
-    </td>
+    <td><code>string</code></td>
   </tr>
   <tr>
     <td>
@@ -277,7 +265,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
 
 ```jsx live
 function ButtonTest() {
-  const msg = "You clicked the button";
+  const msg = 'You clicked the button'
   return (
     <Motor config={config}>
       <Button onClick={() => console.log(msg)}>Click Me.</Button>
@@ -290,42 +278,20 @@ function ButtonTest() {
 
 ```jsx live
 function ButtonTest() {
-  const size = "large";
+  const size = 'large'
   return (
     <Motor config={config}>
-      <Button size={size} color="brand">
-        Brand
-      </Button>
-      <Button size={size} color="var(--oc-red-6)">
-        Red
-      </Button>
-      <Button size={size} color="var(--oc-orange-6)">
-        Orange
-      </Button>
-      <Button size={size} color="var(--oc-yellow-6)">
-        Yellow
-      </Button>
-      <Button size={size} color="var(--oc-green-6)">
-        Green
-      </Button>
-      <Button size={size} color="var(--oc-teal-6)">
-        Teal
-      </Button>
-      <Button size={size} color="var(--oc-blue-6)">
-        Blue
-      </Button>
-      <Button size={size} color="var(--oc-violet-6)">
-        Violet
-      </Button>
-      <Button size={size} color="var(--oc-pink-6)">
-        Pink
-      </Button>
-      <Button size={size} color="var(--oc-gray-6)">
-        Gray
-      </Button>
-      <Button size={size} color="black">
-        Black
-      </Button>
+        <Button size={size} color='brand'>Brand</Button>
+        <Button size={size} color='var(--oc-red-6)'>Red</Button>
+        <Button size={size} color='var(--oc-orange-6)'>Orange</Button>
+        <Button size={size} color='var(--oc-yellow-6)'>Yellow</Button>
+        <Button size={size} color='var(--oc-green-6)'>Green</Button>
+        <Button size={size} color='var(--oc-teal-6)'>Teal</Button>
+        <Button size={size} color='var(--oc-blue-6)'>Blue</Button>
+        <Button size={size} color='var(--oc-violet-6)'>Violet</Button>
+        <Button size={size} color='var(--oc-pink-6)'>Pink</Button>
+        <Button size={size} color='var(--oc-gray-6)'>Gray</Button>
+        <Button size={size} color='black'>Black</Button>
     </Motor>
   );
 }
@@ -462,7 +428,7 @@ or
     <th>button.hover</th>
     <th></th>
   </tr>
-  <tr>
+<tr>
     <td>
       <code>background</code>
     </td>
@@ -512,7 +478,7 @@ or
     <th>button.active</th>
     <th></th>
   </tr>
-  <tr>
+<tr>
     <td>
       <code>transform</code>
     </td>
@@ -549,3 +515,4 @@ or
     </td>
   </tr>
 </table>
+

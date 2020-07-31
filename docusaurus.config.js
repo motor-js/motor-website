@@ -51,11 +51,11 @@ module.exports = {
           label: "Blog",
           position: "left",
         },
-        // {
-        //   to: "community",
-        //   label: "Community",
-        //   position: "left",
-        // },
+        {
+          to: "https://spectrum.chat/motor-js",
+          label: "Community",
+          position: "left",
+        },
       ],
     },
     footer: {
