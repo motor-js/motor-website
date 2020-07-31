@@ -131,7 +131,7 @@ module.exports = {
           homePageId: "Introduction",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: "https://www.motor-js.io//",
+          editUrl: "https://www.motor-js.io/",
         },
         blog: {
           showReadingTime: true,
