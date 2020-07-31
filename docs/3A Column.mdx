@@ -343,53 +343,54 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <td>
         <code>chartColor</code>
       </td>
-      <td>Color scheme to be used for the chart. 
-      Either pass a string that matches a color from our theme, or pass your own array.
+      <td>
+        Color scheme to be used for the chart. Either pass a string that matches
+        a color from our theme, or pass your own array.
       </td>
       <td>
-      <code>array</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "motor"
-      <br />
-      "divergent13"
-      <br />
-      "divergent9"
-      <br />
-      "eco"
-      <br />
-      "bio"
-      <br />
-      "red"
-      <br />
-      "blue"
-      <br />
-      "gray"
-      <br />
-      "pink"
-      <br />
-      "grape"
-      <br />
-      "violet"
-      <br />
-      "indigo"
-      <br />
-      "blue"
-      <br />
-      "cyan"
-      <br />
-      "teal"
-      <br />
-      "green"
-      <br />
-      "lime"
-      <br />
-      "yellow"
-      <br />
-      "orange"
-      <br />
-      <b>* default obtained from theme.</b>
+        <code>array</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "motor"
+        <br />
+        "divergent13"
+        <br />
+        "divergent9"
+        <br />
+        "eco"
+        <br />
+        "bio"
+        <br />
+        "red"
+        <br />
+        "blue"
+        <br />
+        "gray"
+        <br />
+        "pink"
+        <br />
+        "grape"
+        <br />
+        "violet"
+        <br />
+        "indigo"
+        <br />
+        "blue"
+        <br />
+        "cyan"
+        <br />
+        "teal"
+        <br />
+        "green"
+        <br />
+        "lime"
+        <br />
+        "yellow"
+        <br />
+        "orange"
+        <br />
+        <b>* default obtained from theme.</b>
       </td>
     </tr>
     <tr>
@@ -454,6 +455,11 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <td>Display chart legend.</td>
       <td>
         <code>bool</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "right"
+        <br /> "bottom"
         <br />
       </td>
     </tr>
@@ -722,10 +728,10 @@ function ColumnDemo() {
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-            {
-              qField: "=Sum( [Sales Quantity]*[Sales Price])",
-              qLabel: "Revenue",
-            },
+          {
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qLabel: "Revenue",
+          },
         ]}
         columnSortOrder={[1, 0]}
       />
@@ -748,10 +754,10 @@ function ColumnDemo() {
         height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-            {
-              qField: "=Sum( [Sales Quantity]*[Sales Price])",
-              qLabel: "Revenue",
-            },
+          {
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qLabel: "Revenue",
+          },
         ]}
         allowSelections={false}
         textOnAxis={false}
@@ -915,6 +921,11 @@ Settings in global.chart are below :
       <td>Display chart legend.</td>
       <td>
         <code>bool</code>
+        <br />
+        <code>oneOf</code>
+        <br />
+        "right"
+        <br /> "bottom"
         <br />
       </td>
     </tr>

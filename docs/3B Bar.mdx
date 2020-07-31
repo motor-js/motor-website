@@ -103,7 +103,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
   </tr>
   <tr>
     <td>
-      <code>columnSortOrder</code>
+      <code>barSortOrder</code>
     </td>
     <td>Order of the columns on which the returned dat shoud be sorted</td>
     <td>
@@ -447,6 +447,11 @@ You do not need to set the Config prop if the component is a child of the Motor 
     <td>
       <code>bool</code>
       <br />
+      <code>oneOf</code>
+      <br />
+      "right"
+      <br /> "bottom"
+      <br />
     </td>
   </tr>
   <tr>
@@ -716,7 +721,7 @@ function ColumnDemo() {
             qLabel: "Revenue",
           },
         ]}
-        columnSortOrder={[1, 0]}
+        barSortOrder={[1, 0]}
       />
     </Motor>
   );
@@ -901,6 +906,11 @@ Settings in global.chart are below :
     <td>Display chart legend.</td>
     <td>
       <code>bool</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "right"
+      <br /> "bottom"
       <br />
     </td>
   </tr>
