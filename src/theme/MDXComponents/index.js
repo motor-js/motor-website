@@ -93,6 +93,7 @@ const SCOPE = {
   Line,
 };
 
+*/
 
 export default {
   code: (props) => {
@@ -121,4 +122,3 @@ export default {
   h6: Heading("h6"),
 };
 
-*/
