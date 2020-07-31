@@ -92,3 +92,12 @@
   background-color: #444444;
   color: white;
 }
+
+.altcontainer {
+  display: flex;
+  padding: 2rem 0;
+  width: 100%;
+  align-items: center;
+  background-color: #f3eed9;
+  color: black;
+}

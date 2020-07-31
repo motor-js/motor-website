@@ -8,14 +8,6 @@ sidebar_label: Line
 
 ## Usage
 
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
-
-The simpliest method to render a Line chart is to add a Line element to the page and set the cols props.
-
 ```javascript
 
 import { Line } from @motor-js/core
@@ -363,46 +355,48 @@ You do not need to set the Config prop if the component is a child of the Motor 
       </td>
       <td>Color scheme to be used for the chart</td>
       <td>
-        <code>array</code>
-        <br />
-        <code>oneOf</code>
-        <br />
-        "divergent13"
-        <br />
-        "divergent9"
-        <br />
-        "goya"
-        <br />
-        "red"
-        <br />
-        "blue"
-        <br />
-        "gray"
-        <br />
-        "pink"
-        <br />
-        "grape"
-        <br />
-        "violet"
-        <br />
-        "indigo"
-        <br />
-        "blue"
-        <br />
-        "cyan"
-        <br />
-        "teal"
-        <br />
-        "green"
-        <br />
-        "lime"
-        <br />
-        "yellow"
-        <br />
-        "orange"
-        <br />
-        "base"
-        <br />
+      <code>array</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "motor"
+      <br />
+      "divergent13"
+      <br />
+      "divergent9"
+      <br />
+      "eco"
+      <br />
+      "bio"
+      <br />
+      "red"
+      <br />
+      "blue"
+      <br />
+      "gray"
+      <br />
+      "pink"
+      <br />
+      "grape"
+      <br />
+      "violet"
+      <br />
+      "indigo"
+      <br />
+      "blue"
+      <br />
+      "cyan"
+      <br />
+      "teal"
+      <br />
+      "green"
+      <br />
+      "lime"
+      <br />
+      "yellow"
+      <br />
+      "orange"        
+      <br />
         <b>* default obtained from theme.</b>
       </td>
     </tr>
@@ -481,7 +475,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <td>
         <code>roundNum</code>
       </td>
-      <td>Use round numbering to dispaly labels on charts</td>
+      <td>Use round numbering to display labels on charts</td>
       <td>
         <code>bool</code>
         <br />
@@ -492,7 +486,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <td>
         <code>title</code>
       </td>
-      <td>Title to be dispalyed on top of chart</td>
+      <td>Title to be displayed on top of chart</td>
       <td>
         <code>string</code>
         <br />
@@ -594,7 +588,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <td>
         <code>suppressScroll</code>
       </td>
-      <td>Suppress the diplsay of the mini chart with brushing</td>
+      <td>Suppress the display of the mini chart with brushing</td>
       <td>
         <code>bool</code>
         <br />

@@ -2,7 +2,7 @@ module.exports = {
   title: "The React Framework for Qlik Sense Mashups",
   tagline:
     "Charts, Components & Utilities for the rapid creation of custom dashboards off the Qlik Engine",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://friendly-volhard-3f5c11.netlify.app",
   baseUrl: "/",
   favicon: "img/m_icon.png",
   organizationName: "Motor", // Usually your GitHub org/user name.
@@ -18,9 +18,9 @@ module.exports = {
   themeConfig: {
     disableDarkMode: true,
     announcementBar: {
-      id: "alpha",
+      id: "beta",
       content:
-        '<span class="text-white"<b>motor js</b> is in alpha, beware of breaking changes ⚒️</span>',
+        '<span class="text-white"<b>motor js</b> is in beta, beware of breaking changes ⚒️</span>',
       /* backgroundColor: 'var(--blueBrand)', */
     },
     googleAnalytics: {
@@ -68,14 +68,26 @@ module.exports = {
               label: "Docs",
               to: "docs/",
             },
+            {
+              label: "GitHub",
+              href: "https://github.com/motor-js",
+           },
+           {
+             label: "License",
+             to: "license/"
+           },
+           {
+            label: "Privacy Policy",
+            to: "privacy/"
+          }
           ],
         },
         {
           title: "Community",
           items: [
             {
-              label: "Spectrum",
-              href: "https://spectrum.chat/motor-js",
+              label: 'Spectrum',
+              href: 'https://spectrum.chat/motor-js',
             },
             {
               label: "Twitter",
@@ -87,14 +99,10 @@ module.exports = {
           title: "Contact",
           items: [
             {
-              label: "Email Us",
+              label: "Email",
               href:
                 "mailto:hello@motor-js.io?subject=Please tell me more about Motor-JS!",
             },
-            // {
-            //   label: "GitHub",
-            //   href: "https://github.com/facebook/docusaurus",
-            // },
           ],
         },
         // {

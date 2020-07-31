@@ -1,0 +1,822 @@
+---
+id: Theming
+title: Theming
+sidebar_label: Theming
+---
+
+## Overview
+
+A big part of Motor is its theming framework. There are a lot of things you can customize, which are covered on this page.
+
+The recommended path to creating a new theme, is to pass it to the Motor component.
+
+```javascript
+
+import { Motor } from '@motor-js/core';
+
+const myTheme = {
+  global: {
+    colors: {
+      brand: 'red',
+    },
+  },
+};
+
+<Motor theme={myTheme}>
+  //...
+</Motor>
+
+```
+
+This is just an example of using the theme to replace the app's brand color. There are a couple of things you should know:
+
+There is a base theme and the customizations you add will merge with it. 
+As a result, you only need to pass what you need to change, not the entire theme object. 
+These changes will only affect the children of the Motor component.
+
+The library comes with some pre-built themes which you can import and use. See the example below for using the night theme
+
+:::caution 
+Additional themes including the night theme are not in the beta release.
+These are planned ahead of full library release.
+:::
+
+```javascript
+
+import { Motor } from '@motor-js/core';
+import { night } from '@motor-js/core';
+
+<Motor theme={night}>
+  //...
+</Motor>
+
+```
+
+
+## Structure
+
+The structure of the JSON object is divided into three parts: global, charts and each component entry, for example:
+
+```javascript
+
+const myTheme = {
+  global: {
+    // changes here will affect more than one component at a time
+  },
+  filter: {
+    // changes here will affect the Filter component only
+  },
+  //...
+}
+
+```
+
+
+## API
+
+This section documents each of the theme entries so that you know what is possible to customize. 
+
+:::info 
+Please see the relevant component / chart page for those theme API details. This page will document the global theme object.
+:::
+
+
+### global
+
+Settings in global object are below. Default values are in the base theme:
+
+e.g. <code>global.backgroundColor = 'brand'</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+    <th>Component using this theme entry</th>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>background color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'white'
+    </td>
+    <td>
+    Grid
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>fontFamily</code>
+    </td>
+    <td>font family</td>
+    <td>
+      <code>string</code>
+      <br />
+      'Inter, sans-serif'
+    </td>
+    <td>
+      ALL
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>colorTheme</code>
+    </td>
+    <td>default color theme of the charts</td>
+    <td>
+      <code>array</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      <b>"motor"</b>
+      <br />
+      "divergent13"
+      <br />
+      "divergent9"
+      <br />
+      "eco"
+      <br />
+      "bio"
+      <br />
+      "red"
+      <br />
+      "blue"
+      <br />
+      "gray"
+      <br />
+      "pink"
+      <br />
+      "grape"
+      <br />
+      "violet"
+      <br />
+      "indigo"
+      <br />
+      "blue"
+      <br />
+      "cyan"
+      <br />
+      "teal"
+      <br />
+      "green"
+      <br />
+      "lime"
+      <br />
+      "yellow"
+      <br />
+      "orange"
+    </td>
+    <td>
+      All Charts
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>border</code>
+    </td>
+    <td>font family</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      color&#58;'var(--oc-gray-4)',
+      <br />
+      size&#58; '1px',
+      <br />
+      style&#58; 'solid',
+      <br />
+      radius&#58; '8px',
+      <br />
+      &#125;
+    </td>
+    <td>
+      Box <br />
+      Bar <br />
+      Column <br />
+      Line <br />
+      KPI <br />
+      Pie
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>deviceBreakpoint</code>
+    </td>
+    <td>Which size to use depending on the screensize</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      mobile&#58;'small',
+      <br />
+      tablet&#58; 'medium',
+      <br />
+      desktop&#58; 'medium',
+      <br />
+      largeDesktop&#58; 'large',
+      <br />
+      &#125;
+    </td>
+    <td>
+      ALL
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>responsiveBreakpoints</code>
+    </td>
+    <td>screen size breakpoints</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      mobile&#58;'400px',
+      <br />
+      tablet&#58; '640px',
+      <br />
+      desktop&#58; '1024px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     useScreenSize hook
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>focus</code>
+    </td>
+    <td>screen size breakpoints</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      outline&#58; 
+      &#123;
+      <br />
+      color&#58;'#212121',
+      <br />
+      size&#58; '5px'
+      &#125;
+      <br />
+      &#125;
+    </td>
+    <td>
+     Box
+    </td>
+  </tr>
+  <tr>
+    <th>size</th>
+    <th>global.size</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>
+      <code>font</code>
+    </td>
+    <td>dashboard font size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '10px',
+      <br />
+      small&#58; '12px',
+      <br />
+      medium&#58; '14px',
+      <br />
+      large&#58; '16px',
+      <br />
+      xlarge&#58; '18px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>subFont</code>
+    </td>
+    <td>dashboard sub font size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '8px',
+      <br />
+      small&#58; '10px',
+      <br />
+      medium&#58; '12px',
+      <br />
+      large&#58; '14px',
+      <br />
+      xlarge&#58; '16px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>title</code>
+    </td>
+    <td>chart title size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '14px',
+      <br />
+      small&#58; '16px',
+      <br />
+      medium&#58; '18px',
+      <br />
+      large&#58; '20px',
+      <br />
+      xlarge&#58; '22px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All charts
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>subTitle</code>
+    </td>
+    <td>chart sub title size</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '12px',
+      <br />
+      small&#58; '14px',
+      <br />
+      medium&#58; '16px',
+      <br />
+      large&#58; '18px',
+      <br />
+      xlarge&#58; '20px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All charts
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>tooltip</code>
+    </td>
+    <td>chart tooltip</td>
+    <td>
+      <code>object</code>
+      <br />
+      &#123;
+      <br />
+      tiny&#58; '10px',
+      <br />
+      small&#58; '12px',
+      <br />
+      medium&#58; '14px',
+      <br />
+      large&#58; '16px',
+      <br />
+      xlarge&#58; '18px',
+      <br />
+      &#125;
+    </td>
+    <td>
+     All charts
+    </td>
+  </tr>
+</table>
+
+### global.color
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+    <th>Component using this theme entry</th>
+  </tr>
+  <tr>
+    <td>
+      <code>brand</code>
+    </td>
+    <td>brand color</td>
+    <td>
+      <code>string</code>
+      <br />
+      '#FF7272'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>brandLight</code>
+    </td>
+    <td>brand light color</td>
+    <td>
+      <code>string</code>
+      <br />
+      '#FFCCC7'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>accent1</code>
+    </td>
+    <td>accent1 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      '#007DC3'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>accent2</code>
+    </td>
+    <td>accent2 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      '#A08CFF'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>accent3</code>
+    </td>
+    <td>accent3 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      '#f3EED9'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altDark</code>
+    </td>
+    <td>altDark color</td>
+    <td>
+      <code>string</code>
+      <br />
+      '#272727'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray1</code>
+    </td>
+    <td>altGray1 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-1)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray2</code>
+    </td>
+    <td>altGray2 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-2)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray3</code>
+    </td>
+    <td>altGray3 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-3)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray4</code>
+    </td>
+    <td>altGray4 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-4)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray5</code>
+    </td>
+    <td>altGray5 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-5)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray6</code>
+    </td>
+    <td>altGray6 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-6)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray7</code>
+    </td>
+    <td>altGray7 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-7)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray8</code>
+    </td>
+    <td>altGray8 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-8)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>altGray9</code>
+    </td>
+    <td>altGray9 color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-9)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr> 
+  <tr>
+    <td>
+      <code>font</code>
+    </td>
+    <td>font color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-9)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr> 
+  <tr>
+    <td>
+      <code>fontAlt</code>
+    </td>
+    <td>fontAlt color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-7)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr> 
+  <tr>
+    <td>
+      <code>fontLight</code>
+    </td>
+    <td>fontLight color</td>
+    <td>
+      <code>string</code>
+      <br />
+      'var(--oc-gray-2)'
+    </td>
+    <td>
+    Any
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>motor</code>
+    </td>
+    <td>Array of 8 colors, motor color scheme</td>
+    <td>
+      <code>array</code>
+      <br />
+      ["#003f5c",
+      "#2f4b7c",
+      "#665191",
+      "#a05195",
+      "#d45087",
+      "#f95d6a",
+      "#ff7c43",
+      "#ffa600"]
+    </td>
+    <td>
+    Any Chart
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>divergent13</code>
+    </td>
+    <td>Array of 13 divergent colors</td>
+    <td>
+      <code>array</code>
+      <br />
+      ["#43aa8b",
+      "#61b98d",
+      "#7ec98f",
+      "#9dd790",
+      "#bce593",
+      "#ddf297",
+      "#ffff9d",
+      "#ffe57d",
+      "#ffc961",
+      "#ffac4d",
+      "#ff8d42",
+      "#ff6b3f",
+      "#f94144"]
+    </td>
+    <td>
+    Any Chart
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>divergent9</code>
+    </td>
+    <td>Array of 9 divergent colors</td>
+    <td>
+      <code>array</code>
+      <br />
+      ["#43aa8b",
+      "#6fc18e",
+      "#9dd790",
+      "#ccec95",
+      "#ffff9d",
+      "#ffd76e",
+      "#ffac4d",
+      "#ff7c3f",
+      "#f94144"]
+    </td>
+    <td>
+    Any Chart
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>eco</code>
+    </td>
+    <td>Array of 20 colors, eco color scheme</td>
+    <td>
+      <code>array</code>
+      <br />
+      ["#3366CC",
+      "#DC3912",
+      "#FF9900",
+      "#109618",
+      "#990099",
+      "#3B3EAC",
+      "#0099C6",
+      "#DD4477",
+      "#66AA00",
+      "#B82E2E",
+      "#316395",
+      "#994499",
+      "#22AA99",
+      "#AAAA11",
+      "#6633CC",
+      "#E67300",
+      "#8B0707",
+      "#329262",
+      "#5574A6",
+      "#3B3EAC"]
+    </td>
+    <td>
+    Any Chart
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>bio</code>
+    </td>
+    <td>Array of 24 colors, eco color scheme</td>
+    <td>
+      <code>array</code>
+      <br />
+      ["#03B8AA",
+      "#374649",
+      "#FD625E",
+      "#F2C80F",
+      "#5F6B6D",
+      "#8ad4eb",
+      "#fe9666",
+      "#a66999",
+      "#3599b8",
+      "#dfbfbf",
+      "#4ac5bb",
+      "#5f6b6d",
+      "#fb8281",
+      "#f4d25a",
+      "#7f898a",
+      "#a4ddee",
+      "#fdab89",
+      "#b687ac",
+      "#28738a",
+      "#a78f8f",
+      "#168980",
+      "#293537",
+      "#bb4a4a",
+      "#b59525",
+      "#475052"]
+    </td>
+    <td>
+    Any Chart
+    </td>
+  </tr>
+</table>
+
+### global.chart
+
+Theme entries for global.chart can be viewed on each Chart documentation page. Changes here will impact all charts on your dashboard
+
+
+

@@ -8,7 +8,8 @@ sidebar_label: Grid
 
 ## Usage
 
-We have created layout components to make dashabord design easier and quicker.
+This is a Grid layout component based off CSS Grid. It is a 2-dimensional layout system,
+aimed at making it easy to structure your Dashboard
 
 ```javascript
 
@@ -20,12 +21,16 @@ import { Grid } from @motor-js/core
   areas={[["header"], ["main"], ["footer"]]}
   backgroundColor="altGray1"
 >
-  ...
+  //...
 </Grid>
 
 ```
 
 ## Props
+
+:::info
+This component does not require connection to a Qlik engine
+:::
 
 <table>
   <tr>
@@ -239,6 +244,9 @@ import { Grid } from @motor-js/core
 
 ### Grid configuration
 
+The below syntax creates a grid of three rows and one column.
+The rows have been defined in the area property as header, main and footer.
+
 ```jsx {11}
 //...
 <Grid
@@ -278,7 +286,7 @@ function BoxDemo() {
       backgroundColor="altGray1"
     >
       {/** HEADER */}
-      <Box style={{ margin: "auto" }}>
+      <Box gridArea="header" style={{ margin: "auto" }}>
         <span style={{ color: "black", fontWeight: "bold" }}>
           Motor Starter Dashboard
           <span role="img" aria-label="peace_emoji">
@@ -286,11 +294,12 @@ function BoxDemo() {
           </span>
         </span>
       </Box>
-      {/** SIDEBAR */}
       {/** MAIN */}
-      <Box gridArea="main">{/* <MainContent /> */}</Box>
+      <Box gridArea="main" style={{ margin: "auto" }}>
+        Main Content here
+      </Box>
       {/** FOOTER */}
-      <Box style={{ margin: "auto" }}>
+      <Box gridArea="footer" style={{ margin: "auto" }}>
         <span style={{ color: "black" }}>
           made with
           <span

@@ -22,7 +22,9 @@ npm i @motor-js/core
 ### Include in your HTML
 
 ```javascript
-<script src="...@motor-js/core"></script>
+<script src="https://unpkg.com/@motor-js/core"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
 <br />
@@ -39,13 +41,24 @@ This handles two things:
 You can then import the desired React component from the package and you're good to go. 
 Check out the full list of props and theming options for each component in these docs.
 
-```javascript
+:::info
+The connection example below is pointing to Qlik's demo site. All examples in these docs use 
+dimensions from this application
+:::
+
+```jsx
 
 import { Motor } from '@motor-js/core'
-import base from '@motor-js/core/themes'
+import { base } from '@motor-js/core'
 
 <Motor
-  config={..}
+  config={
+    host: "sense-demo.qlik.com",
+    secure: true,
+    port: 443,
+    prefix: "",
+    appId: "372cbc85-f7fb-4db6-a620-9a5367845dce"
+  }
   theme={base}
 >
 // ...
@@ -77,7 +90,6 @@ import { Button } from '@motor-js/core'
 />
 
 ```
-
 
 
 ## Examples

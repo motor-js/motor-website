@@ -30,9 +30,17 @@ import {
   Box,
   Sidebar,
   Modal,
+  Table,
   useSidebar,
   useModal,
 } from "@motor-js/core";
+
+/*
+host: 'sense-demo.qlik.com',
+    secure: true,
+    port: 443,
+    prefix: '/',
+    appId: '133dab5d-8f56-4d40-b3e0-a6b401391bde',
 
 const config = {
   host: "localhost",
@@ -40,14 +48,25 @@ const config = {
   port: 19077,
   prefix: "",
   // appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Luke
-  appId: "fe191278-da6c-444d-a860-0ca05e075b03", // Alan
+  appId: "c2a87f96-e112-44cd-b9f3-2f9db1b0a700", // Alan
   //appId: "bd335164-4640-4a3f-970d-2fef039c39bf", // Alan
 };
 
-//c2a87f96-e112-44cd-b9f3-2f9db1b0a700
-//bd335164-4640-4a3f-970d-2fef039c39bf
-//appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
+  //c2a87f96-e112-44cd-b9f3-2f9db1b0a700
+  //bd335164-4640-4a3f-970d-2fef039c39bf
+  //appId: "de8b2fd6-f9d3-48c3-878b-849317369bfb", // Alan
 
+*/
+
+const config = {
+  host: "sense-demo.qlik.com",
+  secure: true,
+  port: 443,
+  prefix: "",
+  appId: "372cbc85-f7fb-4db6-a620-9a5367845dce",
+};
+
+/*
 //-------------------------------------------------------/
 ////// Object with components I need in scope
 const SCOPE = {
@@ -56,20 +75,22 @@ const SCOPE = {
   Filter,
   CurrentSelections,
   SmartHeading,
-  Search,
-  Pie,
-  Bar,
-  Column,
-  Line,
   KPI,
   config,
   Grid,
   Box,
   Sidebar,
   Modal,
+  Table,
   useSidebar,
   useModal,
+  Search,
+  Pie,
+  Bar,
+  Column,
+  Line,
 };
+
 
 export default {
   code: (props) => {
@@ -97,3 +118,5 @@ export default {
   h5: Heading("h5"),
   h6: Heading("h6"),
 };
+
+*/

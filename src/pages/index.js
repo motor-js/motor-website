@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -17,7 +17,10 @@ import ContactUs from "../components/ContactUsForm";
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
 
-<Motor config={ /* Connect to your Qlik site */ }>
+<Motor 
+  config={ /* Connect to your Qlik site */ }
+  theme={ /* Theme your Mashup */ }
+>
   //...
   <Filter cols=['AwesomeDimension'] />
   //...
@@ -96,6 +99,23 @@ function Feature({ imageUrl, title, description }) {
 }
 
 function Home() {
+
+  useEffect(() => {
+      // Include the Crisp code here, without the <script></script> tags
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "313a6b40-8101-456d-8ca3-2acbba65bcd0";
+
+    (function() {
+      var d = document;
+      var s = d.createElement("script");
+  
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  },[])
+
+
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   const { isShowing, toggle } = useModal();
@@ -140,7 +160,7 @@ function Home() {
       <main>
         <section className={styles.usage}>
           <div className="container">
-            <div className={clsx("col", styles.usage)}>
+            <div className='usage-wrap'>
               <div className="usage">
                 <div className="usage-title">Installation</div>
                 <div className="usage-body">
@@ -168,7 +188,6 @@ function Home() {
                   </div>
                 </div>
               </div>
-
               <div className="usage">
                 <div className="usage-title">Usage</div>
                 <div className="usage-text">
@@ -206,46 +225,55 @@ function Home() {
             </div>
           </section>
         )}
+        <section className={styles.altcontainer}>
+          <div className="container">
+            <div style={{ display: 'flex', textAlign: 'center'}}className="heading">
+              We are adding features and would love your feedback!
+              <br />
+              Get in touch via chat or on Spectrum</div>
+            <Link
+              id="button4"
+              className={clsx("button b1 button--lg", styles.button)}
+              to={useBaseUrl("https://spectrum.chat/motor-js?tab=posts")}
+            >
+              View Community
+            </Link>
+          </div>
+        </section>
         <section className={styles.components}>
           <div className="container">
-            <div className="heading">Explore Charts & Components</div>
+            <div className="heading">Charts Powered by the Engine</div>
             <div className={clsx("col", styles.components)}>
               <div className="left-side">
                 <div
                   style={{
                     height: "400px",
-                    width: "600px",
+                    width: "100%",
+                    paddingRight: '50px',
                     backgroundImage: "url(/img/eg_charts.png)",
                     backgroundSize: "cover",
                   }}
                 />
               </div>
-              <div>
                 <div className="right-side">
                   <div className="sub-heading">
-                    Our Charts sit on top of the Qlik engine, providing an
+                    Go beyond Qlik's native charting capabilities with our range of charts.
+                    Have full control over style, apply custom events and a lot more.
+                    <br />
+                    <br />
+                    <br />
+                    No need for the Capability APIs, our charts work off any Qlik engine connection, providing an
                     interactive and responsive UI experience.
                     <br />
                     <br />
-                    Everything is themeable in just a few lines of code - apply
-                    your brand color, custom styles and fonts with ease
                     <br />
-                    <br />
-                    Check out the live examples in our docs
+                    Check out the examples in our docs
                   </div>
                   <div>
-                    <Link
-                      id="button3"
-                      className={clsx("button b1 button--lg", styles.button)}
-                      to={useBaseUrl("docs/Getting%20Started")}
-                    >
-                      Explore Charts
-                    </Link>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </section>
         <section className={styles.darkcontainer}>
           <div className="container">
@@ -268,3 +296,29 @@ function Home() {
 }
 
 export default Home;
+
+/*
+        <section className={styles.components}>
+          <div className="container">
+            <div className="heading">Unbelievable Theming</div>
+            <div className={clsx("col", styles.components)}>
+              <div className="left-side">
+                <div className="sub-heading">
+                  Theme your entire dashboard with ease and customise all of our components through
+                  our simple to use theme object. 
+                  <br />
+                  <br />
+                  <br />                  
+                  Motor JS leverages CSS in JS and a high level theming context. Apply your theme changes once 
+                  in our top level Motor component and it'll propogate through your application.
+                  </div>
+                </div>
+              <div>
+              <div className="right-side">
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+*/

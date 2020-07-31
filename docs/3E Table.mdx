@@ -8,14 +8,6 @@ sidebar_label: Table
 
 ## Usage
 
-We recommend you start by wrapping your React document with the Motor parent component.
-This handles two things:
-
-- Connection to the Qlik Engine (you can pass configuration or the engine object directly)
-- Theming
-
-The simpliest method to render a table is to add a Table component to the page and set the columns props.
-
 ```javascript
 
 import { Table } from @motor-js/core
@@ -26,19 +18,23 @@ import { Table } from @motor-js/core
           {
             qField: 'country',
             qLabel: 'Country',
-            width: '10%',
+            width: '20%',
           },
           {
-            qField: 'province',
-            qLabel: 'Province',
-            width: '10%',
-          },
-          {
-            qField: 'region_1',
-            qLabel: 'Region',
-            width: '10%',
+            qField: "province",
+            qLabel: "Province",
+            qCondBackgroundFormat:'',
+            qCondTextFormat:'',
+            width: "20%"
           },
         ],
+        measures: [
+          {
+            qField: 'sum(price)',
+            qLabel: 'Total Price',
+            width: '20%',
+          }
+        ]
       },
     ]} />
 
@@ -92,14 +88,15 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>array</code>
       <br />
-      &#123;[ &#123; dimensions &#58;
-      <br /> [ &#123; qField&#58; 'country',
+      [&#123; dimensions &#58;
+      <br /> 
+      [ &#123; qField&#58; 'country',
       <br />
       qLabel&#58; 'Country',
       <br />
       width&#58; '10%', &#125;, ], &#125;,
       <br />
-      ]&#125;
+      ]
     </td>
   </tr> <tr>
     <td>
@@ -122,7 +119,7 @@ A more advanced version demonstrating this is displayed below.
     </td>
     <td>Calculated condition to be met before chart can be displayed.</td>
     <td>
-      <code>shape</code>
+      <code>object</code>
       <br />
       &#123;
       <br />
@@ -312,7 +309,7 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>bandedRows</code>
     </td>
-    <td>Add or remove banded rows.</td>
+    <td>Add or remove banded row color.</td>
     <td>
       <code>bool</code>
       <br />
@@ -323,7 +320,7 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>highlightOnSelection</code>
     </td>
-    <td>Highlight cells on selection.</td>
+    <td>Highlight cells on selection. If false, selected items will be bold</td>
     <td>
       <code>bool</code>
       <br />
@@ -345,24 +342,413 @@ A more advanced version demonstrating this is displayed below.
 
 ## Column Definition
 
-To be completed
+Below props are for use in the dimensions and measures array, within columns. 
+An example of this can also be seen below. 
 
-## Sample Syntax
+<table>
+  <tr>
+    <th>Props within columns</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+    <th>dimensions or measures array?</th>
+  </tr>
+  <tr>
+    <td>
+      <code>qField</code>
+    </td>
+    <td>
+      Field name from your Qlik app
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      '[Product Group Desc]'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qLabel</code>
+    </td>
+    <td>
+      Label of your dimension or measure
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      'Product Group'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qCondBackgroundFormat</code>
+    </td>
+    <td>
+     Conditional background color
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      'Product Group'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qCondTextFormat</code>
+    </td>
+    <td>
+     Conditional text color
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      'Product Group'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qSortCriteria</code>
+    </td>
+    <td>
+     Sort criteria
+    </td>
+    <td>
+      <b>Not available in beta release</b>
+    </td>
+    <td>
+      <b>Not available in beta release</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>width</code>
+    </td>
+    <td>
+     Column width, in pixels of a percent
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      '10%'
+    </td>
+    <td>
+      both
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qNumType</code>
+    </td>
+    <td>
+     Number type
+    </td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      U or UNKNOWN
+      A or ASCII
+      I or INTEGER
+      R or REAL
+      F or FIX
+      M or MONEY
+      D or DATE
+      T or TIME
+      TS or TIMESTAMP
+      IV or INTERVAL
+    </td>
+    <td>
+      measure
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qNumFmt</code>
+    </td>
+    <td>
+     Number format
+    </td>
+    <td>
+      <code>string</code>
+      <br />
+      '#,##0'
+    </td>
+    <td>
+      measure
+    </td>
+  </tr>
+</table>
 
-### Table configuration
-
-```jsx {11}
-   <Modal
-      header={...}
-      footer={...}
-      isShowing={isShowing}
-    >
-      Modal Content, like some filters...
-    </Modal>
-```
 
 ## Example
 
-A simple table example
+### Kitchen Sink Example 
 
-### Table
+```jsx live
+function TableDemo() {
+  return (
+     <Motor config={config}>
+      <Table
+        columns={[{
+          dimensions: [{
+              qField: '[Product Group Desc]',
+              qLabel: 'Product Group',
+              qCondBackgroundFormat:'',
+              qCondTextFormat:'',
+              width: '10%',
+          },{
+              qField: '[Product Sub Group Desc]',
+              qLabel: 'Product Sub Group',
+              qCondBackgroundFormat:'',
+              qCondTextFormat:'',
+              width: '10%',
+          }],
+          measures: [{
+            qField: '=Sum([Sales Quantity])',
+            qLabel: 'Total Sales',
+            qCondBackgroundFormat:'',
+            qCondTextFormat:'',
+            width: '10%',
+            qNumType: 'M',
+            qNumFmt: '£#,##0'
+          }],
+        }]}
+        grid
+        bandedRows
+        grandTotalsFlag
+        headerBackgroundColor='brand'
+        headerFontColor='white'
+      />
+    </Motor>
+  );
+}
+```
+
+## Theme API
+
+### table
+
+e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}</code>
+
+<table>
+  <tr>
+    <th>Setting</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <th>
+      <code>color</code>
+    </th>
+    <th colSpan="2">
+      <code>table.color</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>selected</code>
+    </td>
+    <td>selected color </td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>null</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>selectedFont</code>
+    </td>
+    <td>selected font color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'white'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>headerBackground</code>
+    </td>
+    <td>header background color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'white'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>bodyBackground</code>
+    </td>
+    <td>body background color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'white'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>selectedBackground</code>
+    </td>
+    <td>selected background color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'brand'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>oddRows</code>
+    </td>
+    <td>odd row color when the banded rows prop is set</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'white'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>evenRows</code>
+    </td>
+    <td>even row color when the banded rows prop is set</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'altGray1'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>hover</code>
+    </td>
+    <td>row hover color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'#f2f2f2'</b>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>wrapper</code>
+    </th>
+    <th colSpan="2">
+      <code>table.wrapper</code>
+    </th>
+  </tr>
+   <tr>
+    <td>
+      <code>borderColor</code>
+    </td>
+    <td>wrapper border color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'altGray5'</b>
+    </td>
+  </tr> 
+  <tr>
+    <th>
+      <code>header</code>
+    </th>
+    <th colSpan="2">
+      <code>table.header</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>borderColor</code>
+    </td>
+    <td>header border color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'altGray5'</b>
+    </td>
+  </tr> 
+  <tr>
+    <td>
+      <code>padding</code>
+    </td>
+    <td>header padding</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>"0.4rem 0.7em"</b>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>totals</code>
+    </th>
+    <th colSpan="2">
+      <code>table.totals</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>borderColor</code>
+    </td>
+    <td>totals border color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'altGray5'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>padding</code>
+    </td>
+    <td>totals padding</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>"0.4rem 0.7em"</b>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <code>cells</code>
+    </th>
+    <th colSpan="2">
+      <code>table.cells</code>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>borderColor</code>
+    </td>
+    <td>cells border color</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>'altGray5'</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>padding</code>
+    </td>
+    <td>cells padding</td>
+    <td>
+      <code>string</code>
+     <br />
+      <b>"0.2rem 0.7em"</b>
+    </td>
+  </tr>
+</table>
