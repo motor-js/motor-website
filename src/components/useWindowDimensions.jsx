@@ -16,8 +16,11 @@ export default function useWindowDimensions() {
       setWindowDimensions(getWindowDimensions());
     }
 
+    const isClient = typeof window === 'object';
+    if(isClient) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+    }
   }, []);
 
   return windowDimensions;

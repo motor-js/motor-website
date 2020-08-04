@@ -14,6 +14,7 @@ import {
 import { useModal } from "@motor-js/core";
 import ContactUs from "../components/ContactUsForm";
 import useWindowDimensions from "../components/useWindowDimensions"
+import useWindowSize from '@theme/hooks/useWindowSize';
 
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
@@ -100,7 +101,9 @@ function Feature({ imageUrl, title, description }) {
 }
 
 function Home() {
-  const { height, width } = useWindowDimensions();
+const width = 1000
+//  const { height, width } = useWindowDimensions();
+const windowSize = useWindowSize();
 
   useEffect(() => {
       // Include the Crisp code here, without the <script></script> tags
@@ -170,7 +173,7 @@ function Home() {
                     Install the source files via NPM.
                   </div>
                   <div className="usage-text">
-                    { width > 395 ? <CustomCodeBlock js={"npm install @motor-js/core"}/>: '' }
+                    { windowSize !== 'mobile' ? <CustomCodeBlock js={"npm install @motor-js/core"}/>: '' }
                   </div>
                 </div>
                 <div className="usage-body">
@@ -197,7 +200,7 @@ function Home() {
                   use the components without any additional setup.
                 </div>
                 <div className="usage-text">
-                 { width > 585 ? <CustomCodeBlock js={usageExample} /> : ''}
+                 { windowSize !== 'mobile' ? <CustomCodeBlock js={usageExample} /> : ''}
                 </div>
                 <div>
                   <Link
