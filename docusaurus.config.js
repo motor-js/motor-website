@@ -71,23 +71,23 @@ module.exports = {
             {
               label: "GitHub",
               href: "https://github.com/motor-js",
-           },
-           {
-             label: "License",
-             to: "license/"
-           },
-           {
-            label: "Privacy Policy",
-            to: "privacy/"
-          }
+            },
+            {
+              label: "License",
+              to: "license/",
+            },
+            {
+              label: "Privacy Policy",
+              to: "privacy/",
+            },
           ],
         },
         {
           title: "Community",
           items: [
             {
-              label: 'Spectrum',
-              href: 'https://spectrum.chat/motor-js',
+              label: "Spectrum",
+              href: "https://spectrum.chat/motor-js",
             },
             {
               label: "Twitter",
@@ -131,14 +131,12 @@ module.exports = {
           homePageId: "Introduction",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/",
+          editUrl: "https://www.motor-js.io/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
+          editUrl: "https://www.motor-js.io/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
