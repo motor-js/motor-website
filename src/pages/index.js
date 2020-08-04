@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { useModal } from "@motor-js/core";
 import ContactUs from "../components/ContactUsForm";
+import useWindowDimensions from "../components/useWindowDimensions"
 
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
@@ -99,6 +100,7 @@ function Feature({ imageUrl, title, description }) {
 }
 
 function Home() {
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => {
       // Include the Crisp code here, without the <script></script> tags
@@ -168,7 +170,7 @@ function Home() {
                     Install the source files via NPM.
                   </div>
                   <div className="usage-text">
-                    <CustomCodeBlock js={"npm install @motor-js/core"} />
+                    { width > 395 ? <CustomCodeBlock js={"npm install @motor-js/core"}/>: '' }
                   </div>
                 </div>
                 <div className="usage-body">
@@ -195,7 +197,7 @@ function Home() {
                   use the components without any additional setup.
                 </div>
                 <div className="usage-text">
-                  <CustomCodeBlock js={usageExample} />
+                 { width > 585 ? <CustomCodeBlock js={usageExample} /> : ''}
                 </div>
                 <div>
                   <Link
