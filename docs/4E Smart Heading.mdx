@@ -54,13 +54,16 @@ You do not need to set the Config prop if the component is a child of the Motor 
       &#125;
     </td>
   </tr>
-   <tr>
+  <tr>
     <td>
       <code>type</code>
     </td>
-    <td>heading type, displaying either free text, last reload timestamp or the app name</td>
     <td>
-      <code>oneOf</code> 
+      heading type, displaying either free text, last reload timestamp or the
+      app name
+    </td>
+    <td>
+      <code>oneOf</code>
       <br />
       <b>'lastReload'</b>
       <br />
@@ -75,7 +78,7 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>size of the heading</td>
     <td>
-      <code>oneOf</code> 
+      <code>oneOf</code>
       <br />
       'tiny'
       <br />
@@ -94,18 +97,18 @@ You do not need to set the Config prop if the component is a child of the Motor 
     </td>
     <td>Heading level from H1 to H6, prop takes the number.</td>
     <td>
-      <code>oneOf</code> 
-      <br /> 
+      <code>oneOf</code>
+      <br />
       <b>'1'</b>
       <br />
       '2'
-       <br />
+      <br />
       '3'
-       <br />
+      <br />
       '4'
-       <br />
+      <br />
       '5'
-       <br />
+      <br />
       '6'
     </td>
   </tr>
@@ -129,6 +132,246 @@ You do not need to set the Config prop if the component is a child of the Motor 
       <code>string</code>
       <br />
       <b>'null' (default taken from theme)</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>locales</code>
+    </td>
+    <td>Language specific format to use for lastReload</td>
+    <td>
+      <code>string</code>
+      <br />
+      <b>'null' (default)</b>
+      <br />
+      <b>ar-SA</b> Arabic (Saudi Arabia) <br />
+      <b>bn-BD</b> Bangla (Bangladesh) <br />
+      <b>bn-IN</b> Bangla (India)
+      <br />
+      <b>cs-CZ</b> Czech (Czech Republic) <br />
+      <b>da-DK</b> Danish (Denmark) <br />
+      <b>de-AT</b> Austrian German <br />
+      <b>de-DE</b> Standard German (as spoken in Germany) <br />
+      <b>el-GR</b> Modern Greek <br />
+      <b>en-AU</b> Australian English <br />
+      <b>en-CA</b> Canadian English <br />
+      <b>en-GB</b> British English <br />
+      <b>en-IE</b> Irish English <br />
+      <b>en-IN</b> Indian English <br />
+      <b>en-NZ</b> New Zealand English <br />
+      <b>en-US</b> US English <br />
+      <b>en-ZA</b> English (South Africa) <br />
+      <b>es-AR</b> Argentine Spanish <br />
+      <b>es-CL</b> Chilean Spanish <br />
+      <b>es-CO</b> Colombian Spanish <br />
+      <b>es-ES</b> Castilian Spanish (as spoken in Central-Northern Spain)
+      <br />
+      <b>es-MX</b> Mexican Spanish <br />
+      <b>es-US</b> American Spanish <br />
+      <b>fi-FI</b> Finnish (Finland) <br />
+      <b>fr-BE</b> Belgian French <br />
+      <b>fr-CA</b> Canadian French <br />
+      <b>fr-CH</b> "Swiss" French <br />
+      <b>fr-FR</b> Standard French (especially in France) <br />
+      <b>he-IL</b> Hebrew (Israel) <br />
+      <b>hi-IN</b> Hindi (India)
+      <br />
+      <b>hu-HU</b> Hungarian (Hungary) <br />
+      <b>id-ID</b> Indonesian (Indonesia) <br />
+      <b>it-CH</b> "Swiss" Italian <br />
+      <b>it-IT</b> Standard Italian (as spoken in Italy) <br />
+      <b>jp-JP</b> Japanese (Japan)
+      <br />
+      <b>ko-KR</b> Korean (Republic of Korea) <br />
+      <b>nl-BE</b> Belgian Dutch <br />
+      <b>nl-NL</b> Standard Dutch (as spoken in The Netherlands) <br />
+      <b>no-NO</b> Norwegian (Norway) p<br />
+      <b>l-PL</b> Polish (Poland) <br />
+      <b>pt-BR</b> Brazilian Portuguese <br />
+      <b>pt-PT</b> European Portuguese (as written and spoken in Portugal)
+      <br />
+      <b>ro-RO</b> Romanian (Romania) <br />
+      <b>ru-RU</b> Russian (Russian Federation) <br />
+      <b>sk-SK</b> Slovak (Slovakia) <br />
+      <b>sv-SE</b> Swedish (Sweden) <br />
+      <b>ta-IN</b> Indian Tamil <br />
+      <b>ta-LK</b> Sri Lankan Tamil <br />
+      <b>th-TH</b> Thai (Thailand) <br />
+      <b>tr-TR</b> Turkish (Turkey)
+      <br />
+      <b>zh-CN</b> Mainland China, simplified characters <br />
+      <b>zh-HK</b> Hong Kong, traditional characters <br />
+      <b>zh-TW</b> Taiwan, traditional characters
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>options</code>
+    </td>
+    <td>
+      Date and Time format for lastReload. Must have a value in locales set for
+      this to take effect.
+    </td>
+    <td>
+      <code>object</code>
+      <br />
+      <b>'null' (default)</b>
+      <br />
+      <tr>
+        <td>
+          <b>dateStyle</b>
+        </td>
+        <td>
+          "full"
+          <br />
+          "long"
+          <br />
+          "medium"
+          <br />
+          "short" <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>timeStyle</b>
+        </td>
+        <td>
+          "full"
+          <br />
+          "long"
+          <br />
+          "medium"
+          <br />
+          "short" <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>localeMatcher</b>
+        </td>
+        <td>
+          "best-fit" (default)
+          <br />
+          "lookup"
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>timeZone</b>
+        </td>
+      </tr> <tr>
+        <td>
+          <b>hour12</b>
+        </td>
+        <td>
+          true
+          <br />
+          false
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>hourCycle</b>
+        </td>
+        <td>
+          "h11"
+          <br />
+          "h12"
+          <br />
+          "h23"
+          <br />
+          "h24"
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>formatMatcher</b>
+        </td>
+        <td>
+          "basic"
+          <br />
+          "best-fit" (default)
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>weekday</b>
+        </td>
+        <td>
+          "long"
+          <br />
+          "short"
+          <br />
+          "narrow"
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>year</b>
+        </td>
+        <td>
+          "2-digit"
+          <br />
+          "numeric"
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>month</b>
+        </td>
+        <td>
+          "2-digit"
+          <br />
+          "long"
+          <br />
+          "narrow"
+          <br />
+          <br />
+          "numeric"
+          <br />
+          "short"
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>day</b>
+        </td>
+        <td>
+          "2-digit"
+          <br />
+          "long"
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>hour</b>
+        </td>
+        <td>
+          "2-digit"
+          <br />
+          "long"
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>minute</b>
+        </td>
+        <td>
+          "2-digit"
+          <br />
+          "long"
+          <br />
+        </td>
+      </tr>
     </td>
   </tr>
 </table>
@@ -170,7 +413,9 @@ e.g. <code>global.smartHeading.color = 'brand'</code>
       <code>color</code>
     </td>
     <td>heading color</td>
-    <td><code>string</code></td>
+    <td>
+      <code>string</code>
+    </td>
   </tr>
 </table>
 
