@@ -25,7 +25,7 @@ const license = () => {
     <Layout title="License">
       <div style={{ height: '100%', width: '100%'}}>
         <Document
-          file="../static/license.pdf"
+          file="../static/img/license.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
         >
           <Page pageNumber={pageNumber} />
