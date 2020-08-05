@@ -131,6 +131,16 @@ import { Modal } from @motor-js/core
       <br />
     </td>
   </tr>
+  <tr>
+    <td>
+      <code>onOutsideClick</code>
+    </td>
+    <td>Function to execute when user clicks outside the sidebar</td>
+    <td>
+      <code>function</code>
+      <br />
+    </td>
+  </tr>
 </table>
 
 ## Sample Syntax
@@ -149,11 +159,9 @@ import { Modal } from @motor-js/core
 
 ## Example
 
-A simple modal example
+### Simple Modal
 
-### Modal
-
-Render a simple modal
+Render a simple Modal
 
 ```jsx
 function ModalDemo() {
@@ -174,6 +182,50 @@ function ModalDemo() {
           </div>
         }
         isShowing={isShowing}
+      >
+        <div style={{ display: "flex", height: "50px", padding: "20px 0px" }}>
+          <Filter
+            label="Product Sub Group"
+            dimension={["Product Sub Group Desc"]}
+            size="small"
+          />
+        </div>
+      </Modal>
+      <Button onClick={toggle}>Show Modal</Button>
+    </Motor>
+  );
+}
+```
+
+### Modal with outsideClick
+
+Render a Modal with outsideCLick functionality
+
+```jsx
+function ModalDemo() {
+  const { isShowing, toggle } = useModal();
+
+  const handleClick = () => {
+    toggle();
+  };
+
+  return (
+    <Motor config={config}>
+      <Modal
+        header={
+          <div style={{ fontSize: "20px", fontWeight: "bold" }}>
+            Modal Title
+          </div>
+        }
+        footer={
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <Button width="100px" onClick={toggle}>
+              Close
+            </Button>
+          </div>
+        }
+        isShowing={isShowing}
+        onOutsideClick={handleClick}
       >
         <div style={{ display: "flex", height: "50px", padding: "20px 0px" }}>
           <Filter
