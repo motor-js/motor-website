@@ -33,7 +33,6 @@ The components work via any connection to the Qlik engine, whether that's Qlik C
 :::important
 You need a valid connection to a Qlik Sense Engine to use this library.
 You can configure this in our top level Motor component by setting the config prop or passing the engine object directly.
-More on this here
 :::
 
 The library is split into the following core parts
@@ -81,6 +80,6 @@ Motor communicates with the Qlik engine via EngimaJS, our components have no dep
 
 Motor is a front end framework, so does not handle authentication. You can check out examples of how to connect to the Qlik engine via JWT or certificates here.
 We aim to make it easy to connect to the engine, once you've authenticated, by setting the config or passing the engine object
-to our top level Motor component
+to our top level Motor component.
 
 

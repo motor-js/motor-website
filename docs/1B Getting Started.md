@@ -91,8 +91,36 @@ import { Button } from '@motor-js/core'
 
 ```
 
+## Usage with Qlik Sense Cloud
+
+If you are connecting to a Qlik cloud SAAS instance, your configuration will look slightly different. 
+We need to set the qcs entry to <b>true</b> and also add the web integration id, generated in your Qlik site. 
+See below for an example
+
+```jsx
+
+import { Motor } from '@motor-js/core'
+
+<Motor
+  config={
+  host: 'my-qlik-site.eu.qlikcloud.com',
+  secure: true,
+  port: null,
+  prefix: '',
+  appId: '0c07cd52-e6a1-45ff-a605-fd37394f90bf',
+  qcs: true,
+  webIntId: '4Tx-ydWxSQEM_q1ajlYBVzGgVUVJUo-i',
+  }
+>
+// ...
+</Motor>
+
+```
+
+For more information on how to generate your first web integration id in Qlik SAAS, head to the Qlik [docs](https://qlik.dev/tutorials/making-your-first-api-call).
+
 
 ## Examples
 
 #### Motor Starter Project --> https://github.com/motor-js/motor-starter
-#### Insurance Claims Dashboard --> https://github.com/motor-js/Insurance-Claims
+#### Insurance Claims Dashboard --> https://github.com/motor-js/Insurance-Claims-Multi

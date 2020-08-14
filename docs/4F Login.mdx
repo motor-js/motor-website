@@ -1,0 +1,130 @@
+---
+id: Login
+title: Login
+sidebar_label: Login
+---
+
+#### Login modal, for use with Qlik Sense Cloud. The component will direct the user to log onto their QCS tenant and redirect back to the mashup.
+
+## Usage
+
+```javascript
+
+import { Login } from @motor-js/core
+
+//...
+<Login />
+
+```
+
+## Props
+
+<table>
+  <tr>
+    <th>Prop</th>
+    <th>Description</th>
+    <th>Options / Example</th>
+  </tr>
+  <tr>
+    <td>
+      <code>config</code>
+    </td>
+    <td>
+      Configuration object to connect to the Qlik Engine, only set this if used
+      outside of the Motor component
+    </td>
+    <td>
+      <code>object</code> <br />
+      &#123;
+      <br />
+      host&#58; 'string',
+      <br />
+      secure&#58; 'boolean',
+      <br />
+      port&#58; 'number',
+      <br />
+      prefix&#58; 'string',
+      <br />
+      appId&#58; 'string'
+      <br />
+      qsc&#58; 'boolean'
+      <br />
+      webIntId&#58; 'string',
+      &#125;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>header</code>
+    </td>
+    <td>header text of the login modal</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>body</code>
+    </td>
+    <td>body text of the login modal</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>size</code>
+    </td>
+    <td>size of the heading</td>
+    <td>
+      <code>oneOf</code> 
+      <br />
+      'tiny'
+      <br />
+      'small'
+      <br />
+      <b>'medium'</b>
+      <br />
+      'large'
+      <br />
+      'xlarge'
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>buttonText</code>
+    </td>
+    <td>login button text</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>background color</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>buttonFontColor</code>
+    </td>
+    <td>button font color</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>buttonColor</code>
+    </td>
+    <td>button color</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+</table>
+
