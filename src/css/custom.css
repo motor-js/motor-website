@@ -225,3 +225,22 @@ h1,
 h2 {
   color: var(--redBrand);
 }
+
+.menu__link {
+  font-size: 0.95em;
+  line-height: 15px;
+}
+
+.menu__link--sublist::after {
+  display: none;
+}
+
+.menu__link--sublist {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.menu__link--sublist:hover {
+  background-color: white;
+  cursor: default;
+}
