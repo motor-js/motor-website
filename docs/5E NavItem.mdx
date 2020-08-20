@@ -4,6 +4,10 @@ title: NavItem
 sidebar_label: NavItem
 ---
 
+:::warning
+This component is still under development, we advise to wait before using in your mashups
+:::
+
 #### A Navigation item 
 
 ## Usage
@@ -33,101 +37,38 @@ import { NavItem } from @motor-js/core
   </tr>
   <tr>
     <td>
-      <code>children</code>
+      <code>path</code>
     </td>
-    <td>Contents of the modal.</td>
-    <td>
-      <code>node</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>footer</code>
-    </td>
-    <td>Footer of the modal.</td>
-    <td>
-      <code>node</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>header</code>
-    </td>
-    <td>Header of the modal.</td>
-    <td>
-      <code>node</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>width</code>
-    </td>
-    <td>Width of the modal.</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      '10%'
-      <br /> '20%'
-      <br />
-      '30%'
-      <br />
-      '40%'
-      <br />
-      '50%'
-      <br />
-      '60%'
-      <br />
-      '70%'
-      <br />
-      '80%'
-      <br />
-      '90%'
-      <br />
-      '100%'
-      <br />
-      '10vw'
-      <br />
-      '20vw'
-      <br />
-      '30vw'
-      <br />
-      '40vw'
-      <br />
-      '50vw'
-      <br />
-      '60vw'
-      <br />
-      '70vw'
-      <br />
-      '80vw'
-      <br />
-      '90vw'
-      <br />
-      '10vw'
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>zIndex</code>
-    </td>
-    <td>zIndex of the modal.</td>
+    <td>NavItem path</td>
     <td>
       <code>string</code>
-      <br />
     </td>
   </tr>
   <tr>
     <td>
-      <code>isShowing</code>
+      <code>name</code>
     </td>
-    <td>Is the modal showing.</td>
+    <td>NavItem name</td>
     <td>
-      <code>bool</code>
-      <br />
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>css</code>
+    </td>
+    <td>NavItem css</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>key</code>
+    </td>
+    <td>NavItem key</td>
+    <td>
+      <code>number</code>
     </td>
   </tr>
 </table>

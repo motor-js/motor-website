@@ -244,3 +244,9 @@ h2 {
   background-color: white;
   cursor: default;
 }
+
+@media screen and (max-width: 768px) {
+  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+    display: none;
+  }
+}
