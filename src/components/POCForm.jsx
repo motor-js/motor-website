@@ -147,12 +147,12 @@ const ProofofConceptForm = ({
                       placeholder="Name"
                       required=""
                       type="email"
-                      style="
-              color: rgb(105, 113, 119);
-              background-color: rgb(243, 246, 249);
-              border-radius: 5px;
-              font-weight: 400;
-            "
+                      style={{
+                        color: "rgb(105, 113, 119)",
+                        backgroundColor: "rgb(243, 246, 249)",
+                        borderRadius: "5px",
+                        fontWeight: 400,
+                      }}
                     />
                   </div>
                   <div className="formkit-field">
@@ -163,12 +163,12 @@ const ProofofConceptForm = ({
                       required=""
                       placeholder="Email Address"
                       type="text"
-                      style="
-              color: rgb(105, 113, 119);
-              background-color: rgb(243, 246, 249);
-              border-radius: 5px;
-              font-weight: 400;
-            "
+                      style={{
+                        color: "rgb(105, 113, 119)",
+                        backgroundColor: "rgb(243, 246, 249)",
+                        borderRadius: "5px",
+                        fontWeight: "400",
+                      }}
                     />
                   </div>
                   <div className="formkit-field">
