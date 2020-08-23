@@ -13,8 +13,10 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { useModal } from "@motor-js/core";
 import ContactUs from "../components/ContactUsForm";
-import useWindowDimensions from "../components/useWindowDimensions"
-import useWindowSize from '@theme/hooks/useWindowSize';
+import useWindowDimensions from "../components/useWindowDimensions";
+import useWindowSize from "@theme/hooks/useWindowSize";
+
+import { default as ProofofConceptForm } from "../components/POCForm";
 
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
@@ -101,25 +103,24 @@ function Feature({ imageUrl, title, description }) {
 }
 
 function Home() {
-const width = 1000
-//  const { height, width } = useWindowDimensions();
-const windowSize = useWindowSize();
+  const width = 1000;
+  //  const { height, width } = useWindowDimensions();
+  const windowSize = useWindowSize();
 
   useEffect(() => {
-      // Include the Crisp code here, without the <script></script> tags
+    // Include the Crisp code here, without the <script></script> tags
     window.$crisp = [];
     window.CRISP_WEBSITE_ID = "313a6b40-8101-456d-8ca3-2acbba65bcd0";
 
-    (function() {
+    (function () {
       var d = document;
       var s = d.createElement("script");
-  
+
       s.src = "https://client.crisp.chat/l.js";
       s.async = 1;
       d.getElementsByTagName("head")[0].appendChild(s);
     })();
-  },[])
-
+  }, []);
 
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
@@ -165,7 +166,7 @@ const windowSize = useWindowSize();
       <main>
         <section className={styles.usage}>
           <div className="container">
-            <div className='usage-wrap'>
+            <div className="usage-wrap">
               <div className="usage">
                 <div className="usage-title">Installation</div>
                 <div className="usage-body">
@@ -173,7 +174,11 @@ const windowSize = useWindowSize();
                     Install the source files via NPM.
                   </div>
                   <div className="usage-text">
-                    { windowSize !== 'mobile' ? <CustomCodeBlock js={"npm install @motor-js/core"}/>: '' }
+                    {windowSize !== "mobile" ? (
+                      <CustomCodeBlock js={"npm install @motor-js/core"} />
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
                 <div className="usage-body">
@@ -200,7 +205,11 @@ const windowSize = useWindowSize();
                   use the components without any additional setup.
                 </div>
                 <div className="usage-text">
-                 { windowSize !== 'mobile' ? <CustomCodeBlock js={usageExample} /> : ''}
+                  {windowSize !== "mobile" ? (
+                    <CustomCodeBlock js={usageExample} />
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div>
                   <Link
@@ -232,10 +241,14 @@ const windowSize = useWindowSize();
         )}
         <section className={styles.altcontainer}>
           <div className="container">
-            <div style={{ display: 'flex', textAlign: 'center'}}className="heading">
+            <div
+              style={{ display: "flex", textAlign: "center" }}
+              className="heading"
+            >
               We are adding features and would love your feedback!
               <br />
-              Get in touch via chat or on Spectrum</div>
+              Get in touch via chat or on Spectrum
+            </div>
             <Link
               id="button4"
               className={clsx("button b1 button--lg", styles.button)}
@@ -254,31 +267,33 @@ const windowSize = useWindowSize();
                   style={{
                     height: "400px",
                     width: "100%",
-                    paddingRight: '50px',
+                    paddingRight: "50px",
                     backgroundImage: "url(/img/eg_charts.png)",
                     backgroundSize: "cover",
                   }}
                 />
+                <ProofofConceptForm isShowing />
               </div>
-                <div className="right-side">
-                  <div className="sub-heading">
-                    Go beyond Qlik's native charting capabilities with our range of charts.
-                    Have full control over style, apply custom events and a lot more.
-                    <br />
-                    <br />
-                    <br />
-                    No need for the Capability APIs, our charts work off any Qlik engine connection, providing an
-                    interactive and responsive UI experience.
-                    <br />
-                    <br />
-                    <br />
-                    Check out the examples in our docs
-                  </div>
-                  <div>
-                  </div>
+              <div className="right-side">
+                <div className="sub-heading">
+                  Go beyond Qlik's native charting capabilities with our range
+                  of charts. Have full control over style, apply custom events
+                  and a lot more.
+                  <br />
+                  <br />
+                  <br />
+                  No need for the Capability APIs, our charts work off any Qlik
+                  engine connection, providing an interactive and responsive UI
+                  experience.
+                  <br />
+                  <br />
+                  <br />
+                  Check out the examples in our docs
                 </div>
+                <div></div>
               </div>
             </div>
+          </div>
         </section>
         <section className={styles.darkcontainer}>
           <div className="container">
