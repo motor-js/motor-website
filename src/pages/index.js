@@ -16,7 +16,7 @@ import ContactUs from "../components/ContactUsForm";
 import useWindowDimensions from "../components/useWindowDimensions";
 import useWindowSize from "@theme/hooks/useWindowSize";
 
-import { default as ProofofConceptForm } from "../components/POCForm";
+import ProofofConceptForm from "../components/POCForm";
 
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
@@ -272,8 +272,8 @@ function Home() {
                     backgroundSize: "cover",
                   }}
                 />
-                <ProofofConceptForm isShowing />
               </div>
+
               <div className="right-side">
                 <div className="sub-heading">
                   Go beyond Qlik's native charting capabilities with our range
@@ -295,6 +295,17 @@ function Home() {
             </div>
           </div>
         </section>
+        <section className={styles.altcontainer}>
+          <div className="container">
+            <div
+              style={{ display: "flex", textAlign: "center" }}
+              className="heading"
+            >
+              <ProofofConceptForm isShowing={true} />
+            </div>
+          </div>
+        </section>
+
         <section className={styles.darkcontainer}>
           <div className="container">
             <div className="heading">Need to build a custom Qlik solution?</div>
