@@ -201,6 +201,40 @@ const ProofofConceptForm = ({
                   type="text"
                 />
               </div>
+              <div class="formkit-field">
+                <div role="button" tabindex="0">
+                  <fieldset
+                    data-group="checkboxes"
+                    class="formkit-4889"
+                    group="field"
+                    type="Custom"
+                    order="4"
+                    save_as="Tag"
+                  >
+                    <div
+                      class="formkit-checkboxes"
+                      data-element="tags-checkboxes"
+                      data-group="checkbox"
+                      //                           style="
+                      //   color: rgb(105, 113, 119);
+                      //   background-color: rgb(243, 246, 249);
+                      //   border-radius: 5px;
+                      //   font-weight: 400;
+                      // "
+                    >
+                      <input
+                        class="formkit-checkbox"
+                        id="tag-4889-1812665"
+                        type="checkbox"
+                        name="tags[]"
+                        value="1812665"
+                        checked
+                      />
+                      <label for="tag-4889-1812665">Request free POC</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
               <button
                 // data-element="submit"
                 // // className="formkit-submit formkit-submit"

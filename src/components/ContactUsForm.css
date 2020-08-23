@@ -242,6 +242,7 @@
   input[type="checkbox"] {
   display: none;
 }
+
 .formkit-form[data-uid="02c7858452"]
   [data-group="checkboxes"]
   [data-group="checkbox"]
@@ -249,6 +250,7 @@
   + label::after {
   content: none;
 }
+
 .formkit-form[data-uid="02c7858452"]
   [data-group="checkboxes"]
   [data-group="checkbox"]
@@ -257,6 +259,7 @@
   border-color: #ffffff;
   content: "";
 }
+
 .formkit-form[data-uid="02c7858452"]
   [data-group="checkboxes"]
   [data-group="checkbox"]
@@ -265,6 +268,7 @@
   background: var(--redBrand);
   border-color: var(--redBrand);
 }
+
 .formkit-form[data-uid="02c7858452"]
   [data-group="checkboxes"]
   [data-group="checkbox"]
