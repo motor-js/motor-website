@@ -89,14 +89,13 @@ A more advanced version demonstrating this is displayed below.
       <code>array</code>
       <br />
       [&#123; dimensions &#58;
-      <br /> 
+      <br />
       [ &#123; qField&#58; 'country',
       <br />
       qLabel&#58; 'Country',
       <br />
       width&#58; '10%', &#125;, ], &#125;,
-      <br />
-      ]
+      <br />]
     </td>
   </tr> <tr>
     <td>
@@ -260,8 +259,23 @@ A more advanced version demonstrating this is displayed below.
       <code>oneOf</code>
       <br />
       <b>'left'</b>
-      <br /> 'middle'
+      <br /> 'center'
       <br /> 'right'
+      <br /> 'leftRight'
+      <br />
+    </td>
+  </tr> <tr>
+    <td>
+      <code>bodyAlignment</code>
+    </td>
+    <td>Alignment of header row.</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      <b>'left'</b>
+      <br /> 'center'
+      <br /> 'right'
+      <br /> 'leftRight'
       <br />
     </td>
   </tr> <tr>
@@ -342,8 +356,8 @@ A more advanced version demonstrating this is displayed below.
 
 ## Column Definition
 
-Below props are for use in the dimensions and measures array, within columns. 
-An example of this can also be seen below. 
+Below props are for use in the dimensions and measures array, within columns.
+An example of this can also be seen below.
 
 <table>
   <tr>
@@ -356,73 +370,55 @@ An example of this can also be seen below.
     <td>
       <code>qField</code>
     </td>
-    <td>
-      Field name from your Qlik app
-    </td>
+    <td>Field name from your Qlik app</td>
     <td>
       <code>string</code>
       <br />
       '[Product Group Desc]'
     </td>
-    <td>
-      both
-    </td>
+    <td>both</td>
   </tr>
   <tr>
     <td>
       <code>qLabel</code>
     </td>
-    <td>
-      Label of your dimension or measure
-    </td>
+    <td>Label of your dimension or measure</td>
     <td>
       <code>string</code>
       <br />
       'Product Group'
     </td>
-    <td>
-      both
-    </td>
+    <td>both</td>
   </tr>
   <tr>
     <td>
       <code>qCondBackgroundFormat</code>
     </td>
-    <td>
-     Conditional background color
-    </td>
+    <td>Conditional background color</td>
     <td>
       <code>string</code>
       <br />
       'Product Group'
     </td>
-    <td>
-      both
-    </td>
+    <td>both</td>
   </tr>
   <tr>
     <td>
       <code>qCondTextFormat</code>
     </td>
-    <td>
-     Conditional text color
-    </td>
+    <td>Conditional text color</td>
     <td>
       <code>string</code>
       <br />
       'Product Group'
     </td>
-    <td>
-      both
-    </td>
+    <td>both</td>
   </tr>
   <tr>
     <td>
       <code>qSortCriteria</code>
     </td>
-    <td>
-     Sort criteria
-    </td>
+    <td>Sort criteria</td>
     <td>
       <b>Not available in beta release</b>
     </td>
@@ -434,100 +430,85 @@ An example of this can also be seen below.
     <td>
       <code>width</code>
     </td>
-    <td>
-     Column width, in pixels of a percent
-    </td>
+    <td>Column width, in pixels of a percent</td>
     <td>
       <code>string</code>
       <br />
       '10%'
     </td>
-    <td>
-      both
-    </td>
+    <td>both</td>
   </tr>
   <tr>
     <td>
       <code>qNumType</code>
     </td>
-    <td>
-     Number type
-    </td>
+    <td>Number type</td>
     <td>
       <code>oneOf</code>
-      <br />
-      U or UNKNOWN
-      A or ASCII
-      I or INTEGER
-      R or REAL
-      F or FIX
-      M or MONEY
-      D or DATE
-      T or TIME
-      TS or TIMESTAMP
-      IV or INTERVAL
+      <br />U or UNKNOWN A or ASCII I or INTEGER R or REAL F or FIX M or MONEY D
+      or DATE T or TIME TS or TIMESTAMP IV or INTERVAL
     </td>
-    <td>
-      measure
-    </td>
+    <td>measure</td>
   </tr>
   <tr>
     <td>
       <code>qNumFmt</code>
     </td>
-    <td>
-     Number format
-    </td>
+    <td>Number format</td>
     <td>
       <code>string</code>
       <br />
       '#,##0'
     </td>
-    <td>
-      measure
-    </td>
+    <td>measure</td>
   </tr>
 </table>
 
-
 ## Example
 
-### Kitchen Sink Example 
+### Kitchen Sink Example
 
 ```jsx
 function TableDemo() {
   return (
-     <Motor config={config}>
+    <Motor config={config}>
       <Table
-        columns={[{
-          dimensions: [{
-              qField: '[Product Group Desc]',
-              qLabel: 'Product Group',
-              qCondBackgroundFormat:'',
-              qCondTextFormat:'',
-              width: '10%',
-          },{
-              qField: '[Product Sub Group Desc]',
-              qLabel: 'Product Sub Group',
-              qCondBackgroundFormat:'',
-              qCondTextFormat:'',
-              width: '10%',
-          }],
-          measures: [{
-            qField: '=Sum([Sales Quantity])',
-            qLabel: 'Total Sales',
-            qCondBackgroundFormat:'',
-            qCondTextFormat:'',
-            width: '10%',
-            qNumType: 'M',
-            qNumFmt: '£#,##0'
-          }],
-        }]}
+        columns={[
+          {
+            dimensions: [
+              {
+                qField: "[Product Group Desc]",
+                qLabel: "Product Group",
+                qCondBackgroundFormat: "",
+                qCondTextFormat: "",
+                width: "10%",
+              },
+              {
+                qField: "[Product Sub Group Desc]",
+                qLabel: "Product Sub Group",
+                qCondBackgroundFormat: "",
+                qCondTextFormat: "",
+                width: "10%",
+              },
+            ],
+            measures: [
+              {
+                qField: "=Sum([Sales Quantity])",
+                qLabel: "Total Sales",
+                qCondBackgroundFormat: "",
+                qCondTextFormat: "",
+                width: "10%",
+                qNumType: "M",
+                qNumFmt: "£#,##0",
+              },
+            ],
+          },
+        ]}
         grid
         bandedRows
         grandTotalsFlag
-        headerBackgroundColor='brand'
-        headerFontColor='white'
+        headerBackgroundColor="brand"
+        headerFontColor="white"
       />
     </Motor>
   );
@@ -561,7 +542,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>selected color </td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>null</b>
     </td>
   </tr>
@@ -572,7 +553,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>selected font color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'white'</b>
     </td>
   </tr>
@@ -583,7 +564,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>header background color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'white'</b>
     </td>
   </tr>
@@ -594,7 +575,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>body background color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'white'</b>
     </td>
   </tr>
@@ -605,7 +586,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>selected background color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'brand'</b>
     </td>
   </tr>
@@ -616,7 +597,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>odd row color when the banded rows prop is set</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'white'</b>
     </td>
   </tr>
@@ -627,7 +608,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>even row color when the banded rows prop is set</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'altGray1'</b>
     </td>
   </tr>
@@ -638,7 +619,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>row hover color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'#f2f2f2'</b>
     </td>
   </tr>
@@ -650,17 +631,17 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
       <code>table.wrapper</code>
     </th>
   </tr>
-   <tr>
+  <tr>
     <td>
       <code>borderColor</code>
     </td>
     <td>wrapper border color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'altGray5'</b>
     </td>
-  </tr> 
+  </tr>
   <tr>
     <th>
       <code>header</code>
@@ -676,10 +657,10 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>header border color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'altGray5'</b>
     </td>
-  </tr> 
+  </tr>
   <tr>
     <td>
       <code>padding</code>
@@ -687,7 +668,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>header padding</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>"0.4rem 0.7em"</b>
     </td>
   </tr>
@@ -706,7 +687,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>totals border color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'altGray5'</b>
     </td>
   </tr>
@@ -717,7 +698,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>totals padding</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>"0.4rem 0.7em"</b>
     </td>
   </tr>
@@ -736,7 +717,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>cells border color</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>'altGray5'</b>
     </td>
   </tr>
@@ -747,7 +728,7 @@ e.g. <code>pie.main.otherTotalSpec = {{qOtherLabel: 'Other', qOtherCount: '5'}}<
     <td>cells padding</td>
     <td>
       <code>string</code>
-     <br />
+      <br />
       <b>"0.2rem 0.7em"</b>
     </td>
   </tr>
