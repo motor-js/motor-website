@@ -46,6 +46,11 @@ import { Motor } from @motor-js/core
 
 ```
 
+:::info
+The Motor component now also contains the login component by default. 
+You can customise this by adding a logo via the props and changing the text and color in the base theme.
+:::
+
 ## Props
 
 <table>
@@ -79,6 +84,24 @@ import { Motor } from @motor-js/core
     This is particularly useful if you are connecting to your Qlik site server side (using JWT or certificates).
     </td>
     <td>"object"</td>
+  </tr>
+  <tr>
+    <td><code>logo</code></td>
+    <td>Path to logo to appear in the login component
+    </td>
+    <td>"string"</td>
+  </tr>
+  <tr>
+    <td><code>logoHeight</code></td>
+    <td>Logo height
+    </td>
+    <td>"string"</td>
+  </tr>
+  <tr>
+    <td><code>logoWidth</code></td>
+    <td>Logo width
+    </td>
+    <td>"string"</td>
   </tr>
 </table>
 
