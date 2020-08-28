@@ -12,15 +12,18 @@ A collapsable sidebar component which hides additional content beside a page.
 
 ```javascript
 
-import { Sidebar } from @motor-js/core
+import { Sidebar, useSidebar } from @motor-js/core
 //...
-<Sidebar
-  collapsable
-  padding="100px 5px"
+const {isOpen, toggle} = useSidebar();
+//...
+<Sidebar 
   isOpen={isOpen}
-  backgroundColor="lightblue"
+  onClose={toggle}
+  right
+  overlayBackground='black'
+  header={<h4>Filters</h4>}
 >
-  Sidebar Content
+  <div>Sidebar Content<div>
 </Sidebar>
 
 ```
@@ -35,26 +38,6 @@ import { Sidebar } from @motor-js/core
   </tr>
   <tr>
     <td>
-      <code>children</code>
-    </td>
-    <td>Contents of the sidebar.</td>
-    <td>
-      <code>node</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>collapsable</code>
-    </td>
-    <td>Whether the sidebar is collapsable.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>width</code>
     </td>
     <td>Width of the sidebar.</td>
@@ -65,122 +48,147 @@ import { Sidebar } from @motor-js/core
   </tr>
   <tr>
     <td>
-      <code>pullRight</code>
+      <code>isOpen</code>
     </td>
-    <td>Display sidebar on right hand side of screen.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showOverlay</code>
-    </td>
-    <td>Display overlay when sidebar displayed.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>onOutsideClick</code>
-    </td>
-    <td>Function to execute when user clicks outside the sidebar</td>
+    <td>To open the Sidebar, use with the useSidebar hook, example above</td>
     <td>
       <code>function</code>
       <br />
     </td>
   </tr>
+  <tr>
+    <td>
+      <code>onClose</code>
+    </td>
+    <td>To close the Sidebar, use with the useSidebar hook, example above</td>
+    <td>
+      <code>function</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>onOpen</code>
+    </td>
+    <td>callback function executed when the sidebar opens</td>
+    <td>
+      <code>function</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>backgroundColor</code>
+    </td>
+    <td>Sidebar background color</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>overlayBackground</code>
+    </td>
+    <td>overlay background color</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>header</code>
+    </td>
+    <td>Sidebar header</td>
+    <td>
+      <code>jsx</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>footer</code>
+    </td>
+    <td>Sidebar footer</td>
+    <td>
+      <code>jsx</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>border</code>
+    </td>
+    <td>Sidebar border</td>
+    <td>
+      <code>boolean</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "top"
+      <br />
+      "left"
+      <br />
+      "bottom"
+      <br />
+      "right"
+      <br />
+      "start"
+      <br />
+      "end"
+      <br />
+      "horizontal"
+      <br />
+      "vertical"
+      <br />
+      "all"
+      <br />
+      "between"
+      <br />
+      "none"
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>headerHeight</code>
+    </td>
+    <td>Sidebar header height</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>footerHeight</code>
+    </td>
+    <td>Sidebar footer height</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>borderRadius</code>
+    </td>
+    <td>border radius</td>
+    <td>
+      <code>string</code>
+      <br />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>right</code>
+    </td>
+    <td>opens the sidebar from the right</td>
+    <td>
+      <code>boolean</code>
+      <br />
+    </td>
+  </tr>
 </table>
 
-## Sample Syntax
-
-### Sidebar configuration
-
-```jsx {11}
-//...
-<Sidebar
-  collapsable
-  padding="100px 5px"
-  isOpen={isOpen}
-  backgroundColor="lightblue"
->
-  Sidebar Content
-</Sidebar>
-```
-
-## Example
-
-### Simple sidebar
-
-Render a simple sidebar
-
-```jsx
-function SideBarDemo() {
-  const { isOpen, toggle } = useSidebar();
-  return (
-    <Motor config={config}>
-      <div style={{ overflow: "hidden", height: "300px", width: "500px" }}>
-        <Sidebar
-          width="30%"
-          collapsable
-          direction="column"
-          padding="15px 12px"
-          isOpen={isOpen}
-          backgroundColor="altGray1"
-          justifyContent="top"
-          border={{ color: "brand" }}
-        >
-          <Box direction="column" overflow="visible">
-            <Button onClick={toggle} size={25}>
-              Hide Sidebar
-            </Button>
-          </Box>
-        </Sidebar>
-        <Button onClick={toggle}>Show Sidebar</Button>
-      </div>
-    </Motor>
-  );
-}
-```
-
-### Sidebar with outsideClick
-
-Render a sidebar which clsoes when the user clicks outside.
-
-```jsx
-function SideBarDemo() {
-  const { isOpen, toggle } = useSidebar();
-
-  const handleClick = () => {
-    toggle();
-  };
-
-  return (
-    <Motor config={config}>
-      <div style={{ overflow: "hidden", height: "300px", width: "500px" }}>
-        <Sidebar
-          width="30%"
-          collapsable
-          direction="column"
-          padding="15px 12px"
-          isOpen={isOpen}
-          backgroundColor="altGray1"
-          justifyContent="top"
-          border={{ color: "brand" }}
-          onOutsideClick={handleClick}
-        >
-          <Box direction="column" overflow="visible">
-            <Button onClick={toggle} size={25}>
-              Hide Sidebar
-            </Button>
-          </Box>
-        </Sidebar>
-        <Button onClick={toggle}>Show Sidebar</Button>
-      </div>
-    </Motor>
-  );
-}
-```
