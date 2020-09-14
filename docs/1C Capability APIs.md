@@ -7,7 +7,7 @@ sidebar_label: Capability APIs
 Motor js also supports using the Capability APIs in your React mashups. These APIs will be loaded
 into your mashup if you set the <code>capabilityAPI</code> prop in the Motor component to <code>true</code>.
 
-The Capability APIs are used in both the QlikObject and QlikSelections components, which you'll see listed in the 
+The Capability APIs are used in both the <b>QlikObject</b> and <b>QlikSelections</b> components, which you'll see listed in the 
 documentation. These will enable you to load objects from your Qlik mashup or the current selections bar respecitvely.
 
 You can also access these APIs via the Capability Context which will give you access to the app class. You can use this to add 

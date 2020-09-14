@@ -26,7 +26,7 @@ import { Filter, Motor } from '@motor-js/core'
   theme={ /* Theme your Mashup */ }
 >
   //...
-  <Filter cols=['AwesomeDimension'] />
+  <Filter dimension=['AwesomeDimension'] />
   //...
 </Motor>
 
