@@ -1,0 +1,34 @@
+---
+id: Engine Context
+title: Engine Context
+sidebar_label: Engine Context
+---
+
+#### Context for accessing the Engine API
+
+## Usage
+
+You can access the Qlik engine in any component in your React component tree, see below for an example which returns the engine to the console.
+
+
+```js
+
+import React, { useContext } from 'react'
+import { EngineContext } from '@motor-js/core'
+
+const Example = () => {
+
+  const { engine, engineError } = useContext(EngineContext)
+
+  console.log(engine)
+  
+  return (
+    <div>
+    </div>
+  )
+}
+
+export default Example
+
+```
+

@@ -251,6 +251,21 @@ a[href="/docs/useCapability"]::after {
   font-size: 0.85em;
 }
 
+a[href="/docs/Capability Context"]::after {
+  content: " CAP API ";
+  color: var(--blueBrand);
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+a[href="/docs/Capability APIs"]::after {
+  content: " NEW ";
+  color: var(--redBrand);
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+
 .menu__link--sublist::after {
   display: none;
 }
