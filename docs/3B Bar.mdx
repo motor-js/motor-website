@@ -6,19 +6,30 @@ sidebar_label: Bar
 
 #### Bar chart. A chart displaying horizontal bars.
 
+![Bar Gif](https://media.giphy.com/media/966B0NPulRo2QSvgd4/giphy.gif)
+
 ## Usage
 
 ```javascript
 
 import { Bar } from @motor-js/core
 //...
-<Bar cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+  <Bar 
+    width={900}
+    height={450}
+    title="Claims by Claim type"
+    size='medium'
+    cols={[
+      { qField: '[Claim Settled Date.autoCalendar.Month]', qLabel: 'Month' },
+      { qField: '[Claim Type]', qLabel: 'Claim Type' },
+      { qField: '=Count(ClaimCounter)', qLabel: 'Claims Opened'},
+    ]}
+  />
 
 ```
 
-This can get more complex by setting various other propertes within the cols property which will allow for the naming of columns and the ability to sort the data.
-
-A more advanced version demonstrating this is displayed below.
+This is a simple example, which can get more complex by setting various other propertes. 
+More advanced versions demonstrating various functioanlities can be found in the examples section
 
 ## Props
 
@@ -77,7 +88,7 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>barSortOrder</code>
     </td>
-    <td>Order of the columns on which the returned dat shoud be sorted</td>
+    <td>Order of the columns on which the returned data shoud be sorted</td>
     <td>
       <code>array</code>
       <br />
@@ -89,7 +100,7 @@ A more advanced version demonstrating this is displayed below.
       <code>sortDirection</code>
     </td>
     <td>
-      Direction by which the chart should be sorted. CAn eith be ascending or
+      Direction by which the chart should be sorted. Can either be ascending or
       descending.
     </td>
     <td>
@@ -109,33 +120,25 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>width</code>
     </td>
-    <td>Chart width in percentage or value as pixels</td>
+    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used</td>
     <td>
-      <code>string</code>
-      <br />
-      <b>'100%'</b>
-      <br />
-      '200px'
+      <code>number</code>
     </td>
   </tr>
   <tr>
     <td>
       <code>height</code>
     </td>
-    <td>Chart height in percentage or value as pixels</td>
+    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used </td>
     <td>
-      <code>string</code>
-      <br />
-      <b>'100%'</b>
-      <br />
-      '200px'
+      <code>number</code>
     </td>
   </tr>
   <tr>
     <td>
       <code>margin</code>
     </td>
-    <td>The amount of margin around the component</td>
+    <td>The margin size around the component</td>
     <td>
       <code>string</code>
       <br />
@@ -196,55 +199,6 @@ A more advanced version demonstrating this is displayed below.
       'xAxis'
       <br />
       'none'
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>tickSpacing</code>
-    </td>
-    <td>Spacing of the ticks on the Y axis of the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      "wide"
-      <br />
-      "normal"
-      <br />
-      "narrow"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showGridlines</code>
-    </td>
-    <td>Grid line type to be drawn on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "solid"
-      <br />
-      "dashes"
-      <br />
-      "dots"
-      <br />
-      "none"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>fontColor</code>
-    </td>
-    <td>Color of the labels for the chart</td>
-    <td>
-      <code>string</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -369,9 +323,9 @@ A more advanced version demonstrating this is displayed below.
   </tr>
   <tr>
     <td>
-      <code>percentStacked</code>
+      <code>roundNum</code>
     </td>
-    <td>Draw chart as percenatge stacked chart</td>
+    <td>Use round numbering to dispaly labels on charts</td>
     <td>
       <code>bool</code>
       <br />
@@ -380,13 +334,11 @@ A more advanced version demonstrating this is displayed below.
   </tr>
   <tr>
     <td>
-      <code>roundNum</code>
+      <code>precision</code>
     </td>
-    <td>Use round numbering to dispaly labels on charts</td>
+    <td>Number of decimal precsion when displaying bar labels</td>
     <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
+      <code>number</code>
     </td>
   </tr>
   <tr>
@@ -450,9 +402,30 @@ A more advanced version demonstrating this is displayed below.
   </tr>
   <tr>
     <td>
-      <code>showAxis</code>
+      <code>showAxisLabels</code>
     </td>
-    <td>Display axis on the chart</td>
+    <td>Display axis labels on the chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <code>oneOf</code>
+      <br />
+      "both"
+      <br />
+      "yAxis"
+      <br />
+      "xAxis"
+      <br />
+      "none"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>hideAxisLine</code>
+    </td>
+    <td>Hide axis line on the chart</td>
     <td>
       <code>bool</code>
       <br />
@@ -476,55 +449,6 @@ A more advanced version demonstrating this is displayed below.
     <td>Maximum width in pixels of label before elipsis are applied</td>
     <td>
       <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>suppressScroll</code>
-    </td>
-    <td>Suppress the display of the mini chart with brushing</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnPadding</code>
-    </td>
-    <td>Padding between each bar</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dimensionErrMsg</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid dimension is used in the cols
-      property
-    </td>
-    <td>
-      <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>measureErrMsg</code>
-    </td>
-    <td>
-      Message to be displayed if an invalid measure is used in the cols property
-    </td>
-    <td>
-      <code>string</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -556,23 +480,6 @@ A more advanced version demonstrating this is displayed below.
 
 ## Sample Syntax
 
-### config settings
-
-```jsx {4-9}
-import { Bar } from '@motor-js/core'
-
-<Bar
-  config={{
-    host: "xxxxxxxxx",
-    secure: false,
-    port: xxxxx,
-    prefix: "",
-    appId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-  }}
-  ......
-/>
-```
-
 ### cols settings
 
 <h4>Overview</h4>
@@ -580,7 +487,7 @@ There are three different ways of specifying the columns:
 
 - As a string.
 - As an Object
-- As a reference to a predefined dimension or measure, a so-called master item.
+- As a reference to a predefined dimension or measure, a Master Item.
 
 <b>String syntax</b>
 <br />
@@ -678,14 +585,18 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 The first example is a bar chart sorted by Revenue descending.
 
+![Bar Sorted Gif](https://media.giphy.com/media/nGUAC2uDPRtf0W4TQx/giphy.gif)
+
 ```jsx
 function ColumnDemo() {
   return (
     <Motor config={config}>
       <Bar
+        width={800}
+        height={450}
+        showLabels={false}
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        height="50%"
         cols={[
           { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
           {
@@ -693,35 +604,7 @@ function ColumnDemo() {
             qLabel: "Revenue",
           },
         ]}
-        barSortOrder={[1, 0]}
-      />
-    </Motor>
-  );
-}
-```
-
-### Axis and labels removed from chart
-
-This exmaple removes the text from the axis as well as the labels from each bar and has selections disabled.
-
-```jsx
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Bar
-        title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        height="50%"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-        allowSelections={false}
-        textOnAxis={false}
-        showLabels="none"
+        sortOrder={[1, 0]}
       />
     </Motor>
   );
