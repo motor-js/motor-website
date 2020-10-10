@@ -476,6 +476,175 @@ More advanced versions demonstrating various functioanlities can be found in the
       <b>* default obtained from theme.</b>
     </td>
   </tr>
+  <tr>
+    <td>
+      <code>gridArea</code>
+    </td>
+    <td>Name of the parent grid to place the Bar</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showBoxShadoow</code>
+    </td>
+    <td>Show or hide box shadow</td>
+    <td>
+      <code>boolean</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>stacked</code>
+    </td>
+    <td>Stack the bar chart</td>
+    <td>
+      <code>boolean</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showAsPercent</code>
+    </td>
+    <td>Show the bars as percentage</td>
+    <td>
+      <code>boolean</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>selectionMethod</code>
+    </td>
+    <td>Change the selection method, either click or brush</td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      'click'
+      <br />
+      'brush'
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>renderHorizontally</code>
+    </td>
+    <td>Render as a horizontal bar chart</td>
+    <td>
+      <code>boolean</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>dualAxis</code>
+    </td>
+    <td>Add a second axis to the chart</td>
+    <td>
+      <code>boolean</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>legendTopBottom</code>
+    </td>
+    <td>Render the legend on the top or bottom of the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      'top'
+      <br />
+      'bottom'
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>legendLeftRight</code>
+    </td>
+    <td>Render the legend on the left or right of the chart</td>
+    <td>
+      <code>string</code>
+      <br />
+      'left'
+      <br />
+      'right'
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>legendDirection</code>
+    </td>
+    <td>Direction of the legend values</td>
+    <td>
+      <code>string</code>
+      <br />
+      'row'
+      <br />
+      'column'
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>numDimensionTicks</code>
+    </td>
+    <td>Number of ticks for the X Axis. Leave blank to auto calculate</td>
+    <td>
+      <code>number</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>numMeasureTicks</code>
+    </td>
+    <td>Number of ticks for the Y Axis. Leave blank to auto calculate</td>
+    <td>
+      <code>number</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>numMeasureDualTicks</code>
+    </td>
+    <td>Number of ticks for the second Y Axis. Leave blank to auto calculate</td>
+    <td>
+      <code>number</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>formatAxisDate</code>
+    </td>
+    <td>Format of dates to be displayed on X Axis</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>formatTooltipDate</code>
+    </td>
+    <td>Format of dates to be displayed on the tooltip</td>
+    <td>
+      <code>string</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showCrosshair</code>
+    </td>
+    <td>Turns the crosshair on or off. This appears alongside the tooltip when a bar is hovered over</td>
+    <td>
+      <code>boolean</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>showTooltip</code>
+    </td>
+    <td>Turns the tooltip on or off</td>
+    <td>
+      <code>boolean</code>
+    </td>
+  </tr>
 </table>
 
 ## Sample Syntax
@@ -611,13 +780,48 @@ function ColumnDemo() {
 }
 ```
 
+### Horizontal Bar Chart
+
+![Horizontal Bar Gif]https://media.giphy.com/media/IaGus8u1vkLUGxIdXb/giphy.gif
+
+
+```jsx
+function ColumnDemo() {
+  return (
+    <Motor config={config}>
+      <Bar
+        width={800}
+        height={450}
+        legendLeftRight='left'
+        legendDirection='row'
+        showLabels
+        showLegend={false}
+        showCrossHair={false}
+        renderHorizontally
+        title="Revenue by Product Sub Group"
+        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
+        cols={[
+          { qField: "[Product Group Desc]", qLabel: "Product Group" },
+          {
+            qField: "=Sum( [Sales Quantity]*[Sales Price])",
+            qLabel: "Revenue",
+          },
+        ]}
+        sortOrder={[1, 0]}
+      />
+    </Motor>
+  );
+}
+```
+
+
 ## Theme API
 
 All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
 
 Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific bar chart related theme items are stored in bar. Changing these settings will apply to all bar charts within the application.
 
-Theme settings can be overwritten at a global level. There are 2 possible approaches. Examples are shown below.
+Theme settings can be overwritten at a global level, see below for an example.
 
 ```javascript
 
@@ -636,705 +840,410 @@ import { Motor, ... } from @motor-js/core
 
 ```
 
-```javascript
-
-import { Motor, ... } from @motor-js/core
-//...
-  <Motor config={config} theme={base}>
-   { base.global.colorTheme = "divergent9"}
-   { base.global.chart.allowSelections = false}
-    ...
-  </Motor>
-
-```
 
 ### global.chart
 
-Settings in global.chart are below :
+The global.chart object is documented below. 
 
-<table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allows to enable / disable selctions on charts at a global level.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSlantedYAxis</code>
-    </td>
-    <td>Allows for text on the axis to be displayed at 45 degrees.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundColor</code>
-    </td>
-    <td>Apply a background color to all charts within the application.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "white"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderRadius</code>
-    </td>
-    <td>Border radius for all charts.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "10px"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>userSelect</code>
-    </td>
-    <td>CSS user-select property.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "none"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>suppressZero</code>
-    </td>
-    <td>Suppress zeros on charts.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>suppressScroll</code>
-    </td>
-    <td>Suppress scroll bar / brushing on charts.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowZoom</code>
-    </td>
-    <td>Allow for the brush to be resiezed by the user.</td>
-    <td>
-      <code>bool</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLabels</code>
-    </td>
-    <td>Label positioning on chart.</td>
-    <td>
-      <code>string</code>
-      <br />
-      "top"
-      <br /> <b>"none"</b>
-      <br /> "inside"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLegend</code>
-    </td>
-    <td>Display chart legend.</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "right"
-      <br /> "bottom"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showAxis</code>
-    </td>
-    <td>Display axis on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "both"
-      <br />
-      "yAxis"
-      <br />
-      "xAxis"
-      <br />
-      "none"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showGridlines</code>
-    </td>
-    <td>Grid line type to be drawn on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "solid"
-      <br />
-      "dashes"
-      <br />
-      "dots"
-      <br />
-      "none"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>tickSpacing</code>
-    </td>
-    <td>Spacing of the ticks on the Y axis of the chart</td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      "wide"
-      <br />
-      "normal"
-      <br />
-      "narrow"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxAxisLength</code>
-    </td>
-    <td>Maximum width in pixels of label before elipsis are applied</td>
-    <td>
-      <code>number</code>
-      <br />
-      "80"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>display</code>
-    </td>
-    <td>CSS Display of the chart object</td>
-    <td>
-      <code>string</code>
-      <br />
-      "inline-block"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>boxSizing</code>
-    </td>
-    <td>CSS box sizing of the chart object</td>
-    <td>
-      <code>string</code>
-      <br />
-      "border-box""
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>border</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.border</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>color</code>
-    </td>
-    <td>Color of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "var(--oc-gray-4)"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>size</code>
-    </td>
-    <td>Size of border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "1px"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>style</code>
-    </td>
-    <td>Style of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "solid"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>radius</code>
-    </td>
-    <td>Style of the border around the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      "8px"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>gridlines</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.gridlines</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>stroke</code>
-    </td>
-    <td>Stroke to be sued for the gridlines</td>
-    <td>
-      <code>number</code>
-      <br />
-      "var(--oc-gray-4)"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeDasharray</code>
-    </td>
-    <td>
-      Stroke Dasharray of the gridlines. Allows for dashed or dotted gridlines.
-    </td>
-    <td>
-      <code>number</code>
-      <br />
-      null
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>selection</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.selection</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>opacity</code>
-    </td>
-    <td>Opacity of the item selected</td>
-    <td>
-      <code>number</code>
-      <br />1
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>stroke</code>
-    </td>
-    <td>Stroke of the item selected</td>
-    <td>
-      <code>string</code>
-      <br />
-      "black"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeWidth</code>
-    </td>
-    <td>Stroke width of the item selected</td>
-    <td>
-      <code>string</code>
-      <br />
-      "1px"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>nonSelection</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.nonSelection</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>opacity</code>
-    </td>
-    <td>Opacity of the items not selected</td>
-    <td>
-      <code>number</code>
-      <br />
-      0.5
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>background</code>
-    </td>
-    <td>Background of the items not selected</td>
-    <td>
-      <code>string</code>
-      <br />
-      "var(--oc-gray-1)"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>label</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.label</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>fontColor</code>
-    </td>
-    <td>Label color</td>
-    <td>
-      <code>string</code>
-      <br />
-      "fontAlt"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>noData</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.noData</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>verticalAlign</code>
-    </td>
-    <td>Alignment of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "top"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>display</code>
-    </td>
-    <td>Display of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "inline-block"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderRadius</code>
-    </td>
-    <td>Border radius of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "10px"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundColor</code>
-    </td>
-    <td>Background color of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "var(--oc-gray-1)"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>borderCollapse</code>
-    </td>
-    <td>Border collapse of main object to display no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "collapse"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>noDataContent</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.noDataContent</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>display</code>
-    </td>
-    <td>Display attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "inline-block"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>alignItems</code>
-    </td>
-    <td>Alignment attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "center"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>justifyContent</code>
-    </td>
-    <td>Justify attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "center"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>margin</code>
-    </td>
-    <td>Margin attribute for the no data message</td>
-    <td>
-      <code>string</code>
-      <br />
-      "10px"
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>error</code>
-    </th>
-    <th colSpan="2">
-      <code>global.chart.error</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>dimensionErrMsg</code>
-    </td>
-    <td>error mesage for invalid dimension</td>
-    <td>
-      <code>string</code>
-      <br />
-      "Invalid Dimension."
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>measureErrMsg</code>
-    </td>
-    <td>error mesage for invalid measure</td>
-    <td>
-      <code>string</code>
-      <br />
-      "Invalid Measure. No values returned."
-    </td>
-  </tr>
-</table>
+```javascript
 
-### bar
+    chart: {
+      border: {
+        color: "var(--oc-gray-4)",
+        size: "1px",
+        style: "solid",
+      },
+      wrapper: {
+        borderRadius: "10px",
+        backgroundColor: "white",
+        userSelect: "none", // add to props
+        display: "flex", // add to props
+        boxSizing: "border-box",
+        position: "relative",
+        padding: "16px 16px 0px",
+        fontWeight: "normal",
+        minHeight: "200px",
+        textDecoration: "none",
+        showBoxShadow: true,
+        boxShadow: "rgba(0, 0, 0, 0.1) -2px 2px 8px 0px",
+        flexDirection: "column",
+      },
+      error: {
+        // dataErrorMsg: 'Invalid Dimension or Measure.',
+        dimensionErrMsg: "Invalid Dimension.",
+        measureErrMsg: "Invalid Measure. No values returned.",
+      },
+      titles: {
+        wrapper: {
+          display: "flex",
+          flexDirection: "column",
+          webkitBoxPack: "justify",
+          justifyContent: "space-between",
+          maxHeight: "50px",
+          backgroundColor: "rgb(247, 247, 247)",
+          margin: "-16px -16px 0px",
+          padding: "15px 20px",
+          marginBottom: "15px",
+        },
+        title: {
+          color: "var(--oc-gray-8)",
+          fontSize: {
+            tiny: "14px",
+            small: "16px",
+            medium: "18px",
+            large: "20px",
+            xlarge: "22px",
+          },
+        },
+        subTitle: {
+          color: "var(--oc-gray-6)",
+          fontSize: {
+            tiny: "10px",
+            small: "12px",
+            medium: "14px",
+            large: "16px",
+            xlarge: "18px",
+          },
+        },
+      },
+      suppressZero: false,
+      suppressMissing: false,
+      otherTotalSpec: undefined,
+      showLegend: true,
+      showAxisLabels: "both",
+      margin: "10px",
+      padding: 0.2, // Padding between bars
+      useAnimatedAxes: false,
+      includeZero: true,
+      multiColor: true,
+      selectionMethod: "brush",
+      autoWidth: false,
+      renderHorizontally: false,
+      allowSelections: true, //captureEvents if captureevents true the cannot make selections
+      events: false,
+      color,
+      showLabels: true,
+      showPoints: true,
+      roundNum: true,
+      precision: true,
+      hideAxisLine: "yAxis",
+      noData: {
+        verticalAlign: "top",
+        borderRadius: "10px",
+        // backgroundColor: "var(--oc-gray-1)",
+        backgroundColor: "white",
+        // borderCollapse: "collapse",
+      },
+      noDataContent: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        margin: "10px",
+      },
+      baseColor: "#fff",
+      colors: [
+        "#0b7285",
+        "#15aabf",
+        "#fcc419",
+        "#ff8787",
+        "#6741d9",
+        "#e599f7",
+      ],
+      brush: {
+        stroke: null,
+        patternStroke: null,
+        patternWidth: null,
+        patternHeight: null,
+      },
+      legendStyles: {
+        backgroundColor: "#fff",
+        // stroke: "white",
+        // opacity: 1,
+        // borderRadius: "10px",
+        // legendGroup: { opacity: "1", userSelect: "none" },
+        // legendText: { fill: "var(--oc-gray-7)" },
+      },
+      legendLabelStyles: {
+        fill: "#212529",
+        stroke: "none",
+        fontFamily,
+        fontSize: {
+          tiny: "10px",
+          small: "12px",
+          medium: "14px",
+          large: "16px",
+          xlarge: "18px",
+        },
+        letterSpacing: 0.4,
+        textAnchor: "middle",
+        fontWeight: "normal",
+        pointerEvents: "none",
+      },
+      backgroundStyles: {
+        pattern: null,
+        stroke: "#adb5bd",
+        strokeWidth: 0.5,
+        style: undefined,
+        styleFrom: undefined,
+        styleTo: undefined,
+      },
+      fillStyles: {
+        style: undefined,
+        styleFrom: undefined,
+        styleTo: undefined,
+      },
+      gridStyles: {
+        rows: {
+          stroke: "#adb5bd",
+          strokeWidth: 1,
+          strokeDasharray: "5,3",
+          numTicks: 10,
+          lineStyle: null,
+          // offset: null,
+          tickValues: null,
+        },
+        columns: {
+          stroke: "#adb5bd",
+          strokeWidth: 1,
+          strokeDasharray: "5,3",
+          numTicks: 10,
+          lineStyle: null,
+          // offset: null,
+          tickValues: null,
+        },
+      },
+      selection: {
+        opacity: 1,
+        // stroke: "black",
+        // strokeWidth: "1px",
+      },
+      nonSelection: {
+        opacity: 0.5,
+        // background: "var(--oc-gray-1)",
+      },
+      hover: {
+        opacity: 0.5,
+        // background: "var(--oc-gray-1)",
+      },
+      tooltip: {
+        // snapToDataX: false,
+        // snapToDataX: false,
+        valueOnly: false,
+        valueWithText: false,
+        showClosestItem: true, // Used for tooltip
+        useSingleColor: false, // Used for tooltip. True uses colors as per headingColor
+        headingColor: "altDark",
+        tooltipStyles: {
+          borderRadius: "3px",
+          boxShadow: "0 1px 2px rgba(33,33,33,0.2)",
+          fontSize: {
+            tiny: "10px",
+            small: "12px",
+            medium: "14px",
+            large: "16px",
+            xlarge: "18px",
+          },
+          lineHeight: "1em",
+          padding: ".3rem .5rem",
+          pointerEvents: "none",
+          position: "absolute",
+          backgroundColor: "#fff",
+          color: "altDark",
+          textAlign: null,
+        },
+      },
+      xAxisStyles: {
+        stroke: "#adb5bd",
+        strokeWidth: 1,
+        label: {
+          bottom: {
+            fill: "#212529",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "10px",
+              small: "12px",
+              medium: "14px",
+              large: "16px",
+              xlarge: "18px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "middle",
+            fontWeight: "normal",
+            pointerEvents: "none",
+            // dy: "-0.25em",
+            dy: "0.25em",
+          },
+          top: {
+            fill: "#212529",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "10px",
+              small: "12px",
+              medium: "14px",
+              large: "16px",
+              xlarge: "18px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "middle",
+            fontWeight: "normal",
+            pointerEvents: "none",
+            dy: "-0.25em",
+          },
+        },
+      },
+      yAxisStyles: {
+        stroke: "#adb5bd",
+        strokeWidth: 1,
+        label: {
+          left: {
+            fill: "#212529",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "10px",
+              small: "12px",
+              medium: "14px",
+              large: "16px",
+              xlarge: "18px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "middle",
+            fontWeight: "normal",
+            pointerEvents: "none",
+            dx: "-2.3em", // "-1.5em",
+          },
+          right: {
+            fill: "#212529",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "10px",
+              small: "12px",
+              medium: "14px",
+              large: "16px",
+              xlarge: "18px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "middle",
+            fontWeight: "normal",
+            pointerEvents: "none",
+            dx: "1.5em",
+          },
+        },
+      },
+      xTickStyles: {
+        stroke: "#adb5bd",
+        tickLength: 4,
+        label: {
+          bottom: {
+            fill: "#495057",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "8px",
+              small: "10px",
+              medium: "12px",
+              large: "14px",
+              xlarge: "16px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "middle",
+            fontWeight: 200,
+            pointerEvents: "none",
+            dy: "0.125em",
+          },
+          top: {
+            fill: "#495057",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "8px",
+              small: "10px",
+              medium: "12px",
+              large: "14px",
+              xlarge: "16px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "middle",
+            fontWeight: 200,
+            pointerEvents: "none",
+            dy: "-0.35em",
+          },
+        },
+      },
+      yTickStyles: {
+        stroke: "#adb5bd",
+        tickLength: 4,
+        label: {
+          left: {
+            fill: "#495057",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "8px",
+              small: "10px",
+              medium: "12px",
+              large: "14px",
+              xlarge: "16px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "end",
+            fontWeight: 200,
+            pointerEvents: "none",
+            dx: "-0.25em",
+            dy: "0.25em",
+          },
+          right: {
+            fill: "#495057",
+            stroke: "none",
+            fontFamily,
+            fontSize: {
+              tiny: "8px",
+              small: "10px",
+              medium: "12px",
+              large: "14px",
+              xlarge: "16px",
+            },
+            letterSpacing: 0.4,
+            textAnchor: "start",
+            fontWeight: 200,
+            pointerEvents: "none",
+            dx: "0.25em",
+            dy: "0.25em",
+          },
+        },
+      },
+      valueLabelStyles: {
+        fill: "#495057",
+        stroke: "#fff",
+        fontFamily,
+        fontSize: {
+          tiny: "8px",
+          small: "10px",
+          medium: "12px",
+          large: "14px",
+          xlarge: "16px",
+        },
+        letterSpacing: 0.4,
+        strokeWidth: 2,
+        fontWeight: "normal",
+        textAnchor: "middle",
+        pointerEvents: "none",
+        paintOrder: "stroke",
+      },
+    },
 
-Settings in bar are below :
+```
 
-e.g. <code>bar.main.zoomScrollOnColumnWidth = 30</code>.
+### global.bar
 
-<table>
-  <tr>
-    <th>Setting</th>
-    <th>Description</th>
-    <th>Options / Example</th>
-  </tr>
-  <tr>
-    <th>
-      <code>main</code>
-    </th>
-    <th colSpan="2">
-      <code>bar.main</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>zoomScrollOnColumnWidth</code>
-    </td>
-    <td>Minimum bar width at which brushing will occur</td>
-    <td>
-      <code>number</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnPadding</code>
-    </td>
-    <td>Padding to be used between each bar</td>
-    <td>
-      <code>number</code>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>otherTotalSpec</code>
-    </td>
-    <td>Setting at which 'Others' will be dispalyed on chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>shape</code>
-      <br />
-      See sample syntax above
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnPaddingNarrow</code>
-    </td>
-    <td>Padding to be applied when many bars are displayed</td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxWidth</code>
-    </td>
-    <td>
-      Maximum width in pixles and which axis labels will be shown before elipsis
-      are applied
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>overview</code>
-    </th>
-    <th colSpan="2">
-      <code>bar.overview</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>opacity</code>
-    </td>
-    <td>Opacity for the mini chart</td>
-    <td>
-      <code>number</code>
-      0.5
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>stroke</code>
-    </td>
-    <td>Stroke color for the mini chart</td>
-    <td>
-      <code>string</code>
-      "var(--oc-gray-4)"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeWidth</code>
-    </td>
-    <td>Stroke width for the mini chart</td>
-    <td>
-      <code>number</code>
-      0.5
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <code>columns</code>
-    </th>
-    <th colSpan="2">
-      <code>bar.columns</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>stroke</code>
-    </td>
-    <td>Stroke color around columns</td>
-    <td>
-      <code>string</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>strokeWidth</code>
-    </td>
-    <td>Stroke width around columns</td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-</table>
+```javascript
+
+bar: { 
+  stroke: "#fff",
+  strokeWidth: 1
+}
+
+```
