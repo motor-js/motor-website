@@ -12,13 +12,14 @@ sidebar_label: Table
 
 import { Table } from @motor-js/core
 //...
-<Table columns={[
-      {
-        dimensions: [
-          {
-            qField: 'country',
-            qLabel: 'Country',
-            width: '20%',
+<Table 
+  columns={[
+    {
+      dimensions: [
+        {
+          qField: 'country',
+          qLabel: 'Country',
+          width: '20%',
           },
           {
             qField: "province",
@@ -36,7 +37,8 @@ import { Table } from @motor-js/core
           }
         ]
       },
-    ]} />
+    ]} 
+  />
 
 ```
 
