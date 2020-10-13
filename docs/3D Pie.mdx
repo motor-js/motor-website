@@ -383,59 +383,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>showAxisLabels</code>
-    </td>
-    <td>Display axis labels on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "both"
-      <br />
-      "yAxis"
-      <br />
-      "xAxis"
-      <br />
-      "none"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>hideAxisLine</code>
-    </td>
-    <td>Hide axis line on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "both"
-      <br />
-      "yAxis"
-      <br />
-      "xAxis"
-      <br />
-      "none"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxAxisLength</code>
-    </td>
-    <td>Maximum width in pixels of label before elipsis are applied</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>otherTotalSpec</code>
     </td>
     <td>
@@ -486,8 +433,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       'none'
       <br />
       'click'
-      <br />
-      'brush'
     </td>
   </tr>
   <tr>
@@ -531,61 +476,21 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>numDimensionTicks</code>
+      <code>legendShape</code>
     </td>
-    <td>Number of ticks for the X Axis. Leave blank to auto calculate</td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>numMeasureTicks</code>
-    </td>
-    <td>Number of ticks for the Y Axis. Leave blank to auto calculate</td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>numMeasureDualTicks</code>
-    </td>
-    <td>
-      Number of ticks for the second Y Axis. Leave blank to auto calculate
-    </td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>formatAxisDate</code>
-    </td>
-    <td>Format of dates to be displayed on X Axis</td>
+    <td>shape of the indicator for the legend</td>
     <td>
       <code>string</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>formatTooltipDate</code>
-    </td>
-    <td>Format of dates to be displayed on the tooltip</td>
-    <td>
-      <code>string</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showCrosshair</code>
-    </td>
-    <td>
-      Turns the crosshair on or off. This appears alongside the tooltip when a
-      bar is hovered over
-    </td>
-    <td>
-      <code>boolean</code>
+      <br />
+      'cirlce'
+      <br />
+      'line'
+      <br />
+      'dashed-line'
+      <br />
+      'rect'
+      <br />
+      <b>'auto (rect)'</b>
     </td>
   </tr>
   <tr>
@@ -595,42 +500,6 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>Turns the tooltip on or off</td>
     <td>
       <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>xAxisStyles</code>
-    </td>
-    <td>Set the X-Axis style, see the theme object for properties</td>
-    <td>
-      <code>object</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>yAxisStyles</code>
-    </td>
-    <td>Set the Y-Axis style, see the theme object for properties</td>
-    <td>
-      <code>object</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>xTickStyles</code>
-    </td>
-    <td>Set the X-Axis ticks style, see the theme object for properties</td>
-    <td>
-      <code>object</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>yTickStyles</code>
-    </td>
-    <td>Set the Y-Axis ticks style, see the theme object for properties</td>
-    <td>
-      <code>object</code>
     </td>
   </tr>
 </table>
@@ -784,7 +653,6 @@ function ColumnDemo() {
         showLabels
         showLegend={false}
         showCrossHair={false}
-        renderHorizontally
         title="Revenue by Product Sub Group"
         subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
         cols={[
@@ -900,10 +768,8 @@ The global.chart object is documented below.
       padding: 0.2, // Padding between bars
       useAnimatedAxes: false,
       includeZero: true,
-      multiColor: true,
-      selectionMethod: "brush",
+      selectionMethod: "click",
       autoWidth: false,
-      renderHorizontally: false,
       allowSelections: true, //captureEvents if captureevents true the cannot make selections
       events: false,
       color,
