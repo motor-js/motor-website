@@ -1,35 +1,36 @@
 ---
-id: Bar
-title: Bar
-sidebar_label: Bars
+id: Area
+title: Area
+sidebar_label: Area
 ---
 
-#### Bar chart. A chart displaying horizontal or vertical bars.
+#### Area chart.
 
-![Bar Gif](https://media.giphy.com/media/966B0NPulRo2QSvgd4/giphy.gif)
+![Area Gif](https://media.giphy.com/media/KEmVc6GjLOAww5fKYX/giphy.gif)
 
 ## Usage
 
 ```javascript
 
-import { Bar } from @motor-js/core
+import { Area } from @motor-js/core
 //...
-  <Bar
-    width={900}
-    height={450}
-    title="Claims by Claim type"
-    size='medium'
+  <Area
+    width={750}
+    height={350}
     cols={[
-      { qField: '[Claim Settled Date.autoCalendar.Month]', qLabel: 'Month' },
-      { qField: '[Claim Type]', qLabel: 'Claim Type' },
-      { qField: '=Count(ClaimCounter)', qLabel: 'Claims Opened'},
+      { qField: "[Month]", qLabel: "Month" },
+      {
+        qField: "=Sum([Sales Margin Amount])",
+        qLabel: "Margin",
+      },
     ]}
   />
 
 ```
 
-This is a simple example, which can get more complex by setting various other propertes.
-More advanced versions demonstrating various functioanlities can be found in the examples section
+This can get more complex by setting various other propertes within the cols property which will allow for the naming of columns and the ability to sort the data.
+
+A more advanced version demonstrating this is displayed below.
 
 ## Props
 
@@ -120,10 +121,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>width</code>
     </td>
-    <td>
-      Chart width as a number which will be converted to pixels. If not set, the
-      parent container width will be used
-    </td>
+    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used</td>
     <td>
       <code>number</code>
     </td>
@@ -132,10 +130,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>height</code>
     </td>
-    <td>
-      Chart width as a number which will be converted to pixels. If not set, the
-      parent container width will be used{" "}
-    </td>
+    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used </td>
     <td>
       <code>number</code>
     </td>
@@ -246,17 +241,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>showBoxShadow</code>
-    </td>
-    <td>Show a shadow around the main chart container</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>backgroundColor</code>
     </td>
     <td>Background color the chart</td>
@@ -264,48 +248,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <code>string</code>
       <br />
       <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundStyle</code>
-    </td>
-    <td>
-      Colour gradinet of chart background. Pass style of one of below or pass
-      styleFrom and styleTo
-    </td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      'Linear (to be used for custom gradient)'
-      <br />
-      'Radial (to be used for custom gradient)'
-      <br />
-      'DarkGreen'
-      <br />
-      'LightGreen'
-      <br />
-      'OrangeRed'
-      <br />
-      'PinkBlue'
-      <br />
-      'PinkRed'
-      <br />
-      'PurpleOrange'
-      <br />
-      'PurpleRed'
-      <br />
-      'PurpleTeal'
-      <br />
-      'SteelPurple'
-      <br />
-      'TealBlue'
-      <br />
-      'e.g'
-      <br />
-      '&#123; style: "PinkBlue" &#125;'
-      <br />
-      '&#123; style: "Linear", styleFrom: "#fadadd", styleTo: "#89cff0" &#125;'
     </td>
   </tr>
   <tr>
@@ -369,16 +311,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
     </td>
-  </tr> <tr>
-    <td>
-      <code>stacked</code>
-    </td>
-    <td>Draw chart as stacked chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
   </tr>
   <tr>
     <td>
@@ -439,6 +371,28 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
+      <code>allowSelections</code>
+    </td>
+    <td>Allow selections to be made on the chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxWidth</code>
+    </td>
+    <td>Maximum width in pixels of each bar</td>
+    <td>
+      <code>number</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>showAxisLabels</code>
     </td>
     <td>Display axis labels on the chart</td>
@@ -475,6 +429,17 @@ More advanced versions demonstrating various functioanlities can be found in the
       "xAxis"
       <br />
       "none"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxAxisLength</code>
+    </td>
+    <td>Maximum width in pixels of label before elipsis are applied</td>
+    <td>
+      <code>number</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -546,8 +511,6 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>oneOf</code>
       <br />
-      'none'
-      <br />
       'click'
       <br />
       'brush'
@@ -558,17 +521,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <code>renderHorizontally</code>
     </td>
     <td>Render as a horizontal bar chart</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>multiColor</code>
-    </td>
-    <td>
-      For single dimension and emasure charts render all bars in the same colour
-    </td>
     <td>
       <code>boolean</code>
     </td>
@@ -623,25 +575,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>legendShape</code>
-    </td>
-    <td>shape of the indicator for the legend</td>
-    <td>
-      <code>string</code>
-      <br />
-      'cirlce'
-      <br />
-      'line'
-      <br />
-      'dashed-line'
-      <br />
-      'rect'
-      <br />
-      <b>'auto (rect)'</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>numDimensionTicks</code>
     </td>
     <td>Number of ticks for the X Axis. Leave blank to auto calculate</td>
@@ -662,9 +595,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>numMeasureDualTicks</code>
     </td>
-    <td>
-      Number of ticks for the second Y Axis. Leave blank to auto calculate
-    </td>
+    <td>Number of ticks for the second Y Axis. Leave blank to auto calculate</td>
     <td>
       <code>number</code>
     </td>
@@ -691,10 +622,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>showCrosshair</code>
     </td>
-    <td>
-      Turns the crosshair on or off. This appears alongside the tooltip when a
-      bar is hovered over
-    </td>
+    <td>Turns the crosshair on or off. This appears alongside the tooltip when a bar is hovered over</td>
     <td>
       <code>boolean</code>
     </td>
@@ -746,171 +674,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
 </table>
 
-## Sample Syntax
-
-### cols settings
-
-<h4>Overview</h4>
-There are three different ways of specifying the columns:
-
-- As a string.
-- As an Object
-- As a reference to a predefined dimension or measure, a Master Item.
-
-<b>String syntax</b>
-<br />
-
-If a string starts with =, it will be treated as a measure, otherwise it is
-treated as a dimension.
-
-```jsx {4-7}
-import { Bar } from "@motor-js/core";
-
-<Bar
-  cols={[
-  "Case Owner Group",
-  "=Avg([Case Duration Time])"
-]}
-  ....
-/>
-```
-
-<b>Object syntax</b>
-<br />
-
-Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
-
-```jsx {4-28}
-import { Bar } from "@motor-js/core";
-
-<Bar
-  cols={[
-  /*dimension*/
-  "Year",
-  /*dimension with label*/
-   { qField: "[Case Owner Group]", qLabel: "Group" },
-  /*measure with label*/
-   { qField: "=Avg([Case Duration Time])", qLabel: "Avg Case Duration Time" },
-  /*measure with label*/
-   { qField: "=Sum( [Open Cases]", qLabel: "Open Cases" },
-]}
-  ....
-/>
-```
-
-<b>Predefined dimensions and measures syntax</b>
-<br />
-
-You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
-
-```jsx {4-8}
-import { Bar } from "@motor-js/core";
-
-<Bar
-  cols={[
-  {
-    "qLibraryId":"eqZjE",
-    "qType":"measure"
-  }
-]}
-  ....
-/>
-```
-
-### calcCondition settings
-
-```jsx {5-8}
-import { Bar } from "@motor-js/core";
-
-  <Bar
-    ....
-    calcCondition={{
-      qCond: '1+1=2',
-      qMsg: 'Calculation condition has not been met',
-    }}
-  />
-```
-
-### otherTotalSpec settings
-
-```jsx {5-8}
-import { Bar } from "@motor-js/core";
-
-  <Bar
-   ....
-          otherTotalSpec={{
-             qOtherLabel: 'Other',
-             qOtherCount: '5'
-           }}
-     />
-```
-
-## Examples
-
-These examples are based off the Consumer Sales Qlik Sense application.
-
-### Chart sorted by descending values
-
-The first example is a bar chart sorted by Revenue descending.
-
-![Bar Sorted Gif](https://media.giphy.com/media/nGUAC2uDPRtf0W4TQx/giphy.gif)
-
-```jsx
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Bar
-        width={800}
-        height={450}
-        showLabels={false}
-        title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-        sortOrder={[1, 0]}
-      />
-    </Motor>
-  );
-}
-```
-
-### Horizontal Bar Chart
-
-![Horizontal Bar Gif](https://media.giphy.com/media/IaGus8u1vkLUGxIdXb/giphy.gif)
-
-```jsx
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Bar
-        width={800}
-        height={450}
-        legendLeftRight="left"
-        legendDirection="row"
-        showLabels
-        showLegend={false}
-        showCrossHair={false}
-        renderHorizontally
-        title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        cols={[
-          { qField: "[Product Group Desc]", qLabel: "Product Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-        sortOrder={[1, 0]}
-      />
-    </Motor>
-  );
-}
-```
 
 ## Theme API
 
@@ -937,9 +700,10 @@ import { Motor, ... } from @motor-js/core
 
 ```
 
+
 ### global.chart
 
-The global.chart object is documented below.
+The global.chart object is documented below. 
 
 ```javascript
 
@@ -1330,16 +1094,5 @@ The global.chart object is documented below.
         paintOrder: "stroke",
       },
     },
-
-```
-
-### global.bar
-
-```javascript
-
-bar: {
-  stroke: "#fff",
-  strokeWidth: 1
-}
 
 ```

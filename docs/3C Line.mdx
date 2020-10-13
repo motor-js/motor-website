@@ -4,7 +4,7 @@ title: Line
 sidebar_label: Line
 ---
 
-#### Line chart. A chart displaying data as a line chart.
+#### A Line chart.
 
 ![Line Gif](https://media.giphy.com/media/cPJ4AdvEczPO23SHfn/giphy.gif)
 
@@ -14,7 +14,17 @@ sidebar_label: Line
 
 import { Line } from @motor-js/core
 //...
-<Line cols={["[Product Sub Group Desc]", "=Sum([Sales Quantity])"]} />
+  <Line
+    width={750}
+    height={350}
+    cols={[
+      { qField: "[Month]", qLabel: "Month" },
+      {
+        qField: "=Sum([Sales Margin Amount])",
+        qLabel: "Margin",
+      },
+    ]}
+  />
 
 ```
 
@@ -479,7 +489,7 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>stacked</code>
     </td>
-    <td>Stack the bar chart</td>
+    <td>Stack the line chart</td>
     <td>
       <code>boolean</code>
     </td>
@@ -780,97 +790,6 @@ import { Line } from "@motor-js/core";
            }}
      />
 ```
-
-## Examples
-
-These examples are based off the Consumer Sales Qlik Sense application.
-
-### Chart sorted by descending values
-
-The first example is a line chart sorted by Revenue descending.
-
-```jsx
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Line
-        title="Revenue by Sales Date"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        height="50%"
-        cols={[
-          { qField: "[DateKey]", qLabel: "Sales Date" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-        columnSortOrder={[1, 0]}
-      />
-    </Motor>
-  );
-}
-```
-
-### Axis and labels removed from chart
-
-This exmaple removes the text from the axis as well as the labels from each line and has selections disabled.
-
-```jsx
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Line
-        title="Revenue by Sales Date"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        height="50%"
-        cols={[
-          { qField: "[DateKey]", qLabel: "Sales Date" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-        allowSelections={false}
-        textOnAxis={false}
-        showLabels="none"
-      />
-    </Motor>
-  );
-}
-```
-
-### Dual axis chart
-
-This is a dual axis chart example
-
-```jsx
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Line
-        title="Revenue by Sales Date"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        height="50%"
-        cols={[
-          { qField: "[DateKey]", qLabel: "Sales Date" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-          {
-            qField: "=Sum( [Sales Quantity])",
-            qLabel: "Quantity",
-          },
-        ]}
-        dualAxis={true}
-      />
-    </Motor>
-  );
-}
-```
-
-
-
 
 ## Theme API
 
@@ -1291,16 +1210,5 @@ The global.chart object is documented below.
         paintOrder: "stroke",
       },
     },
-
-```
-
-### global.line
-
-```javascript
-
-line: { 
-  stroke: "#fff",
-  strokeWidth: 1
-}
 
 ```
