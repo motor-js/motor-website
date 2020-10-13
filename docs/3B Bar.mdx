@@ -1,7 +1,7 @@
 ---
 id: Bar
 title: Bar
-sidebar_label: Bars
+sidebar_label: Bar
 ---
 
 #### Bar chart. A chart displaying horizontal or vertical bars.
@@ -246,17 +246,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>showBoxShadow</code>
-    </td>
-    <td>Show a shadow around the main chart container</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>backgroundColor</code>
     </td>
     <td>Background color the chart</td>
@@ -264,48 +253,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <code>string</code>
       <br />
       <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>backgroundStyle</code>
-    </td>
-    <td>
-      Colour gradinet of chart background. Pass style of one of below or pass
-      styleFrom and styleTo
-    </td>
-    <td>
-      <code>oneOf</code>
-      <br />
-      'Linear (to be used for custom gradient)'
-      <br />
-      'Radial (to be used for custom gradient)'
-      <br />
-      'DarkGreen'
-      <br />
-      'LightGreen'
-      <br />
-      'OrangeRed'
-      <br />
-      'PinkBlue'
-      <br />
-      'PinkRed'
-      <br />
-      'PurpleOrange'
-      <br />
-      'PurpleRed'
-      <br />
-      'PurpleTeal'
-      <br />
-      'SteelPurple'
-      <br />
-      'TealBlue'
-      <br />
-      'e.g'
-      <br />
-      '&#123; style: "PinkBlue" &#125;'
-      <br />
-      '&#123; style: "Linear", styleFrom: "#fadadd", styleTo: "#89cff0" &#125;'
     </td>
   </tr>
   <tr>
@@ -439,6 +386,28 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
+      <code>allowSelections</code>
+    </td>
+    <td>Allow selections to be made on the chart</td>
+    <td>
+      <code>bool</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxWidth</code>
+    </td>
+    <td>Maximum width in pixels of each bar</td>
+    <td>
+      <code>number</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>showAxisLabels</code>
     </td>
     <td>Display axis labels on the chart</td>
@@ -475,6 +444,17 @@ More advanced versions demonstrating various functioanlities can be found in the
       "xAxis"
       <br />
       "none"
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>maxAxisLength</code>
+    </td>
+    <td>Maximum width in pixels of label before elipsis are applied</td>
+    <td>
+      <code>number</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -546,8 +526,6 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>oneOf</code>
       <br />
-      'none'
-      <br />
       'click'
       <br />
       'brush'
@@ -558,17 +536,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <code>renderHorizontally</code>
     </td>
     <td>Render as a horizontal bar chart</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>multiColor</code>
-    </td>
-    <td>
-      For single dimension and emasure charts render all bars in the same colour
-    </td>
     <td>
       <code>boolean</code>
     </td>
@@ -619,25 +586,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       'row'
       <br />
       'column'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>legendShape</code>
-    </td>
-    <td>shape of the indicator for the legend</td>
-    <td>
-      <code>string</code>
-      <br />
-      'cirlce'
-      <br />
-      'line'
-      <br />
-      'dashed-line'
-      <br />
-      'rect'
-      <br />
-      <b>'auto (rect)'</b>
     </td>
   </tr>
   <tr>
@@ -742,6 +690,30 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>Set the Y-Axis ticks style, see the theme object for properties</td>
     <td>
       <code>object</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>legendLabelStyle</code>
+    </td>
+    <td>Object to be used for the styling of the legend labels</td>
+    <td>
+      <code>object</code>
+      <br />
+      'e.g.'
+      <br />' &#123; fill: "darkblue", fontWeight: 800, &#125; '
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>valueLabelStyle</code>
+    </td>
+    <td>Object to be used for the styling of the value labels</td>
+    <td>
+      <code>object</code>
+      <br />
+      'e.g.'
+      <br />' &#123; fill: "white", stroke: "red"", &#125; '
     </td>
   </tr>
 </table>
