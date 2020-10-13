@@ -4,7 +4,7 @@ title: Pie
 sidebar_label: Pie
 ---
 
-#### Bar chart. A chart displaying horizontal bars.
+#### Pie chart. A chart displaying a pie chart.
 
 <!-- ![Pie Gif](https://media.giphy.com/media/966B0NPulRo2QSvgd4/giphy.gif) -->
 
@@ -24,6 +24,7 @@ import { Pie } from @motor-js/core
     colorTheme="bio"
     selectionMethod="click"
     showLabels={false}
+    legendShape="circle"
     cols={[
       { qField: 'Claim Type', qLabel: 'Claim Type' },
       { qField: '=Sum([Total Claim Cost])', qLabel: 'Total Claims Cost' },
@@ -380,7 +381,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>precision</code>
     </td>
-    <td>Number of decimal precsion when displaying bar labels</td>
+    <td>Number of decimal precsion when displaying pie labels</td>
     <td>
       <code>number</code>
     </td>
@@ -449,7 +450,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>gridArea</code>
     </td>
-    <td>Name of the parent grid to place the Bar</td>
+    <td>Name of the parent grid to place the Pie chart</td>
     <td>
       <code>string</code>
     </td>
@@ -691,12 +692,12 @@ If a string starts with =, it will be treated as a measure, otherwise it is
 treated as a dimension.
 
 ```jsx {4-7}
-import { Bar } from "@motor-js/core";
+import { Pie } from "@motor-js/core";
 
-<Bar
+<Pie
   cols={[
-  "Case Owner Group",
-  "=Avg([Case Duration Time])"
+  "Claim Type,
+  "=Sum([Total Claim Cost])"
 ]}
   ....
 />
@@ -708,18 +709,14 @@ import { Bar } from "@motor-js/core";
 Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
 
 ```jsx {4-28}
-import { Bar } from "@motor-js/core";
+import { Pie } from "@motor-js/core";
 
-<Bar
+<Pie
   cols={[
-  /*dimension*/
-  "Year",
   /*dimension with label*/
-   { qField: "[Case Owner Group]", qLabel: "Group" },
+   { qField: 'Claim Type', qLabel: 'Claim Type' },
   /*measure with label*/
-   { qField: "=Avg([Case Duration Time])", qLabel: "Avg Case Duration Time" },
-  /*measure with label*/
-   { qField: "=Sum( [Open Cases]", qLabel: "Open Cases" },
+  { qField: '=Sum([Total Claim Cost])', qLabel: 'Total Claims Cost' },
 ]}
   ....
 />
@@ -731,9 +728,9 @@ import { Bar } from "@motor-js/core";
 You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
 
 ```jsx {4-8}
-import { Bar } from "@motor-js/core";
+import { Pie } from "@motor-js/core";
 
-<Bar
+<Pie
   cols={[
   {
     "qLibraryId":"eqZjE",
@@ -747,9 +744,9 @@ import { Bar } from "@motor-js/core";
 ### calcCondition settings
 
 ```jsx {5-8}
-import { Bar } from "@motor-js/core";
+import { Pie } from "@motor-js/core";
 
-  <Bar
+  <Pie
     ....
     calcCondition={{
       qCond: '1+1=2',
@@ -761,9 +758,9 @@ import { Bar } from "@motor-js/core";
 ### otherTotalSpec settings
 
 ```jsx {5-8}
-import { Bar } from "@motor-js/core";
+import { Pie } from "@motor-js/core";
 
-  <Bar
+  <Pie
    ....
           otherTotalSpec={{
              qOtherLabel: 'Other',
@@ -776,62 +773,59 @@ import { Bar } from "@motor-js/core";
 
 These examples are based off the Consumer Sales Qlik Sense application.
 
-### Chart sorted by descending values
+### Donut Chart
 
-The first example is a bar chart sorted by Revenue descending.
+The first example is a donut chart.
 
-![Bar Sorted Gif](https://media.giphy.com/media/nGUAC2uDPRtf0W4TQx/giphy.gif)
+![Donut Gif](../static/img/gifs/donut.gif)
 
 ```jsx
-function ColumnDemo() {
+function DonutDemo() {
   return (
     <Motor config={config}>
-      <Bar
-        width={800}
-        height={450}
-        showLabels={false}
-        title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
+      <Pie
+        title="Total Claim Cost"
+        subTitle="Total Claims form the Insurance Caims Qlik Sense application"
+        isDonut
+        showLegend
+        legendShape="circle"
+        colorTheme="bio"
+        selectionMethod="click"
+        showTooltip={true}
+        showLabels={true}
         cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
+          { qField: "Claim Type", qLabel: "Claim Type" },
+          { qField: "=Sum([Total Claim Cost])", qLabel: "Total Claims Cost" },
         ]}
-        sortOrder={[1, 0]}
       />
     </Motor>
   );
 }
 ```
 
-### Horizontal Bar Chart
+### Pie chart with corner Radius and Padding Angle set
 
-![Horizontal Bar Gif](https://media.giphy.com/media/IaGus8u1vkLUGxIdXb/giphy.gif)
+![Pie with padding Gif](../static/img/gifs/PiePadding.gif)
 
 ```jsx
 function ColumnDemo() {
   return (
     <Motor config={config}>
-      <Bar
-        width={800}
-        height={450}
-        legendLeftRight="left"
-        legendDirection="row"
-        showLabels
-        showLegend={false}
-        showCrossHair={false}
-        title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
+      <Pie
+        title="Total Claim Cost"
+        subTitle="Total Claims form the Insurance Caims Qlik Sense application"
+        showLegend
+        legendShape="circle"
+        colorTheme="bio"
+        selectionMethod="click"
+        padAngle={0.05}
+        cornerRadius={15}
+        showTooltip={true}
+        showLabels={true}
         cols={[
-          { qField: "[Product Group Desc]", qLabel: "Product Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
+          { qField: "Claim Type", qLabel: "Claim Type" },
+          { qField: "=Sum([Total Claim Cost])", qLabel: "Total Claims Cost" },
         ]}
-        sortOrder={[1, 0]}
       />
     </Motor>
   );
@@ -842,7 +836,7 @@ function ColumnDemo() {
 
 All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific bar chart related theme items are stored in bar. Changing these settings will apply to all bar charts within the application.
+Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific pie chart related theme items are stored in pie. Changing these settings will apply to all pie charts within the application.
 
 Theme settings can be overwritten at a global level, see below for an example.
 
@@ -932,21 +926,14 @@ The global.chart object is documented below.
       suppressMissing: false,
       otherTotalSpec: undefined,
       showLegend: true,
-      showAxisLabels: "both",
       margin: "10px",
-      padding: 0.2, // Padding between bars
-      useAnimatedAxes: false,
       includeZero: true,
       selectionMethod: "click",
       autoWidth: false,
-      allowSelections: true, //captureEvents if captureevents true the cannot make selections
-      events: false,
       color,
       showLabels: true,
-      showPoints: true,
       roundNum: true,
       precision: true,
-      hideAxisLine: "yAxis",
       noData: {
         verticalAlign: "top",
         borderRadius: "10px",
@@ -969,12 +956,6 @@ The global.chart object is documented below.
         "#6741d9",
         "#e599f7",
       ],
-      brush: {
-        stroke: null,
-        patternStroke: null,
-        patternWidth: null,
-        patternHeight: null,
-      },
       legendStyles: {
         backgroundColor: "#fff",
         // stroke: "white",
@@ -1011,26 +992,6 @@ The global.chart object is documented below.
         style: undefined,
         styleFrom: undefined,
         styleTo: undefined,
-      },
-      gridStyles: {
-        rows: {
-          stroke: "#adb5bd",
-          strokeWidth: 1,
-          strokeDasharray: "5,3",
-          numTicks: 10,
-          lineStyle: null,
-          // offset: null,
-          tickValues: null,
-        },
-        columns: {
-          stroke: "#adb5bd",
-          strokeWidth: 1,
-          strokeDasharray: "5,3",
-          numTicks: 10,
-          lineStyle: null,
-          // offset: null,
-          tickValues: null,
-        },
       },
       selection: {
         opacity: 1,
@@ -1072,169 +1033,6 @@ The global.chart object is documented below.
           textAlign: null,
         },
       },
-      xAxisStyles: {
-        stroke: "#adb5bd",
-        strokeWidth: 1,
-        label: {
-          bottom: {
-            fill: "#212529",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "10px",
-              small: "12px",
-              medium: "14px",
-              large: "16px",
-              xlarge: "18px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "middle",
-            fontWeight: "normal",
-            pointerEvents: "none",
-            // dy: "-0.25em",
-            dy: "0.25em",
-          },
-          top: {
-            fill: "#212529",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "10px",
-              small: "12px",
-              medium: "14px",
-              large: "16px",
-              xlarge: "18px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "middle",
-            fontWeight: "normal",
-            pointerEvents: "none",
-            dy: "-0.25em",
-          },
-        },
-      },
-      yAxisStyles: {
-        stroke: "#adb5bd",
-        strokeWidth: 1,
-        label: {
-          left: {
-            fill: "#212529",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "10px",
-              small: "12px",
-              medium: "14px",
-              large: "16px",
-              xlarge: "18px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "middle",
-            fontWeight: "normal",
-            pointerEvents: "none",
-            dx: "-2.3em", // "-1.5em",
-          },
-          right: {
-            fill: "#212529",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "10px",
-              small: "12px",
-              medium: "14px",
-              large: "16px",
-              xlarge: "18px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "middle",
-            fontWeight: "normal",
-            pointerEvents: "none",
-            dx: "1.5em",
-          },
-        },
-      },
-      xTickStyles: {
-        stroke: "#adb5bd",
-        tickLength: 4,
-        label: {
-          bottom: {
-            fill: "#495057",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "8px",
-              small: "10px",
-              medium: "12px",
-              large: "14px",
-              xlarge: "16px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "middle",
-            fontWeight: 200,
-            pointerEvents: "none",
-            dy: "0.125em",
-          },
-          top: {
-            fill: "#495057",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "8px",
-              small: "10px",
-              medium: "12px",
-              large: "14px",
-              xlarge: "16px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "middle",
-            fontWeight: 200,
-            pointerEvents: "none",
-            dy: "-0.35em",
-          },
-        },
-      },
-      yTickStyles: {
-        stroke: "#adb5bd",
-        tickLength: 4,
-        label: {
-          left: {
-            fill: "#495057",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "8px",
-              small: "10px",
-              medium: "12px",
-              large: "14px",
-              xlarge: "16px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "end",
-            fontWeight: 200,
-            pointerEvents: "none",
-            dx: "-0.25em",
-            dy: "0.25em",
-          },
-          right: {
-            fill: "#495057",
-            stroke: "none",
-            fontFamily,
-            fontSize: {
-              tiny: "8px",
-              small: "10px",
-              medium: "12px",
-              large: "14px",
-              xlarge: "16px",
-            },
-            letterSpacing: 0.4,
-            textAnchor: "start",
-            fontWeight: 200,
-            pointerEvents: "none",
-            dx: "0.25em",
-            dy: "0.25em",
-          },
-        },
-      },
       valueLabelStyles: {
         fill: "#495057",
         stroke: "#fff",
@@ -1257,13 +1055,18 @@ The global.chart object is documented below.
 
 ```
 
-### global.bar
+### global.pie
 
 ```javascript
 
-bar: {
-  stroke: "#fff",
-  strokeWidth: 1
-}
+ pie: {
+    margin: { top: 20, right: 20, bottom: 20, left: 20 },
+    stroke: "#adb5bd",
+    strokeWidth: 0.5,
+    cornerRadius: 3,
+    padAngle: 0.005,
+    isDonut: false,
+    donutThickness: 50,
+  }
 
 ```
