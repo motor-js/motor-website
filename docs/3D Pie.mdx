@@ -23,7 +23,7 @@ import { Pie } from @motor-js/core
     size='medium'
     colorTheme="bio"
     selectionMethod="click"
-    isDonut={false}
+    showLabels={false}
     cols={[
       { qField: 'Claim Type', qLabel: 'Claim Type' },
       { qField: '=Sum([Total Claim Cost])', qLabel: 'Total Claims Cost' },
@@ -207,21 +207,11 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>textOnAxis</code>
+      <code>showBoxShadow</code>
     </td>
-    <td>Labels for each axis on the chart</td>
+    <td>Show a shadow around the main chart container</td>
     <td>
       <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -336,17 +326,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>{" "}
   <tr>
     <td>
-      <code>stacked</code>
-    </td>
-    <td>Draw chart as stacked chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>roundNum</code>
     </td>
     <td>Use round numbering to dispaly labels on charts</td>
@@ -400,28 +379,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       "right"
       <br /> "bottom"
       <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allow selections to be made on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxWidth</code>
-    </td>
-    <td>Maximum width in pixels of each bar</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
   <tr>
@@ -520,51 +477,17 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>stacked</code>
-    </td>
-    <td>Stack the bar chart</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showAsPercent</code>
-    </td>
-    <td>Show the bars as percentage</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>selectionMethod</code>
     </td>
     <td>Change the selection method, either click or brush</td>
     <td>
       <code>oneOf</code>
       <br />
+      'none'
+      <br />
       'click'
       <br />
       'brush'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>renderHorizontally</code>
-    </td>
-    <td>Render as a horizontal bar chart</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dualAxis</code>
-    </td>
-    <td>Add a second axis to the chart</td>
-    <td>
-      <code>boolean</code>
     </td>
   </tr>
   <tr>

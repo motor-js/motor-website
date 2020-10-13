@@ -14,7 +14,7 @@ sidebar_label: Bar
 
 import { Bar } from @motor-js/core
 //...
-  <Bar 
+  <Bar
     width={900}
     height={450}
     title="Claims by Claim type"
@@ -28,7 +28,7 @@ import { Bar } from @motor-js/core
 
 ```
 
-This is a simple example, which can get more complex by setting various other propertes. 
+This is a simple example, which can get more complex by setting various other propertes.
 More advanced versions demonstrating various functioanlities can be found in the examples section
 
 ## Props
@@ -120,7 +120,10 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>width</code>
     </td>
-    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used</td>
+    <td>
+      Chart width as a number which will be converted to pixels. If not set, the
+      parent container width will be used
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -129,7 +132,10 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>height</code>
     </td>
-    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used </td>
+    <td>
+      Chart width as a number which will be converted to pixels. If not set, the
+      parent container width will be used{" "}
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -240,6 +246,17 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
+      <code>showBoxShadow</code>
+    </td>
+    <td>Show a shadow around the main chart container</td>
+    <td>
+      <code>boolean</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>backgroundColor</code>
     </td>
     <td>Background color the chart</td>
@@ -310,7 +327,8 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
     </td>
-  </tr> <tr>
+  </tr>{" "}
+  <tr>
     <td>
       <code>stacked</code>
     </td>
@@ -380,28 +398,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allow selections to be made on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxWidth</code>
-    </td>
-    <td>Maximum width in pixels of each bar</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>showAxisLabels</code>
     </td>
     <td>Display axis labels on the chart</td>
@@ -438,17 +434,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       "xAxis"
       <br />
       "none"
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxAxisLength</code>
-    </td>
-    <td>Maximum width in pixels of label before elipsis are applied</td>
-    <td>
-      <code>number</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -519,6 +504,8 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>Change the selection method, either click or brush</td>
     <td>
       <code>oneOf</code>
+      <br />
+      'none'
       <br />
       'click'
       <br />
@@ -604,7 +591,9 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>numMeasureDualTicks</code>
     </td>
-    <td>Number of ticks for the second Y Axis. Leave blank to auto calculate</td>
+    <td>
+      Number of ticks for the second Y Axis. Leave blank to auto calculate
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -631,7 +620,10 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>showCrosshair</code>
     </td>
-    <td>Turns the crosshair on or off. This appears alongside the tooltip when a bar is hovered over</td>
+    <td>
+      Turns the crosshair on or off. This appears alongside the tooltip when a
+      bar is hovered over
+    </td>
     <td>
       <code>boolean</code>
     </td>
@@ -820,7 +812,6 @@ function ColumnDemo() {
 
 ![Horizontal Bar Gif](https://media.giphy.com/media/IaGus8u1vkLUGxIdXb/giphy.gif)
 
-
 ```jsx
 function ColumnDemo() {
   return (
@@ -828,8 +819,8 @@ function ColumnDemo() {
       <Bar
         width={800}
         height={450}
-        legendLeftRight='left'
-        legendDirection='row'
+        legendLeftRight="left"
+        legendDirection="row"
         showLabels
         showLegend={false}
         showCrossHair={false}
@@ -849,7 +840,6 @@ function ColumnDemo() {
   );
 }
 ```
-
 
 ## Theme API
 
@@ -876,10 +866,9 @@ import { Motor, ... } from @motor-js/core
 
 ```
 
-
 ### global.chart
 
-The global.chart object is documented below. 
+The global.chart object is documented below.
 
 ```javascript
 
@@ -1277,7 +1266,7 @@ The global.chart object is documented below.
 
 ```javascript
 
-bar: { 
+bar: {
   stroke: "#fff",
   strokeWidth: 1
 }
