@@ -268,6 +268,45 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
+      <code>backgroundStyle</code>
+    </td>
+    <td>
+      Colour gradinet of chart background. Pass style of one of below or pass
+      styleFrom and styleTo
+    </td>
+    <td>
+      <code>oneOf</code>
+      <br />
+      'Linear (to be used for custom gradient)'
+      <br />
+      'Radial (to be used for custom gradient)'
+      <br />
+      'DarkGreen'
+      <br />
+      'LightGreen'
+      <br />
+      'OrangeRed'
+      <br />
+      'PinkBlue'
+      <br />
+      'PinkRed'
+      <br />
+      'PurpleOrange'
+      <br />
+      'PurpleRed'
+      <br />
+      'PurpleTeal'
+      <br />
+      'SteelPurple'
+      <br />
+      'TealBlue'
+      <br />
+      'e.g. backgroundStyle={{ style: "PinkBlue" }}' 'e.g. backgroundStyle=
+      {{ style: "Linear", styleFrom: "#fadadd", styleTo: "#89cff0" }}'
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>borderRadius</code>
     </td>
     <td>Border radius of the border around the chart</td>
@@ -327,8 +366,7 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
     </td>
-  </tr>{" "}
-  <tr>
+  </tr> <tr>
     <td>
       <code>stacked</code>
     </td>
