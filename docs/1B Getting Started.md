@@ -49,7 +49,6 @@ dimensions from this application
 ```jsx
 
 import { Motor } from '@motor-js/core'
-import { base } from '@motor-js/core'
 
 <Motor
   config={
@@ -59,35 +58,9 @@ import { base } from '@motor-js/core'
     prefix: "",
     appId: "372cbc85-f7fb-4db6-a620-9a5367845dce"
   }
-  theme={base}
 >
 // ...
 </Motor>
-
-```
-
-<br />
-
-:::tip 
-Heads up! No need to set the config in each individual component. Set this once in the Motor component and then wrap 
-the root of your project in this component. Check out the Motor Starter Project for an example.
-:::
-
-<br />
-
-If you really need to (and are not using the Motor component), you can pass the engine configuration directly in the components. 
-Some styling can also be applied directly to the components as props, the rest can be customised through the theme object.
-
-```javascript
-
-import { Button } from '@motor-js/core'
- 
-<Button 
-    config={..}
-    type='clearSelections'
-    title='Clear'
-    color='var(--oc-red-6)'
-/>
 
 ```
 

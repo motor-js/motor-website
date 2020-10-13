@@ -4,7 +4,7 @@ title: Combo
 sidebar_label: Combo
 ---
 
-#### Combo chart. A chart displaying data as a line chart.
+#### Combo chart. A chart displaying data as either a bar or line.
 
 ![Combo Gif](https://media.giphy.com/media/TCEFcqkrDRAoFzhLE8/giphy.gif)
 
@@ -14,7 +14,23 @@ sidebar_label: Combo
 
 import { Combo } from @motor-js/core
 //...
-
+      <Combo 
+        width={750} 
+        height={400} 
+        cols={[
+          { qField: "[Month]", qLabel: "Month" },
+          {
+            qField: "=Sum([Sales Amount])",
+            qLabel: "Sales",
+            qChartType:'line'
+          },
+          {
+            qField: "=Sum([Sales Margin Amount])",
+            qLabel: "Margin",
+            qChartType:'bar'
+          },
+        ]}
+      />
 
 ```
 

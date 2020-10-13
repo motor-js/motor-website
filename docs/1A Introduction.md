@@ -6,22 +6,21 @@ sidebar_label: Introduction
 
 ## Motivation
 
-Motor exists to simplify the creation of custom dashboards off the Qlik engine. 
+Motor.js exists to simplify the creation of custom dashboards off the Qlik engine. 
 
 The Qlik APIs provide an interface for building web mashups, 
 allowing for custom user experiences powered by Qlik's associative engine.
 These mashups are often lengthy to develop and require specialist knowledge of the Qlik APIs.
 
 Motor has been developed to make building these dashboards easy, by handling connection to the engine 
-and providing complete components, graphs and utlities.
+and providing complete components, graphs and utilities.
 
-Motor aims to provide the following:
+Motor.js aims to provide the following:
 
 - <b>Easy Mashup Development</b>: We aim to make the creation of Qlik Mashups as simple as possible for developers, removing the need 
 for detailed knowledge of the Qlik APIs.
-- <b>Powerful Theming</b>: Tailor the component library to your brand and layout needs. From simply applying your 
+- <b>Powerful Theming</b>: Motor.js is based off a CSS in JS framework. You can tailor the component library to your brand and layout needs, from simply applying your 
 brand color, to editing our theme object and component functionality via props.
-- <b>Responsive Components</b>: All our components are responsive out of the box
 - <b>Helpful Utilities</b>: Re-usable hooks to simplify interaction with the associative engine
 
 
@@ -46,7 +45,7 @@ The library is split into the following core parts
 
 ## How it Works
 
-Motor is made up of a series of re-usable components which can be easily brought together to build custom dashboards.
+Motor.js is made up of a series of re-usable components which can be easily brought together to build custom dashboards.
 
 These components are built in React and connect to the Qlik engine using the Engine API and Enigma JS. 
 
@@ -63,7 +62,7 @@ This section will break down the libraries and technologies used by Motor.
 
 #### React
 
-Motor is a React library utilising React hooks, we currently don't support other frameworks such as Angular or Vue. 
+Motor.js is a React library utilising React hooks, we currently don't support other frameworks such as Angular or Vue. 
 
 #### Styled Components
 
