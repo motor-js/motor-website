@@ -37,11 +37,11 @@ const starter_URL =
 
 const features = [
   {
-    title: <>Free for Non-Commercial Use</>,
+    title: <>Free and open on GitHub</>,
     imageUrl: "img/icons/happy.svg",
     description: (
       <>
-        Get started for free, just install from npm, connect to a Qlik engine
+        Motor js is free, provided on the Apache 2.0 license. Just install from npm, connect to a Qlik engine
         and start building.
       </>
     ),
@@ -74,10 +74,10 @@ const features = [
     ),
   },
   {
-    title: <>Simple Licensing</>,
+    title: <>Enterprise Support Available</>,
     imageUrl: "img/icons/shopping.svg",
     description: (
-      <>Pay by developer, so you can scale without additional cost.</>
+      <>We offer a supported version of the library for Enterprise projects</>
     ),
   },
   {
