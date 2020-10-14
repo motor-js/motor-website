@@ -190,27 +190,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>border</code>
     </td>
     <td>Border to be dispalyed around the chart</td>
@@ -316,7 +295,8 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
     </td>
-  </tr> <tr>
+  </tr>{" "}
+  <tr>
     <td>
       <code>stacked</code>
     </td>
@@ -382,17 +362,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       "right"
       <br /> "bottom"
       <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allow selections to be made on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
   <tr>
@@ -996,7 +965,6 @@ The global.chart object is documented below.
       selectionMethod: "brush",
       autoWidth: false,
       renderHorizontally: false,
-      allowSelections: true, //captureEvents if captureevents true the cannot make selections
       events: false,
       color,
       showLabels: true,

@@ -4,25 +4,37 @@ title: Scatter
 sidebar_label: Scatter
 ---
 
-#### Bar chart. A chart displaying horizontal or vertical bars.
+#### Scatter chart. A chart displaying a scatter chart.
 
-![Bar Gif](https://media.giphy.com/media/966B0NPulRo2QSvgd4/giphy.gif)
+![Scatter Gif](../static/img/gifs/Scatter1.gif)
 
 ## Usage
 
 ```javascript
 
-import { Bar } from @motor-js/core
+import { Scatter } from @motor-js/core
 //...
-  <Bar
-    width={900}
-    height={450}
-    title="Claims by Claim type"
-    size='medium'
+  <Scatter
+    width={750}
+    height={400}
+    colorTheme="bio"
+    showLabels={true}
+    selectionMethod="brush"
+    tooltipStyles={{
+      borderRadius: '10px',
+      background: 'beige',
+    }}
+    showCrossHair={false}
     cols={[
-      { qField: '[Claim Settled Date.autoCalendar.Month]', qLabel: 'Month' },
-      { qField: '[Claim Type]', qLabel: 'Claim Type' },
-      { qField: '=Count(ClaimCounter)', qLabel: 'Claims Opened'},
+      { qField: 'Product Sub Group', qLabel: 'Product Sub Group' },
+      {
+        qField: '=Sum({$<[Year]={"2007"}>}[Sales Amount])',
+        qLabel: 'TY Sales',
+      },
+      {
+        qField: '=Sum([Sales Margin Amount])/Sum([Sales Amount])',
+        qLabel: 'Margin %',
+      },
     ]}
   />
 
@@ -86,7 +98,20 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>barSortOrder</code>
+      <code>suppressMissing</code>
+    </td>
+    <td>
+      Suppress items whith missing values from being displayed in the chart
+    </td>
+    <td>
+      <code>boolean</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>sortOrder</code>
     </td>
     <td>Order of the columns on which the returned data shoud be sorted</td>
     <td>
@@ -186,27 +211,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
       <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
   <tr>
@@ -316,16 +320,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
     </td>
-  </tr> <tr>
-    <td>
-      <code>stacked</code>
-    </td>
-    <td>Draw chart as stacked chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
   </tr>
   <tr>
     <td>
@@ -342,7 +336,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>precision</code>
     </td>
-    <td>Number of decimal precsion when displaying bar labels</td>
+    <td>Number of decimal precsion when displaying scatter labels</td>
     <td>
       <code>number</code>
     </td>
@@ -365,43 +359,6 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>Sub title to be dispalyed on top of chart</td>
     <td>
       <code>string</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showLegend</code>
-    </td>
-    <td>Display chart legend.</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      "right"
-      <br /> "bottom"
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allow selections to be made on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>maxWidth</code>
-    </td>
-    <td>Maximum width in pixels of each bar</td>
-    <td>
-      <code>number</code>
       <br />
       <b>* default obtained from theme.</b>
     </td>
@@ -450,22 +407,9 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>maxAxisLength</code>
-    </td>
-    <td>Maximum width in pixels of label before elipsis are applied</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>otherTotalSpec</code>
     </td>
-    <td>
-      Message to be displayed if an invalid measure is used in the cols property
-    </td>
+    <td>Group values over a certain number of items</td>
     <td>
       <code>bool</code>
       <br />
@@ -486,7 +430,7 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>gridArea</code>
     </td>
-    <td>Name of the parent grid to place the Bar</td>
+    <td>Name of the parent grid to place the chart</td>
     <td>
       <code>string</code>
     </td>
@@ -496,24 +440,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <code>showBoxShadoow</code>
     </td>
     <td>Show or hide box shadow</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>stacked</code>
-    </td>
-    <td>Stack the bar chart</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showAsPercent</code>
-    </td>
-    <td>Show the bars as percentage</td>
     <td>
       <code>boolean</code>
     </td>
@@ -533,63 +459,6 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
-      <code>renderHorizontally</code>
-    </td>
-    <td>Render as a horizontal bar chart</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dualAxis</code>
-    </td>
-    <td>Add a second axis to the chart</td>
-    <td>
-      <code>boolean</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>legendTopBottom</code>
-    </td>
-    <td>Render the legend on the top or bottom of the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      'top'
-      <br />
-      'bottom'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>legendLeftRight</code>
-    </td>
-    <td>Render the legend on the left or right of the chart</td>
-    <td>
-      <code>string</code>
-      <br />
-      'left'
-      <br />
-      'right'
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>legendDirection</code>
-    </td>
-    <td>Direction of the legend values</td>
-    <td>
-      <code>string</code>
-      <br />
-      'row'
-      <br />
-      'column'
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>numDimensionTicks</code>
     </td>
     <td>Number of ticks for the X Axis. Leave blank to auto calculate</td>
@@ -602,17 +471,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <code>numMeasureTicks</code>
     </td>
     <td>Number of ticks for the Y Axis. Leave blank to auto calculate</td>
-    <td>
-      <code>number</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>numMeasureDualTicks</code>
-    </td>
-    <td>
-      Number of ticks for the second Y Axis. Leave blank to auto calculate
-    </td>
     <td>
       <code>number</code>
     </td>
@@ -642,18 +500,6 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>Use only a sinlge color in the tooltip</td>
     <td>
       <code>bool</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>showCrosshair</code>
-    </td>
-    <td>
-      Turns the crosshair on or off. This appears alongside the tooltip when a
-      bar is hovered over
-    </td>
-    <td>
-      <code>boolean</code>
     </td>
   </tr>
   <tr>
@@ -725,6 +571,17 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />' &#123; fill: "white", stroke: "red"", &#125; '
     </td>
   </tr>
+  <tr>
+    <td>
+      <code>showBoxShadow</code>
+    </td>
+    <td>Show a shadow around the main chart container</td>
+    <td>
+      <code>boolean</code>
+      <br />
+      <b>* default obtained from theme.</b>
+    </td>
+  </tr>
 </table>
 
 ## Sample Syntax
@@ -745,12 +602,13 @@ If a string starts with =, it will be treated as a measure, otherwise it is
 treated as a dimension.
 
 ```jsx {4-7}
-import { Bar } from "@motor-js/core";
+import { Scatter } from "@motor-js/core";
 
-<Bar
+<Scatter
   cols={[
   "Case Owner Group",
-  "=Avg([Case Duration Time])"
+  "=Avg([Case Duration Time])",
+  "=Min([Case Duration Time])"
 ]}
   ....
 />
@@ -762,12 +620,10 @@ import { Bar } from "@motor-js/core";
 Use the object syntax if you want to set more options for your columns. If you. for example, create a pivot table with labels, you should use qFieldLabels for dimensions and qLabel for measures.
 
 ```jsx {4-28}
-import { Bar } from "@motor-js/core";
+import { Scatter } from "@motor-js/core";
 
-<Bar
+<Scatter
   cols={[
-  /*dimension*/
-  "Year",
   /*dimension with label*/
    { qField: "[Case Owner Group]", qLabel: "Group" },
   /*measure with label*/
@@ -785,9 +641,9 @@ import { Bar } from "@motor-js/core";
 You can use dimensions and measures that are predefined in the app. This is mostly relevant if the user should be able to select dimensions and measures from lists. You must know the Dimension ID or the Measure ID, which is defined in the qLibraryID property. You must also state if it is a measure or a dimension in the qType property.
 
 ```jsx {4-8}
-import { Bar } from "@motor-js/core";
+import { Scatter } from "@motor-js/core";
 
-<Bar
+<Scatter
   cols={[
   {
     "qLibraryId":"eqZjE",
@@ -801,9 +657,9 @@ import { Bar } from "@motor-js/core";
 ### calcCondition settings
 
 ```jsx {5-8}
-import { Bar } from "@motor-js/core";
+import { Scatter } from "@motor-js/core";
 
-  <Bar
+  <Scatter
     ....
     calcCondition={{
       qCond: '1+1=2',
@@ -815,9 +671,9 @@ import { Bar } from "@motor-js/core";
 ### otherTotalSpec settings
 
 ```jsx {5-8}
-import { Bar } from "@motor-js/core";
+import { Scatter } from "@motor-js/core";
 
-  <Bar
+  <Scatter
    ....
           otherTotalSpec={{
              qOtherLabel: 'Other',
@@ -832,61 +688,39 @@ These examples are based off the Consumer Sales Qlik Sense application.
 
 ### Chart sorted by descending values
 
-The first example is a bar chart sorted by Revenue descending.
+The first example is a scatter chart sorted with conditional chart colouring.
 
-![Bar Sorted Gif](https://media.giphy.com/media/nGUAC2uDPRtf0W4TQx/giphy.gif)
-
-```jsx
-function ColumnDemo() {
-  return (
-    <Motor config={config}>
-      <Bar
-        width={800}
-        height={450}
-        showLabels={false}
-        title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
-        cols={[
-          { qField: "[Product Sub Group Desc]", qLabel: "Product Sub Group" },
-          {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
-          },
-        ]}
-        sortOrder={[1, 0]}
-      />
-    </Motor>
-  );
-}
-```
-
-### Horizontal Bar Chart
-
-![Horizontal Bar Gif](https://media.giphy.com/media/IaGus8u1vkLUGxIdXb/giphy.gif)
+![Scatter Color Gif](../static/img/gifs/Scatter2.gif)
 
 ```jsx
-function ColumnDemo() {
+function ScatterDemo() {
   return (
     <Motor config={config}>
-      <Bar
+      <Scatter
         width={800}
         height={450}
-        legendLeftRight="left"
-        legendDirection="row"
-        showLabels
-        showLegend={false}
-        showCrossHair={false}
-        renderHorizontally
-        title="Revenue by Product Sub Group"
-        subTitle="Revenue figures from the Consumer Sales Qlik Sense application"
+        colorTheme="bio"
+        selectionMethod="click"
+        tooltipStyles={{
+          borderRadius: "10px",
+          background: "pink",
+        }}
         cols={[
-          { qField: "[Product Group Desc]", qLabel: "Product Group" },
           {
-            qField: "=Sum( [Sales Quantity]*[Sales Price])",
-            qLabel: "Revenue",
+            qField: "Supplier Name",
+            qLabel: "Supplier Name",
+            qCondChartColor:
+              "=if(Avg(([Supplier Complaints])>12) or (Avg([Supplier Satisfaction Rating])<10),'Red', 'Green')",
+          },
+          {
+            qField: "=[Supplier Complaints]/Sum(ClaimCounter)",
+            qLabel: "Ave Supplier Complaints",
+          },
+          {
+            qField: "=Avg([Supplier Satisfaction Rating])",
+            qLabel: "Ave Supplier Satisfaction Rating",
           },
         ]}
-        sortOrder={[1, 0]}
       />
     </Motor>
   );
@@ -897,7 +731,7 @@ function ColumnDemo() {
 
 All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
 
-Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific bar chart related theme items are stored in bar. Changing these settings will apply to all bar charts within the application.
+Most of the chart settings are in global.chart. Changing any setting in the above will apply to all charts within the application. Specific scatter chart related theme items are stored in scatter. Changing these settings will apply to all scatter charts within the application.
 
 Theme settings can be overwritten at a global level, see below for an example.
 
@@ -933,8 +767,8 @@ The global.chart object is documented below.
       wrapper: {
         borderRadius: "10px",
         backgroundColor: "white",
-        userSelect: "none", // add to props
-        display: "flex", // add to props
+        userSelect: "none",
+        display: "flex",
         boxSizing: "border-box",
         position: "relative",
         padding: "16px 16px 0px",
@@ -946,7 +780,6 @@ The global.chart object is documented below.
         flexDirection: "column",
       },
       error: {
-        // dataErrorMsg: 'Invalid Dimension or Measure.',
         dimensionErrMsg: "Invalid Dimension.",
         measureErrMsg: "Invalid Measure. No values returned.",
       },
@@ -989,14 +822,11 @@ The global.chart object is documented below.
       showLegend: true,
       showAxisLabels: "both",
       margin: "10px",
-      padding: 0.2, // Padding between bars
       useAnimatedAxes: false,
       includeZero: true,
       multiColor: true,
       selectionMethod: "brush",
       autoWidth: false,
-      renderHorizontally: false,
-      allowSelections: true, //captureEvents if captureevents true the cannot make selections
       events: false,
       color,
       showLabels: true,
@@ -1314,13 +1144,16 @@ The global.chart object is documented below.
 
 ```
 
-### global.bar
+### global.scatter
 
 ```javascript
 
-bar: {
-  stroke: "#fff",
-  strokeWidth: 1
-}
+  scatter: {
+    size: 5,
+    style: {
+      strokeWidth: 3,
+      stroke: "orange",
+    },
+  },
 
 ```
