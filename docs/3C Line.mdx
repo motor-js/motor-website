@@ -121,7 +121,10 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>width</code>
     </td>
-    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used</td>
+    <td>
+      Chart width as a number which will be converted to pixels. If not set, the
+      parent container width will be used
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -130,7 +133,10 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>height</code>
     </td>
-    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used </td>
+    <td>
+      Chart width as a number which will be converted to pixels. If not set, the
+      parent container width will be used{" "}
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -181,27 +187,6 @@ A more advanced version demonstrating this is displayed below.
       <br />
       <b>* default obtained from theme.</b>
       <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
   <tr>
@@ -367,17 +352,6 @@ A more advanced version demonstrating this is displayed below.
       "right"
       <br /> "bottom"
       <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>allowSelections</code>
-    </td>
-    <td>Allow selections to be made on the chart</td>
-    <td>
-      <code>bool</code>
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
   <tr>
@@ -595,7 +569,9 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>numMeasureDualTicks</code>
     </td>
-    <td>Number of ticks for the second Y Axis. Leave blank to auto calculate</td>
+    <td>
+      Number of ticks for the second Y Axis. Leave blank to auto calculate
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -622,7 +598,10 @@ A more advanced version demonstrating this is displayed below.
     <td>
       <code>showCrosshair</code>
     </td>
-    <td>Turns the crosshair on or off. This appears alongside the tooltip when a bar is hovered over</td>
+    <td>
+      Turns the crosshair on or off. This appears alongside the tooltip when a
+      bar is hovered over
+    </td>
     <td>
       <code>boolean</code>
     </td>
@@ -673,7 +652,6 @@ A more advanced version demonstrating this is displayed below.
     </td>
   </tr>
 </table>
-
 
 ## Sample Syntax
 
@@ -816,10 +794,9 @@ import { Motor, ... } from @motor-js/core
 
 ```
 
-
 ### global.chart
 
-The global.chart object is documented below. 
+The global.chart object is documented below.
 
 ```javascript
 
@@ -895,7 +872,6 @@ The global.chart object is documented below.
       selectionMethod: "brush",
       autoWidth: false,
       renderHorizontally: false,
-      allowSelections: true, //captureEvents if captureevents true the cannot make selections
       events: false,
       color,
       showLabels: true,

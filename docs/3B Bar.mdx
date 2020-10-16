@@ -14,7 +14,7 @@ sidebar_label: Bar
 
 import { Bar } from @motor-js/core
 //...
-  <Bar 
+  <Bar
     width={900}
     height={450}
     title="Claims by Claim type"
@@ -28,7 +28,7 @@ import { Bar } from @motor-js/core
 
 ```
 
-This is a simple example, which can get more complex by setting various other propertes. 
+This is a simple example, which can get more complex by setting various other propertes.
 More advanced versions demonstrating various functioanlities can be found in the examples section
 
 ## Props
@@ -120,7 +120,10 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>width</code>
     </td>
-    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used</td>
+    <td>
+      Chart width as a number which will be converted to pixels. If not set, the
+      parent container width will be used
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -129,7 +132,10 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>height</code>
     </td>
-    <td>Chart width as a number which will be converted to pixels. If not set, the parent container width will be used </td>
+    <td>
+      Chart width as a number which will be converted to pixels. If not set, the
+      parent container width will be used{" "}
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -180,27 +186,6 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
       <br />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>textOnAxis</code>
-    </td>
-    <td>Labels for each axis on the chart</td>
-    <td>
-      <code>boolean</code>
-      <br />
-      <code>oneOf</code>
-      <br />
-      <b>'both'</b>
-      <br />
-      'yAxis'
-      <br />
-      'xAxis'
-      <br />
-      'none'
-      <br />
-      <b>* default obtained from theme.</b>
     </td>
   </tr>
   <tr>
@@ -310,7 +295,8 @@ More advanced versions demonstrating various functioanlities can be found in the
       <br />
       <b>* default obtained from theme.</b>
     </td>
-  </tr> <tr>
+  </tr>{" "}
+  <tr>
     <td>
       <code>stacked</code>
     </td>
@@ -595,7 +581,9 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>
       <code>numMeasureDualTicks</code>
     </td>
-    <td>Number of ticks for the second Y Axis. Leave blank to auto calculate</td>
+    <td>
+      Number of ticks for the second Y Axis. Leave blank to auto calculate
+    </td>
     <td>
       <code>number</code>
     </td>
@@ -620,9 +608,21 @@ More advanced versions demonstrating various functioanlities can be found in the
   </tr>
   <tr>
     <td>
+      <code>useSingleColor</code>
+    </td>
+    <td>Use only a sinlge color in the tooltip</td>
+    <td>
+      <code>bool</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>showCrosshair</code>
     </td>
-    <td>Turns the crosshair on or off. This appears alongside the tooltip when a bar is hovered over</td>
+    <td>
+      Turns the crosshair on or off. This appears alongside the tooltip when a
+      bar is hovered over
+    </td>
     <td>
       <code>boolean</code>
     </td>
@@ -670,6 +670,30 @@ More advanced versions demonstrating various functioanlities can be found in the
     <td>Set the Y-Axis ticks style, see the theme object for properties</td>
     <td>
       <code>object</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>legendLabelStyle</code>
+    </td>
+    <td>Object to be used for the styling of the legend labels</td>
+    <td>
+      <code>object</code>
+      <br />
+      'e.g.'
+      <br />' &#123; fill: "darkblue", fontWeight: 800, &#125; '
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>valueLabelStyle</code>
+    </td>
+    <td>Object to be used for the styling of the value labels</td>
+    <td>
+      <code>object</code>
+      <br />
+      'e.g.'
+      <br />' &#123; fill: "white", stroke: "red"", &#125; '
     </td>
   </tr>
 </table>
@@ -811,7 +835,6 @@ function ColumnDemo() {
 
 ![Horizontal Bar Gif](https://media.giphy.com/media/IaGus8u1vkLUGxIdXb/giphy.gif)
 
-
 ```jsx
 function ColumnDemo() {
   return (
@@ -819,8 +842,8 @@ function ColumnDemo() {
       <Bar
         width={800}
         height={450}
-        legendLeftRight='left'
-        legendDirection='row'
+        legendLeftRight="left"
+        legendDirection="row"
         showLabels
         showLegend={false}
         showCrossHair={false}
@@ -840,7 +863,6 @@ function ColumnDemo() {
   );
 }
 ```
-
 
 ## Theme API
 
@@ -867,10 +889,9 @@ import { Motor, ... } from @motor-js/core
 
 ```
 
-
 ### global.chart
 
-The global.chart object is documented below. 
+The global.chart object is documented below.
 
 ```javascript
 
@@ -1266,7 +1287,7 @@ The global.chart object is documented below.
 
 ```javascript
 
-bar: { 
+bar: {
   stroke: "#fff",
   strokeWidth: 1
 }
