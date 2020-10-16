@@ -4,13 +4,6 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-:::caution
-Motor is completely free only for non-commercial use.<br />
-If you plan to use the library in a commerical setting, please visit our pricing
-page and choose a license.
-
-:::
-
 The easiest way to get started is to install via NPM.
 
 ### Install via NPM

@@ -130,14 +130,14 @@
 .left-side {
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   display: flex;
-  width: 50%;
+  width: 60%;
 }
 
 .right-side {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
 }
 
 

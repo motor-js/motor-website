@@ -5,9 +5,10 @@ module.exports = {
   url: "https://friendly-volhard-3f5c11.netlify.app",
   baseUrl: "/",
   favicon: "img/m_icon.png",
-  organizationName: "Motor", // Usually your GitHub org/user name.
-  projectName: "Motor", // Usually your repo name.
+  organizationName: "Motor.js", // Usually your GitHub org/user name.
+  projectName: "Motor.js", // Usually your repo name.
   themes: ["@docusaurus/theme-live-codeblock"],
+  plugins: ['@docusaurus/plugin-ideal-image'],
   stylesheets: [
     {
       href:
@@ -16,7 +17,7 @@ module.exports = {
     },
   ],
   themeConfig: {
-    disableDarkMode: true,
+    disableDarkMode: false,
     announcementBar: {
       id: "beta",
       content:
@@ -55,6 +56,11 @@ module.exports = {
           to: "https://spectrum.chat/motor-js",
           label: "Community",
           position: "left",
+        },
+        {
+          to: "https://github.com/motor-js/motor-ui",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },

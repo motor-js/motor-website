@@ -15,8 +15,8 @@ import { useModal } from "@motor-js/core";
 import ContactUs from "../components/ContactUsForm";
 import useWindowDimensions from "../components/useWindowDimensions";
 import useWindowSize from "@theme/hooks/useWindowSize";
-
 import ProofofConceptForm from "../components/POCForm";
+import Image from '@theme/IdealImage';
 
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'
@@ -32,12 +32,64 @@ import { Filter, Motor } from '@motor-js/core'
 
 `.trim();
 
+const chartExample = `
+import { Motor, Bar, Filter } from '@motor-js/core'
+
+<Motor 
+  config={ /* Connect to your Qlik site */ }
+  theme={{
+    global: {
+      color: { brand: 'blue' },
+      chart: {
+        gridStyles: { 
+          rows: { 
+            stroke: '#EDEDED',
+            strokeDasharray: 0,
+            numTicks: 6
+          },
+          columns: { stroke: 'none' },
+        },
+        yTickStyles: { stroke: 'none' }
+      }
+    },
+  }} 
+>
+  //...
+  <Filter dimension={['Month']} />
+  <Bar 
+    width={800}
+    height={350}
+    colorTheme='divergent13'
+    showLegend={false}
+    showLabels={false}
+    numMeasureTicks={6}
+    stacked
+    cols={[
+      { 
+        qField: '[Month]', 
+        qLabel: 'Month'
+      },
+      { 
+        qField: '[Product Group Desc]',
+        qLabel: 'Product Group'
+      },
+      { 
+        qField: '=sum([Sales Amount])',
+        qLabel: 'Sales'
+      },
+    ]}
+  />
+  //...
+</Motor>
+
+`.trim();
+
 const starter_URL =
   "https://github.com/motor-js/motor-starter/archive/master.zip";
 
 const features = [
   {
-    title: <>Free and open on GitHub</>,
+    title: <>Free and Open on GitHub</>,
     imageUrl: "img/icons/happy.svg",
     description: (
       <>
@@ -145,7 +197,7 @@ function Home() {
                 className={clsx("button b1 button--lg", styles.button)}
                 to={useBaseUrl("docs/Getting%20Started")}
               >
-                Get Started for free
+                Get Started
               </Link>
               <Link
                 id="button2"
@@ -260,42 +312,27 @@ function Home() {
         </section>
         <section className={styles.components}>
           <div className="container">
-            <div className="heading">Charts Powered by the Engine</div>
+            <div className="heading">Custom Charts Powered by the Engine</div>
+            <div className="sub-heading">
+              Motor js' charts are fully customisable through our theme object. We also support the Capability APIs for quick and easy embedding in your React project
+            </div>
             <div className={clsx("col", styles.components)}>
               <div className="left-side">
-                <div
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    paddingRight: "50px",
-                    backgroundImage: "url(/img/eg_charts.png)",
-                    backgroundSize: "cover",
-                  }}
-                />
-              </div>
-
-              <div className="right-side">
-                <div className="sub-heading">
-                  Go beyond Qlik's native charting capabilities with our range
-                  of charts. Have full control over style, apply custom events
-                  and a lot more.
-                  <br />
-                  <br />
-                  <br />
-                  No need for the Capability APIs, our charts work off any Qlik
-                  engine connection, providing an interactive and responsive UI
-                  experience.
-                  <br />
-                  <br />
-                  <br />
-                  Check out the examples in our docs
+                <div className="usage-text">
+                  {windowSize !== "mobile" ? (
+                    <CustomCodeBlock js={chartExample} />
+                  ) : (
+                    ""
+                  )}
                 </div>
-                <div></div>
+              </div>
+              <div className="right-side">
+                <img src={require('../../static/img/bar_home.png')} alt="loading..." />
               </div>
             </div>
           </div>
         </section>
-        <section className={styles.altcontainer}>
+        {/*<section className={styles.altcontainer}>
           <div className="container">
             <div
               style={{ display: "flex", textAlign: "center" }}
@@ -304,7 +341,7 @@ function Home() {
               <ProofofConceptForm isShowing={true} />
             </div>
           </div>
-        </section>
+        </section>*/}
 
         <section className={styles.darkcontainer}>
           <div className="container">
