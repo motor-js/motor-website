@@ -106,3 +106,102 @@ function ColumnDemo() {
 }
 ```
 
+## Using Colors in Charts
+
+All of our charts come with a <b>colorTheme</b> prop which enables you to customise their colors. This section will cover some examples.
+
+### Using the default color palettes
+
+Our base themes contain a number of default color palettes which are found in the base theme object, in global.colors. See below for some examples 
+
+#### Example using the <b>divergent13</b> palette
+
+![Divergent 13 Bar](../static/img/bar_divergent.png)
+
+```javascript
+  <Bar 
+    width={800}
+    height={350}
+    colorTheme="divergent13"
+    showLegend={false}
+    showLabels={false}
+    stacked
+    cols={[
+      { qField: '[Month]', qLabel: 'Month' },
+      { qField: '[Product Group Desc]', qLabel: 'Product Group' },
+      { qField: '=sum([Sales Amount])', qLabel: 'Sales'},
+    ]}
+  />
+
+```
+
+#### Example using the <b>eco</b> palette
+
+![Eco Bar](../static/img/bar_eco.png)
+
+```javascript
+  <Bar 
+    width={800}
+    height={350}
+    colorTheme="eco"
+    showLegend={false}
+    showLabels={false}
+    stacked
+    cols={[
+      { qField: '[Month]', qLabel: 'Month' },
+      { qField: '[Product Group Desc]', qLabel: 'Product Group' },
+      { qField: '=sum([Sales Amount])', qLabel: 'Sales'},
+    ]}
+  />
+
+```
+
+### Using a color string
+
+You can pass a single color as a string, which will create an array of colors from Open Color. If there is no match with Open Color, the colors of the bar chart will default to black. 
+If you want the chart to have a single color, pass an array of one color instead.
+
+![Green Bar](../static/img/bar_green.png)
+
+```javascript
+  <Bar 
+    width={800}
+    height={350}
+    colorTheme="green"
+    showLegend={false}
+    showLabels={false}
+    stacked
+    cols={[
+      { qField: '[Month]', qLabel: 'Month' },
+      { qField: '[Product Group Desc]', qLabel: 'Product Group' },
+      { qField: '=sum([Sales Amount])', qLabel: 'Sales'},
+    ]}
+  />
+
+```
+
+### Using an array of colors
+
+You can pass an array of colors, to build your own color palette
+
+![Array Bar](../static/img/bar_array.png)
+
+```javascript
+  <Bar 
+    width={800}
+    height={350}
+    colorTheme={
+      ['#ff7f50','#87cefa','#da70d6','#32cd32','#6495ed',
+      '#ff69b4','#ba55d3','#cd5c5c','#ffa500','#40e0d0']
+    }
+    showLegend={false}
+    showLabels={false}
+    stacked
+    cols={[
+      { qField: '[Month]', qLabel: 'Month' },
+      { qField: '[Product Group Desc]', qLabel: 'Product Group' },
+      { qField: '=sum([Sales Amount])', qLabel: 'Sales'},
+    ]}
+  />
+
+```
