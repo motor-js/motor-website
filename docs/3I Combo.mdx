@@ -373,17 +373,6 @@ A more advanced version demonstrating this is displayed below.
   </tr>
   <tr>
     <td>
-      <code>maxWidth</code>
-    </td>
-    <td>Maximum width in pixels of each bar</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>showAxisLabels</code>
     </td>
     <td>Display axis labels on the chart</td>
@@ -677,27 +666,25 @@ A more advanced version demonstrating this is displayed below.
 ![Combo Gif](https://media.giphy.com/media/fC2ZkndjesAU1mNCET/giphy.gif)
 
 ```javascript
-  <Combo 
-    width={750} 
-    height={400} 
-    colorTheme={['red', 'blue']}
-    cols={[
-      { qField: "[Month]", qLabel: "Month" },
-      {
-        qField: "=Sum([Sales Amount])",
-        qLabel: "Sales",
-        qChartType:'line',
-      },
-      {
-        qField: "=Sum([Sales Margin Amount])",
-        qLabel: "Margin",
-        qChartType:'bar',     
-      },
-    ]}
-  />
+<Combo
+  width={750}
+  height={400}
+  colorTheme={["red", "blue"]}
+  cols={[
+    { qField: "[Month]", qLabel: "Month" },
+    {
+      qField: "=Sum([Sales Amount])",
+      qLabel: "Sales",
+      qChartType: "line",
+    },
+    {
+      qField: "=Sum([Sales Margin Amount])",
+      qLabel: "Margin",
+      qChartType: "bar",
+    },
+  ]}
+/>
 ```
-
-
 
 ## Theme API
 

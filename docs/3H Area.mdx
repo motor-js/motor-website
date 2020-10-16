@@ -367,17 +367,6 @@ A more advanced version demonstrating this is displayed below.
   </tr>
   <tr>
     <td>
-      <code>maxWidth</code>
-    </td>
-    <td>Maximum width in pixels of each bar</td>
-    <td>
-      <code>number</code>
-      <br />
-      <b>* default obtained from theme.</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>showAxisLabels</code>
     </td>
     <td>Display axis labels on the chart</td>
@@ -673,28 +662,27 @@ These examples are based off the Consumer Sales Qlik Sense application.
 ![Stacked Area](https://media.giphy.com/media/rsTwvVo6wbjk7IuYBj/giphy.gif)
 
 ```javascript
-
-    <Area
-      width={750}
-      height={350}
-      showLabels
-      stacked
-      showPoints={false}
-      showLegend
-      showCrossHair={false}
-      title="Sales and Margin over Time"
-      cols={[
-        { qField: "[Month]", qLabel: "Month" },
-        {
-          qField: "=Sum([Sales Margin Amount])",
-          qLabel: "Margin",
-        },
-        {
-          qField: "=Sum([Sales Amount])",
-          qLabel: "Sales",
-        },
-      ]}
-    />
+<Area
+  width={750}
+  height={350}
+  showLabels
+  stacked
+  showPoints={false}
+  showLegend
+  showCrossHair={false}
+  title="Sales and Margin over Time"
+  cols={[
+    { qField: "[Month]", qLabel: "Month" },
+    {
+      qField: "=Sum([Sales Margin Amount])",
+      qLabel: "Margin",
+    },
+    {
+      qField: "=Sum([Sales Amount])",
+      qLabel: "Sales",
+    },
+  ]}
+/>
 ```
 
 ## Theme API
@@ -721,7 +709,6 @@ import { Motor, ... } from @motor-js/core
   </Motor>
 
 ```
-
 
 ### global.chart
 
