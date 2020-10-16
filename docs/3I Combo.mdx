@@ -670,6 +670,35 @@ A more advanced version demonstrating this is displayed below.
   </tr>
 </table>
 
+## Examples
+
+### Change colors using Color Theme property
+
+![Combo Gif](https://media.giphy.com/media/fC2ZkndjesAU1mNCET/giphy.gif)
+
+```javascript
+  <Combo 
+    width={750} 
+    height={400} 
+    colorTheme={['red', 'blue']}
+    cols={[
+      { qField: "[Month]", qLabel: "Month" },
+      {
+        qField: "=Sum([Sales Amount])",
+        qLabel: "Sales",
+        qChartType:'line',
+      },
+      {
+        qField: "=Sum([Sales Margin Amount])",
+        qLabel: "Margin",
+        qChartType:'bar',     
+      },
+    ]}
+  />
+```
+
+
+
 ## Theme API
 
 All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
