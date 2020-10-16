@@ -664,6 +664,39 @@ A more advanced version demonstrating this is displayed below.
   </tr>
 </table>
 
+## Examples
+
+These examples are based off the Consumer Sales Qlik Sense application.
+
+### Stacked Area Chart
+
+![Stacked Area](https://media.giphy.com/media/rsTwvVo6wbjk7IuYBj/giphy.gif)
+
+```javascript
+
+    <Area
+      width={750}
+      height={350}
+      showLabels
+      stacked
+      showPoints={false}
+      showLegend
+      showCrossHair={false}
+      title="Sales and Margin over Time"
+      cols={[
+        { qField: "[Month]", qLabel: "Month" },
+        {
+          qField: "=Sum([Sales Margin Amount])",
+          qLabel: "Margin",
+        },
+        {
+          qField: "=Sum([Sales Amount])",
+          qLabel: "Sales",
+        },
+      ]}
+    />
+```
+
 ## Theme API
 
 All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.
@@ -688,6 +721,7 @@ import { Motor, ... } from @motor-js/core
   </Motor>
 
 ```
+
 
 ### global.chart
 

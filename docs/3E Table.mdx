@@ -6,39 +6,55 @@ sidebar_label: Table
 
 #### Table Component. Display data in a tabular format.
 
+![Table Gif](https://media.giphy.com/media/POs4ZNZE2mPNSD1rpO/giphy.gif)
+
 ## Usage
 
 ```javascript
 
 import { Table } from @motor-js/core
 //...
-<Table 
-  columns={[
-    {
-      dimensions: [
-        {
-          qField: 'country',
-          qLabel: 'Country',
-          width: '20%',
-          },
+      <Table 
+        border='none'
+        bandedRows
+        grandTotalsFlag
+        columns={[
           {
-            qField: "province",
-            qLabel: "Province",
-            qCondBackgroundFormat:'',
-            qCondTextFormat:'',
-            width: "20%"
-          },
-        ],
-        measures: [
-          {
-            qField: 'sum(price)',
-            qLabel: 'Total Price',
-            width: '20%',
-          }
-        ]
-      },
-    ]} 
-  />
+            dimensions: [
+              {
+                qField: '[Product Group Desc]',
+                qLabel: 'Country',
+                width: '20%',
+              } ,
+              {
+                qField: "Month",
+                qLabel: "Month",
+                width: "20%"
+              },
+            ],
+            measures: [
+              {
+                qField: '=sum([Sales Amount])',
+                qLabel: 'Sales',
+                qNumType: "M",
+                qNumFmt: '£#,##0',
+                qCondBackgroundFormat:'',
+                qCondTextFormat:'',
+                width: '20%',
+              },
+              {
+                qField: '=sum([Sales Margin Amount])',
+                qNumType: "M",
+                qNumFmt: "£#,##0",
+                qCondBackgroundFormat:'if(sum([Sales Margin Amount])<0, red())',
+                qCondTextFormat: 'if(sum([Sales Margin Amount])<0, white())',
+                qLabel: 'Margin',
+                width: '20%',
+              }
+            ]
+           },
+        ]} 
+      />
 
 ```
 
@@ -444,6 +460,42 @@ An example of this can also be seen below.
 </table>
 
 ## Example
+
+### Simple Example
+
+```javascript
+
+import { Table } from @motor-js/core
+//...
+<Table 
+  columns={[
+    {
+      dimensions: [
+        {
+          qField: 'country',
+          qLabel: 'Country',
+          width: '20%',
+          },
+          {
+            qField: "province",
+            qLabel: "Province",
+            qCondBackgroundFormat:'',
+            qCondTextFormat:'',
+            width: "20%"
+          },
+        ],
+        measures: [
+          {
+            qField: 'sum(price)',
+            qLabel: 'Total Price',
+            width: '20%',
+          }
+        ]
+      },
+    ]} 
+  />
+
+```
 
 ### Kitchen Sink Example
 

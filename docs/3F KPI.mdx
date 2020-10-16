@@ -6,13 +6,15 @@ sidebar_label: KPI
 
 #### KPI. A component displaying data as a single numeric value.
 
+![KPI Gif](https://media.giphy.com/media/sHKpfC7uT51qGEOBSS/giphy.gif)
+
 ## Usage
 
 ```javascript
 
 import { KPI } from @motor-js/core
 //...
-<KPI cols={[ "=Sum([Sales Quantity])"]} />
+ <KPI label='Sales Amount' cols={[ "=Sum([Sales Amount])"]} />
 //...
 ```
 
