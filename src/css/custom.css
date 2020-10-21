@@ -128,16 +128,17 @@
 }
 
 .left-side {
-  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  padding: 0.5rem;
   display: flex;
-  width: 60%;
+  width: 50%;
 }
 
 .right-side {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
+  margin-top: 10px;
 }
 
 

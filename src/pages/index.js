@@ -89,7 +89,7 @@ const starter_URL =
 
 const features = [
   {
-    title: <>Free and Open on GitHub</>,
+    title: <>Free and Open Source</>,
     imageUrl: "img/icons/happy.svg",
     description: (
       <>
@@ -189,6 +189,8 @@ function Home() {
       <div className="hero-overlay">
         <header className={clsx("hero hero--primary", styles.heroBanner)}>
           <div className="container">
+            <iframe src="https://ghbtns.com/github-btn.html?user=motor-js&repo=motor-ui&type=star&count=false&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub">
+            </iframe>
             <span className="hero__title">{siteConfig.title}</span>
             <div className="hero__subtitle">{siteConfig.tagline}</div>
             <div className={styles.buttons}>
@@ -209,7 +211,7 @@ function Home() {
                   setCheckedValue("BOOKDEMO");
                 }}
               >
-                Book Demo
+                Contact Us
               </Link>
             </div>
           </div>
@@ -327,7 +329,7 @@ function Home() {
                 </div>
               </div>
               <div className="right-side">
-                <img src={require('../../static/img/bar_home.png')} alt="loading..." />
+                <img src={'../../static/img/bar_home.png'} alt="loading..." width='600px'/>
               </div>
             </div>
           </div>

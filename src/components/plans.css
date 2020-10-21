@@ -1,8 +1,8 @@
 .plan-card {
-  padding: 1rem;
+  padding: 1rem 2rem;
   margin: 1rem 0;
   display: flex;
-  min-width: 300px;
+  min-width: 350px;
   align-items: center;
   justify-content: flex-start;
   border: 1px solid #cccccc;

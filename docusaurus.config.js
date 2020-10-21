@@ -17,7 +17,7 @@ module.exports = {
     },
   ],
   themeConfig: {
-    disableDarkMode: false,
+    disableDarkMode: true,
     announcementBar: {
       id: "beta",
       content:
@@ -43,8 +43,8 @@ module.exports = {
           position: "left",
         },
         {
-          to: "pricing",
-          label: "Pricing",
+          to: "enterprise",
+          label: "Enterprise",
           position: "left",
         },
         {
@@ -77,10 +77,6 @@ module.exports = {
             {
               label: "GitHub",
               href: "https://github.com/motor-js",
-            },
-            {
-              label: "License",
-              to: "license/",
             },
             {
               label: "Privacy Policy",

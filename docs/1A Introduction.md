@@ -73,6 +73,9 @@ You can check out details of our theming framework here.
 
 Motor communicates with the Qlik engine via EngimaJS, our components have no dependencies on the Capability APIs.
 
+#### visx
+
+Motor js charts are built on top of D3, using https://airbnb.io/visx/. 
 
 
 ## Authentication
