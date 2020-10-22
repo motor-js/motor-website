@@ -9,8 +9,6 @@ const enterprise = (props) => {
     {
       id: 2,
       title: "ENTERPRISE SUPPORT",
-      perUsers: "Internal applications",
-      perUsers2: "No developer limit",
       fee: "Contact us for pricing",
       isMostPopular: true,
       actionName: "Contact Us",

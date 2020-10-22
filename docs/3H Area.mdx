@@ -855,6 +855,41 @@ These examples are based off the Consumer Sales Qlik Sense application.
 />
 ```
 
+### Range Fill Color
+
+![Stacked Area](https://media.giphy.com/media/aUpcyZ72tx6DyAGZVc/giphy.gif)
+
+```javascript
+  <Area 
+    width={750}
+    height={400}
+    colorTheme="bio"
+    suppressZero
+    stacked
+    showCrossHair={false}
+    showPoints={false}
+    curveShape='Natural'
+    cols={[
+      { 
+        qField: '[Month]',
+        qLabel: 'Month',            
+      },
+      { 
+        qField: '=sum([Sales Amount])',
+        qLabel: 'Sum of Sales',
+        qFillStyle: {
+          style: "Linear",
+          fillFrom : "#c21500",
+          fillTo : "#ffc500"
+        }
+      },
+    ]}
+  />
+```
+
+
+
+
 ## Theme API
 
 All components are styled from the main theme. Each theme can be overwtitten which will allow for all charts to share common functionality without having to set the props at an individual level.

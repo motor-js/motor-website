@@ -122,14 +122,14 @@ const features = [
     title: <>Awesome Hooks</>,
     imageUrl: "img/icons/graph.svg",
     description: (
-      <>Re-usable hooks to speed up the development of your custom dashboards</>
+      <>Re-usable hooks to speed up the development of your custom dashboards.</>
     ),
   },
   {
     title: <>Enterprise Support Available</>,
     imageUrl: "img/icons/shopping.svg",
     description: (
-      <>We offer a supported version of the library for Enterprise projects</>
+      <>We offer a supported version of the library for Enterprise projects.</>
     ),
   },
   {
