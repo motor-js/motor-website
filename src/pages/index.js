@@ -17,6 +17,7 @@ import useWindowDimensions from "../components/useWindowDimensions";
 import useWindowSize from "@theme/hooks/useWindowSize";
 import ProofofConceptForm from "../components/POCForm";
 import Image from '@theme/IdealImage';
+//import thumbnail from '../../static/img/gifs/bar_gif.gif';
 
 const usageExample = `
 import { Filter, Motor } from '@motor-js/core'

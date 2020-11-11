@@ -2,13 +2,12 @@ module.exports = {
   title: "The React Framework for Qlik Sense Mashups",
   tagline:
     "Charts, Components & Utilities for the rapid creation of custom dashboards off the Qlik Engine",
-  url: "https://friendly-volhard-3f5c11.netlify.app",
+  url: "https://motor-js.io",
   baseUrl: "/",
   favicon: "img/m_icon.png",
   organizationName: "Motor.js", // Usually your GitHub org/user name.
   projectName: "Motor.js", // Usually your repo name.
   themes: ["@docusaurus/theme-live-codeblock"],
-  plugins: ['@docusaurus/plugin-ideal-image'],
   stylesheets: [
     {
       href:
@@ -124,6 +123,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Motor, Inc.`,
     },
   },
+  plugins: ['@docusaurus/plugin-ideal-image'],
   presets: [
     [
       "@docusaurus/preset-classic",

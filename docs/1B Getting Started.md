@@ -44,13 +44,13 @@ dimensions from this application
 import { Motor } from '@motor-js/core'
 
 <Motor
-  config={
+  config={{
     host: "sense-demo.qlik.com",
     secure: true,
     port: 443,
     prefix: "",
     appId: "372cbc85-f7fb-4db6-a620-9a5367845dce"
-  }
+  }}
 >
 // ...
 </Motor>
@@ -61,22 +61,22 @@ import { Motor } from '@motor-js/core'
 
 If you are connecting to a Qlik cloud SAAS instance, your configuration will look slightly different. 
 We need to set the qcs entry to <b>true</b> and also add the web integration id, generated in your Qlik site. 
-See below for an example
+See below for an example:
 
 ```jsx
 
 import { Motor } from '@motor-js/core'
 
 <Motor
-  config={
-  host: 'my-qlik-site.eu.qlikcloud.com',
-  secure: true,
-  port: null,
-  prefix: '',
-  appId: '0c07cd52-e6a1-45ff-a605-fd37394f90bf',
-  qcs: true,
-  webIntId: '4Tx-ydWxSQEM_q1ajlYBVzGgVUVJUo-i',
-  }
+  config={{
+    host: 'juno-ui.eu.qlikcloud.com',
+    secure: true,
+    port: null,
+    prefix: '',
+    appId: '39e218c1-42ee-4f38-9451-1b8f850505d5',
+    webIntId: '4Tx-ydWxSQEM_q1ajlYBVzGgVUVJUo-i',
+    qcs: true,
+  }}>
 >
 // ...
 </Motor>
@@ -90,3 +90,4 @@ For more information on how to generate your first web integration id in Qlik SA
 
 #### Motor Starter Project --> https://github.com/motor-js/motor-starter
 #### Insurance Claims Dashboard --> https://github.com/motor-js/Insurance-Claims-Multi
+
