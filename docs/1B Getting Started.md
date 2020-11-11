@@ -74,7 +74,7 @@ import { Motor } from '@motor-js/core'
     port: null,
     prefix: '',
     appId: '39e218c1-42ee-4f38-9451-1b8f850505d5',
-    webIntId: '4Tx-ydWxSQEM_q1ajlYBVzGgVUVJUo-i',
+    webIntId: '...',
     qcs: true,
   }}>
 >
