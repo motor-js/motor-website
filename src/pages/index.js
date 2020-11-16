@@ -330,7 +330,7 @@ function Home() {
                 </div>
               </div>
               <div className="right-side">
-                <img src={'../../static/img/bar_home.png'} alt="loading..." width='600px'/>
+                <img src={'img/bar_home.png'} alt="loading..." width='600px'/>
               </div>
             </div>
           </div>
