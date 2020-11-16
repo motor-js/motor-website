@@ -25,8 +25,8 @@ module.exports = {
         "Bar",
         "Line",
         "Area",
-        "Combo",
-        "Pie",
+        /*"Combo",*/
+        /*"Pie",*/
         "Scatter",
         "Table",
         "KPI",

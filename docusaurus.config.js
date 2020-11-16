@@ -18,9 +18,10 @@ module.exports = {
   themeConfig: {
     disableDarkMode: true,
     announcementBar: {
-      id: "beta",
+      id: "star",
       content:
-        '<span class="text-white"<b>motor js</b> is in beta, beware of breaking changes ⚒️</span>',
+      '<span class="text-white">If you like motor.js, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/motor-js/motor-ui">GitHub!</a></span>'
+       /* '<span class="text-white"<b>motor js</b> is in beta, beware of breaking changes ⚒️</span>',*/
       /* backgroundColor: 'var(--blueBrand)', */
     },
     googleAnalytics: {
