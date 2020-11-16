@@ -89,5 +89,4 @@ For more information on how to generate your first web integration id in Qlik SA
 ## Examples
 
 #### Motor Starter Project --> https://github.com/motor-js/motor-starter
-#### Insurance Claims Dashboard --> https://github.com/motor-js/Insurance-Claims-Multi
 
