@@ -46,7 +46,7 @@ function SideBarObject() {
         <Motor
           config={config}>
           ...
-          <Sidebar collapsable padding='100px 5px' isOpen={isOpen} backgroundColor='lightblue'>
+          <Sidebar collapsable padding='100px 5px' isOpen={isOpen} onClose={toggle} backgroundColor='lightblue'>
             Sidebar Content
           </Sidebar>
           ...
@@ -82,6 +82,7 @@ function SideBarDemo() {
           direction="column"
           padding="15px 12px"
           isOpen={isOpen}
+          onClose={toggle}
           backgroundColor="altGray1"
           justifyContent="top"
           border={{ color: "brand" }}
