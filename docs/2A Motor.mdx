@@ -24,20 +24,20 @@ We are also making a change to the base theme, by changing the brand color to re
 import { Motor } from @motor-js/core
 //...
 <Motor 
-  config={
+  config={{
     host: "localhost",
     secure: false,
     port: 19077,
     prefix: "",
     appId: 'myAwesomeApp',
-  }
-  theme={
+  }}
+  theme={{
     global: {
       color: {
         brand: 'red'
       }
     }
-  }
+  }}
 >
 
 //...
