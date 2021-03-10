@@ -27,7 +27,7 @@ module.exports = {
         "Area",
         /*"Combo",*/
         /*"Pie",*/
-        "Scatter",
+        /*"Scatter",*/
         "Table",
         "KPI",
         "Qlik Object",
