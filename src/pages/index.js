@@ -13,10 +13,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { useModal } from "@motor-js/core";
 import ContactUs from "../components/ContactUsForm";
-import useWindowDimensions from "../components/useWindowDimensions";
 import useWindowSize from "@theme/hooks/useWindowSize";
-import ProofofConceptForm from "../components/POCForm";
-import Image from '@theme/IdealImage';
 //import thumbnail from '../../static/img/gifs/bar_gif.gif';
 
 const usageExample = `
@@ -91,53 +88,28 @@ const starter_URL =
 const features = [
   {
     title: <>Free and Open Source</>,
-    imageUrl: "img/icons/happy.svg",
-    description: (
-      <>
-        Motor js is free, provided on the Apache 2.0 license. Just install from npm, connect to a Qlik engine
-        and start building.
-      </>
-    ),
+    imageUrl: "img/icons/happy.svg"
   },
   {
     title: <>Powerful Theming</>,
-    imageUrl: "img/icons/design.svg",
-    description: (
-      <>
-        Tailor the library to your needs. Control color, styles and layouts
-        through our easy to use theme object.
-      </>
-    ),
+    imageUrl: "img/icons/design.svg"
   },
   {
     title: <>Responsive Charts</>,
-    imageUrl: "img/icons/mobile.svg",
-    description: (
-      <>
-        Charts, Components and Layouts are responsive, supporting all screen
-        sizes.
-      </>
-    ),
+    imageUrl: "img/icons/mobile.svg"
   },
   {
     title: <>Awesome Hooks</>,
     imageUrl: "img/icons/graph.svg",
-    description: (
-      <>Re-usable hooks to speed up the development of your custom dashboards.</>
-    ),
   },
   {
     title: <>Enterprise Support Available</>,
     imageUrl: "img/icons/shopping.svg",
-    description: (
-      <>We offer a supported version of the library for Enterprise projects.</>
-    ),
   },
   {
     title: <>Typescript Support</>,
     imageUrl: "img/icons/flag.svg",
-    description: <>Out of the box support for Typescript.</>,
-  },
+  }
 ];
 
 function Feature({ imageUrl, title, description }) {

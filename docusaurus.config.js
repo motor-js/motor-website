@@ -16,13 +16,10 @@ module.exports = {
     },
   ],
   themeConfig: {
-    disableDarkMode: true,
-    announcementBar: {
-      id: "star",
-      content:
-      '<span class="text-white">If you like motor.js, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/motor-js/motor-ui">GitHub!</a></span>'
-       /* '<span class="text-white"<b>motor js</b> is in beta, beware of breaking changes ⚒️</span>',*/
-      /* backgroundColor: 'var(--blueBrand)', */
+    colorMode: {
+      // "light" | "dark"
+      defaultMode: 'light',
+      disableSwitch: true,
     },
     googleAnalytics: {
       trackingID: "UA-173440524-1",
@@ -35,16 +32,11 @@ module.exports = {
         src: "img/motor_red.png",
         srcDark: "img/motor_red.png",
       },
-      links: [
+      items: [
         {
           to: "docs/",
           activeBasePath: "docs",
           label: "Docs",
-          position: "left",
-        },
-        {
-          to: "enterprise",
-          label: "Enterprise",
           position: "left",
         },
         {
@@ -107,19 +99,6 @@ module.exports = {
             },
           ],
         },
-        // {
-        //   title: "More",
-        //   items: [
-        //     {
-        //       label: "Blog",
-        //       to: "blog",
-        //     },
-        //     {
-        //       label: "GitHub",
-        //       href: "https://github.com/facebook/docusaurus",
-        //     },
-        //   ],
-        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Motor, Inc.`,
     },
