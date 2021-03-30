@@ -6,6 +6,12 @@ sidebar_label: Capability Context
 
 #### Context for accessing the Capability APIs
 
+:::warning
+Note, since v0.1.7 the Capability Context has been removed from the library. You can now access the Capability APIs by using the Engine Context.
+Please see below for an example.
+:::
+
+
 ## Usage
 
 You can access the Capability APIs in any component in your React component tree, 
@@ -15,11 +21,11 @@ see below for an example which clears a field called <code>Date</code>
 ```js
 
 import React, { useContext } from 'react'
-import { CapabilityContext } from '@motor-js/core'
+import { EngineContext } from '@motor-js/core'
 
 const Example = () => {
 
-  const { app } = useContext(CapabilityContext)
+  const { app } = useContext(EngineContext)
 
   const clear = () => {
     app.field('Date').clear()
